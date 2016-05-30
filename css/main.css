@@ -1,0 +1,346 @@
+body {
+    min-width: 1080px;
+    padding-top: 5px;
+    background: url(../images/pastelstrip.png) center top repeat-x;
+    background-size: 50% 5px;
+}
+
+a {
+    color: #009dff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.blank {
+    color: inherit;
+    text-decoration: none;
+}
+
+b {
+    font-weight: bold;
+}
+
+p {
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 17px;
+    color: #4b4b4b;
+}
+
+.lighter {
+    font-weight: lighter;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+hr {
+    border: none;
+    height: 5px;
+    background: white url(../images/pastelstrip.png) center center;
+    background-size: 90% 100%;
+}
+
+.main_width {
+    width: 1000px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+    padding: 0 40px;
+}
+
+.main {
+    margin-top: 50px;
+}
+
+#header {
+    background: white;
+    height: 150px;
+    width: 100%;
+}
+
+#logo {
+    height: 150px;
+    margin-left: -40px;
+}
+
+#nav {
+    display: inline-block;
+    float: right;
+    margin-top: 60px;
+    margin-right: -25px;
+}
+
+#nav h1 {
+    display: inline-block;
+    font-weight: lighter;
+    font-size: 25px;
+    padding: 10px 25px;
+    border-left: 1px solid #d1d1d1;
+    background-image: url(../images/pastelstrip.png);
+    background-size: 0% 5px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    -webkit-transition: background-size 0.2s;
+    transition: background-size 0.2s;
+    margin-right: -4px;
+}
+
+#nav h1:hover {
+    background-size: 250% 5px;
+}
+
+#nav h1:nth-child(1) {
+    border: none;
+}
+
+#nav h1:nth-last-child(1) {
+    margin-right: 0;
+}
+
+#nav h1.active {
+    background-image: url(../images/pastelstrip.png);
+    background-size: 250% 5px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+#gray_box {
+    background: #272727 url(../images/pickhoofpattern.png) center center;
+    height: 400px;
+}
+
+#slant_border {
+    background: url(../images/slant.png) no-repeat;
+    background-size: 100% 100%;  
+    height: 404px;
+    margin-top: -402px;
+}
+
+#intro {
+    margin-top: -404px;
+    height: 420px;
+    color: white;
+}
+
+#intro p {
+    color: white;
+}
+
+#intro a {
+    color: white;
+    text-decoration: none;
+}
+
+#intro a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+#intro img {
+    display: block;
+    position: absolute;
+    margin-top: 180px;
+    z-index: 0;
+}
+
+#intro div {
+    min-height: 10px;
+    display: inline-table;
+    vertical-align: top;
+    margin-top: 100px;
+    color: white;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+}
+
+#intro div h2 {
+    font-weight: lighter;
+}
+
+#text_left {
+    width: 270px;
+    float: left;
+}
+
+#text_right {
+    float: right;
+    width: 500px;
+}
+
+.download {
+    background: rgba(255, 255, 255, 0.9);
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+    color: black
+}
+
+#minelpdl {
+    background-image: url(../images/pastelstrip.png);
+    background-repeat: repeat-x;
+    background-size: 100% 5px;
+}
+
+#lldl {
+    box-shadow: inset 0 5px #5e84ce;
+}
+
+.download:hover {
+    background: white;
+}
+
+
+table {
+    width: 100%;
+    min-height: 10px;
+}
+
+.tri_table td {
+    width: 33%;
+}
+
+.bi_table td {
+    width: 50%;
+}
+
+td {
+    padding: 5px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+a .card:hover {
+    box-shadow: 0 0 0 1px rgba(152, 219, 0, 0.49), 0 0 0 5px rgba(205, 227, 36, 0.34), 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card .pic {
+    width: 111%;
+    margin: -15px -15px 0;
+}
+
+.card .icon {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: -38px auto 10px;
+    position: relative;
+    border-radius: 100px;
+    box-shadow: 0 0 0 3px rgb(255, 255, 255);
+}
+
+tr:nth-child(1) td:nth-child(1) .card .icon {
+    background: #ed4f4f;
+}
+
+tr:nth-child(1) td:nth-child(2) .card .icon {
+    background: #ff861e;
+}
+
+tr:nth-child(1) td:nth-child(3) .card .icon {
+    background: #ffc400;
+}
+
+tr:nth-child(2) td:nth-child(1) .card .icon {
+    background: #3f72e5;
+}
+
+tr:nth-child(2) td:nth-child(2) .card .icon {
+    background: #7f59c6;
+}
+
+tr:nth-child(2) td:nth-child(3) .card .icon {
+    background: #ba42d6;
+}
+
+table:nth-of-type(2) tr:nth-child(1) td:nth-child(1) .card .icon {
+    background: #92c917;
+}
+
+table:nth-of-type(2) tr:nth-child(1) td:nth-child(2) .card .icon {
+    background: #d6d600;
+}
+
+.noicon h2 {
+    padding: 10px;
+    margin: -3px -15px 15px;
+    color: white;
+}
+
+.noicon h2:hover {
+    box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+td:nth-child(1) .noicon:nth-child(1) h2 {
+    background: #fd3f9e;
+}
+
+td:nth-child(2) .noicon:nth-child(1) h2 {
+    background: #009dff;
+}
+
+td:nth-child(3) .noicon:nth-child(1) h2 {
+    background: #fd883f;
+}
+
+#demo {
+    text-align: center;
+}
+
+#demo img {
+    vertical-align: top;
+}
+
+#demo h2, #demo p {
+    text-align: left;
+}
+
+.fixed {
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+#footer {
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.06) url(../images/pastelstrip.png) center top repeat-x;
+    background-size: 50% 5px;
+    clear: both;
+}
+
+#footer .main_width p {
+    text-align: center;
+    color: #767676;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
