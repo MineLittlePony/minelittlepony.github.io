@@ -164,7 +164,7 @@ hr {
     min-height: 10px;
     display: inline-table;
     vertical-align: top;
-    margin-top: 100px;
+    margin-top: 80px;
     color: white;
     line-height: 1.2;
     position: relative;
@@ -193,6 +193,10 @@ hr {
     width: 100%;
     text-align: center;
     color: black
+}
+.source {
+    padding: 8px 10px;
+    margin: 5px 0;
 }
 
 #minelpdl {
