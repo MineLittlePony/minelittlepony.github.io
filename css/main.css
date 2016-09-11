@@ -19,15 +19,16 @@ a.blank {
     text-decoration: none;
 }
 
-b {
-    font-weight: bold;
-}
-
-p {
+body {
     font-family: sans-serif;
     font-weight: lighter;
     font-size: 17px;
     color: #4b4b4b;
+}
+
+
+p, img {
+    padding: 10px 0;
 }
 
 .lighter {
@@ -36,6 +37,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Slab', sans-serif;
+    padding-top:30px;
 }
 
 h1 {
@@ -67,6 +69,77 @@ hr {
 
 .main {
     margin-top: 50px;
+}
+
+.main div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#pixels {
+    float: left;
+    width: 400px;
+}
+
+#pixels ul {
+    list-style: none;
+}
+
+#pixels i.fa-circle {
+    text-shadow: 0 0 1px black;
+}
+
+#pixels i.earth {
+    color: #f9b131;
+}
+#pixels i.unicorn {
+    color: #d19fe4;
+}
+#pixels i.pegasus {
+    color: #88caf0;
+}
+#pixels i.alicorn {
+    color: #fef9fc;
+}
+#pixels i.zebra {
+    color: #d0cccf;
+}
+#pixels i.changeling {
+    color: #282b29;
+}
+#pixels i.stub {
+    color: #425844;
+}
+#pixels i.quarter {
+    color: #468e88;
+}
+#pixels i.half {
+    color: #534b76;
+}
+#pixels i.threequarters {
+    color: #8a6b7f;
+}
+#pixels i.fa-ban {
+    color: #ff8686
+}
+#pixels i.male {
+    color: #ffffff;
+}
+#pixels i.filly {
+    color: #ffbe53;
+}
+#pixels i.large {
+    color: #ce3245;
+}
+#pixels i.princess {
+    color: #534b76;
+}
+#pixels i.magic {
+    color: #4444aa;
 }
 
 #header {
@@ -324,7 +397,7 @@ td:nth-child(3) .noicon:nth-child(1) h2 {
     vertical-align: top;
 }
 
-#demo h2, #demo p {
+#demo h2, #demo p, #demo ul {
     text-align: left;
 }
 

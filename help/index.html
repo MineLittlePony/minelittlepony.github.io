@@ -1,174 +1,207 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Mine Little Pony: Ponify Minecraft!</title>
-        <link rel="stylesheet" type="text/css" href="../css/reset.css">
-        <link rel="stylesheet" type="text/css" href="../css/main.css">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <div id="header">
-            <div class="main_width">
-                <a class="blank" href="../"><img id="logo" src="../images/logo.png"></a>
-                <span id="nav">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mine Little Pony: Ponify Minecraft!</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="main_width">
+            <a class="blank" href="../"><img id="logo" src="../images/logo.png"></a>
+            <span id="nav">
                     <h1><a class="blank" href="../">The Mod</a></h1>
                     <h1><a class="blank" href="../installation/">Installation</a></h1>
                     <h1 class="active">Skinning Help</h1>
                 </span>
-            </div>
         </div>
-        <div class="main_width main" id="demo">
+    </div>
+    <div class="main_width main" id="demo">
+        <div id="jump">
             <hr>
-            <br>
             <h2>Jump to section</h2>
-            <br>
-            <p><a class="blank" href="#simple"><i class="fa fa-chevron-down"></i> Simple skin layout</a></p>
-            <p><a class="blank" href="#complex"><i class="fa fa-chevron-down"></i> Complex skin layout</a></p>
-            <p><a class="blank" href="#trigger"><i class="fa fa-chevron-down"></i> Trigger pixels</a></p>
-            <p><a class="blank" href="#hd"><i class="fa fa-chevron-down"></i> HD Skins</a></p>
-            <p><a class="blank" href="#upload"><i class="fa fa-chevron-down"></i> Uploading your skins</a></p>
-            <br>
+            <ul>
+                <li><a class="blank" href="#simple"><i class="fa fa-chevron-down"></i> Simple skin layout</a></li>
+                <li><a class="blank" href="#complex"><i class="fa fa-chevron-down"></i> Complex skin layout</a></li>
+                <li><a class="blank" href="#wings"><i class="fa fa-chevron-down"></i> Detailed Wings</a></li>
+                <li><a class="blank" href="#trigger"><i class="fa fa-chevron-down"></i> Trigger pixels</a></li>
+                <li><a class="blank" href="#hd"><i class="fa fa-chevron-down"></i> HD Skins</a></li>
+                <li><a class="blank" href="#upload"><i class="fa fa-chevron-down"></i> Uploading your skins</a></li>
+            </ul>
             <hr>
-            <br>
-            <a id="simple"></a>
-            <h2>Simple skin layout - pre 1.8</h2>
-            <br>
-            <p>The simple skin layout uses the pre-1.8 skin template and is a good place to start if you have little or no experience making Mine Little Pony skins. Basic components like the head, hair, arms, legs, and torso are kept in the same place and non-human parts such as the horn, wings, ears, and extra textures are squeezed into unused areas. Below is a scaled-up and labeled template Mine Little Pony skin. The blue pixels in the upper left corner are trigger pixels, read more about them below.</p>
-            <br>
+        </div>
+        <div id="simple">
+            <h2>Simple skin layout</h2>
+
+            <p>The simple skin layout uses the pre-1.8 skin template and is a good place to start if you have little or no experience
+                making Mine Little Pony skins. Basic components like the head, hair, arms, legs, and torso are kept in the
+                same place and non-human parts such as the horn, wings, ears, and extra textures are squeezed into unused
+                areas. Below is a scaled-up and labeled template Mine Little Pony skin. The blue pixels in the upper left
+                corner are trigger pixels, read more about them below.</p>
+
             <p>T - top, BT - bottom, F - front, B - back, R - right, L - left.</p>
-            <br>
+
             <img src="../images/labeledguideold.png">
-            <br>
-            <br>
-            <p>A comparison between a standard definition (SD) Twilight Sparkle skin and the default Steve skin shows where the extra parts go.</p>
-            <br>
+
+            <p>A comparison between a standard definition (SD) Twilight Sparkle skin and the default Steve skin shows where
+                the extra parts go.</p>
+
             <img src="../images/ponyguideold.png" style="width: 450px">
             <img src="../images/steveguideold.png" style="width: 450px">
-            <br>
-            <br>
+
+            <!--Keep this new line-->
+            <br/>
             <img src="../images/MineLP_TS_template_old.png">
-            <br>
+
             <p style="display: inline-block"><a href="../images/MineLP_TS_template_old.png" target="_blank"><i class="fa fa-download"></i> download me</a></p>
-            <br>
-            <br>
-            <p><i class="fa fa-asterisk" style="color:orange"></i> The foreleg and hind leg textures are mirrored for the other side of the body as well as the body side textures. For more detailed skins, pay close attention to how some textures are flipped and mirrored around the player model. Use the guide below to see how body texures are matched up. Red marks flipped textures.</p>
-            <br>
+
+            <p><i class="fa fa-asterisk" style="color:orange"></i> The foreleg and hind leg textures are mirrored for the other
+                side of the body as well as the body side textures. For more detailed skins, pay close attention to how some
+                textures are flipped and mirrored around the player model. Use the guide below to see how body texures are
+                matched up. Red marks flipped textures.</p>
+
             <img src="../images/bodylayoutguide.png">
-            <br>
-            <br>
-            <br>
-            <br>
-            
-            <a id="complex"></a>
-            <h2>Complex skin layout - 1.8 onward</h2>
-            <br>
-            <p>As of Minecraft 1.8, skins now have an extra layer all over the body as opposed to just the head. This means that player models can now have sleeves and pants. The complex skin layout is twice the size of the older layout with a dimension of 64x64 pixels whereas the old layout is sized at 32x64 pixels. Blue marks the extra layer of texture.</p>
-            <br>
+        </div>
+        <div id="complex">
+            <h2>Complex skin layout</h2>
+
+            <p>As of Minecraft 1.8, skins now have an extra layer all over the body as opposed to just the head. This means
+                that player models can now have sleeves and pants. The complex skin layout is twice the size of the older
+                layout with a dimension of 64x64 pixels whereas the old layout is sized at 32x64 pixels. Blue marks the extra
+                layer of texture.</p>
+
             <img src="../images/labeledguidenew.png">
-            <br>
-            <br>
-            <p>As far as making skins for Mine Little Pony is concerned, the process remains the same for most part. It is important to note that leg textures are no longer mirrored, all legs now have their own texture space. It is also important to note that left and right legs have different sides that face outward as well as sides that face inward; simply copying right leg textures to use on the left side won't work.</p>
-            <br>
+
+            <p>As far as making skins for Mine Little Pony is concerned, the process remains the same for most part. It is important
+                to note that leg textures are no longer mirrored, all legs now have their own texture space. It is also important
+                to note that left and right legs have different sides that face outward as well as sides that face inward;
+                simply copying right leg textures to use on the left side won't work.</p>
+
             <img src="../images/ponyguidenew.png">
-            <br>
-            <br>
-            <img src="../images/MineLP_TS_template_new.png" >
-            <br>
+
+            <br/>
+            <img src="../images/MineLP_TS_template_new.png">
             <p style="display: inline-block"><a href="../images/MineLP_TS_template_new.png" target="_blank"><i class="fa fa-download"></i> download me</a></p>
-            <br>
-            <br>
-            <p><i class="fa fa-asterisk" style="color:orange"></i> Notice the bottom leg textures and how their faces are differently positioned. For right legs, the faces are, from left to right, inward > front > outward > back whereas left leg faces are inward > front > outward > back.</p>
-            <br>
+
+            <p><i class="fa fa-asterisk" style="color:orange"></i> Notice the bottom leg textures and how their faces are differently
+                positioned. For right legs, the faces are, from left to right, inward > front > outward > back whereas left
+                leg faces are inward > front > outward > back.</p>
+
             <p>Body alignment is the same as the older skin layout.</p>
-            <br>
-            <br>
-            <br>
-            <br>
-            
-            <a id="trigger"></a>
+        </div>
+        <div id="wings">
+            <h2>Wings info</h2>
+            <p>The texture for the wings may seem a bit confusing. It may look like it is the texture for the entire wingspan,
+                but this is only true when they are folded. When extended, the whole area is used for every single feather,
+                meaning the exact same texture is used for all of the feathers. In actuality, they are skinned similarly
+                to a 2x2 leg or arm.
+            </p>
+        </div>
+        <div id="trigger">
             <h2>Trigger pixels</h2>
-            <br>
-            <p>You can use trigger pixels to determine the species of pony you are, the length of your tail, the gender, and the size of your pony. This is done by coloring the top left pixels of your Mine Little Pony skin a specific color.</p>
-            <br>
-            <span style="float: left; width: 400px;">
-                <p><b>Race</b> determines your pony type:</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #f9b131"></i> <span class="fixed">#f9b131</span> Earth pony</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #d19fe4"></i> <span class="fixed">#d19fe4</span> Unicorn</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #88caf0"></i> <span class="fixed">#88caf0</span> Pegasus</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #fef9fc; text-shadow: 0 0 1px black"></i> <span class="fixed">#fef9fc</span> Alicorn</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #d0cccf"></i> <span class="fixed">#d0cccf</span> Zebra</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #282b29"></i> <span class="fixed">#282b29</span> Changeling</p>
-                <br>
-                <p><b>Tail length</b> determines how long your tail is:</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #425844"></i> <span class="fixed">#425844</span> Stub</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #468e88"></i> <span class="fixed">#468e88</span> 1/4</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #534b76"></i> <span class="fixed">#534b76</span> 1/2</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #8a6b7f"></i> <span class="fixed">#8a6b7f</span> 3/4</p>
-                <p><i class="fa fa-ban fa-fw" style="color: #ff8686"></i> <span class="fixed">#------</span> Full length</p>
-                <br>
-                <p><b>Snuzzle</b> determines the shape of your snout:</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #ffffff; text-shadow: 0 0 1px black"></i> <span class="fixed">#ffffff</span> Male / squared</p>
-                <p><i class="fa fa-ban fa-fw" style="color: #ff8686"></i> <span class="fixed">#------</span> Female / rounded</p>
-                <br>
-                <p><b>Model size</b> determines how large your model is:</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #ffbe53"></i> <span class="fixed">#ffbe53</span> Filly</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #ce3254"></i> <span class="fixed">#ce3254</span> Large</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #534b76"></i> <span class="fixed">#534b76</span> Alicorn</p>
-                <p><i class="fa fa-ban fa-fw" style="color: #ff8686"></i> <span class="fixed">#------</span> Normal</p>
-                <br>
-                <p><b>Unicorn color</b> determines the color of magic:</p>
-                <p><i class="fa fa-circle fa-fw" style="color: #4444aa;"></i> <span class="fixed">#4444aa</span> Default color</p>
-                <p><i class="fa fa-ban fa-fw" style="color: #ff8686"></i> <span class="fixed">#------</span> Custom color</p>
-            </span>
+
+            <p>You can use trigger pixels to determine the species of pony you are, the length of your tail, the gender, and
+                the size of your pony. This is done by coloring the top left pixels of your Mine Little Pony skin a specific
+                color.
+            </p>
+
+            <div id="pixels">
+                <p><span class="bold">Race</span> determines your pony type:</p>
+                <ul>
+                    <li><i class="fa fa-circle fa-fw earth"></i> <span class="fixed">#f9b131</span> Earth pony</li>
+                    <li><i class="fa fa-circle fa-fw unicorn"></i> <span class="fixed">#d19fe4</span> Unicorn</li>
+                    <li><i class="fa fa-circle fa-fw pegasus"></i> <span class="fixed">#88caf0</span> Pegasus</li>
+                    <li><i class="fa fa-circle fa-fw alicorn"></i> <span class="fixed">#fef9fc</span> Alicorn</li>
+                    <li><i class="fa fa-circle fa-fw zebra"></i> <span class="fixed">#d0cccf</span> Zebra</li>
+                    <li><i class="fa fa-circle fa-fw changeling"></i> <span class="fixed">#282b29</span> Changeling</li>
+                </ul>
+                <p><span class="bold">Tail length</span> determines how long your tail is:</p>
+                <ul>
+                    <li><i class="fa fa-circle fa-fw stub"></i> <span class="fixed">#425844</span> Stub</li>
+                    <li><i class="fa fa-circle fa-fw quarter"></i> <span class="fixed">#468e88</span> 1/4</li>
+                    <li><i class="fa fa-circle fa-fw half"></i> <span class="fixed">#534b76</span> 1/2</li>
+                    <li><i class="fa fa-circle fa-fw threequarters"></i> <span class="fixed">#8a6b7f</span> 3/4</li>
+                    <li><i class="fa fa-ban fa-fw"></i> <span class="fixed">#------</span> Full length</li>
+                </ul>
+                <p><span class="bold">Snuzzle</span> determines the shape of your snout:</p>
+                <ul>
+                    <li><i class="fa fa-circle fa-fw magic"></i> <span class="fixed">#ffffff</span> Male / squared</li>
+                    <li><i class="fa fa-ban fa-fw"></i> <span class="fixed">#------</span> Female / rounded</li>
+                </ul>
+                <p><span class="bold">Model size</span> determines how large your model is:</p>
+                <ul>
+                    <li><i class="fa fa-circle fa-fw filly"></i> <span class="fixed">#ffbe53</span> Filly</li>
+                    <li><i class="fa fa-circle fa-fw large"></i> <span class="fixed">#ce3254</span> Large</li>
+                    <li><i class="fa fa-circle fa-fw princess" style="color: #534b76"></i> <span class="fixed">#534b76</span>                        Alicorn</li>
+                    <li><i class="fa fa-ban fa-fw"></i> <span class="fixed">#------</span> Normal</li>
+                </ul>
+                <p><span class="bold">Unicorn color</span> determines the color of magic:</p>
+                <ul>
+                    <li><i class="fa fa-circle fa-fw magic"></i> <span class="fixed">#4444aa</span> Default color</li>
+                    <li><i class="fa fa-ban fa-fw"></i> <span class="fixed">#------</span> Custom color</li>
+                </ul>
+            </div>
             <img src="../images/triggerpixelguide.png" style="clear: left">
-            <br style="clear: both">
-            <br style="clear: both">
-            <p style="clear: both"><i class="fa fa-asterisk" style="color:orange"></i> Trigger pixels must use the specified colors and must stay in the above configuration. A skin without triger pixels will not be registered as a Mine Little Pony skin. It is not recommened to use a screen grab to sample the colors. Copy and paste the hex color codes instead or <a href="../images/triggerpixelraster.png" target="_blank">download this image guide</a> and use an eyedropper tool.</p>
-            <br>
-            <img>
-            <br>
-            <br>
-            <br>
-            <br>
-            
-            <a id="hd"></a>
+            <p style="clear: both"><i class="fa fa-asterisk" style="color:orange"></i> Trigger pixels must use the specified colors and must stay
+                in the above configuration. A skin without triger pixels will not be registered as a Mine Little Pony skin.
+                It is not recommened to use a screen grab to sample the colors. Copy and paste the hex color codes instead
+                or <a href="../images/triggerpixelraster.png" target="_blank">download this image guide</a> and use an eyedropper
+                tool.
+            </p>
+
+        </div>
+        <div id="hd">
             <h2>HD Skins</h2>
-            <br>
-            <p>Mine Little Pony supports high definition (HD) skins in both the old and new skin layouts. HD skins can vary in resolution but their dimensions must be multiples of the original SD skin. For the older layout which is sized at 32x64, HD skins can be 64x128, 128x256, or 256x512. HD skins using the new layout can be sized at 64x64, 128x128, 256x256, or 512x512.</p>
-            <br>
+
+            <p>Mine Little Pony supports high definition (HD) skins in both the old and new skin layouts. HD skins can vary
+                in resolution but their dimensions must be multiples of the original SD skin. For the older layout which
+                is sized at 32x64, HD skins can be 64x128, 128x256, or 256x512. HD skins using the new layout can be sized
+                at 64x64, 128x128, 256x256, or 512x512.</p>
+
             <img src="../images/ponyguidenew.png" style="width: 450px">
             <img src="../images/hdskin.png" style="width: 450px">
-            <br>
-            <br>
-            <p><i class="fa fa-asterisk" style="color:orange"></i> HD skins must still follow the template for SD skins. Notice how the trigger pixels in the HD skin on the right  aren't scaled up along with the rest of the skin. It is important that the trigger pixels are kept the same size and in the same configuration for Mine Little Pony to register the skin as a pony skin.</p>
-            <br>
-            <br>
-            <br>
-            <br>
-            
-            <a id="upload"></a>
+
+            <p><i class="fa fa-asterisk" style="color:orange"></i> HD skins must still follow the template for SD skins. Notice
+                how the trigger pixels in the HD skin on the right aren't scaled up along with the rest of the skin. It is
+                important that the trigger pixels are kept the same size and in the same configuration for Mine Little Pony
+                to register the skin as a pony skin.</p>
+
+        </div>
+        <div id="upload">
             <h2>Uploading your skins</h2>
-            <br>
-            <p>Regular SD skins can be uploaded to <a href="https://minecraft.net" target="_blank">Minecraft.net</a> like a normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin layouts can be uploaded to Minecraft.net.</p>
-            <br>
+            <p>Regular SD skins can be uploaded to <a href="https://minecraft.net" target="_blank">Minecraft.net</a> like a
+                normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin
+                layouts can be uploaded to Minecraft.net.</p>
+
             <img src="../images/minecraftupload.png" style="width: 500px;">
-            <br>
-            <br>
-            <p>Both SD and HD skins can be uploaded to Mine Little Pony's skin server which is independent from Minecraft's skin server. Skins uploaded to Mine Little Pony's server can only be seen by other clients with Mine Little Pony installed.</p>
-            <br>
-            <p>To upload a skin to Mine Little Pony's skin server, launch the game with Mine Little Pony installed. When at the home screen (the screen with the panning panorama) press F1. The HD skin manager should open along with a small window where you can drag and drop your skin on. The browse button can also be use to browse through your files if you prefer. Click the ">>" button and your skin will upload to the server. It may take some time for skin changes to be visible to other players.</p>
-            <br>
+
+            <p>Both SD and HD skins can be uploaded to Mine Little Pony's skin server which is independent from Minecraft's
+                skin server. Skins uploaded to Mine Little Pony's server can only be seen by other clients with Mine Little
+                Pony installed.</p>
+
+            <p>To upload a skin to Mine Little Pony's skin server, launch the game with Mine Little Pony installed. When at
+                the home screen (the screen with the panning panorama) press F1. The HD skin manager should open along with
+                a small window where you can drag and drop your skin on. The browse button can also be use to browse through
+                your files if you prefer. Click the ">>" button and your skin will upload to the server. It may take some
+                time for skin changes to be visible to other players.</p>
+
             <img src="../images/minelpupload.png" style="width: 700px">
             <img src="../images/drop.png">
         </div>
-        <div id="footer">
-            <div class="main_width">
-                <p>Site design &copy; 2015 Brohoof.com</p>
-                <p>Mine Little Pony was created by <a href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1278090-mine-little-pony-v1-6-4-1" target="_blank">Verdana</a>, now unofficially maintained by <a href="https://github.com/killjoy1221" target="_blank">KillJoy</a> | All creations belong to their respective creators</p>
-                <p>My Little Pony: Friendship is Magic &copy; Hasbro, Inc. | Minecraft &copy; Mojang AB</p>
-            </div>
+    </div>
+    <div id="footer">
+        <div class="main_width">
+            <p>Site design &copy; 2015 Brohoof.com</p>
+            <p>Mine Little Pony was created by <a href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1278090-mine-little-pony-v1-6-4-1"
+                    target="_blank">Verdana</a>, now unofficially maintained by <a href="https://github.com/killjoy1221" target="_blank">KillJoy</a>                | All creations belong to their respective creators</p>
+            <p>My Little Pony: Friendship is Magic &copy; Hasbro, Inc. | Minecraft &copy; Mojang AB</p>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
