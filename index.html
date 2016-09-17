@@ -7,6 +7,8 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/github-releases.js"></script>
     </head>
     <body>
         <div id="header">
@@ -25,11 +27,12 @@
             <img src="images/ponybanner.png">
             <div id="text_left">
                 <h1>Get the Mod Now!</h1>
-                <h2>For Minecraft 1.9.4</h2>
-                <a class="blank" href="https://github.com/MineLittlePony/MineLittlePony/releases" target="_blank"><h1 class="download" id="minelpdl">Download <i class="fa fa-dropbox"></i></h1></a>
+                <h2>For Minecraft <span class="mcversion"></span></h2>
+                <a id="latest" class="blank" target="_blank"><h1 class="download" id="minelpdl">Download <i class="fa fa-download"></i></h1></a>
+                <a class="blank" href="https://github.com/MineLittlePony/MineLittlePony/releases" target="_blank"><h3 class="download" id="minelpdllatest">Old Releases <i class="fa fa-clock-o"></i></h3></a>
                 <a class="blank" href="https://github.com/MineLittlePony/MineLittlePony" target="_blank"><h6 class="download source">Source <i class="fa fa-github"></i></h6></a>
                 <p><i class="fa fa-asterisk fa-fw" style="color: orange;"></i> LiteLoader is required</p>
-                <a class="blank" href="http://jenkins.liteloader.com/" target="_blank"><h1 class="download" id="lldl">Get LiteLoader <i class="fa fa-external-link-square"></i></h1></a>
+                <a class="blank" href="http://www.liteloader.com/" target="_blank"><h1 class="download" id="lldl">Get LiteLoader <i class="fa fa-external-link-square"></i></h1></a>
                 <a href="installation/"><p><i class="fa fa-question-circle fa-fw" style="color: #00a7ff;"></i> Installation instruction</p></a>
             </div>
             <div id="text_right">
@@ -148,4 +151,5 @@
             </div>
         </div>
     </body>
+    <script>makeReleaseButton()</script>
 </html>
