@@ -1,0 +1,52 @@
+0.1 - Initial release.
+0.2 - Bug fix release, now compatible with Zombe's Fly Mod and maybe more other mods too.
+0.3 - Bug fix release to fix some model and animation errors. The player arm no longer stutters in first-person. Hair has been repositioned so it is no longer too far back on the head. Legs no longer sway by themselves if the player is standing still. The tail sways a bit now instead, does not appear detached from the body, and looks much better. This update also fixes the issue that caused horn and wing models to not show up correctly on a player if the player has not added a compatible skin on minecraft.net.
+0.4 - Feature release to add new animations to pegasus ponies when flying and add new and improved background ponies. Also updates ears so the ear texture comes from a previously unused area of the skin rather than the main body area, allowing the ears to be a different colour to the body.
+0.5 - Major rewrite to migrate to Player Model API and dramatically improve compatibility. Added a version that ModLoader can load. Added configurable ponyfication settings. Added new animations for unicorns. Fixed some bugs with flying animations playing incorrectly.
+0.6 - Another big rewrite to remove an unnescessary class. Improved compatibility since 0.5 and fixed regression relating to Zombe's mod pack. Fixed some memory leaks. Fixed a regression introduced in 0.4 where the tail would not sway when standing still. Fixed a regression introduced in 0.5 where the position of the held item was incorrect.
+0.7 - Located and fixed the memory leak that plagued 0.5 and 0.6 related to first person camera. Fixed position of held item. Fixed bug that caused unicorns to glitch when other players swung an item.
+0.8 - Fixed a silly bug with the armour.
+0.9 - Last version for Minecraft 1.8.1. Added threaded check for skins so this happens in the background. Fixed position of block on head. Added a new sleep animation.
+1.0 - Updated to work with Minecraft 1.0.0. Fixed skins so they don't have beards. Added animations for bows.
+1.1 - Compatibility with Minecraft 1.1.
+1.2 - Compatibility with Minecraft 1.2. Support for new models (with snouts, necks, and variable length tails) and new skinning technique. Compatability with Forge and Spoutcraft in the default install. Fixed a bug with the position of the held item.
+1.2.1 - Fixed a silly bug with the mod trying to render everyone as a pony.
+1.2.2 - Compatibility with Minecraft 1.2.4. Fixed a bug with display of the neck when riding in a minecart.
+1.2.3 - Rebuilt against Minecraft 1.2.5 source.
+1.3.1.1 - Compatibility with Minecraft 1.3.1. Massive refactoring. Lots of new compatibility stuff. New pony armour.
+1.3.1.2 - Fixed bugs with detecting the type of skin a player is using. Added option to not use the new armour. Fixed armour rendering when sleeping and riding minecart. Fixed creation of "mods" folder.
+1.3.2.1 - Added a glow to uncorn horns. Added cloaks and deadmau5 ears. Added option to not use snuzzles. Fixed a bug with the rotation of blocks worn on head. Added a default skin (for the player) for people without a connection to the skin server. Compatible with Minecraft 1.3.2.
+1.3.2.2 - Fixed compatibility with Minecraft Forge. Changed skin loading to improve performance, reliability and robustness.
+1.3.2.3 - Fixed Forge armour again. New running animation.
+1.3.2.4 - Re-did hown glow and added item glow for unicorns. Improved support for HD skins. Fixed a bug with TagAPI servers.
+1.3.2.5 - Fixed a silly bug where you turn white when you take damage if you are a unicorn and you are holding an item.
+1.4.1.1 - Updated for Minecraft 1.4.1 pre-release.
+1.4.2.1 - Updated for Minecraft 1.4.2 pre-release.
+1.4.2.2 - Fixed a bug where unicorn horn glow appears transparent if the user has a dark coloured skin.
+1.4.2.3 - Added ModLoader support. Added Forge support and updated Spoutcraft support. Fixed a small bug with the leather armour texture. Packaged the normal version so it works with Magic Launcher.
+1.4.4.1 - Built against Minecraft 1.4.4.
+1.4.5.1 - Built against Minecraft 1.4.5.
+1.4.5.2 - Bundled LiteLoader. Added HD skin support. Fixed bugs with magic glow clipping into hair, inverted texture on one of the wings, and incorrect position of hair on human when sneaking. Fixed Forge and Spoutcraft compatibility.
+1.4.5.3 - Fixed HD skins menu not being displayed for Forge users.
+1.4.6.1 - Updated for Minecraft 1.4.6.1. Fixed a bug with capes taking on the colour of enchanted items.
+1.4.6.2 - Reverted a change that made arrows sticking in other players behave really oddly.
+1.4.6.3 - Updated HD skins stuff to work better with Forge and Optifine. Added zebra and changling pixel options (using existing earth pony and alicorn models respectively). Added some backbround ponies.
+1.4.6.4 - Improved HD skins stuff, in particular tried to fix a bug that breaks skins when changing world.
+1.5.0.1 - Updated for Minecraft 1.5.0. Worked around the bug that breaks skins when changing world. Broke compatibility with Forge and Spoutcraft
+1.5.1.1 - Updated for Minecraft 1.5.1. Really properly finally fixed the bug that breaks skins when changing world.
+1.5.1.2 - Added pony villagers. Added compatibility with VoxelPlayer via new RenderPlayerDecorator. Fixed a Forge crash. Fixed a ModLoader crash. Made everything LiteMods. Merged ModLoader and normal codebase (they're basically the same mod now).
+1.5.1.3 - Fixed a bug where the villager saddle bags were rendered on the player in the skin preview display.
+1.5.1.4 - Fixed a problem where FML could load the ModLoader version but ModLoader couldn't.
+1.5.2.1 - Updated for Minecraft 1.5.2. Only build a single universal release now which should work with everything (no more different versions of the mod for ModLoader or non-ModLoader installations). Fixed a bug where player models were lost when leaving and rejoining the game.
+1.5.2.2 - Added pony zombies. Fixed a bug where villagers would flap their wings when they player flies.
+1.5.2.3 - Removed arrows sticking in players again, one day I should fix it properly :(
+1.5.2.4 - Rebased config onto VoxelCommon. Added in-game configuration menu. Fixed main menu option when using the Brony Mod Pack. Fixed ponyfication of zombie pigmen and added a new texture and config option for this. Added show-accurate scaling option (configurable, on by default). Added getRace() method for ponies (to allow third-party mods to check the race of pony without re-checking the texture).
+1.5.2.5 - Added skeleton ponies. Added an experimental "pony's-eye-view" option (off by default).
+1.5.2.6 - Added more types of skeletons including wither skeletons. Split GUI into two tabs. Fixed block selection in pony's-eye-view. Fixed a dumb bug with villagers. Updated zombie villager texture.
+1.5.2.7 - Fixed armour rendering for skeletons. Replaced skeleton textures with ones that look more like vanilla Minecraft.
+1.6.2.1 - Updated for Minecraft 1.6.2. Moved fully to LiteLoader. Fixed Pony's Eye View with Forge. Fixed arrows in players. Improved wing rendering. Added support for pony armor in forge mods. Removed option to disable HD, because we totally depend on the HD skin code to check pony skins now (even for normal Minecraft skins).
+1.6.2.2 - I derped and left in debug code in 1.6.2.1 that set everyone's ponylevel to 1. This fixes that.
+1.6.2.3 - Rewrote Pony's Eye View (removed custom EntityRenderers). Added option to change config live. Improved armour rendering. Fixed HD skins preview. Fixed bug with disabling pony sizes.
+1.6.2.4 - Improved armour support for Forge. Fixed compatibility with VoxelPlayer. Added Equestria Girls. Fixed rubber-banding in multiplayer. Fixed bucket placement in single player (still not correct in multiplayer). Added support for fixing skins with broken hair (like in vanilla Minecraft). Updated all background ponies.
+1.6.2.5 - Fixed some more bugs with Pony's Eye View, added Pony's Eye View options, went back to using a custom entity renderer for Pony's Eye View but did it more cleverly this time.
+1.6.4.1 - Updated for Minecraft 1.6.4.
