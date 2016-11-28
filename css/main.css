@@ -287,17 +287,24 @@ hr {
 }
 
 
-table {
+.table {
     width: 100%;
+    display: inline-table;
+}
+
+.table span {
     min-height: 10px;
+    padding:5px;
 }
 
-.tri_table td {
-    width: 33%;
+.tri_table span {
+    width: 32%;
+    display: inline-table;
 }
 
-.bi_table td {
-    width: 50%;
+.bi_table span {
+    width: 48%;
+    display: inline-table;
 }
 
 td {
@@ -335,36 +342,40 @@ a .card:hover {
     box-shadow: 0 0 0 3px rgb(255, 255, 255);
 }
 
-tr:nth-child(1) td:nth-child(1) .card .icon {
+.table span:nth-child(1) .card .icon {
     background: #ed4f4f;
 }
 
-tr:nth-child(1) td:nth-child(2) .card .icon {
+.table span:nth-child(2) .card .icon {
     background: #ff861e;
 }
 
-tr:nth-child(1) td:nth-child(3) .card .icon {
+.table span:nth-child(3) .card .icon {
     background: #ffc400;
 }
 
-tr:nth-child(2) td:nth-child(1) .card .icon {
+.table span:nth-child(4) .card .icon {
     background: #3f72e5;
 }
 
-tr:nth-child(2) td:nth-child(2) .card .icon {
+.table span:nth-child(5) .card .icon {
     background: #7f59c6;
 }
 
-tr:nth-child(2) td:nth-child(3) .card .icon {
+.table span:nth-child(6) .card .icon {
     background: #ba42d6;
 }
 
-table:nth-of-type(2) tr:nth-child(1) td:nth-child(1) .card .icon {
+#help span:nth-child(1) .card .icon {
     background: #92c917;
 }
 
-table:nth-of-type(2) tr:nth-child(1) td:nth-child(2) .card .icon {
+#help span:nth-child(2) .card .icon {
     background: #d6d600;
+}
+
+#other span:nth-child(1) .card .icon {
+    background: #7289DA;
 }
 
 .noicon h2 {
@@ -377,15 +388,15 @@ table:nth-of-type(2) tr:nth-child(1) td:nth-child(2) .card .icon {
     box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
-td:nth-child(1) .noicon:nth-child(1) h2 {
+span:nth-child(1) .noicon h2 {
     background: #fd3f9e;
 }
 
-td:nth-child(2) .noicon:nth-child(1) h2 {
+span:nth-child(2) .noicon h2 {
     background: #009dff;
 }
 
-td:nth-child(3) .noicon:nth-child(1) h2 {
+span:nth-child(3) .noicon h2 {
     background: #fd883f;
 }
 
