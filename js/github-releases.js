@@ -4,7 +4,11 @@ function makeReleaseButton() {
         var url = data.html_url
         var version = data.tag_name
 
-        $(".mcversion").text(version.substring(0, version.lastIndexOf(".")))        
+        var mcver = version.substring(0, version.lastIndexOf("."))
+        if (mcver.endsWith(".0"))
+            mcver = mcver.substring(0, mcver.length - 2)
+
+        $(".mcversion").text(mcver)
         $("#latest").attr("href", url)
     })
 }
