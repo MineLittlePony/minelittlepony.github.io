@@ -249,7 +249,7 @@ hr {
 }
 
 #text_left {
-    width: 270px;
+    width: 345px;
     float: left;
 }
 
@@ -263,19 +263,30 @@ hr {
     display: inline-block;
     padding: 10px;
     margin: 10px 0;
-    width: 100%;
+    width: 95%;
     text-align: center;
     color: black
+}
+.download-latest {
+    width: 50%;
+    float: left;
+}
+.download-beta {
+    width: 35%;
+    float: right;
 }
 .source {
     padding: 8px 10px;
     margin: 5px 0;
 }
 
-#minelpdl {
+.minelpdl {
     background-image: url(../images/pastelstrip.png);
     background-repeat: repeat-x;
     background-size: 100% 5px;
+}
+#prerelease {
+    display: none;
 }
 
 #lldl {
