@@ -1,207 +1,109 @@
-<!doctype html>
-<html>
+---
+layout: "page"
+css: "home"
+path: ""
+---
+<!-- Banner -->
+<div id="intro">
+	<div>
+		<h2>Ponify your Minecraft experience!</h2>
+		<div>
+			<p>You want more ponies in your life? Well, this Minecraft mod will help you to feel yourself a pony (not IRL, but that's more than nothing).</p>
+			<p>The mod turns you, other players and even mobs into little pastel-colored horses!</p>
+		</div>
+	</div>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Mine Little Pony: Ponify Minecraft!</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/github-releases.js"></script>
-</head>
+	<div>
+		<h1>Get the mod now!</h1>
+		
+		<!-- Download links -->
+		<a id="intro--link__download" href="https://github.com/MineLittlePony/MineLittlePony/releases" target="_blank">Download</a>
+		<a id="intro--link__download-beta" href="#" download hidden>Pre-release</a>
+		<a id="intro--link__download-liteloader" href="https://www.liteloader.com/download" target="_blank">Get LiteLoader</a>
+		
+		<!-- GitHub links -->
+		<div id="intro--links__mod">
+			<a href="https://github.com/MineLittlePony/MineLittlePony/releases" target="_blank">All releases</a>
+			<a href="https://github.com/MineLittlePony/MineLittlePony" target="_blank">Source code</a>
+		</div>
+		
+		<!-- Flex space -->
+		<div style="flex-grow:1;"></div>
+		
+		<!-- Social links -->
+		<div id="intro--links__social">
+			<a id="intro--link__discord" href="https://discord.gg/HbJSFyu" target="_blank">
+				<img src="{{ '/assets/home/discord_logo.svg' | relative_url }}" type="image/svg+xml">
+			</a>
+		</div>
+		
+	</div>
+	
+</div>
 
-<body>
-    <div id="header">
-        <div class="main_width">
-            <img id="logo" src="images/logo.png">
-            <span id="nav">
-                    <h1 class="active">The Mod</h1>
-                    <h1><a class="blank" href="installation/">Installation</a></h1>
-                    <h1><a class="blank" href="help/">Skinning Help</a></h1>
-                    <h1><a class="blank" href="legacy/">Old Stuff</a></h1>
-                    <h1><a class="blank" href="faq/">FAQ</a></h1>
+<!-- Introducing cards -->
+<div id="features" class="cards">
+	{% for card in site.data.cards.features %}
+	<!-- Intro card #{{ forloop.index }} -->
+	<div>
+		<img src="{{ '/assets/home/' | append: card.header | append: '.png' | relative_url }}">
+		<img src="{{ '/assets/home/' | append: card.icon | append: '.png' | relative_url }}" style="background:{{ card.color }};">
+		<h2>{{ card.title }}</h2>
+		<div>{{ card.description }}</div>
+	</div>
+	{% endfor %}
+</div>
 
-                </span>
-        </div>
-    </div>
-    <div id="gray_box"></div>
-    <div id="slant_border"></div>
-    <div id="intro" class="main_width">
-        <img src="images/ponybanner.png">
-        <div id="text_left">
-            <h1>Get the Mod Now!</h1>
-            <h2>For Minecraft <span class="mcversion"></span></h2>
-            <a id="latest" class="blank" target="_blank">
-                <h1 class="download minelpdl">Download <i class="fa fa-download"></i></h1>
-            </a>
-            <a id="prerelease" class="blank" target="_blank">
-                <h1 class="download download-beta minelpdl">Beta <i class="fa fa-flask"></i></h1>
-            </a>
-            <a class="blank" href="https://github.com/MineLittlePony/MineLittlePony/releases" target="_blank">
-                <h3 class="download" id="minelpdllatest">Old Releases <i class="fa fa-clock-o"></i></h3>
-            </a>
-            <a class="blank" href="https://github.com/MineLittlePony/MineLittlePony" target="_blank">
-                <h6 class="download source">Source <i class="fa fa-github"></i></h6>
-            </a>
-            <p><i class="fa fa-asterisk fa-fw" style="color: orange;"></i> LiteLoader is required</p>
-            <a class="blank" href="https://www.liteloader.com/" target="_blank">
-                <h1 class="download" id="lldl">Get LiteLoader <i class="fa fa-external-link-square"></i></h1>
-            </a>
-            <a href="installation/">
-                <p><i class="fa fa-question-circle fa-fw" style="color: #00a7ff;"></i> Installation instruction</p>
-            </a>
-        </div>
-        <div id="text_right">
-            <h1>Mine Little Pony: Friendship is Crafting</h1>
-            <h2>Ponify your Minecraft experience!</h2>
-            <hr>
-            <p>Need more pony in your life? This My Little Pony: Friendship is Magic inspired Minecraft mod will turn you, other
-                players, and even mobs into little pastel-colored horses!</p>
-        </div>
-    </div>
-    <div class="main_width">
-        <div id="features" class="table tri_table">
-            <span>
-                <div class="card">
-                    <img class="pic" src="images/clientside.png">
-                    <img class="icon" src="images/clienticon.png">
-                    <h2>Client-side</h2>
-                    <p>Mine Little Pony is unreliant on server plugins and works seamlessly with other Pony clients.</p>
-                </div>
-            </span>
-            <span>
-                <div class="card">
-                    <img class="pic" src="images/ponytype.png">
-                    <img class="icon" src="images/ponytypeicon.png">
-                    <h2>6 Unique Pony Types</h2>
-                    <p>Be an earth pony, pegasus, unicorn, alicorn, zebra, or changeling with trigger pixels.</p>
-                </div>
-            </span>
-            <span>
-                <div class="card">
-                    <img class="pic" src="images/customize.png">
-                    <img class="icon" src="images/customizeicon.png">
-                    <h2>Highly Customizable</h2>
-                    <p>Mine Little Pony supports custom skins and custom player model modifications.</p>
-                </div>
-            </span>
-            <span>
-                <div class="card">
-                    <img class="pic" src="images/mobs.png">
-                    <img class="icon" src="images/mobicon.png">
-                    <h2>Ponified Mobs</h2>
-                    <p>Mobs have also been transformed into ponies and can be textured using resource packs.</p>
-                </div>
-            </span>
-            <span>
-                <div class="card">
-                    <img class="pic" src="images/hdskins.png">
-                    <img class="icon" src="images/hdicon.png">
-                    <h2>HD Skins</h2>
-                    <p>Tired of 8x8 faces? Mine Little Pony has its own skin server that supports high definition skins.</p>
-                </div>
-            </span>
-            <span>
-                <div class="card">
-                    <img class="pic" src="images/armor.png">
-                    <img class="icon" src="images/armoricon.png">
-                    <h2>Armor Compatiblity</h2>
-                    <p>Minecraft armor pieces fit on Mine Little Pony models and can also be textured using resource packs.</p>
-                </div>
-            </span>
-        </div>
-        <hr>
-        <div id="help" class="table bi_table">
-            <span>
-                <a href="installation/" class="blank">
-                    <div class="card">
-                        <img style="margin-top: 0;" class="icon" src="images/boxicon.png">
-                        <h2>Installation Instructions</h2>
-                        <p>Follow these quick steps to get Mine Little Pony up and running. LiteLoader is required.</p>
-                    </div>
-                </a>
-            </span>
-            <span>
-                <a href="help/" class="blank">
-                    <div class="card">
-                        <img style="margin-top: 0;" class="icon" src="images/helpicon.png">
-                        <h2>Skinning Help</h2>
-                        <p>See skinning guides and instructions on how to customize your pony model.</p>
-                    </div>
-                </a>
-            </span>
-        </div>
-        <hr>
-        <div id="other" class="table tri_table">
-            <span>
-            <a href="https://discord.gg/HbJSFyu" class="blank">
-                <div class="card">
-                    <img style="margin-top: 0;" class="icon" src="images/discordicon.png">
-                    <h2>Discord Chat</h2>
-                    <p>Got a problem? Need help? Chat with us on Discord.</p>
-                </div>
-            </a>
-            </span>
-            <span>
-            <a href="https://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2178137-mine-little-pony-friendship-is-crafting-v1-7-10-1" class="blank">
-                <div class="card">
-                    <img style="margin-top:0;" class="icon" src="images/forumsicon.png">
-                    <h2>Minecraft Forums</h2>
-                    <p>Chat on the forums or just share your experiences</p>
-                </div>
-            </a>
-            </span>
+<hr>
 
-        </div>
-        <hr>
-        <div id="links" class="table tri_table">
-            <span>
-                <div class="card noicon">
-                    <img class="pic" src="images/lnt.png">
-                    <a href="https://www.minecraftforum.net/forums/mapping-and-modding/resource-packs/2787763-love-tolerance-l-t-updated-to-1-11-x/" class="blank" target="_blank">
-                        <h2>Get Info <i class="fa fa-external-link-square"></i></h2>
-                    </a>
-                    <p>Complete the Mine Little Pony experience with the Love &amp; Tolerance resource pack.</p>
-                </div>
-            </span>
-            <span>
-                <div class="card noicon">
-                    <img class="pic" src="images/skinpack.png">
-                    <a href="downloads/MineLittlePonySkins.zip" class="blank" download>
-                        <h2>Download <i class="fa fa-download"></i></h2>
-                    </a>
-                    <p>Get a quick start with this pack of more than 200 canon Mine Little Pony compatible skins.</p>
-                </div>
-            </span>
+<!-- Extra cards -->
+<div id="links" class="cards">
+	{% for card in site.data.cards.links %}
+		{% if card.hidden != true %}
+		<!-- Extra card #{{ forloop.index }} -->
+		<div class="noicon">
+			{% if card.download %}<a href="{{ card.url | relative_url }}" download>
+			{% else %}<a href="{{ card.url }}" target="_blank">{% endif %}
+				
+				<img src="{{ '/assets/home/' | append: card.header | relative_url }}.png">
+				<h2 style="background:{{ card.color }};">{{ card.label }}</h2>
+				<div>{{ card.description }}</div>
+				
+			</a>
+		</div>
+		{% endif %}
+	{% endfor %}
+</div>
 
-<!-- defunt EQ3 Link [KEEP AS REFERENCE, REMOVE LINK INFO LATER]
-
-            <span>
-                <div class="card noicon">
-                    <img class="pic" src="images/pvs.png">
-                    <a href="https://www.eq3.in/" class="blank" target="_blank">
-                        <h2>Go to EQ3 <i class="fa fa-external-link-square"></i></h2>
-                    </a>
-                    <p>Don't play alone! Join Equestria Cubed and be ponies together in the best recreation of Equestria.</p>
-                </div>
-            </span>
--->
-
-        </div>https:
-    </div>
-    <div id="footer">
-        <div class="main_width">
-            <p>Site design &copy; 2018 minelittlepony-mod.com</p>
-            <p>Mine Little Pony was created by <a href="https://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1278090-mine-little-pony-v1-6-4-1"
-                    target="_blank">Verdana</a>, now unofficially maintained by <a href="https://github.com/killjoy1221" target="_blank">KillJoy</a>                | All creations belong to their respective creators</p>
-            <p>My Little Pony: Friendship is Magic &copy; Hasbro, Inc. | Minecraft &copy; Mojang AB</p>
-        </div>
-    </div>
-</body>
 <script>
-    makeReleaseButton()
-</script>
+fetch('https://api.github.com/repos/MineLittlePony/MineLittlePony/releases')
+	.then(r => r.json())
+	.then(function (json) {
+		json = json.filter(item => item.target_commitish == 'master');
+		
+		let
+		lastVersion = '',
+		release     = null,
+		prerelease  = null;
+		
+		for (let item of json)
+			if (lastVersion < (lastVersion = item.tag_name.substr(0, item.tag_name.lastIndexOf('.'))))
+				if (item.prerelease) prerelease = item;
+				else { release = item; break; }
+		
+		let download_link = document.querySelector('#intro--link__download');
+		
+		download_link.removeAttribute('target');
+		download_link.setAttribute('data-version', release.tag_name.substr(0, release.tag_name.length - 2));
+		download_link.href = release.assets[0].browser_download_url;
+		download_link.download = true;
 
-</html>
+		if (prerelease) {
+			let pre_link = document.querySelector('#intro--link__download-beta');
+			
+			pre_link.removeAttribute('hidden');
+			pre_link.setAttribute('data-version', prerelease.tag_name.substr(0, prerelease.tag_name.lastIndexOf('.')));
+			pre_link.href = prerelease.assets[0].browser_download_url;
+		}
+	});
+</script>

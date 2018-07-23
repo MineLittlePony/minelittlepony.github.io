@@ -1,0 +1,12 @@
+@import 'article.css';
+
+ul {
+	margin-bottom: 10px;
+}
+li {
+	border-radius: 3px;
+	padding: 2px 3px;
+}
+li:hover {
+	background: whitesmoke;
+}
