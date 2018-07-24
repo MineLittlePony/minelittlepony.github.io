@@ -1,0 +1,61 @@
+features:
+    - title: "Client-side"
+      description: "Mine Little Pony is unreliant on server plugins and works seamlessly with other Pony clients"
+      color: "#ed4f4f"
+      header: "clientside"
+      icon: "clienticon"
+      
+    - title: "6 Unique Pony Types"
+      description: "Be an earth pony, pegasus, unicorn, alicorn, zebra, or changeling with trigger pixels"
+      color: "#ff861e"
+      header: "ponytype"
+      icon: "ponytypeicon"
+      
+    - title: "Highly Customizable"
+      description: "Mine Little Pony supports custom skins and custom player model modifications"
+      color: "#ffc400"
+      header: "customize"
+      icon: "customizeicon"
+      
+    - title: "Ponified Mobs"
+      description: "Mobs have also been transformed into ponies and can be textured using resource packs"
+      color: "#3f72e5"
+      header: "mobs"
+      icon: "mobicon"
+      
+    - title: "HD Skins"
+      description: "Tired of 8x8 faces? Mine Little Pony has its own skin server that supports high definition skins"
+      color: "#7f59c6"
+      header: "hdskins"
+      icon: "hdicon"
+      
+    - title: "Armor Compatibility"
+      description: "Minecraft armor pieces fit on Mine Little Pony models and can also be textured using resource packs"
+      color: "#ba42d6"
+      header: "armor"
+      icon: "armoricon"
+
+links:
+    - header: "lnt"
+      url: "https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/2787763-love-tolerance-l-t-updated-to-1-12-x"
+      color: "#fd3f9e"
+      label: "Get Info"
+      description: "Complete the Mine Little Pony experience with the Love&nbsp;&amp;&nbsp;Tolerance resource pack"
+    
+    - download: true
+      header: "skinpack"
+      url: "/assets/files/MineLittlePonySkins.zip"
+      color: "#009dff"
+      label: "Download"
+      description: "Get a quick start with this pack of more than 200 canon Mine Little Pony compatible skins"
+      
+    # This card was found in source of home page
+    # Comment from source:
+    # defunt EQ3 Link KEEP AS REFERENCE, REMOVE LINK INFO LATER
+    
+    - hidden: true
+      header: "pvs"
+      url: "https://www.eq3.in/"
+      color: "#fd883f"
+      label: "Go to EQ3"
+      description: "Don't play alone! Join Equestria Cubed and be ponies together in the best recreation of Equestria"

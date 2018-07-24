@@ -1,0 +1,36 @@
+@import 'article.css';
+
+form {
+	display: flex;
+}
+input, button {
+	border-radius: 5px;
+	font: inherit;
+	line-height: 50px;
+	padding: 0 20px;
+	
+	height: 50px;
+}
+input {
+	background: whitesmoke;
+	margin-right: 10px;
+	
+	flex-grow: 1;
+}
+button {
+	background: dodgerblue;
+	color: white;
+}
+
+#error {
+	color: tomato;
+}
+#error:empty {
+	display: none;
+}
+
+img {
+	image-rendering: pixelated;
+	
+	min-width: 25%;
+}

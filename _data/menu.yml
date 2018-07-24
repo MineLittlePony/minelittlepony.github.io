@@ -1,0 +1,17 @@
+- path: ""
+  title: "Home"
+  
+- path: "installation"
+  title: "Installation"
+  
+- path: "help"
+  title: "Skinning"
+  
+- path: "legacy"
+  title: "Archive"
+  
+- path: "tools"
+  title: "Tools"
+  
+- path: "faq"
+  title: "FAQ"

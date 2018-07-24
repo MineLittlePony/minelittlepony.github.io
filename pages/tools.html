@@ -1,0 +1,57 @@
+---
+layout: page
+permalink: "/tools/"
+path: "tools"
+css: "tools"
+title: "Tools"
+---
+<h2>Tools</h2>
+<ul>
+	<li><a href="#retriever">Retriever</a></li>
+	<li><a href="#converter">Converter</a></li>
+	<li><a href="#resizer">Resizer</a></li>
+</ul>
+
+<h2 id="retriever">Skin retriever</h2>
+<p>Here you can get your skin from the Mine Little Pony server. After image is loaded, just click on it to download</p>
+<blockquote><p>It may take a while for the first time</p></blockquote>
+<form id="retriever-form">
+	<div id="retriever-wrapper">
+		<div id="retriever-progress"></div>
+		<input type="text" name="nickname" spellcheck="off" placeholder="Enter your nickname here and press Enter">
+	</div>
+	<button type="submit" name="submit">Retrieve</button>
+	<a id="retriever-convert" href="#converter" disabled>Convert</a>
+	<a id="retriever-resize" href="#resizer" disabled>Resize</a>
+</form>
+<p id="retriever-error"></p>
+<p class="margin"><img id="retriever-output"></p>
+
+<h2 id="converter">Skin converter</h2>
+<p>This tool can convert your skin from basic pre-1.8 and pre-1.8 skin layout to the new skin layout</p>
+<blockquote><p>For old pre-1.8 layout, butt part can't be fully converted because of its limited area in the new layout</p></blockquote>
+<div class="settings">
+	<div><input id="converter-file" type="file" accept="image/png"></div>
+	<div><input id="converter-mirror" type="checkbox" disabled>&nbsp;&nbsp;&nbsp;<label for="converter-mirror">Mirror</label></div>
+	<div><button id="converter-download" disabled>Download</button><!--&nbsp;&nbsp;&nbsp;<a href="#resizer" title="Load the result to resizer tool" disabled>Resize</a>--></div>
+	<div><a id="converter-resize" href="#resizer" disabled>Resize</a></div>
+</div>
+<canvas id="converter-output" class="empty margin" width="512" height="256"></canvas>
+
+<h2 id="resizer">Skin resizer</h2>
+<p>Sometimes you may want to quickly change the size of you skin but you don't have any program for that. Here you can easily resize your skin with keeping trigger pixels work</p>
+<div class="settings">
+	<div><input id="resizer-file" type="file" accept="image/png"></div>
+	<div><label>Size</label>&nbsp;&nbsp;&nbsp;<input id="resizer-size" type="range" value="0" min="0" max="5" step="1" disabled></div>
+	<div><button id="resizer-download" disabled>Download</button></div>
+</div>
+<div class="settings">
+	<div>Current size:&nbsp;<span id="resizer-current-size">none</span></div>
+</div>
+<canvas id="resizer-output" class="empty margin" width="512" height="256"></canvas>
+
+<script src="{{ '/js/libs/FileSaver.js' | relative_url }}"></script>
+<script src="{{ '/js/tools/helper.js' | relative_url }}"></script>
+<script src="{{ '/js/tools/retriever.js' | relative_url }}"></script>
+<script src="{{ '/js/tools/converter.js' | relative_url }}"></script>
+<script src="{{ '/js/tools/resizer.js' | relative_url }}"></script>

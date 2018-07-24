@@ -1,0 +1,22 @@
+name: "Official Mine Little Pony mod site"
+title: "Mine Little Pony: Ponify Minecraft!"
+description: "The Mine Little Pony mod provides you an ability to play Minecraft as pastel-colored horse with customization of your pony!"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.minelittlepony-mod.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+   - Gemfile
+   - Gemfile.lock
+   - node_modules
+   - vendor/bundle/
+   - vendor/cache/
+   - vendor/gems/
+   - vendor/ruby/
+   - README.md
+   - CNAME
