@@ -92,7 +92,7 @@ Mine Little Pony supports high definition (HD) skins in both the old and new ski
 Regular SD skins can be uploaded to [Minecraft.net](https://minecraft.net/) like a normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin layouts can be uploaded to Minecraft.net
 {:.margin}
 
-![Uplpading skin to Minecraft.net]({{ '/assets/skinning/minecraftupload.png' | relative_url }})
+![Uploading skin to Minecraft.net]({{ '/assets/skinning/minecraftupload.png' | relative_url }})
 {:.margin}
 
 Both SD and HD skins can be uploaded to Mine Little Pony's skin server which is independent from Minecraft's skin server. Skins uploaded to Mine Little Pony's server can only be seen by other clients with Mine Little Pony installed
