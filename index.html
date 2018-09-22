@@ -87,7 +87,7 @@ fetch('https://api.github.com/repos/MineLittlePony/MineLittlePony/releases')
 		prerelease  = null;
 		
 		for (let item of json)
-			if (lastVersion < (lastVersion = item.tag_name.substr(0, item.tag_name.lastIndexOf('.'))))
+			if (lastVersion <= (lastVersion = item.tag_name.substr(0, item.tag_name.lastIndexOf('.'))))
 				if (item.prerelease) prerelease = item;
 				else { release = item; break; }
 		
