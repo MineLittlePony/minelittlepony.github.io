@@ -8,37 +8,38 @@ path: ""
 	<div>
 		<h2>Ponify your Minecraft experience!</h2>
 		<div>
-			<p>You want more ponies in your life? Well, this Minecraft mod will help you to feel yourself a pony (not IRL, but that's more than nothing).</p>
+			<p>You want more ponies in your life? Well, this Minecraft mod will help you to feel yourself a pony (not IRL, but
+				that's more than nothing).</p>
 			<p>The mod turns you, other players and even mobs into little pastel-colored horses!</p>
 		</div>
 	</div>
 
 	<div>
 		<h1>Get the mod now!</h1>
-		
+
 		<!-- Download links -->
 		<a id="intro--link__download" href="https://github.com/MineLittlePony/MineLittlePony/releases" target="_blank">Download</a>
 		<a id="intro--link__download-beta" href="#" download hidden>Pre-release</a>
 		<a id="intro--link__download-liteloader" href="https://www.liteloader.com/download" target="_blank">Get LiteLoader</a>
-		
+
 		<!-- GitHub links -->
 		<div id="intro--links__mod">
 			<a href="https://github.com/MineLittlePony/MineLittlePony/releases" target="_blank">All releases</a>
 			<a href="https://github.com/MineLittlePony/MineLittlePony" target="_blank">Source code</a>
 		</div>
-		
+
 		<!-- Flex space -->
 		<div style="flex-grow:1;"></div>
-		
+
 		<!-- Social links -->
 		<div id="intro--links__social">
 			<a id="intro--link__discord" href="https://discord.gg/HbJSFyu" target="_blank">
 				<img src="{{ '/assets/home/discord_logo.svg' | relative_url }}" type="image/svg+xml">
 			</a>
 		</div>
-		
+
 	</div>
-	
+
 </div>
 
 <!-- Introducing cards -->
@@ -59,51 +60,55 @@ path: ""
 <!-- Extra cards -->
 <div id="links" class="cards">
 	{% for card in site.data.cards.links %}
-		{% if card.hidden != true %}
-		<!-- Extra card #{{ forloop.index }} -->
-		<div class="noicon">
-			{% if card.download %}<a href="{{ card.url | relative_url }}" download>
+	{% if card.hidden != true %}
+	<!-- Extra card #{{ forloop.index }} -->
+	<div class="noicon">
+		{% if card.download %}<a href="{{ card.url | relative_url }}" download>
 			{% else %}<a href="{{ card.url }}" target="_blank">{% endif %}
-				
+
 				<img src="{{ '/assets/home/' | append: card.header | relative_url }}.png">
 				<h2 style="background:{{ card.color }};">{{ card.label }}</h2>
 				<div>{{ card.description }}</div>
-				
+
 			</a>
-		</div>
-		{% endif %}
+	</div>
+	{% endif %}
 	{% endfor %}
 </div>
 
 <script>
-fetch('https://api.github.com/repos/MineLittlePony/MineLittlePony/releases')
-	.then(r => r.json())
-	.then(function (json) {
-		json = json.filter(item => item.target_commitish == 'master');
-		
-		let
-		lastVersion = '',
-		release     = null,
-		prerelease  = null;
-		
-		for (let item of json)
-			if (lastVersion <= (lastVersion = item.tag_name.substr(0, item.tag_name.lastIndexOf('.'))))
-				if (item.prerelease) prerelease = item;
-				else { release = item; break; }
-		
-		let download_link = document.querySelector('#intro--link__download');
-		
-		download_link.removeAttribute('target');
-		download_link.setAttribute('data-version', release.tag_name.substr(0, release.tag_name.length - 2));
-		download_link.href = release.assets[0].browser_download_url;
-		download_link.download = true;
+	fetch('https://api.github.com/repos/MineLittlePony/MineLittlePony/releases')
+		.then(r => r.json())
+		.then(function (json) {
+			json = json.filter(item => item.target_commitish == 'master');
 
-		if (prerelease) {
-			let pre_link = document.querySelector('#intro--link__download-beta');
-			
-			pre_link.removeAttribute('hidden');
-			pre_link.setAttribute('data-version', prerelease.tag_name.substr(0, prerelease.tag_name.lastIndexOf('.')));
-			pre_link.href = prerelease.assets[0].browser_download_url;
-		}
-	});
+			let lastVersion = '0';
+			let release = null;
+			let prerelease = null;
+
+			for (let item of json) {
+				if (lastVersion <= (lastVersion = item.tag_name.substr(0, item.tag_name.lastIndexOf('.')))) {
+					if (item.prerelease) {
+						if (!prerelease) prerelease = item;
+					} else {
+						release = item;
+						break;
+					}
+				}
+			}
+			let download_link = document.querySelector('#intro--link__download');
+
+			download_link.removeAttribute('target');
+			download_link.setAttribute('data-version', release.tag_name.substr(0, release.tag_name.length - 2));
+			download_link.href = release.html_url;
+			download_link.download = true;
+
+			if (prerelease) {
+				let pre_link = document.querySelector('#intro--link__download-beta');
+
+				pre_link.removeAttribute('hidden');
+				pre_link.setAttribute('data-version', prerelease.tag_name.substr(0, prerelease.tag_name.lastIndexOf('.')));
+				pre_link.href = prerelease.html_url;
+			}
+		});
 </script>
