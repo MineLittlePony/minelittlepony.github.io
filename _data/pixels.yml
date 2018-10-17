@@ -31,7 +31,7 @@
     - color: "#d6ddac"
       description: "Hippogriff"
       
-    - color: "#dddddd"  # TODO change to #eeeeee
+    - color: "#eeeeee"
       description: "Batpony"
       
     - color: "#3655dd"
