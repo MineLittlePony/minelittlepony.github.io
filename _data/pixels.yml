@@ -1,6 +1,9 @@
 - name: "Race"
   description: "determines your pony type"
   pixels:
+    - color:
+      description: "Human"
+  
     - color: "#f9b131"
       description: "Earth pony"
       
@@ -18,6 +21,21 @@
       
     - color: "#282b29"
       description: "Changeling"
+      
+    - color: "#caed5a"
+      description: "Reformed Changeling"
+      
+    - color: "#ae9145"
+      description: "Griffin"
+      
+    - color: "#d6ddac"
+      description: "Hippogriff"
+      
+    - color: "#dddddd"  # TODO change to #eeeeee
+      description: "Batpony"
+      
+    - color: "#3655dd
+      description: "Seapony"
 
 - name: "Tail length"
   description: "determines how long your tail is"
