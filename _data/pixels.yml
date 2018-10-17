@@ -34,7 +34,7 @@
     - color: "#dddddd"  # TODO change to #eeeeee
       description: "Batpony"
       
-    - color: "#3655dd
+    - color: "#3655dd"
       description: "Seapony"
 
 - name: "Tail length"
