@@ -93,6 +93,7 @@ Mine Little Pony supports high definition (HD) skins in both the old and new ski
 With the addition of Batponies and Seaponies, it is now possible to distinguish the features of each respective race. Batponies include different wings and ear tufts, and Seaponies include fish tails when submerged in water. 
 
 It is now also possible to wear hats and saddlebags. While hats can not be textured, saddlebags can, taking up the wing spot in the skin texture. For texture reference please see the templates
+{:.margin}
 
 ## Uploading your skins
 Regular SD skins can be uploaded to [Minecraft.net](https://minecraft.net/) like a normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin layouts can be uploaded to Minecraft.net
