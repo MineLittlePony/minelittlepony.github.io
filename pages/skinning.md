@@ -12,6 +12,7 @@ title: "Skinning guide"
 - [Wings](#wings)
 - [Trigger pixels](#trigger-pixels)
 - [HD skins](#hd-skins)
+- [Alternate Skin Features]
 - [Uploading your skins](#uploading-your-skins)
 
 ## Simple skin layout
@@ -87,6 +88,11 @@ Mine Little Pony supports high definition (HD) skins in both the old and new ski
 
 > HD skins must still follow the template for SD skins. Notice how the trigger pixels in the HD skin on the right aren't scaled up along with the rest of the skin. It is important that the trigger pixels are kept the same size and in the same configuration for Mine Little Pony to register the skin as a pony skin
 {:.margin}
+
+## Alternate Skin Features
+With the addition of Batponies and Seaponies, it is now possible to distinguish the features of each respective race. Batponies include different wings and ear tufts, and Seaponies include fish tails when submerged in water. 
+
+It is now also possible to wear hats and saddlebags. While hats can not be textured, saddlebags can, taking up the wing spot in the skin texture. For texture reference please see the templates
 
 ## Uploading your skins
 Regular SD skins can be uploaded to [Minecraft.net](https://minecraft.net/) like a normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin layouts can be uploaded to Minecraft.net
