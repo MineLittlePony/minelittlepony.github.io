@@ -15,7 +15,7 @@
   
 - question: "How do I retrieve my skin from the server?"
   answer: "If you are using an official Minecraft account you can do it "
-  # Should be realized better
+  # Should be implemented better
   # But data files don't support liquid syntax
   relative_link:
     name: "here"

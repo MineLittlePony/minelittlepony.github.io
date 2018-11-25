@@ -37,8 +37,8 @@
   assets:
     - name: "1.6.2.5"
       files:
-        type: "litemod"
-        filename: "mod_minelp_1.6.2.5_mc1.6.2.litemod"
+        - type: "litemod"
+          filename: "mod_minelp_1.6.2.5_mc1.6.2.litemod"
 
     - name: "1.6.2.4"
       files:
