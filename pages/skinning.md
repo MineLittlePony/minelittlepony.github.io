@@ -12,7 +12,7 @@ title: "Skinning guide"
 - [Wings](#wings)
 - [Trigger pixels](#trigger-pixels)
 - [HD skins](#hd-skins)
-- [Alternate Skin Features]
+- [Alternate Skin Features](#alternate-skin-features)
 - [Uploading your skins](#uploading-your-skins)
 
 ## Simple skin layout
