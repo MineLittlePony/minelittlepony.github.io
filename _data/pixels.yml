@@ -67,17 +67,26 @@
 - name: "Model size"
   description: "determines how large your model is"
   pixels:
-    - color: "#ffbe53"
-      description: "Filly"
+    - color: "#534b76"
+      description: "Tall"
       
     - color: "#ce3254"
-      description: "Large"
+      description: "Bulky"
       
-    - color: "#534b76"
-      description: "Alicorn"
+    - color: "#3254ce"
+      description: "Lanky"
       
     - color:
       description: "Normal"
+      
+    - color: "#53beff"
+      description: "Yearling"
+      
+    - color: "#ffbe53"
+      description: "Foal"
+      
+      
+      
 
 - name: "Magic color"
   description: "determines the color of your magic"
