@@ -76,18 +76,15 @@
     - color: "#3254ce"
       description: "Lanky"
       
-    - color:
-      description: "Normal"
-      
     - color: "#53beff"
       description: "Yearling"
       
     - color: "#ffbe53"
       description: "Foal"
       
+    - color:
+      description: "Normal"
       
-      
-
 - name: "Magic color"
   description: "determines the color of your magic"
   pixels:
