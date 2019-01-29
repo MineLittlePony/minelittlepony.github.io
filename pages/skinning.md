@@ -7,36 +7,15 @@ title: "Skinning guide"
 ---
 
 ## Sections
-- [Simple skin layout](#simple-skin-layout)
-- [Complex skin layout](#complex-skin-layout)
+- [Legacy skin layout](#legacy-skin-layout)
+- [Skin layout](#skin-layout)
 - [Wings](#wings)
 - [Trigger pixels](#trigger-pixels)
 - [HD skins](#hd-skins)
 - [Alternate Skin Features](#alternate-skin-features)
 - [Uploading your skins](#uploading-your-skins)
 
-## Simple skin layout
-The simple skin layout uses the pre-1.8 skin template and is a good place to start if you have little or no experience making Mine Little Pony skins. Basic components like the head, hair, arms, legs and torso are kept in the same place and non-human parts such as the horn, wings, ears and extra textures are squeezed into unused areas. Below is a scaled-up and labeled template of Mine Little Pony skin
-
-The blue pixels in the upper left corner are trigger pixels, read more about them below
-
-> **T** - top, **BT** - bottom, **F** - front, **B** - back, **R** - right, **L** - left
-
-![Simple skin template]({{ '/assets/skinning/simpletemplate.png' | relative_url }})
-
-A comparison between a standard definition (SD) Twilight Sparkle skin and the default Steve skin shows where the extra parts go:
-
-{:.images}
-![Twilight Sparkle simple skin layout]({{ '/assets/skinning/twilight_simple_template.png' | relative_url }})
-![Steve simple skin layout]({{ '/assets/skinning/steve_simple_template.png' | relative_url }})
-
-{:.button}
-[Download Twilight Sparkle simple skin]({{ '/assets/skinning/twilight_simple.png' | relative_url }}){:.download-button download="TwilightSparkle_simple.png"}
-
-> The foreleg and hind leg textures are mirrored for the other side of the body as well as the body side textures. For more detailed skins, pay close attention to how some textures are flipped and mirrored around the player model. Use the guide below to see how body textures are matched up. Red color marks flipped textures
-![Flipped textures of the body]({{ '/assets/skinning/flippedtextures.png' | relative_url }})
-
-## Complex skin layout
+## Skin layout
 As of Minecraft 1.8, skins now have an extra layer all over the body as opposed to just the head. This means that player models can now have sleeves and pants. The complex skin layout is twice the size of the older layout with a dimension of 64x64 pixels whereas the old layout is sized at 64x32 pixels. Blue color marks the extra layer of texture
 
 ![Complex skin layout]({{ '/assets/skinning/complextemplate.png' | relative_url }})
@@ -56,6 +35,27 @@ As of Minecraft 1.8, skins now have an extra layer all over the body as opposed 
 > \\
 > [Download converter]({{ '/assets/files/SkinConverter-1.0.1.jar' | relative_url }}){:.download-button}
 {:.margin}
+
+## legacy skin layout
+The legacy skin layout uses the pre-1.8 skin template and is a good place to start if you have little or no experience making Mine Little Pony skins. Basic components like the head, hair, arms, legs and torso are kept in the same place and non-human parts such as the horn, wings, ears and extra textures are squeezed into unused areas. Below is a scaled-up and labeled template of Mine Little Pony skin
+
+The blue pixels in the upper left corner are trigger pixels, read more about them below
+
+> **T** - top, **BT** - bottom, **F** - front, **B** - back, **R** - right, **L** - left
+
+![Simple skin template]({{ '/assets/skinning/simpletemplate.png' | relative_url }})
+
+A comparison between a standard definition (SD) Twilight Sparkle skin and the default Steve skin shows where the extra parts go:
+
+{:.images}
+![Twilight Sparkle simple skin layout]({{ '/assets/skinning/twilight_simple_template.png' | relative_url }})
+![Steve simple skin layout]({{ '/assets/skinning/steve_simple_template.png' | relative_url }})
+
+{:.button}
+[Download Twilight Sparkle simple skin]({{ '/assets/skinning/twilight_simple.png' | relative_url }}){:.download-button download="TwilightSparkle_simple.png"}
+
+> The foreleg and hind leg textures are mirrored for the other side of the body as well as the body side textures. For more detailed skins, pay close attention to how some textures are flipped and mirrored around the player model. Use the guide below to see how body textures are matched up. Red color marks flipped textures
+![Flipped textures of the body]({{ '/assets/skinning/flippedtextures.png' | relative_url }})
 
 ## Wings
 The texture for the wings may seem a bit confusing. It may look like it is the texture for the entire wingspan, but this is only true when they are folded. When extended, the whole area is used for every single feather, meaning the exact same texture is used for all of the feathers. In actuality, they are skinned similarly to a 2x2 leg or arm
@@ -92,8 +92,47 @@ Mine Little Pony supports high definition (HD) skins in both the old and new ski
 ## Alternate Skin Features
 With the addition of Batponies and Seaponies, it is now possible to distinguish the features of each respective race. Batponies include different wings and ear tufts, and Seaponies include fish tails when submerged in water. 
 
-It is now also possible to wear hats and saddlebags. While hats can not be textured, saddlebags can, taking up the wing spot in the skin texture. For texture reference please see the templates
+It is also now also possible to wear hats and saddlebags. While hats can not be textured, saddlebags can, taking up the wing spot in the skin texture. For texture reference please see the templates
 {:.margin}
+
+Condensed Trigger Pixels and you!
+
+Pony gear is the first of the skinning options that uses the new "Condensed Trigger Pixel Format" (CTPF for short) which allows you to select any combination of up to three values in the same pixel space.
+
+To use this, you have to use an editor that allows for selecting colors based on their RGB values. (eg. GIMP, Paint.NET, Photoshop, and most others should all have this capability) Every value in this system is selected by setting any one of the respective pixel's channels to the same number corresponding to that value.
+
+Words are *horrible* for explaining this, so here's a chart:
+
+If you want to set option (1) on a pixel, you would set any of the pixel's three channels to the value (1). So following pixels would work:
+
+R | G | B
+1 | 0 | 0
+
+As would any of these others:
+
+0 | 1 | 0
+0 | 0 | 1
+1 | 1 | 1
+0 | 1 | 0
+23| 40| 1
+
+Really, as long as (1) is present in either of the channels, that pixel will reflect as having the value (1).
+You can also _add_ values together, meaning the last example (23 | 40 | 1) would also reflect as having the value (23) and the value (40).
+
+These are just examples, though, so here's some *actual* values and what they mean!
+
+Pony Gear
+
+50  - Muffin Hat
+100 - Witch's Hat
+200 - Saddle Bags (skinnable * )
+250 - AJ's Stetson
+
+50 | 250 | 100 - Muffin Hat _and_ AJ's stetson _and_ the Witch's hat.
+200| 0   | 0   - Just saddle bags (what most people might want)
+50 | 0   | 0   - Muffin Hat (glory to the muffin queen!)
+
+*Note* As mentioned above, Saddle Bags are the only set of gear that is currently skinnable. They occupy the same area as the wings on Pegasi, and affect how wings are skinned on flying races. [New Template to be added]
 
 ## Uploading your skins
 Regular SD skins can be uploaded to [Minecraft.net](https://minecraft.net/) like a normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin layouts can be uploaded to Minecraft.net
