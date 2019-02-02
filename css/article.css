@@ -9,13 +9,16 @@
 ul {
 	margin: 10px;
 	margin-left: 2em;
-	margin-bottom: 2em;
 }
 hr {
 	margin: 0;
 }
 hr:first-of-type {
-	margin-bottom: 2em;
+	margin: 2em 0;
+}
+
+h2:not(:first-of-type) {
+    margin-top: 1.5em;
 }
 
 p {
@@ -35,7 +38,7 @@ p.images {
 	align-items: center;
 }
 p.images img {
-	margin: 0 10px;
+	margin: 0.5em 10px;
 	
 	width: 0;
 	
@@ -43,7 +46,7 @@ p.images img {
 }
 p:not(.images) img {
   display: block;
-  margin: 15px auto 0;
+  margin: 1em auto;
   
   max-width: 100%;
 }
@@ -59,8 +62,4 @@ blockquote p {
 	margin: 0 !important;
 	padding: 20px 30px;
 	text-indent: 0;
-}
-
-.margin {
-	margin-bottom: 2em;
 }

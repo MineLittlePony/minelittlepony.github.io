@@ -5,14 +5,14 @@ path: "thanks"
 css: "thanks"
 title: "Original thanks"
 ---
+
 ## What is this page
 Here is a copy of original "About" page on Verdana's mod site ([archive](https://web.archive.org/web/20150418140823/http://www.minelittlepony.com:80/wiki/Mine_Little_Pony:About){:target="_blank"})
-{:.margin}
+
 ---
 
 ## About
 Mine Little Pony was created in 2011 by Verdana, and has grown since then with art and code contributed by many different people
-{:.margin}
 
 ## Code
 - This mod was originally based on the [Player Model API](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1274437-1-1-0-player-model-api-2-1){:target="_blank"} by **Binkan Salaryman**. It's a great mod, and he's a great guy. Thanks Binkan Salaryman!
@@ -23,7 +23,6 @@ Mine Little Pony was created in 2011 by Verdana, and has grown since then with a
 - Thanks to **Noppes** for help getting this working with ModLoader
 - Thanks to **XTwilight3** for providing a Forge patch for previous versions
 - Thanks to **Tux2** for providing the original Spoutcraft and Forge support
-{:.margin}
 
 ## Skins
 Thanks to all the artists who created original My Little Pony skins for Minecraft. It was your work that inspired me to make this mod, and I borrowed a lot of ideas (and quite a few pixels) from your original skins. I hope you forgive me. Twilight Sparkle, Rarity and Applejack (as well as many other ponies) was based on skins by **k9saurus**. Celestia and Luna were based on a skin by **peaceiscloser**. Fluttershy was based on a skin by **paladinwat** (which itself was based on skins by **kirapt0r**, **netbelleanie**/**rawriza**, and **kjhf**...). I sadly cannot remember where I got the skin on which I based the new Rainbow Dash, if it was you then thanks. The other skins were based at least in part on the work of these artists
@@ -50,7 +49,6 @@ Extra special thanks to all of the talented skin artists who made new skin files
 I messed around with some of their skins a bit before I added them to the mod in some cases, so if you don't like something about any of the skins then that's probably my fault rather than any of these people who are all amazing
 
 The skins for the mobs were made by me, inspired by the default Minecraft mobs. The zombies use some elements from the mob skins in the [Love&nbsp;and&nbsp;Tolerance](https://www.planetminecraft.com/texture_pack/love-and-tolerance-texture-pack/){:target="_blank"} texture pack. The skeletons were made by **dann494**
-{:.margin}
 
 ## Other things
 - Thanks to [MuseWhimsy](https://musewhimsy.deviantart.com){:target="_blank"} for designing [the Mine Little Pony logo](https://verdanarepublic.deviantart.com/art/Mine-Little-Pony-logo-333184067){:target="_blank"}

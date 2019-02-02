@@ -5,9 +5,9 @@ path: "legacy"
 css: "legacy"
 title: "Archive"
 ---
+
 ## Original thanks
 Verdana made a page with words of thanks to contributors of mod which you can read [here](thanks)
-{:.margin}
 
 ## Old versions of the mod
 If you want to play earlier versions of this mod you can [download them from Mega cloud](https://mega.nz/#F!NYJQGILa!X70azQPM_psKwpBPW2EleQ){:target="_blank"}. Please note that they are not supported at all.

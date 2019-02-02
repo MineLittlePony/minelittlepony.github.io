@@ -31,7 +31,6 @@ As of Minecraft 1.8, skins now have an extra layer all over the body as opposed 
 > Later versions of the mod will convert textures for you. The converter is not needed to simply use the old skins\\
 > \\
 > [Download converter](https://mega.nz/#!VJAVgSaT!MHYOKCIGL82drIAILA_w2gj5CD8CxXMxAyavG928Sw8){:.download-button}
-{:.margin}
 
 ## legacy skin layout
 The legacy skin layout uses the pre-1.8 skin template and is a good place to start if you have little or no experience making Mine Little Pony skins. Basic components like the head, hair, arms, legs and torso are kept in the same place and non-human parts such as the horn, wings, ears and extra textures are squeezed into unused areas. Below is a scaled-up and labeled template of Mine Little Pony skin
@@ -56,11 +55,9 @@ A comparison between a standard definition (SD) Twilight Sparkle skin and the de
 
 ## Wings
 The texture for the wings may seem a bit confusing. It may look like it is the texture for the entire wingspan, but this is only true when they are folded. When extended, the whole area is used for every single feather, meaning the exact same texture is used for all of the feathers. In actuality, they are skinned similarly to a 2x2 leg or arm
-{:.margin}
 
 ## Trigger pixels
 You can use trigger pixels to determine the species of pony you are, the length of your tail, the gender, and the size of your pony. This is done by coloring the top left pixels of your Mine Little Pony skin a specific color
-{:.margin}
 
 ![Trigger pixels]({{ '/assets/skinning/pixels.png' | relative_url }}){:#pixels}
 
@@ -73,24 +70,20 @@ You can use trigger pixels to determine the species of pony you are, the length 
 {% endfor %}
 
 > Trigger pixels must use the specified colors and must stay in the above configuration. A skin without triger pixels will not be registered as a Mine Little Pony skin. It is not recommened to use a screen grab to sample the colors. Copy and paste the hex color codes instead or [download this image guide]({{ '/assets/skinning/pixels_raster.png' | relative_url }}){:download="pixels_raster.png"} and use an eyedropper tool
-{:.margin}
 
 ## HD skins
 Mine Little Pony supports high definition (HD) skins in both the old and new skin layouts. HD skins can vary in resolution but their dimensions must be multiples of the original SD skin. For the older layout which is sized at 64x32, HD skins can be 128x64, 256x128, or 512x256. HD skins using the new layout can be sized at 64x64, 128x128, 256x256, or 512x512
-{:.margin}
 
 {:.images}
 ![Twilight Sparkle SD complex skin layout]({{ '/assets/skinning/twilight_complex_template.png' | relative_url }})
 ![HD complex skin layout]({{ '/assets/skinning/hdskin.png' | relative_url }})
 
 > HD skins must still follow the template for SD skins. Notice how the trigger pixels in the HD skin on the right aren't scaled up along with the rest of the skin. It is important that the trigger pixels are kept the same size and in the same configuration for Mine Little Pony to register the skin as a pony skin
-{:.margin}
 
 ## Alternate Skin Features
 With the addition of Batponies and Seaponies, it is now possible to distinguish the features of each respective race. Batponies include different wings and ear tufts, and Seaponies include fish tails when submerged in water. 
 
 It is also now also possible to wear hats and saddlebags. While hats can not be textured, saddlebags can, taking up the wing spot in the skin texture. For texture reference please see the templates
-{:.margin}
 
 Condensed Trigger Pixels and you!
 
@@ -133,10 +126,8 @@ Pony Gear
 
 ## Uploading your skins
 Regular SD skins can be uploaded to [Minecraft.net](https://minecraft.net/) like a normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin layouts can be uploaded to Minecraft.net
-{:.margin}
 
 ![Uploading skin to Minecraft.net]({{ '/assets/skinning/minecraftupload.png' | relative_url }})
-{:.margin}
 
 Both SD and HD skins can be uploaded to Mine Little Pony's skin server which is independent from Minecraft's skin server. Skins uploaded to Mine Little Pony's server can only be seen by other clients with Mine Little Pony installed
 
