@@ -5,11 +5,12 @@ path: "installation"
 css: "article"
 title: "Installation guide"
 ---
-## Instructions
- - [Step 1: Download necessary files](#step1)
- - [Step 2: Install LiteLoader](#step2)
- - [Step 3: Install Mine Little Pony mod](#step3)
- - [Step 4: Launch & Play!](#step4)
+
+## Contents
+{:.no_toc}
+
+- Table of contents
+{:toc}
 
 ## Download Mine Little Pony and LiteLoader {#step1}
 Mine Little Pony requires the mod loader LiteLoader in order to run. Download the Mine Little Pony mod and the LiteLoader installer from the front page

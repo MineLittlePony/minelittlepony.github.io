@@ -6,14 +6,11 @@ css: "skinning"
 title: "Skinning guide"
 ---
 
-## Sections
-- [Legacy skin layout](#legacy-skin-layout)
-- [Skin layout](#skin-layout)
-- [Wings](#wings)
-- [Trigger pixels](#trigger-pixels)
-- [HD skins](#hd-skins)
-- [Alternate Skin Features](#alternate-skin-features)
-- [Uploading your skins](#uploading-your-skins)
+## Contents
+{:.no_toc}
+
+- Table of contents
+{:toc}
 
 ## Skin layout
 As of Minecraft 1.8, skins now have an extra layer all over the body as opposed to just the head. This means that player models can now have sleeves and pants. The complex skin layout is twice the size of the older layout with a dimension of 64x64 pixels whereas the old layout is sized at 64x32 pixels. Blue color marks the extra layer of texture

@@ -5,10 +5,13 @@ path: "faq"
 css: "article"
 title: "FAQ"
 ---
-## Questions
-{% for item in site.data.faq -%}
-- [{{ item.question }}](#faq{{ forloop.index }})
-{% endfor %}
+
+## Contents
+{:.no_toc}
+
+- Table of contents
+{:toc}
+
 ---
 {% for item in site.data.faq %}
 ## {{ item.question }} {#faq{{ forloop.index }}}
