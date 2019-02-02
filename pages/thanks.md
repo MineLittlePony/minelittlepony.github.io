@@ -55,7 +55,7 @@ The skins for the mobs were made by me, inspired by the default Minecraft mobs. 
 ## Other things
 - Thanks to [MuseWhimsy](https://musewhimsy.deviantart.com){:target="_blank"} for designing [the Mine Little Pony logo](https://verdanarepublic.deviantart.com/art/Mine-Little-Pony-logo-333184067){:target="_blank"}
 - Thanks to **dann494** for the images explaining skinning and his constant feedback and support on the forums
-- Thanks to **oskarek11** who drew the image of Princess Celestia from which I borrowed the hair in [the header image]({{ '/assets/files/original_site_header.png' | relative_url }}){:target="_blank"}
+- Thanks to **oskarek11** who drew the image of Princess Celestia from which I borrowed the hair in [the header image](https://mega.nz/#!YBZT0KCa!ubCikvjkLVgziA58yMehTrhZPBRje45M8jsXVYPF1Vw){:target="_blank"}
 - Kudos to the original pony mod (I didn't use any of the code but someone else had the idea first) posted on ponycraft.net (now removed, [archive](https://web.archive.org/web/20130124171230/http://ponycraft.net:80/){:target="_blank"})
 - Thanks to everyone in [my MinecraftForum.net thread](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1278090-mine-little-pony-v1-6-4-1){:target="_blank"} and on brohoof.com ([archive](https://web.archive.org/web/20150502042354/http://www.brohoof.com:80/){:target="_blank"}) for your feedback, testing and support so far
 - This mod uses Mumfrey's [LiteLoader](https://www.liteloader.com){:target="_blank"}. Need a tick and don't want much else? LiteLoader might be the lightweight mod loader you've been waiting for!
