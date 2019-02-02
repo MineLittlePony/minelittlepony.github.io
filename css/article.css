@@ -17,7 +17,7 @@ hr:first-of-type {
 	margin: 2em 0;
 }
 
-h2:not(:first-of-type) {
+h2:not(:first-of-type), h3, h4 {
     margin-top: 1.5em;
 }
 
@@ -62,4 +62,12 @@ blockquote p {
 	margin: 0 !important;
 	padding: 20px 30px;
 	text-indent: 0;
+}
+
+table tbody tr:nth-child(odd) {
+    background: #eee;
+}
+
+table th, table td {
+    padding: 5px 10px;
 }

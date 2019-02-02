@@ -32,7 +32,7 @@ As of Minecraft 1.8, skins now have an extra layer all over the body as opposed 
 > \\
 > [Download converter](https://mega.nz/#!VJAVgSaT!MHYOKCIGL82drIAILA_w2gj5CD8CxXMxAyavG928Sw8){:.download-button}
 
-## legacy skin layout
+## Legacy skin layout
 The legacy skin layout uses the pre-1.8 skin template and is a good place to start if you have little or no experience making Mine Little Pony skins. Basic components like the head, hair, arms, legs and torso are kept in the same place and non-human parts such as the horn, wings, ears and extra textures are squeezed into unused areas. Below is a scaled-up and labeled template of Mine Little Pony skin
 
 The blue pixels in the upper left corner are trigger pixels, read more about them below
@@ -85,7 +85,7 @@ With the addition of Batponies and Seaponies, it is now possible to distinguish 
 
 It is also now also possible to wear hats and saddlebags. While hats can not be textured, saddlebags can, taking up the wing spot in the skin texture. For texture reference please see the templates
 
-Condensed Trigger Pixels and you!
+### Condensed Trigger Pixels and you!
 
 Pony gear is the first of the skinning options that uses the new "Condensed Trigger Pixel Format" (CTPF for short) which allows you to select any combination of up to three values in the same pixel space.
 
@@ -111,18 +111,20 @@ You can also _add_ values together, meaning the last example (23 | 40 | 1) would
 
 These are just examples, though, so here's some *actual* values and what they mean!
 
-Pony Gear
+#### Pony Gear
 
-50  - Muffin Hat
-100 - Witch's Hat
-200 - Saddle Bags (skinnable * )
-250 - AJ's Stetson
+- **50**  - Muffin Hat
+- **100** - Witch's Hat
+- **200** - Saddle Bags (skinnable * )
+- **250** - AJ's Stetson
 
-50 | 250 | 100 - Muffin Hat _and_ AJ's stetson _and_ the Witch's hat.
-200| 0   | 0   - Just saddle bags (what most people might want)
-50 | 0   | 0   - Muffin Hat (glory to the muffin queen!)
+| R   | G   | B   | Description |
+|-----|-----|-----|:------------|
+| 50  | 250 | 100 | Muffin Hat _and_ AJ's stetson _and_ the Witch's hat
+| 200 | 0   | 0   | Just saddle bags (what most people might want)
+| 50  | 0   | 0   | Muffin Hat (glory to the muffin queen!)
 
-*Note* As mentioned above, Saddle Bags are the only set of gear that is currently skinnable. They occupy the same area as the wings on Pegasi, and affect how wings are skinned on flying races. [New Template to be added]
+> \* As mentioned above, Saddle Bags are the only set of gear that is currently skinnable. They occupy the same area as the wings on Pegasi, and affect how wings are skinned on flying races. [New Template to be added]
 
 ## Uploading your skins
 Regular SD skins can be uploaded to [Minecraft.net](https://minecraft.net/) like a normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin layouts can be uploaded to Minecraft.net
