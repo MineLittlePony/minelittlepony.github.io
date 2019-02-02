@@ -42,9 +42,8 @@ links:
       label: "Get Info"
       description: "Complete the Mine Little Pony experience with the Love&nbsp;&amp;&nbsp;Tolerance resource pack"
     
-    - download: true
-      header: "skinpack"
-      url: "/assets/files/MineLittlePonySkins.zip"
+    - header: "skinpack"
+      url: "https://mega.nz/#!JEwnwSKZ!6QCj2Ua_anukJo-NwQe8qlU3QluVY4bv9ppHh3zeEUM"
       color: "#009dff"
       label: "Download"
       description: "Get a quick start with this pack of more than 200 canon Mine Little Pony compatible skins"
