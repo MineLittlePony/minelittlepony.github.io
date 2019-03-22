@@ -5,8 +5,8 @@ features:
       header: "clientside"
       icon: "clienticon"
       
-    - title: "6 Unique Pony Types"
-      description: "Be an earth pony, pegasus, unicorn, alicorn, zebra, or changeling with trigger pixels"
+    - title: "8 Unique Pony Types"
+      description: "Be an earth pony, pegasus, unicorn, alicorn, zebra, bat pony, sea pony or changeling with trigger pixels"
       color: "#ff861e"
       header: "ponytype"
       icon: "ponytypeicon"
@@ -50,11 +50,11 @@ links:
       
     # This card was found in source of home page
     # Comment from source:
-    # defunt EQ3 Link KEEP AS REFERENCE, REMOVE LINK INFO LATER
+    # Defunct card for if we ever have a main associated server.
     
     - hidden: true
-      header: "pvs"
-      url: "https://www.eq3.in/"
+      header: "[Server Name]"
+      url: "[Server link goes here if we ever have one again]"
       color: "#fd883f"
-      label: "Go to EQ3"
+      label: "Go to [Server]"
       description: "Don't play alone! Join Equestria Cubed and be ponies together in the best recreation of Equestria"
