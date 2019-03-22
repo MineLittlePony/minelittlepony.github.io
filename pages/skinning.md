@@ -85,6 +85,13 @@ With the addition of Batponies and Seaponies, it is now possible to distinguish 
 
 It is also now also possible to wear hats and saddlebags. While hats can not be textured, saddlebags can, taking up the wing spot in the skin texture. For texture reference please see the templates
 
+Here's a couple example skins showing off the skins and how the new features are textured!
+
+{:.images}
+![Bat Pony (EEEE)]({{ '/assets/skinning/Stardust - Complex.png' | relative_url }})
+![Sea Pony (Only active when you're in the water)]({{ '/assets/skinning/seapony.png' | relative_url }})
+
+
 ### Condensed Trigger Pixels and you!
 
 Pony gear is the first of the skinning options that uses the new "Condensed Trigger Pixel Format" (CTPF for short) which allows you to select any combination of up to three values in the same pixel space.
