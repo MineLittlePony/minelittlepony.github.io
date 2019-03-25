@@ -81,7 +81,7 @@ Mine Little Pony supports high definition (HD) skins in both the old and new ski
 > HD skins must still follow the template for SD skins. Notice how the trigger pixels in the HD skin on the right aren't scaled up along with the rest of the skin. It is important that the trigger pixels are kept the same size and in the same configuration for Mine Little Pony to register the skin as a pony skin
 
 ## Alternate Skin Features
-With the addition of Batponies and Seaponies, it is now possible to distinguish the features of each respective race. Batponies include different wings and ear tufts, and Seaponies include fish tails when submerged in water. 
+With the addition of Batponies and Seaponies, it is now possible to distinguish the features of each respective race. Batponies include different wings and ear tufts, and Seaponies include fish tails when submerged in water. Changelings get special bug wings, which can be seen in the example skins below.
 
 It is also now also possible to wear hats and saddlebags. While hats can not be textured, saddlebags can, taking up the wing spot in the skin texture. For texture reference please see the templates
 
@@ -90,7 +90,7 @@ Here's a couple example skins showing off the skins and how the new features are
 {:.images}
 ![Bat Pony (EEEE)]({{ '/assets/skinning/Stardust - Complex - Upscaled.png' | relative_url }})
 ![Sea Pony (Only active when you're in the water)]({{ '/assets/skinning/Seapony - Upscaled.png' | relative_url }})
-
+![Changeling (they're not a bug ok?)]({{ '/assets/skinning/Changeling.png' | relative_url }})
 
 ### Condensed Trigger Pixels and you!
 
