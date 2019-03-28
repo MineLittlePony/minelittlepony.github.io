@@ -16,5 +16,5 @@ title: "FAQ"
 
 {% for item in site.data.faq %}
 ## {{ item.question }} {#faq{{ forloop.index }}}
-{{ item.answer }}{% if item.relative_link != nil %}[{{ item.relative_link.name }}]({{ item.relative_link.url | relative_url }}){% endif %}
+{{ item.answer | replace: ':rel:', site.baseurl }}
 {% endfor %}
