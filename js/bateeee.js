@@ -38,5 +38,5 @@ document.addEventListener('keydown', function(e) {
 });
 
 function activateCheats() {
-document.getElementById("intro").style.background = "https://minelittlepony-mod.com/assets/seeeecret/batbanner.svg')"
+document.getElementById("intro").style.background = "url('https://minelittlepony-mod.com/assets/seeeecret/batbanner.svg')"
 }
