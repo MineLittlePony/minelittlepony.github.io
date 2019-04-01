@@ -81,7 +81,7 @@ Mine Little Pony supports high definition (HD) skins in both the old and new ski
 > HD skins must still follow the template for SD skins. Notice how the trigger pixels in the HD skin on the right aren't scaled up along with the rest of the skin. It is important that the trigger pixels are kept the same size and in the same configuration for Mine Little Pony to register the skin as a pony skin
 
 ## Alternate Skin Features
-With the addition of Batponies and Seaponies, it is now possible to distinguish the features of each respective race. Batponies include different wings and ear tufts, and Seaponies include fish tails when submerged in water. Changelings get special bug wings, which can be seen in the example skins below. Zebras have longer necks and mohawks.
+With the addition of Batponies and Seaponies, it is now possible to distinguish the features of each respective race. Batponies include different wings and ear tufts, and Seaponies include fish tails when submerged in water. 
 
 It is also now also possible to wear hats and saddlebags. While hats can not be textured, saddlebags can, taking up the wing spot in the skin texture. For texture reference please see the templates
 
@@ -89,9 +89,8 @@ Here's a couple example skins showing off the skins and how the new features are
 
 {:.images}
 ![Bat Pony (EEEE)]({{ '/assets/skinning/Stardust - Complex - Upscaled.png' | relative_url }})
-![Sea Pony (20,000 EEEEs Under the Sea!)]({{ '/assets/skinning/Seapony - Upscaled.png' | relative_url }})
-![Changeling (they're not a bug ok?)]({{ '/assets/skinning/Changeling.png' | relative_url }})
-![Zebra (fun fact, zebras are actually black with white stripes! How neat is that?!)]({{ '/assets/skinning/Zebra.png' | relative_url }})
+![Sea Pony (Only active when you're in the water)]({{ '/assets/skinning/Seapony - Upscaled.png' | relative_url }})
+
 
 ### Condensed Trigger Pixels and you!
 
@@ -132,9 +131,7 @@ These are just examples, though, so here's some *actual* values and what they me
 | 200 | 0   | 0   | Just saddle bags (what most people might want)
 | 50  | 0   | 0   | Muffin Hat (glory to the muffin queen!)
 
-> \* As mentioned above, Saddle Bags are the only set of gear that is currently skinnable. They occupy the same area as the wings on Pegasi, and affect how wings are skinned on flying races.
-
-There's also some fun secrets hidden away! What are they? Well they're secrets! (We can't just give away everything, where's the fun in that?!
+> \* As mentioned above, Saddle Bags are the only set of gear that is currently skinnable. They occupy the same area as the wings on Pegasi, and affect how wings are skinned on flying races. [New Template to be added]
 
 ## Uploading your skins
 Regular SD skins can be uploaded to [Minecraft.net](https://minecraft.net/) like a normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin layouts can be uploaded to Minecraft.net
