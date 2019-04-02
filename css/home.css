@@ -3,7 +3,6 @@
 #intro {
 	background: url(../assets/home/ponybanner.png) no-repeat center, url(../assets/home/intropattern.png), #222;
 	clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 calc(100% - 50px));
-	background-color: 605000;
 	color: white;
 	padding: 50px 0;
 	text-shadow: 0 0 50px rgba(0,0,0,0.5);

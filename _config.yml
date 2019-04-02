@@ -1,6 +1,6 @@
-name: "Official Mine Biggest Ducky mod site"
-title: "Mine Biggest Ducky: Duckify Minecraft!"
-description: "The Mine Biggest Ducky mod provides you an ability to play Minecraft as pastel-colored duck!"
+name: "Official Mine Little Pony mod site"
+title: "Mine Little Pony: Ponify Minecraft!"
+description: "The Mine Little Pony mod provides you an ability to play Minecraft as pastel-colored horse with customization of your pony!"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.minelittlepony-mod.com" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -20,4 +20,3 @@ exclude:
    - vendor/ruby/
    - README.md
    - CNAME
-theme: jekyll-theme-cayman
