@@ -8,7 +8,7 @@
   answer: "There are not enough frequently asked questions. But feel free to ask them on the [Discord server](https://discord.gg/HbJSFyu){:target=\"_blank\"}"
   
 - question: "Does FillyCam still work?"
-  answer: "FillyCam has been discontinued. Use [BigPony](https://github.com/MineLittlePony/BigPony/releases){:target=\"_blank\"} unstead"
+  answer: "FillyCam has been discontinued. Use [BigPony](https://github.com/MineLittlePony/BigPony/releases){:target=\"_blank\"} instead"
   
 - question: "Is there a Forge version?"
   answer: "No. But LiteLoader [can be installed as a Forge mod](http://www.liteloader.com/explore/docs/user:install:forge){:target=\"_blank\"}"
