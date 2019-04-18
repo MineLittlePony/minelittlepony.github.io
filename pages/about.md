@@ -3,6 +3,7 @@ layout: "page"
 permalink: "/about/"
 css: "about"
 path: "about"
+description: "This page is a special thanks to all the talented artists, coders, and people who have contributed to the mod's development over the years. Without you we wouldn't be where we are today!"
 ---
 
 ## The Development Team!

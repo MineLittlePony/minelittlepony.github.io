@@ -4,6 +4,7 @@ permalink: "/help/"
 path: "help"
 css: "skinning"
 title: "Skinning guide"
+description: "Learn how to draw your own skin for Mine Little Pony mod, how to turn your character into pegasus, how to add a hat to your pony and other interesting things!"
 ---
 
 ## Contents

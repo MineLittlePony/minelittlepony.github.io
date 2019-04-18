@@ -4,6 +4,7 @@ permalink: "/legacy/"
 path: "legacy"
 css: "legacy"
 title: "Archive"
+description: "Original thanks page by Verdana, old versions of Mine Little Pony mod, etc."
 ---
 
 ## Original thanks

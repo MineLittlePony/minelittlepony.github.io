@@ -4,6 +4,12 @@
 {% assign title = site.title %}
 {% endif %}
 
+{% if page.description != nil %}
+{% assign description = page.description %}
+{% else %}
+{% assign description = site.description %}
+{% endif %}
+
 <html>
 	<head>
 		<title>{{ title }}</title>
@@ -15,8 +21,8 @@
 		<!-- SEO tags (copied from Minima theme) -->
 		<meta property="og:title" content="{{ title }}">
 		<meta property="og:locale" content="en_US">
-		<meta name="description" content="{{ site.description }}">
-		<meta property="og:description" content="{{ site.description }}">
+		<meta name="description" content="{{ description }}">
+		<meta property="og:description" content="{{ description }}">
 		<link rel="canonical" href="{{ site.url }}">
 		<meta property="og:url" content="{{ site.url }}">
 		<meta property="og:site_name" content="{{ site.name }}">

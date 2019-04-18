@@ -4,6 +4,7 @@ permalink: "/installation/"
 path: "installation"
 css: "article"
 title: "Installation guide"
+description: "Learn about how to install Mine Little Pony mod!"
 ---
 
 ## Contents

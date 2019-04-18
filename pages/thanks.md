@@ -4,6 +4,7 @@ permalink: "/legacy/thanks/"
 path: "thanks"
 css: "thanks"
 title: "Original thanks"
+description: "The copy of original &quot;About&quot; page by Verdana"
 ---
 
 ## What is this page
