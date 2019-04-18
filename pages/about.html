@@ -7,9 +7,9 @@ path: "about"
 <!-- Banner -->
 <div id="intro">
     <div>
-        <h2>The Development Team!<h2>
+        <h2>The Development Team!</h2>
         <div>
-            <p>These are the guys that keep the mod running!<p>
+            <p>These are the guys that keep the mod running!</p>
         </div>
     </div>
         
@@ -19,11 +19,13 @@ path: "about"
     <!-- Intro card #{{ forloop.index }} -->
     <div>
         <img src="{{ '/assets/about/' | append: about.header | append: '.png' | relative_url }}">
-        <img src="{{ '/assets/about/' | append: about.icon | append: '.png' | relative_url }}" style="background:{{ card.color }};">
+        <img src="{{ '/assets/about/' | append: about.icon | append: '.png' | relative_url }}" style="background:{{ about.color }};">
         <h2>{{ about.title }}</h2>
         <div>{{ about.description }}</div>
     </div>
+
     {% endfor %}
+</div>
 </div>
 
 <hr>
@@ -49,7 +51,7 @@ path: "about"
 
 <h2>Website Stuff</h2>
 <ul>
-<li>Special thanks to <b><a href="https://github.com/keupoz">Keupoz</a></b> for updating the site to Jekyll, this was a huge help and a long delayed project that we couldn't have hoped to finish without their help!</li>
+<li>Special thanks to <b><a href="https://github.com/keupoz">Keupoz</a></b> for updating the site to Jekyll, this was a huge help and a long delayed project that we couldn't have hoped to finish without their help! Also thanks for catching code errors and making sure everything's set up the way it's supposed to be!</li>
 </ul>
 
 <h2>Code</h2>
@@ -81,7 +83,7 @@ path: "about"
 Extra special thanks to all of the talented skin creators who made new skin files just for this mod:</p>
 
 <ul>
-<li><b>DaBethster</b> for allowing us to use her HD changeling skin as a reference on the updated skinning guide!</li>
+<li><b>DaBethster</b> (Discord: DaBethster#4129) for allowing us to use her HD changeling skin as a reference on the updated skinning guide!</li>
 
 <li><b>AlphaSpaceWombat</b> who made Cotton Pie Joe, Fluttershy (bunny costume), King Sombra, Pinkie Pie (no mouth), Pinkie Pie (spy costume), Shining Armor (horn broken), Tailor the Tailor, Ambrosia, Banana Fluff, Guard Commanders, Donut Joe, Featherweight, Fruitbasket, Hairy Tipper, Mjölna, normal armored royal Guards, Salty, Silverspeed, Sugar Berry, Sunstreak, Wildfire, Soarin' (in Wonderbolt suit), updated Princess Celestia, Princess Luna, Gala Twilight Sparkle, crazy Pinkie, workout Pinkie and Winter Wrap Up Pinkie, (and Winter Wrap Up Fluttershy), (and Winter Warp Up Rarity), Zecora, Caramel, Cranky Doodle Donkey, Mr and Mrs Cake, Noteworthy, Spitfire (in Wonderbolt outfit), Vinyl Scratch, Cloudchaser, Snips and Snails (and the older versions of Flim and Flam, Rainbow Dash (and Winter Wrap Up Rainbow Dash), Twilight Sparkle, Pinkie Pie, Fluttershy, Rarity, Applejack, Applebloom, Scootaloo, Sweetie Belle, Big Macintosh, Derpy Hooves, Cheerilee, Mayor Mare, and Octavia). He also made Trixie's Alicorn amulet and the Winter Wrap Up uniforms for Applejack and Rainbow Dash.</li>
 
@@ -147,4 +149,3 @@ The skins for the mobs were originally made by Verdana, inspired by the default 
 <li>Thanks to <b>Mojang</b> and <b>Hasbro</b>, best companies, for creating Minecraft and My Little Pony: Friendship Is Magic
 </li>
 </ul>
-

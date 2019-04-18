@@ -1,0 +1,51 @@
+.about {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.about > div {
+	box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+	margin: 10px;
+	
+	flex-basis: 30%;
+}
+.about > div img:nth-child(1) {
+	width: 100%;
+}
+.about > div:not(.noicon) img:nth-child(2) {
+	background: gray;
+	border-radius: 50%;
+	box-shadow: 0 0 0 5px white;
+	display: block;
+	margin: -35px auto 0;
+	
+	width: 70px; height: 70px;
+	
+	position: relative;
+}
+.about > div:not(.noicon) h2 {
+	padding: 10px 20px;
+	text-align: center;
+}
+.about > div div {
+	color: #555;
+	padding: 0 20px 15px;
+	text-align: center;
+}
+.about > div.noicon h2 {
+	color: white;
+	display: block;
+	font-size: 1.2em;
+	font-weight: 700;
+	padding: 10px;
+	text-align: center;
+}
+.about > div.noicon div {
+	padding: 15px 20px;
+}
+.about > div a {
+	color: inherit;
+	display: block;
+	text-decoration: none;
+}

@@ -19,7 +19,7 @@ devteam:
       
     - title: "Zombie"
       description: "The big cheese in charge of maintaining this wonderful website, also a huge Tiki Bar Enthusiast, Theme Park Fanatic, Bat, Duck, Raccoon, and all around pretty cool dude. EEEEEEEEEE"
-      color: "#3f72e5"
+      color: "#007F7F"
       header: "zombie"
       icon: "baticon"
       
@@ -31,7 +31,7 @@ devteam:
 
     - title: "R9000"
       description: "No one's quite sure what R9000 does... not even himself! All we know is that he does something, and he's a cool kid!"
-      color: "#7f59c6"
+      color: "#404040"
       header: "r9000"
       icon: "none"
 

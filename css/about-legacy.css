@@ -1,0 +1,163 @@
+@import 'fonts.css';
+@import 'menu.css';
+
+
+html {
+	background: whitesmoke;
+}
+
+
+#content {
+	flex-grow: 1;
+}
+
+footer {
+	background: url(../assets/pastelstripe.png) repeat-x top center / 50% 5px #eee;
+	color: #999;
+	font-size: 0.9em;
+	margin-top: 20px;
+	padding: 30px 50px;
+}
+footer a {
+	color: inherit;
+}
+footer span {
+	display: block;
+	text-align: center;
+}
+footer span:not(:last-child) {
+	margin-bottom: 5px;
+}
+
+hr {
+	background: url(../assets/pastelstripe.png) repeat-x top center / 50% 5px;
+	margin: 15px 30px;
+	
+	height: 5px;
+}
+
+.about {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.about > div {
+	box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+	margin: 10px;
+	
+	flex-basis: 30%;
+}
+.about > div img:nth-child(1) {
+	width: 100%;
+}
+.about > div:not(.noicon) img:nth-child(2) {
+	background: gray;
+	border-radius: 50%;
+	box-shadow: 0 0 0 5px white;
+	display: block;
+	margin: -35px auto 0;
+	
+	width: 70px; height: 70px;
+	
+	position: relative;
+}
+.about > div:not(.noicon) h2 {
+	padding: 10px 20px;
+	text-align: center;
+}
+.about > div div {
+	color: #555;
+	padding: 0 20px 15px;
+	text-align: center;
+}
+.about > div.noicon h2 {
+	color: white;
+	display: block;
+	font-size: 1.2em;
+	font-weight: 700;
+	padding: 10px;
+	text-align: center;
+}
+.about > div.noicon div {
+	padding: 15px 20px;
+}
+.about > div a {
+	color: inherit;
+	display: block;
+	text-decoration: none;
+}
+
+#content {
+	padding: 20px 30px;
+}
+#content a {
+	color: dodgerblue;
+	text-decoration: none;
+}
+
+ul {
+	margin: 10px;
+	margin-left: 2em;
+}
+hr {
+	margin: 0;
+}
+hr:first-of-type {
+	margin: 2em 0;
+}
+
+h2:not(:first-of-type), h3, h4 {
+    margin-top: 1.5em;
+}
+
+p {
+	margin: 10px 0;
+  text-indent: 1em;
+}
+code {
+	background: #eee;
+	border-radius: 3px;
+	padding: 2px 5px;
+}
+
+p.images {
+	text-indent: 0;
+	
+	display: flex;
+	align-items: center;
+}
+p.images img {
+	margin: 0.5em 10px;
+	
+	width: 0;
+	
+	flex-grow: 1;
+}
+p:not(.images) img {
+  display: block;
+  margin: 1em auto;
+  
+  max-width: 100%;
+}
+
+blockquote {
+	margin: 20px 0;
+}
+blockquote p {
+	background: whitesmoke;
+	border-radius: 5px;
+	border-left: 5px solid #eee;
+	display: inline-block;
+	margin: 0 !important;
+	padding: 20px 30px;
+	text-indent: 0;
+}
+
+table tbody tr:nth-child(odd) {
+    background: #eee;
+}
+
+table th, table td {
+    padding: 5px 10px;
+}
