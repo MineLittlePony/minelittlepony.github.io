@@ -10,12 +10,12 @@ description: "This page is a special thanks to all the talented artists, coders,
 These are the guys that keep the mod running!
 
 <div class="cards">
-	{% for about in site.data.about.devteam %}
+	{% for card in site.data.about.devteam %}
 	<div>
-		<img src="{{ '/assets/about/' | append: about.header | append: '.png' | relative_url }}">
-		<img src="{{ '/assets/about/' | append: about.icon | append: '.png' | relative_url }}" style="background:{{ card.color }};">
-		<h2>{{ about.title }}</h2>
-		<div>{{ about.description }}</div>
+		<img src="{{ '/assets/about/' | append: card.header | append: '.png' | relative_url }}">
+		<img src="{{ '/assets/about/' | append: card.icon | append: '.png' | relative_url }}" style="background:{{ card.color }};">
+		<h2>{{ card.title }}</h2>
+		<div>{{ card.description }}</div>
 	</div>
 	{% endfor %}
 </div>
