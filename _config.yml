@@ -20,3 +20,4 @@ exclude:
    - vendor/ruby/
    - README.md
    - CNAME
+   - .gitignore
