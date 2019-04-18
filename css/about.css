@@ -1,13 +1,2 @@
 @import 'article.css';
-@import 'aboutcards.css';
-
-ul {
-	margin-bottom: 10px;
-}
-li {
-	border-radius: 3px;
-	padding: 2px 3px;
-}
-li:hover {
-	background: whitesmoke;
-}
+@import 'cards.css';
