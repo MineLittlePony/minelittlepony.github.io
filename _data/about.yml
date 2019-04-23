@@ -18,10 +18,10 @@ devteam:
       icon: "publicrelations"
       
     - title: "Zombie"
-      description: "The big cheese in charge of maintaining this wonderful website, also a huge Tiki Bar Enthusiast, Theme Park Fanatic, Bat, Duck, Raccoon, and all around pretty cool dude. EEEEEEEEEE"
+      description: "The bat in charge... of maintaining this wonderful website, also a huge Tiki Bar Enthusiast, Theme Park Fanatic, Bat, Duck, Raccoon, and all around pretty cool dude. EEEEEEEEEE"
       color: "#007F7F"
-      header: "zombie"
-      icon: "baticon"
+      header: "zombie-image"
+      icon: "zombie"
       
     - title: "Polyacov_Yury"
       description: "That QA guy that would bug about a bug for a week if he can't fix it himself"
