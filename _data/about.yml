@@ -8,14 +8,14 @@ devteam:
     - title: "Solly"
       description: "Solly is that cool kid who keeps the mod updated and adds all those wonderful features you know and love! (Also added bats so he's pretty rad in my book! - Zombie)"
       color: "#ff861e"
-      header: "solly"
-      icon: "dev"
+      header: "solly-image"
+      icon: "solly"
       
     - title: "Rolling"
       description: "Rolling.... is a bat. Oh and he's also our head of Public Relations and manages the official Discord server! EEEE"
       color: "#ffc400"
-      header: "rolling"
-      icon: "publicrelations"
+      header: "rolling-image"
+      icon: "rolling"
       
     - title: "Zombie"
       description: "The bat in charge... of maintaining this wonderful website, also a huge Tiki Bar Enthusiast, Theme Park Fanatic, Bat, Duck, Raccoon, and all around pretty cool dude. EEEEEEEEEE"
