@@ -64,6 +64,9 @@
     - color:
       description: "Female (rounded)"
 
+    - color: "#888888"
+      description: "Abomination (no snuzzle)"
+
 - name: "Model size"
   description: "determines how large your model is"
   pixels:
