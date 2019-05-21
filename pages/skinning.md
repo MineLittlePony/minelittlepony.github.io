@@ -137,7 +137,7 @@ These are just examples, though, so here's some *actual* values and what they me
 | 200 | 0   | 0   | Just saddle bags (what most people might want)
 | 50  | 0   | 0   | Muffin Hat (glory to the muffin queen!)
 
-> \* As mentioned above, Saddle Bags are the only set of gear that is currently skinnable. They occupy the same area as the wings on Pegasi, and affect how wings are skinned on flying races.
+> As mentioned above, Saddle Bags are the only set of gear that is currently skinnable. They occupy the same area as the wings on Pegasi, and affect how wings are skinned on flying races.
 
 Look, I know this might be confusing, and you might be wondering "But Zombie how on Earth do I do the pixels for this?!" Well wonder no more! Here for your convenience is an example skin of my OC but with all three hats enabled!
 
@@ -155,7 +155,7 @@ Now let's see how this is actually accomplished!
 
 Notice how the RGB Values for the outlined pixel correspond to the values for each hat? It's really a lot simpler than it sounds, but if this guide doesn't help you enough feel free to download the example skin so you can see how it works for yourself!
 
-> \* There's also some fun secrets hidden away! What are they? Well they're secrets! (We can't just give away everything, where's the fun in that?!
+> There's also some fun secrets hidden away! What are they? Well they're secrets! (We can't just give away everything, where's the fun in that?!
 
 ## Uploading your skins
 Regular SD skins can be uploaded to [Minecraft.net](https://minecraft.net/) like a normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin layouts can be uploaded to Minecraft.net
