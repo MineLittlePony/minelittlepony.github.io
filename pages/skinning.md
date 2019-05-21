@@ -4,7 +4,7 @@ permalink: "/help/"
 path: "help"
 css: "skinning"
 title: "Skinning guide"
-description: "Learn how to draw your own skin for Mine Little Pony mod, how to turn your character into pegasus, how to add a hat to your pony and other interesting things!"
+description: "Learn how to draw your own skin for the Mine Little Pony mod, how to set the race of your character, how to add a hat to your character and other interesting things!"
 ---
 
 ## Contents
@@ -91,8 +91,12 @@ Here's a couple example skins showing off the skins and how the new features are
 {:.images}
 ![Bat Pony (EEEE)]({{ '/assets/skinning/Stardust - Complex - Upscaled.png' | relative_url }})
 ![Sea Pony (20,000 EEEEs Under the Sea!)]({{ '/assets/skinning/Seapony - Upscaled.png' | relative_url }})
-![Changeling (they're not a bug ok?)]({{ '/assets/skinning/Changeling.png' | relative_url }})
-![Zebra (fun fact, zebras are actually black with white stripes! How neat is that?!)]({{ '/assets/skinning/Zebra.png' | relative_url }})
+![Changeling (they're not a bug ok?)]({{ '/assets/skinning/Changeling - Upscaled.png' | relative_url }})
+![Zebra (fun fact, zebras are actually black with white stripes! How neat is that?!)]({{ '/assets/skinning/Zebra - Upscaled.png' | relative_url }})
+
+{:.button}
+[Download the four example skins:]({{ '/assets/skinning/example_skins.zip' | relative_url }}){:.download-button download="example_skins.zip"}
+
 
 ### Condensed Trigger Pixels and you!
 
@@ -134,6 +138,18 @@ These are just examples, though, so here's some *actual* values and what they me
 | 50  | 0   | 0   | Muffin Hat (glory to the muffin queen!)
 
 > \* As mentioned above, Saddle Bags are the only set of gear that is currently skinnable. They occupy the same area as the wings on Pegasi, and affect how wings are skinned on flying races.
+
+Look, I know this might be confusing, and you might be wondering "But Zombie how on Earth do I do the pixels for this?!" Well wonder no more! Here for your convenience is an example skin of my OC but with all three hats enabled!
+
+{:.images}
+![Stardust wearing his snazzy hat stack, just like something straight out of TF2!]({{ '/assets/skinning/hatstack.png' | relative_url }})
+![The Skin (with it's pixels of course!)]({{ '/assets/skinning/Stardust - Accessories - Upscaled.png' | relative_url }})
+![HD complex skin layout]({{ '/assets/skinning/Accessory Values.png' | relative_url }})
+
+{:.button}
+[Download the Stardust Accessory Example Skin!]({{ '/assets/skinning/Stardust - Complex - Accessories.png' | relative_url }}){:.download-button download="Stardust - Complex - Accessories.png"}
+
+Notice how the RGB Values for the outlined pixel correspond to the values for each hat? It's really a lot simpler than it sounds, but if this guide doesn't help you enough feel free to download the example skin so you can see how it works for yourself!
 
 There's also some fun secrets hidden away! What are they? Well they're secrets! (We can't just give away everything, where's the fun in that?!
 
