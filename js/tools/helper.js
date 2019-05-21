@@ -1,6 +1,6 @@
 var
 LOG_2     = Math.log(2),
-SKINS_URL = 'https://ponyskins.herokuapp.com/';
+SKINS_URL = 'https://keupoz.herokuapp.com/ponyskins/valhalla/';
 
 function clear (ctx, s, x,y, w,h) {
 	ctx.clearRect(x * s, y * s, w * s, h * s);

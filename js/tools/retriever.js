@@ -20,12 +20,12 @@ filename = '';
 $img.addEventListener('load', function () {
 	busy = $form.submit.disabled = false;
 	$progress.classList.remove('show');
-	
+
 	ctx.canvas.width  = this.naturalWidth;
 	ctx.canvas.height = this.naturalHeight;
-	
+
 	ctx.drawImage(this, 0,0);
-	
+
 	$convert.removeAttribute('disabled');
 	$resize.removeAttribute('disabled');
 });
@@ -43,7 +43,7 @@ function processResult (e) {
 	} else {
 		var F = new FileReader();
 		F.onload = function () {
-			$error.innerText = this.result;
+			$error.innerText = JSON.parse(this.result).error;
 			busy = $form.submit.disabled = false;
 			$progress.classList.remove('show');
 		};
@@ -53,25 +53,25 @@ function processResult (e) {
 
 $form.addEventListener('submit', function (e) {
 	e.preventDefault();
-	
+
 	if (busy) return;
-	
+
 	if (this.nickname.value == '') {
 		$error.innerText = 'Enter a nickname';
 		return;
 	}
-	
+
 	busy = this.submit.disabled = true;
 	$progress.style.width = 0;
 	$progress.classList.add('show');
-	
+
 	this.nickname.blur();
-	
+
 	var xhr = new XMLHttpRequest();
-	
+
 	xhr.open('GET', SKINS_URL + this.nickname.value.trim());
 	xhr.responseType = 'blob';
-		
+
 	xhr.onprogress = function (e) {
 		$progress.style.width = e.loaded / e.total * 100 + '%';
 	};
