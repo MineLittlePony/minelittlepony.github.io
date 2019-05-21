@@ -143,6 +143,10 @@ Look, I know this might be confusing, and you might be wondering "But Zombie how
 
 {:.images}
 ![Stardust wearing his snazzy hat stack, just like something straight out of TF2!]({{ '/assets/skinning/hatstack.png' | relative_url }})
+
+Now let's see how this is actually accomplished!
+
+{:.images}
 ![The Skin (with it's pixels of course!)]({{ '/assets/skinning/Stardust - Accessories - Upscaled.png' | relative_url }})
 ![HD complex skin layout]({{ '/assets/skinning/Accessory Values.png' | relative_url }})
 
