@@ -155,7 +155,7 @@ Now let's see how this is actually accomplished!
 
 Notice how the RGB Values for the outlined pixel correspond to the values for each hat? It's really a lot simpler than it sounds, but if this guide doesn't help you enough feel free to download the example skin so you can see how it works for yourself!
 
-There's also some fun secrets hidden away! What are they? Well they're secrets! (We can't just give away everything, where's the fun in that?!
+> \* There's also some fun secrets hidden away! What are they? Well they're secrets! (We can't just give away everything, where's the fun in that?!
 
 ## Uploading your skins
 Regular SD skins can be uploaded to [Minecraft.net](https://minecraft.net/) like a normal skin. Make sure to select the "My skin fits on the classic 'Steve' player model" option. Both skin layouts can be uploaded to Minecraft.net
