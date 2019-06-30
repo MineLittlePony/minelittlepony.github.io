@@ -1,9 +1,8 @@
 ---
 layout: page
-permalink: "/installation/"
-path: "installation"
+permalink: "/installation-legacy/"
 css: "article"
-title: "Installation guide"
+title: "Legacy Installation guide"
 description: "Learn about how to install the Mine Little Pony mod for legacy versions!"
 ---
 
