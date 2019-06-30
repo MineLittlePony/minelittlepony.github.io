@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: "/installation-legacy/"
+path: "installation-legacy"
 css: "article"
 title: "Legacy Installation guide"
 description: "Learn about how to install the Mine Little Pony mod for legacy versions!"
