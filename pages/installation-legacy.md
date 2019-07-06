@@ -2,7 +2,6 @@
 layout: page
 permalink: "/installation-legacy/"
 path: "installation-legacy"
-css: "article"
 title: "Legacy Installation guide"
 description: "Learn about how to install the Mine Little Pony mod for legacy versions!"
 ---
@@ -14,7 +13,7 @@ description: "Learn about how to install the Mine Little Pony mod for legacy ver
 {:toc}
 
 ## Download Mine Little Pony and LiteLoader {#step1}
-Mine Little Pony requires the mod loader LiteLoader in order to run. Download the Mine Little Pony mod from the all releases link on the homepage, and the <a href="https://www.liteloader.com/download">Liteloader Installer</a> 
+Mine Little Pony requires the mod loader LiteLoader in order to run. Download the Mine Little Pony mod from the all releases link on the homepage, and the <a href="https://www.liteloader.com/download">Liteloader Installer</a>
 ![Downloaded files]({{ '/assets/installation/legacy/step1.png' | relative_url }})
 
 ## Installing LiteLoader {#step2}

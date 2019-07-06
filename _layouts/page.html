@@ -13,11 +13,11 @@
 <html>
 	<head>
 		<title>{{ title }}</title>
-		
+
 		<!-- Page settings -->
 		<meta name="viewport" content="width=device-width">
 		<meta charset="utf-8">
-		
+
 		<!-- SEO tags (copied from Minima theme) -->
 		<meta property="og:title" content="{{ title }}">
 		<meta property="og:locale" content="en_US">
@@ -26,15 +26,15 @@
 		<link rel="canonical" href="{{ site.url }}">
 		<meta property="og:url" content="{{ site.url }}">
 		<meta property="og:site_name" content="{{ site.name }}">
-		
+
 		<!-- Icon -->
 		<link rel="shortcut icon" href="{{ '/assets/favicon.ico' | relative_url }}" type="image/x-icon">
 
 		<!-- Style sheets -->
 		<link rel="stylesheet" href="{{ '/css/index.css' | relative_url }}">
-		<link rel="stylesheet" href="{{ '/css/' | append: page.css | append: '.css' | relative_url }}">
+		{%- comment -%} <link rel="stylesheet" href="{{ '/css/' | append: page.css | append: '.css' | relative_url }}"> {%- endcomment -%}
 	</head>
-	
+
 	<body>
 		<menu>
 			{% for link in site.data.menu %}
@@ -45,8 +45,8 @@
 				{% endif %}
 			{% endfor %}
 		</menu>
-		
-		<div id="content">
+
+		<div id="content" class="{{ page.class }}">
 			{{ content }}
 		</div>
 
@@ -56,6 +56,6 @@
 			<span>Minecraft &copy; Mojang AB</span>
 			<span>My Little Pony: Friendship is Magic &copy; Hasbro, Inc.</span>
 		</footer>
-		
+
 	</body>
 </html>

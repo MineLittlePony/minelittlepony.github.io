@@ -1,6 +1,6 @@
 ---
+class: "home"
 layout: "page"
-css: "home"
 path: ""
 ---
 <!-- Banner -->
@@ -16,12 +16,12 @@ path: ""
         <h1>Get the mod now!</h1>
 
         <!-- Download links -->
-        <a id="intro--link__download" href="https://github.com/MineLittlePony/MineLittlePony/releases" target="_blank">Download</a>
-        <a id="intro--link__download-beta" href="#" download hidden>Pre-release</a>
-        <a id="intro--link__download-fabric" href="https://fabricmc.net/use/" target="_blank">Get Fabric</a>
+        <a class="link download release" href="https://github.com/MineLittlePony/MineLittlePony/releases" target="_blank">Download</a>
+        <a class="link download beta"    href="#" hidden>Pre-release</a>
+        <a class="link download fabric"  href="https://fabricmc.net/use/" target="_blank">Get Fabric</a>
 
         <!-- GitHub links -->
-        <div id="intro--links__mod">
+        <div class="links github">
             <a href="https://github.com/MineLittlePony/MineLittlePony/releases" target="_blank">All releases</a>
             <a href="https://github.com/MineLittlePony/MineLittlePony" target="_blank">Source code</a>
         </div>
@@ -30,8 +30,8 @@ path: ""
         <div style="flex-grow:1;"></div>
 
         <!-- Social links -->
-        <div id="intro--links__social">
-            <a id="intro--link__discord" href="https://discord.gg/HbJSFyu" target="_blank">
+        <div class="links social">
+            <a class="discord" href="https://discord.gg/HbJSFyu" target="_blank">
                 <img src="{{ '/assets/home/discord_logo.svg' | relative_url }}" type="image/svg+xml">
             </a>
         </div>
@@ -44,12 +44,7 @@ path: ""
 <div id="features" class="cards">
     {% for card in site.data.cards.features %}
     <!-- Intro card #{{ forloop.index }} -->
-    <div>
-        <img src="{{ '/assets/home/' | append: card.header | append: '.png' | relative_url }}">
-        <img src="{{ '/assets/home/' | append: card.icon | append: '.png' | relative_url }}" style="background:{{ card.color }};">
-        <h2>{{ card.title }}</h2>
-        <div>{{ card.description }}</div>
-    </div>
+    {% include icon_card.html card=card %}
     {% endfor %}
 </div>
 
@@ -60,16 +55,7 @@ path: ""
     {% for card in site.data.cards.links %}
     {% if card.hidden != true %}
     <!-- Extra card #{{ forloop.index }} -->
-    <div class="noicon">
-        {% if card.download %}<a href="{{ card.url | relative_url }}" download>
-            {% else %}<a href="{{ card.url }}" target="_blank">{% endif %}
-
-                <img src="{{ '/assets/home/' | append: card.header | relative_url }}.png">
-                <h2 style="background:{{ card.color }};">{{ card.label }}</h2>
-                <div>{{ card.description }}</div>
-
-            </a>
-    </div>
+    {% include link_card.html card=card %}
     {% endif %}
     {% endfor %}
 </div>
@@ -94,15 +80,15 @@ path: ""
                     }
                 }
             }
-            let download_link = document.querySelector('#intro--link__download');
+
+            let download_link = document.querySelector('#intro .link.download.release');
 
             download_link.removeAttribute('target');
             download_link.setAttribute('data-version', release.tag_name.substr(0, release.tag_name.length - 2));
             download_link.href = release.html_url;
-            download_link.download = true;
 
             if (prerelease) {
-                let pre_link = document.querySelector('#intro--link__download-beta');
+                let pre_link = document.querySelector('#intro .link.download.beta');
 
                 pre_link.removeAttribute('hidden');
                 pre_link.setAttribute('data-version', prerelease.tag_name.substr(0, prerelease.tag_name.lastIndexOf('.')));

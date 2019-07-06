@@ -1,0 +1,6 @@
+<div class="card icon">
+  <img class="banner" src="{{ '/assets/home/' | append: include.card.header | append: '.png' | relative_url }}">
+  <img class="icon"   src="{{ '/assets/home/' | append: include.card.icon | append: '.png' | relative_url }}" style="background:{{ include.card.color }};">
+  <h2  class="title">{{ include.card.title }}</h2>
+  <div class="content">{{ include.card.description }}</div>
+</div>

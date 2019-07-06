@@ -1,8 +1,8 @@
 ---
+class: "skinning"
 layout: page
 permalink: "/help/"
 path: "help"
-css: "skinning"
 title: "Skinning guide"
 description: "Learn how to draw your own skin for the Mine Little Pony mod, how to set the race of your character, how to add a hat to your character and other interesting things!"
 ---

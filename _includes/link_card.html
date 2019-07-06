@@ -1,0 +1,11 @@
+<div class="card link">
+  {% if include.card.download %}
+  <a href="{{ include.card.url | relative_url }}" download>
+  {% else %}
+  <a href="{{ include.card.url }}" target="_blank">
+  {% endif %}
+    <img class="banner" src="{{ '/assets/home/' | append: include.card.header | relative_url }}.png">
+    <h2  class="title" style="background:{{ include.card.color }};">{{ include.card.label }}</h2>
+    <div class="content">{{ include.card.description }}</div>
+  </a>
+</div>

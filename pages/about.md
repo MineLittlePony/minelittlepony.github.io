@@ -1,7 +1,7 @@
 ---
+class: "thanks"
 layout: "page"
 permalink: "/about/"
-css: "about"
 path: "about"
 description: "This page is a special thanks to all the talented artists, coders, and people who have contributed to the mod's development over the years. Without you we wouldn't be where we are today!"
 ---
@@ -90,4 +90,3 @@ The skins for the mobs were originally made by Verdana, inspired by the default 
 - This mod uses Mumfrey's [LiteLoader](https://www.liteloader.com){:target="_blank"}. Need a tick and don't want much else? LiteLoader might be the lightweight mod loader you've been waiting for!
 - This mod was made with **MCP**. Thanks to Searge and the MCP team, without whom this mod would not be possible
 - Thanks to **Mojang** and **Hasbro**, best companies, for creating Minecraft and My Little Pony: Friendship Is Magic
-

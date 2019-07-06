@@ -2,7 +2,6 @@
 layout: page
 permalink: "/installation/"
 path: "installation"
-css: "article"
 title: "Installation guide"
 description: "Learn how to install the Mine Little Pony mod!"
 ---
@@ -32,5 +31,3 @@ The Mine Little Pony mod should have a `.jar` extension. Place the `.jar` file i
 If everything was done correctly, a new Minecraft profile named  "Fabric-Loader" with the installed version in the name should appear in the drop down menu. Choose that profile and launch the game and you're done! Congratulations on your newfound poniness!
 ![Selecting installed profile]({{ '/assets/installation/step4.1.png' | relative_url }})
 ![Your player model in the game should look like this]({{ '/assets/installation/step4.2.png' | relative_url }})
-
-
