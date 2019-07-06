@@ -36,6 +36,9 @@ $icon-size: 70px
     text-align: center
 
   &.link
+    &:hover
+      transform: translateY(-1px)
+
     &:active
       box-shadow: 0 4px 8px rgba(black, 0.1)
       transform: translateY(2px)
@@ -43,7 +46,7 @@ $icon-size: 70px
     & > a
       color: inherit
       display: block
-      text-decoration: none
+      text-decoration: none !important
 
     .title
       background: gray
