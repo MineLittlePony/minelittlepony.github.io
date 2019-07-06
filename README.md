@@ -5,16 +5,15 @@ To run this site on your local machine, install [Jekyll](https://jekyllrb.com), 
 ## Data files
 Most of the data are stored in `yml` files which are placed in `_data` directory of the repository.
 List of data files:
-- `menu` - list of links in menu on top of pages 
+- `menu` - list of links in menu on top of pages
 - `cards` - list of cards which are placed on the main page of the site
 - `faq` - list of questions and answers on FAQ page
-- `old_files` - list of files which are placed on Archive page
 - `pixels` - pixels data for skinning guide
 
 ## Data structure
 ### Menu
 ```yaml
-- path: "relative/path/to/page"
+- permalink: "/absolute/path/to/page" # this must be the same as in front matter of page
   title: "Name in menu"
 ```
 
@@ -42,19 +41,10 @@ links:
 ### FAQ
 ```yaml
 # Markdown syntax supported
-- question: "Question"
-  answer: "Answer"
-```
-
-### Archive
-```yaml
-- version: "Version"
-  assets:
-    - name: "Name of the asset"
-      description: "Asset description"
-      files:
-        - type: "litemod"
-          filename: "filename.litemod" # name of a file placed in /assets/files/mod/
+- question: "How do I get my skin?"
+  answer: "You can do it [here](:rel:/tools/#retriever)"
+  # Above is an example of adding relative links to the answer
+  # Just use regular link syntax but add :rel: before url
 ```
 
 ### Pixels
