@@ -1,7 +1,5 @@
 ---
-layout: page
 permalink: "/installation/"
-path: "installation"
 title: "Installation guide"
 description: "Learn how to install the Mine Little Pony mod!"
 ---

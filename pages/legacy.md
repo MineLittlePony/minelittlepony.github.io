@@ -1,7 +1,5 @@
 ---
-layout: page
 permalink: "/legacy/"
-path: "legacy"
 title: "Archive"
 description: "Original thanks page by Verdana, old versions of Mine Little Pony mod, etc."
 ---

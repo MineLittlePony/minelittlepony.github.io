@@ -1,20 +1,20 @@
-- path: ""
+- permalink: "/"
   title: "Home"
-  
-- path: "installation"
+
+- permalink: "/installation/"
   title: "Installation"
-  
-- path: "help"
+
+- permalink: "/help/"
   title: "Skinning"
-  
-- path: "legacy"
+
+- permalink: "/legacy/"
   title: "Archive"
-  
-- path: "tools"
+
+- permalink: "/tools/"
   title: "Tools"
-  
-- path: "faq"
+
+- permalink: "/faq/"
   title: "FAQ"
 
-- path: "about"
+- permalink: "/about/"
   title: "About"

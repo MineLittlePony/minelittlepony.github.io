@@ -38,10 +38,10 @@
 	<body>
 		<menu>
 			{% for link in site.data.menu %}
-				{% if page.path == link.path %}
+				{% if page.permalink == link.permalink %}
 					<span>{{ link.title }}</span> <!-- You are here! -->
 				{% else %}
-					<a href="{{ '/' | append: link.path | relative_url }}">{{ link.title }}</a>
+					<a href="{{ link.permalink | relative_url }}">{{ link.title }}</a>
 				{% endif %}
 			{% endfor %}
 		</menu>

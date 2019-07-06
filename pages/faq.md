@@ -1,7 +1,5 @@
 ---
-layout: page
 permalink: "/faq/"
-path: "faq"
 title: "FAQ"
 description: "Frequently asked questions about Mine Little Pony mod"
 ---
