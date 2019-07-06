@@ -44,7 +44,7 @@ path: ""
 <div id="features" class="cards">
     {% for card in site.data.cards.features %}
     <!-- Intro card #{{ forloop.index }} -->
-    {% include icon_card.html card=card %}
+    {% include icon_card.html root="home" card=card %}
     {% endfor %}
 </div>
 
@@ -55,7 +55,7 @@ path: ""
     {% for card in site.data.cards.links %}
     {% if card.hidden != true %}
     <!-- Extra card #{{ forloop.index }} -->
-    {% include link_card.html card=card %}
+    {% include link_card.html root="home" card=card %}
     {% endif %}
     {% endfor %}
 </div>
