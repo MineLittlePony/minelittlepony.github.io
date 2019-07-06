@@ -1,0 +1,28 @@
+@import 'mixins/stripe'
+
+menu
+  background: url(../assets/logo.png) no-repeat 10px center / 250px
+  padding-right: 20px
+
+  height: 150px
+
+  display: flex
+  align-items: center
+  justify-content: flex-end
+
+  a, span
+    @include stripe(bottom, 0px)
+
+    color: inherit
+    display: block
+    font-size: 1.2em
+    font-weight: 700
+    padding: 10px 20px
+    text-decoration: none
+    transition: background-size 100ms
+
+    &:not(:last-child)
+      border-right: 2px solid #ddd
+
+  a:hover, span
+    background-size: 100% 5px

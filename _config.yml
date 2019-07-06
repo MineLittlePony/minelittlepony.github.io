@@ -7,6 +7,12 @@ url: "https://www.minelittlepony-mod.com" # the base hostname & protocol for you
 # Build settings
 markdown: kramdown
 
+sass:
+   sass_dir: css/_sass
+   # Better set it to 'compressed' because
+   # indentation doesn't seem to work anyway
+   style: compressed
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

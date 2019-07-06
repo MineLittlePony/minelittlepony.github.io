@@ -1,0 +1,42 @@
+#content.skinning
+  p.button
+    margin: 20px
+    text-align: center
+    text-indent: 0
+
+  a.download-button
+    background: dodgerblue
+    border-radius: 5px
+    color: white
+    display: inline-block
+    margin: auto
+    padding: 20px 30px
+
+  p.pixels + ul
+    list-style: none
+
+    li
+      margin-left: -1em
+
+      p
+        display: inline
+
+      strong
+        font-family: "Monospace"
+
+  .pixel
+    display: inline-block
+    border: 1px solid #777
+    border-radius: 50%
+    box-sizing: border-box
+    margin-bottom: -0.1em
+
+    width:  0.9em
+    height: 0.9em
+
+    &.empty
+      background: url(../assets/skinning/no-color.svg) no-repeat center top
+      border: none
+
+  #pixels
+    float: right
