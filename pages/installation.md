@@ -11,7 +11,7 @@ description: "Learn how to install the Mine Little Pony mod!"
 {:toc}
 
 ## For Legacy Versions (1.12 and below)
-The installation guide for versions of Mine Little Pony prior to Minecraft 1.14 can be found <a href="https://minelittlepony-mod.com/installation-legacy">Here</a>
+The installation guide for versions of Mine Little Pony prior to Minecraft 1.14 can be found [here]({{ '/installation-legacy' | relative_url }})
 
 ## Download Mine Little Pony and Fabric {#step1}
 Mine Little Pony requires the mod loader Fabric in order to run. Download the Mine Little Pony mod and the Fabric installer from the front page
@@ -22,7 +22,7 @@ Download the appropriate installer for your operating system: download the `.exe
 ![Fabric installer]({{ '/assets/installation/step2.png' | relative_url }})
 
 ## Installing Mine Little Pony {#step3}
-The Mine Little Pony mod should have a `.jar` extension. Place the `.jar` file in the `mods` folder that has been created in your `minecraft` root folder. Be sure to also download and move the <a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api">Fabric API .jar</a> into the mods folder as well.
+The Mine Little Pony mod should have a `.jar` extension. Place the `.jar` file in the `mods` folder that has been created in your `minecraft` root folder. Be sure to also download and move the [Fabric API .jar](https://www.curseforge.com/minecraft/mc-mods/fabric-api){:target="_blank"} into the mods folder as well.
 ![Path to Mine Little Pony mod file]({{ '/assets/installation/step3.png' | relative_url }})
 
 ## Select the Fabric-Loader profile and play! {#step4}
