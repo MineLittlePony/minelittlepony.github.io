@@ -35,4 +35,11 @@ devteam:
       header: "r9000"
       icon: "none"
 
+    - title: "Keupoz"
+      description: "That dude that makes the site code look really legit and cool and fixes zombie's mistakes when he breaks it."
+      color: "#AE0000"
+      header: "keupoz-image"
+      icon: "keupoz"
+
+
       
