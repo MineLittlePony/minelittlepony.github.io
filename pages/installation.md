@@ -21,7 +21,7 @@ Mine Little Pony requires the mod loader Fabric in order to run. Download the Mi
 Download the appropriate installer for your operating system: download the `.exe` installer if you are using Windows and `.jar` for other operating systems. Open the installer and follow the instructions on screen
 ![Fabric installer]({{ '/assets/installation/step2.png' | relative_url }})
 
-## Installing Mine Little Pony and HDSkins{#step3}
+## Installing Mine Little Pony and HDSkins {#step3}
 The Mine Little Pony mod should have a `.jar` extension. Place the `.jar` file in the `mods` folder that has been created in your `minecraft` root folder. Be sure to also download and move the [Fabric API .jar](https://www.curseforge.com/minecraft/mc-mods/fabric-api){:target="_blank"} and HDSkins jar into the mods folder as well.
 ![Path to Mine Little Pony mod file]({{ '/assets/installation/step3.png' | relative_url }})
 
