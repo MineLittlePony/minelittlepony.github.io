@@ -11,7 +11,7 @@
   answer: "FillyCam has been discontinued. Use [BigPony](https://github.com/MineLittlePony/BigPony/releases){:target=\"_blank\"} instead"
   
 - question: "Is there a Forge version?"
-  answer: "No. But LiteLoader [can be installed as a Forge mod](http://www.liteloader.com/explore/docs/user:install:forge){:target=\"_blank\"}"
+  answer: "No, but with pre 1.13 versions, LiteLoader [can be installed as a Forge mod](http://www.liteloader.com/explore/docs/user:install:forge){:target=\"_blank\"}"
   
 - question: "How do I retrieve my skin from the server?"
   answer: "If you are using an official Minecraft account you can do it [here](:rel:/tools/#retriever)"
@@ -24,3 +24,11 @@
 
 - question: "When is the next version going to be released?"
   answer: "[Mods are hard ok?? No but really, these things take time, your patience is really appreciated! (We're just as excited for the new versions as you are, trust me!)](https://www.youtube.com/watch?v=0d6yBHDvKUw){:target=\"_blank\"}"
+
+- question: "Does this mod work on the console or mobile versions?
+  answer: "Unfortunately not, we do not currently have the ability to port the mod to those versions."
+
+- question: "Why can't I upload skins on cracked versions?"
+  answer: "Uploading skins is only available on legitimate paid versions of the game. We do not support pirated or cracked copies, this is out of our control."
+
+
