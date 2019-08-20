@@ -57,4 +57,4 @@ links:
 ```
 
 ## First development history
-To see history of development of Jekyll remake before pushing it to official repository, go [here](https://github.com/niteru/MineLPSite)
+To see history of development of Jekyll remake before pushing it to official repository, go [here](https://github.com/keupoz/MineLPSite)
