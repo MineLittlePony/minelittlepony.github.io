@@ -87,7 +87,7 @@ It is also now also possible to wear hats and saddlebags. While hats can not be 
 Here's a couple example skins showing off the skins and how the new features are textured!
 
 {:.images}
-![Bat Pony (EEEE)]({{ '/assets/skinning/Stardust - Complex - Upscaled.png' | relative_url }})
+![Bat Pony (EEEE)]({{ '/assets/skinning/Stardust - Accessories - Upscaled' | relative_url }})
 ![Sea Pony (20,000 EEEEs Under the Sea!)]({{ '/assets/skinning/Seapony - Upscaled.png' | relative_url }})
 ![Changeling (they're not a bug ok?)]({{ '/assets/skinning/Changeling - Upscaled.png' | relative_url }})
 ![Zebra (fun fact, zebras are actually black with white stripes! How neat is that?!)]({{ '/assets/skinning/Zebra - Upscaled.png' | relative_url }})
