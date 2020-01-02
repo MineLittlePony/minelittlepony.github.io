@@ -80,6 +80,7 @@ The skins for the mobs were originally made by Verdana, inspired by the default 
 - Thanks to **oskarek11** who drew the image of Princess Celestia from which I borrowed the hair in [the header image](https://mega.nz/#!YBZT0KCa!ubCikvjkLVgziA58yMehTrhZPBRje45M8jsXVYPF1Vw){:target="_blank"}
 - Kudos to the original pony mod (Verdana didn't use any of the code but someone else had the idea first) posted on ponycraft.net (now removed, [archive](https://web.archive.org/web/20130124171230/http://ponycraft.net:80/){:target="_blank"})
 - Thanks to everyone in [MinecraftForum.net thread](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1278090-mine-little-pony-v1-6-4-1){:target="_blank"} and on brohoof.com ([archive](https://web.archive.org/web/20150502042354/http://www.brohoof.com:80/){:target="_blank"}) for your feedback, testing and support so far
-- This mod uses Mumfrey's [LiteLoader](https://www.liteloader.com){:target="_blank"}. Need a tick and don't want much else? LiteLoader might be the lightweight mod loader you've been waiting for!
+- This mod uses [Fabric] (https://fabricmc.net/) {:target="_blank"}.
+- Pre 1.13 versions of this mod use Mumfrey's [LiteLoader](https://www.liteloader.com){:target="_blank"}. Need a tick and don't want much else? LiteLoader might be the lightweight mod loader you've been waiting for!
 - This mod was made with **MCP**. Thanks to Searge and the MCP team, without whom this mod would not be possible
 - Thanks to **Mojang** and **Hasbro**, best companies, for creating Minecraft and My Little Pony: Friendship Is Magic
