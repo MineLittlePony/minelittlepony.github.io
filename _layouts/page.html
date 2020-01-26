@@ -35,26 +35,11 @@
 	</head>
 
 	<body>
-		<menu>
-			{% for link in site.data.menu %}
-				{% if page.permalink == link.permalink %}
-					<span>{{ link.title }}</span> <!-- You are here! -->
-				{% else %}
-					<a href="{{ link.permalink | relative_url }}">{{ link.title }}</a>
-				{% endif %}
-			{% endfor %}
-		</menu>
+		{% include menu.html %}
 
 		<div id="content" class="{{ page.class }}">
 			{{ content }}
 		</div>
-
-		<footer>
-			<span>Site design &copy; 2020 minelittlepony-mod.com (refreshed by <a href="https://github.com/keupoz" target="_blank">Keupoz</a>, maintained by <a href="https://twitter.com/TikiBat" target="_blank">Zombie</a>)</span>
-			<span>Original Mine Little Pony mod &copy; <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1278090-mine-little-pony-v1-6-4-1" target="_blank">Verdana</a> (unofficially maintained by <a href="https://github.com/killjoy1221" target="_blank">KillJoy</a>)</span>
-			<span>Minecraft &copy; Mojang AB</span>
-			<span>My Little Pony: Friendship is Magic &copy; Hasbro, Inc.</span>
-		</footer>
-
+		{% include footer.html %}
 	</body>
 </html>
