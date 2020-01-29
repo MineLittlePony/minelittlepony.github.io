@@ -83,7 +83,7 @@ permalink: "/"
             let download_link = document.querySelector('#intro .link.download.release');
 
             download_link.removeAttribute('target');
-            download_link.setAttribute('data-version', release.tag_name.substr(0, release.tag_name.length - 2));
+            download_link.setAttribute('data-version', release.tag_name);
             download_link.href = release.html_url;
 
             if (prerelease) {
