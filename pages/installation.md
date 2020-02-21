@@ -13,9 +13,9 @@ description: "Learn how to install the Mine Little Pony mod!"
 ## For Legacy Versions (1.12 and below)
 The installation guide for versions of Mine Little Pony prior to Minecraft 1.14 can be found [here]({{ '/installation-legacy' | relative_url }})
 
-## Download Mine Little Pony and Fabric {#step1}
-Mine Little Pony requires the mod loader Fabric in order to run. Download the Mine Little Pony mod and the Fabric installer from the front page. If you'd like to have the option to use HD skins or the mod's own skin server make sure you also download and install the HDSkins mod, which is linked with the latest version of the mod.
-![Downloaded files]({{ '/assets/installation/step1.png' | relative_url }})
+## Download Mine Little Pony, HDSkins, and Fabric {#step1}
+Mine Little Pony can be downloaded from the [Releases Page](https://github.com/MineLittlePony/MineLittlePony/releases){:target="_blank"} in the github repository. HD Skins can also be downloaded from [It's own releases page](https://github.com/MineLittlePony/HDSkins/releases){:target="_blank"}, though it's not required to use this mod. HD Skins is an optional mod and only needed if you want to be able to use HD Skins and utilize the mod's own skin server and in game skin menu. You can read more about that [here](https://minelittlepony-mod.com/help/#uploading-your-skins){:target="_blank"}. Mine Little Pony requires the Fabric mod loader in order to run, you can find it [here](https://fabricmc.net/use/){:target="_blank"} and you can find more information on how to install it and get it working properly below. 
+[Downloaded files]({{ '/assets/installation/step1.png' | relative_url }})
 
 ## Installing Fabric {#step2}
 Download the appropriate [installer](https://fabricmc.net/use/){:target="_blank"} for your operating system: download the `.exe` installer if you are using Windows and `.jar` for other operating systems. Open the installer and follow the instructions on screen
