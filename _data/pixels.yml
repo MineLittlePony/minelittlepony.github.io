@@ -26,10 +26,13 @@
       description: "Reformed Changeling"
       
     - color: "#ae9145"
-      description: "Griffin"
+      description: "Gryphon"
       
     - color: "#d6ddac"
       description: "Hippogriff"
+
+    - color: "#fa88af"
+      description: "Kirin"
       
     - color: "#eeeeee"
       description: "Batpony"
@@ -43,7 +46,7 @@
     - color: "#425844"
       description: "Stub"
       
-    - color: "#468e88"
+    - color: "#d19fe4"
       description: "1/4"
       
     - color: "#534b76"
