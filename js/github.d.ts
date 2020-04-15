@@ -1,0 +1,144 @@
+interface User {
+    readonly d: number
+    readonly ode_id: string
+    readonly ogin: string
+    readonly vatar_url: string
+    readonly ravatar_id: string
+    readonly rl: string
+    readonly tml_url: string
+    readonly ollowers_url: string
+    readonly ollowing_url: string
+    readonly ists_url: string
+    readonly tarred_url: string
+    readonly ubscriptions_url: string
+    readonly rganizations_url: string
+    readonly epos_url: string
+    readonly vents_url: string
+    readonly eceived_events_url: string
+    readonly ype: string
+    readonly ite_admin: boolean
+}
+
+interface License {
+    readonly key: string
+    readonly name: string
+    readonly spdx_id: string
+    readonly url: string
+    readonly node_id: string
+}
+
+interface Repo {
+    readonly id: number
+    readonly node_id: string
+    readonly name: string
+    readonly full_name: string
+    readonly private: boolean
+    readonly owner: User
+    readonly html_url: string
+    readonly description: string
+    readonly fork: false
+    readonly url: string
+    readonly forks_url: string
+    readonly keys_url: string
+    readonly collaborators_url: string
+    readonly teams_url: string
+    readonly hooks_url: string
+    readonly issue_events_url: string
+    readonly events_url: string
+    readonly assignees_url: string
+    readonly branches_url: string
+    readonly tags_url: string
+    readonly blobs_url: string
+    readonly git_tags_url: string
+    readonly git_refs_url: string
+    readonly trees_url: string
+    readonly statuses_url: string
+    readonly languages_url: string
+    readonly stargazers_url: string
+    readonly contributors_url: string
+    readonly subscribers_url: string
+    readonly subscription_url: string
+    readonly commits_url: string
+    readonly git_commits_url: string
+    readonly comments_url: string
+    readonly issue_comment_url: string
+    readonly contents_url: string
+    readonly compare_url: string
+    readonly merges_url: string
+    readonly archive_url: string
+    readonly downloads_url: string
+    readonly issues_url: string
+    readonly pulls_url: string
+    readonly milestones_url: string
+    readonly notifications_url: string
+    readonly labels_url: string
+    readonly releases_url: string
+    readonly deployments_url: string
+    readonly created_at: string
+    readonly updated_at: string
+    readonly pushed_at: string
+    readonly git_url: string
+    readonly ssh_url: string
+    readonly clone_url: string
+    readonly svn_url: string
+    readonly size: number
+    readonly stargazers_count: number
+    readonly watchers_count: number
+    readonly language: string
+    readonly has_issues: boolean
+    readonly has_projects: boolean
+    readonly has_downloads: boolean
+    readonly has_wiki: boolean
+    readonly has_pages: boolean
+    readonly forks_count: number
+    readonly mirror_url: string
+    readonly archived: boolean
+    readonly disabled: boolean
+    readonly open_issues_count: number
+    readonly license: License
+    readonly forks: number
+    readonly open_issues: number
+    readonly watchers: number
+    readonly default_branch: string
+    readonly temp_clone_token: string
+    readonly organization: User
+    readonly network_count: number
+    readonly subscribers_count: number
+}
+
+interface Asset {
+    readonly id: number
+    readonly node_id: string
+    readonly url: string
+    readonly name: string
+    readonly label: string
+    readonly uploader: User
+    readonly content_type: string
+    readonly state: string
+    readonly size: number
+    readonly download_count: number
+    readonly created_at: string
+    readonly updated_at: string
+    readonly browser_download_url: string
+}
+
+interface Release {
+    readonly id: number
+    readonly node_id: string
+    readonly url: string
+    readonly assets_url: string
+    readonly upload_url: string
+    readonly html_url: string
+    readonly tag_name: string
+    readonly target_commitish: string
+    readonly name: string
+    readonly draft: boolean
+    readonly author: User
+    readonly prerelease: boolean
+    readonly created_at: string
+    readonly published_at: string
+    readonly assets: [Asset]
+    readonly tarball_url: string
+    readonly zipball_url: string
+    readonly body: string
+}

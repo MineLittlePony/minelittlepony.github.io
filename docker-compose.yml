@@ -1,0 +1,11 @@
+version: "2.0"
+services:
+  web:
+    image: jekyll/jekyll:3.8
+    volumes:
+      - .:/srv/jekyll
+      - ./vendor/bundle:/usr/local/bundle
+    command: jekyll serve -w -I --force_polling --livereload --livereload-port 4001
+    ports:
+      - 4000:4000
+      - 4001:4001
