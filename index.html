@@ -60,45 +60,7 @@ permalink: "/"
     {% endfor %}
 </div>
 
-<script>
-    fetch('https://api.github.com/repos/MineLittlePony/MineLittlePony/releases')
-        .then(r => r.json())
-        .then(function (json) {
-            json = json.filter(item => item.target_commitish == 'master');
-
-            let lastVersion = '0';
-            let release = null;
-            let prerelease = null;
-
-            for (let item of json) {
-                if (lastVersion <= (lastVersion = item.tag_name.substr(0, item.tag_name.lastIndexOf('.')))) {
-                    if (item.prerelease) {
-                        if (!prerelease) prerelease = item;
-                    } else {
-                        release = item;
-                        break;
-                    }
-                }
-            }
-
-            let download_link = document.querySelector('#intro .link.download.release');
-
-            download_link.removeAttribute('target');
-            download_link.setAttribute('data-version', release.tag_name.substr(0, release.tag_name.length - 2));
-            download_link.href = release.html_url;
-
-            if (prerelease) {
-                let pre_link = document.querySelector('#intro .link.download.beta');
-
-                pre_link.removeAttribute('hidden');
-                pre_link.setAttribute('data-version', prerelease.tag_name.substr(0, prerelease.tag_name.lastIndexOf('.')));
-                pre_link.href = prerelease.html_url;
-            }
-        });
-</script>
-
+<script src="/js/release.js"></script>
 <!-- BatEEEE -->
-
-<script src="../js/BatEEEE.js"></script>
-
+<script src="/js/BatEEEE.js"></script>
 <!-- Shhh don't worry about this, it's a special EEEEaster EEEEgg - Zombie -->
