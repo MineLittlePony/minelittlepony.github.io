@@ -1,6 +1,14 @@
 # Mine Little Pony mod site
 
-To run this site on your local machine, install [Jekyll](https://jekyllrb.com), go to the site directory and enter command `bundle exec jekyll serve`
+## Development Setup
+
+Requires: Ruby and the Gem package manager
+
+To install run `bundle install`
+
+To update run `bundle update`
+
+To launch run `bundle exec jekyll serve`
 
 ## Data files
 Most of the data are stored in `yml` files which are placed in `_data` directory of the repository.
