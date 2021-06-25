@@ -51,7 +51,7 @@ function getReleaseVersion(repoName, releaseLink, betaLink) {
 }
 
 getReleaseVersion('MineLittlePony',
- document.querySelector('#intro .link.download.release')
+ document.querySelector('#intro .link.download.release'),
  document.querySelector('#intro .link.download.beta'));
 getReleaseVersion('HDSkins',
  document.querySelector('#intro .link.download.hdskins'));
