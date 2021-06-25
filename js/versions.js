@@ -1,6 +1,6 @@
 
 function getReleaseVersion(repoName, releaseLink, betaLink) {
-  fetch('https://api.github.com/repos/MineLittlePony/MineLittlePony/releases')
+  fetch(`https://api.github.com/repos/MineLittlePony/${repoName}/releases`)
     .then(r => r.json())
     .then(versions => {
       versions = versions
@@ -8,7 +8,7 @@ function getReleaseVersion(repoName, releaseLink, betaLink) {
         .map(item => {
           return {
             preview: item.prerelease,
-            version: release.tag_name,
+            version: item.tag_name,
             mc: extractMcVersion(item),
             url: item.html_url
           };
