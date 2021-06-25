@@ -75,8 +75,14 @@
       &.hdskins
         border-top: 5px solid royalblue
 
-      &[data-version]::after
-        content: 'for ' attr(data-version)
+      &::before
+        content: attr(data-text)
+
+      &[data-version]::before
+        content: attr(data-text) ' (' attr(data-version) ')'
+
+      &[data-mc]::after
+        content: 'for ' attr(data-mc)
 
         font-size: 1rem
         font-weight: normal
