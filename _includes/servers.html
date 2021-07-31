@@ -1,7 +1,7 @@
 <script type="application/javascript" src="/js/servers.js" async defer></script>
 <div id="servers">
     {% for server in site.data.servers %}
-    <a {% if server.web %}href="{{server.web}}"{% endif %}>
+    <a {% if server.web %}href="{{server.web}}"{% endif %} target="_blank">
         <div class="server" data-ip="{{server.ip}}" data-name="{{server.name}}">
             <div>
                 {{server.name}}<br/>
