@@ -1,0 +1,13 @@
+- name: Hypixel
+  web: https://hypixel.net/
+  ip: mc.hypixel.net
+- name: Pony Condordia
+  web: https://www.planetminecraft.com/server/concorida/
+  ip: mc.ponyconcordia.com
+- name: Pixel Ponies
+  web: http://pixelponies.moe/wp/
+  ip: mc.pixelponies.moe
+- name: Pony Arcade
+  web: https://poniarcade.com/
+  ip: play.poniarcade.com
+

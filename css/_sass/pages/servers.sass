@@ -1,0 +1,46 @@
+#servers
+  width: 425px
+  border: solid 2px #aaa
+  margin: 1em
+
+  a
+    width: 100%
+
+    &:link
+      text-decoration: none
+
+  .server
+    display: flex
+    color: white
+    background-color: #555
+    width: 100%
+    height: 75px
+    font-family: UnifontMedium, Helvetica, sans-serif
+    font-weight: normal
+    font-style: normal
+    border: .25em solid #333
+
+    img
+      width: 75px
+      height: 75px
+
+    &:hover
+      border-color: #aaa
+
+      .server-content > .server-info
+        display: block
+
+      .server-content > .server-motd
+        display: none
+
+    .server-error
+      color: red
+
+    .server-info
+      display: none
+
+    .server-motd
+      display: block
+
+    .server-content
+      margin: .5em
