@@ -12,6 +12,4 @@ Mine Little Pony or HDSkins.
 Remember that neither of these mods are required
 to be present on the server to use the full functionality.
 
-**Note: Server list functionality is WIP. Some servers are used as test data.**
-
 {% include servers.html %}
