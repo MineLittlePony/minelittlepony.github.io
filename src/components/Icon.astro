@@ -1,0 +1,12 @@
+---
+export interface Props {
+  className: string
+  prefix: string
+  icon: string
+  style?: string
+}
+
+const Props = Astro.props as Props
+---
+
+<i class={`${Props.className} ${Props.prefix} fa-${Props.icon}`} style={Props.style}></i>

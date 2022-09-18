@@ -1,0 +1,46 @@
+---
+import IconButton from '../IconButton.astro';
+---
+
+<div class="input-form">
+  <div class="input-form__error"></div>
+
+  <form class="input-form__form">
+    <input type="file" class="input-form__file" accept="image/png" hidden />
+
+    <input type="text" class="input-form__nickname" placeholder="Enter nickname or open file" />
+
+    <IconButton className="input-form__submit" type="submit" prefix="fas" icon="magnifying-glass"
+      title="Search for skin" />
+
+    <IconButton className="input-form__open" type="button" prefix="fas" icon="folder" title="Open file from device" />
+
+    <IconButton className="input-form__save" type="button" prefix="fas" icon="floppy-disk"
+      title="Save file to device" />
+
+    <IconButton className="input-form__reset" type="button" prefix="fas" icon="rotate-right" title="Reset the image" />
+  </form>
+</div>
+
+<style lang="scss">
+  .input-form {
+    $root: &;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+
+    &__error {
+      color: tomato;
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    &__form {
+      display: flex;
+      gap: calc(var(--margin) / 2)
+    }
+  }
+</style>

@@ -1,0 +1,31 @@
+---
+export interface Props {
+  id: string
+  label: string
+}
+
+const Props = Astro.props as Props
+const id = `checkbox--${Props.id}`
+---
+
+<div class="checkbox">
+  <input {id} class="checkbox__input" type="checkbox" />
+  <label class="checkbox__label" for={id}>{Props.label}</label>
+</div>
+
+<style lang="scss">
+  .checkbox {
+    height: var(--input-height);
+
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    &__input {
+      font: inherit;
+
+      width: 1em;
+      height: 1em;
+    }
+  }
+</style>

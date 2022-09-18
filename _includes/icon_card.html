@@ -1,8 +1,0 @@
-{% assign path = '/assets/' | append: include.root | append: '/' %}
-
-<div class="card icon">
-  <img class="banner" src="{{ path | append: include.card.header | append: '.png' | relative_url }}">
-  <img class="icon"   src="{{ path | append: include.card.icon   | append: '.png' | relative_url }}" style="background:{{ include.card.color }};">
-  <h2  class="title">{{ include.card.title }}</h2>
-  <div class="content">{{ include.card.description }}</div>
-</div>

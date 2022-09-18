@@ -1,9 +1,0 @@
-<menu>
-    {% for link in site.data.menu %}
-        {% if page.permalink == link.permalink %}
-            <span>{{ link.title }}</span> <!-- You are here! -->
-        {% else %}
-            <a href="{{ link.permalink | relative_url }}">{{ link.title }}</a>
-        {% endif %}
-    {% endfor %}
-</menu>

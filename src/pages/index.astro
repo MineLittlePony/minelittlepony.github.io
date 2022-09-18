@@ -1,0 +1,108 @@
+---
+import Extra from '@/components/home/Extra.astro';
+import Feature from '@/components/home/Feature.astro';
+import Hero from '@/components/home/Hero.astro';
+import Extras from '@/data/cards/extra';
+import Features from '@/data/cards/features';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Home" menuEntry="Home">
+  <Hero />
+
+  <div class="home-content">
+    <div class="features">
+      {Features.map((feature) => (
+      <Feature {...feature} />
+      ))}
+    </div>
+  </div>
+
+  <div class="home-footer">
+    <h3 class="footer__title">Extra downloads for better experience:</h3>
+
+    <div class="extras">
+      {Extras.map((extra) => (
+      <Extra {...extra} />
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import '@/scripts/pages/home'
+</script>
+
+<style lang="scss">
+  :root {
+    --hero-clip-height: 50px;
+  }
+
+  :global(.body-content__main) {
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  .home-content,
+  .home-footer {
+    padding: var(--gutter);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: center;
+    }
+  }
+
+  .home-footer {
+    background: #3a3a3a;
+    color: white;
+  }
+
+  :global(footer) {
+    background: #323232 !important;
+    border-top: 0;
+
+    &::before {
+      content: unset !important;
+    }
+  }
+
+  .features {
+    --features-columns: 1;
+
+    margin-top: calc(-1 * var(--hero-clip-height) - var(--gutter));
+
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(var(--features-columns), 1fr);
+    gap: var(--margin);
+  }
+
+  .extras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--margin);
+    justify-content: center;
+  }
+
+  @media (min-width: 700px) {
+    .features {
+      --features-columns: 2;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .features {
+      --features-columns: 3;
+    }
+  }
+</style>

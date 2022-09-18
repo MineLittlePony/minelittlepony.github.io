@@ -1,0 +1,16 @@
+<div class="preview">
+  <canvas class="preview__output"></canvas>
+</div>
+
+<style lang="scss">
+  .preview {
+    &__output {
+      background: var(--checker-texture) top left / calc(100% / 32);
+      box-shadow: var(--drop-shadow);
+      display: block;
+      image-rendering: pixelated;
+
+      width: 100%;
+    }
+  }
+</style>

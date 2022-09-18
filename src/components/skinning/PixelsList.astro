@@ -1,0 +1,18 @@
+---
+import Pixels from '@/data/pixels';
+import Pixel from './Pixel.astro';
+---
+
+<div class="pixels-list">
+  {Pixels.map((pixel) => (
+  <Pixel {...pixel} />
+  ))}
+</div>
+
+<style lang="scss">
+  .pixels-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+  }
+</style>

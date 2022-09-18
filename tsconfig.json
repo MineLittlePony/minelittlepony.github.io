@@ -1,0 +1,22 @@
+{
+  "extends": "@keupoz/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    // Enable top-level await, and other modern ESM features.
+    "target": "ESNext",
+    "module": "ESNext",
+    // Enable node-style module resolution, for things like npm package imports.
+    "moduleResolution": "node",
+    // Enable JSON imports.
+    "resolveJsonModule": true,
+    // Enable stricter transpilation for better output.
+    "isolatedModules": true,
+    "importsNotUsedAsValues": "error",
+    // Add type definitions for our Vite runtime.
+    "types": ["astro/client"],
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}

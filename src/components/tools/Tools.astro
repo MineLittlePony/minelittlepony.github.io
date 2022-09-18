@@ -1,0 +1,107 @@
+---
+import Pixels from "@/data/pixels";
+import Checkbox from "../Checkbox.astro";
+import FileInfo from "./FileInfo.astro";
+import InputForm from "./InputForm.astro";
+import Loader from "./Loader.astro";
+import Pixel from "./Pixel.astro";
+import Preview from "./Preview.astro";
+import SkinSize from "./SkinSize.astro";
+---
+
+<div class="tools is-loading">
+  <Loader />
+
+  <div class="tools__section">
+    <Preview />
+    <InputForm />
+  </div>
+
+  <div class="tools__section">
+    <table class="tools__options">
+      <!-- tr.option>(td.option__label{${1}}+td.option__content{${2}}) -->
+
+      <tr class="option">
+        <td class="option__label">File info</td>
+        <td class="option__content">
+          <FileInfo />
+        </td>
+      </tr>
+
+      <tr class="option">
+        <td class="option__label">Skin layout</td>
+        <td class="option__content">
+          <Checkbox id="tools-convert" label="Convert to modern square" />
+        </td>
+      </tr>
+
+      <tr class="option">
+        <td class="option__label">Skin size</td>
+        <td class="option__content">
+          <SkinSize />
+        </td>
+      </tr>
+
+      {
+        Pixels.map((pixel) => (
+          <tr class="option">
+            <td class="option__label">{pixel.label}</td>
+            <td class="option__content">
+              <Pixel {...pixel} />
+            </td>
+          </tr>
+        ))
+      }
+
+      <style lang="scss">
+        .tools {
+          position: relative;
+
+          &.is-loading {
+            overflow: hidden;
+          }
+
+          &,
+          &__section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--margin);
+          }
+
+          &__options {
+            border-collapse: collapse;
+            // Very important to make label of custom select shrink the text
+            // and to restrict tables from doing crazy things
+            table-layout: fixed;
+
+            width: 100%;
+          }
+
+          @media (min-width: 800px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+
+        .option {
+          background: none !important;
+          border-bottom: 1px solid rgba(black, 0.1);
+
+          td {
+            padding: calc(var(--margin) / 2) 0 !important;
+          }
+
+          &__label {
+            white-space: nowrap;
+          }
+
+          &__content {
+            width: 70%;
+          }
+        }
+      </style>
+
+
+    </table>
+  </div>
+</div>

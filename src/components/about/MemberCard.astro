@@ -1,0 +1,70 @@
+---
+import type { MemberInfo } from '@/data/cards/team';
+import SocialLink from './SocialLink.astro';
+
+export type Props = MemberInfo
+
+const Props = Astro.props as Props
+---
+
+<div class="member">
+  <img src={Props.avatar} alt={`${Props.name}'s avatar`} class="member__avatar" />
+
+  <div class="member__content">
+    <div class="member__title">
+      <span class="member__name">{Props.name}</span>
+
+      {Props.nickname !== undefined &&
+      <code class="member__nickname" title="Minecraft nickname">{Props.nickname}</code>
+      }
+    </div>
+
+    {Props.social!==undefined && <div class="member__social">
+      {Props.social.github !== undefined &&
+      <SocialLink className="member__github" prefix="fab" icon="github"
+        href={`https://github.com/${Props.social.github}`} title="GitHub" />}
+
+      {Props.social.twitter !== undefined &&
+      <SocialLink className="member__twitter" prefix="fab" icon="twitter"
+        href={`https://twitter.com/${Props.social.twitter}`} title="Twitter" />}
+
+      {Props.social.vk !== undefined &&
+      <SocialLink className="member__vk" prefix="fab" icon="vk" href={`https://vk.com/${Props.social.vk}`} title="VK" />
+      }
+    </div>}
+
+    <div class="member__description">{Props.description}</div>
+  </div>
+</div>
+
+<style lang="scss">
+  .member {
+    // 3 lines * line-height (1.5)
+    --avatar-size: 4.5em;
+
+    border: 1px solid #dedede;
+    border-radius: var(--border-radius);
+    padding: var(--margin);
+
+    display: flex;
+    gap: var(--margin);
+
+    &__avatar {
+      border-radius: 50%;
+      object-fit: cover;
+
+      width: var(--avatar-size);
+      height: var(--avatar-size);
+    }
+
+    &__title {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5em;
+    }
+
+    &__name {
+      font-weight: 700;
+    }
+  }
+</style>

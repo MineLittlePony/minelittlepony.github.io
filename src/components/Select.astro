@@ -1,0 +1,108 @@
+---
+import { SelectOption } from './SelectTypes';
+
+export interface Props {
+  max: number
+  options: SelectOption[]
+}
+
+const Props = Astro.props as Props
+---
+
+<div class="select" data-max={Props.max}>
+  <div class="select__label-wrapper input">
+    <div class="select__label">Not initialized</div>
+    <i class="select__icon fa-solid fa-angle-down"></i>
+  </div>
+
+  <div class="select__options">
+    {Props.options.map((option) => (
+    <div class="select__option" data-value={option.value}>{option.label}</div>
+    ))}
+  </div>
+</div>
+
+<style lang="scss">
+  .select {
+    $root: &;
+
+    user-select: none;
+
+    position: relative;
+
+    &__label-wrapper {
+      display: flex;
+      align-items: center;
+      gap: calc(var(--margin) / 2);
+    }
+
+    &__label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      flex: 1;
+    }
+
+    &__icon {
+      #{$root}.is-open & {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__options {
+      background: white;
+      border: 1px solid rgba(black, 0.1);
+      border-radius: var(--border-radius);
+      box-shadow: var(--drop-shadow);
+      overflow: auto;
+
+      max-height: calc(var(--input-height) * 7.5);
+      width: 100%;
+
+      position: absolute;
+      top: calc(100% + var(--margin) / 2);
+      left: 0;
+      z-index: 1;
+
+      display: none;
+      flex-direction: column;
+
+      #{$root}.is-open & {
+        display: flex;
+      }
+
+      #{$root}.is-reversed & {
+        flex-direction: column-reverse;
+
+        top: auto;
+        bottom: calc(100% + var(--margin) / 2);
+      }
+    }
+
+    &__option {
+      padding: 0 var(--margin);
+
+      line-height: var(--input-height);
+      height: var(--input-height);
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(black, 0.1);
+
+        #{$root}.is-reversed & {
+          border-top: 1px solid rgba(black, 0.1);
+          border-bottom: 0;
+        }
+      }
+
+      &:hover {
+        background: rgba(black, 0.1);
+      }
+
+      &.is-selected {
+        background: dodgerblue;
+        color: white;
+      }
+    }
+  }
+</style>

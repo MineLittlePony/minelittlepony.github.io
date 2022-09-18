@@ -1,0 +1,59 @@
+---
+import Icon from '@/components/Icon.astro'
+import type { FeatureCard } from '@/data/cards/features'
+
+export type Props = FeatureCard
+
+const Props = Astro.props as Props
+const content = await (Astro as any).__renderMarkdown(Props.content, { mode: 'md' }) as string
+const color = `#${(Props.color & 0xffffff).toString(16).padStart(6, '0')}`
+const iconStyle = `background-color: ${color};`
+---
+
+<div class="feature">
+  <img src={`/home/features/${Props.image}.png`} alt={`${Props.title} image`} class="feature__image">
+  <Icon className="feature__icon" prefix={Props.iconPrefix} icon={Props.iconName} style={iconStyle} />
+
+  <div class="feature__body">
+    <h4 class="feature__title">{Props.title}</h4>
+    <div class="feature__content" set:html={ content }></div>
+  </div>
+</div>
+
+<style lang="scss">
+  .feature {
+    --icon-size: 4.5rem;
+
+    box-shadow: var(--drop-shadow);
+    overflow: hidden;
+    text-align: center;
+
+    &__image {
+      width: 100%;
+    }
+
+    &__icon {
+      background: gray;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px white;
+      color: white;
+      display: block;
+      font-size: calc(var(--icon-size) / 2);
+      line-height: var(--icon-size);
+      margin: calc(var(--icon-size) / -2) auto 0;
+
+      height: var(--icon-size);
+      width: var(--icon-size);
+
+      position: relative;
+    }
+
+    &__body {
+      padding: var(--margin) var(--gutter);
+
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--margin) / 2);
+    }
+  }
+</style>

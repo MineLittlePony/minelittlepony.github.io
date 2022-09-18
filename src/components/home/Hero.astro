@@ -1,0 +1,153 @@
+---
+import Links from '@/data/links.json';
+import GitHubLink from './GitHubLink.astro';
+---
+
+<div class="hero">
+  <div class="hero__content">
+    <div class="hero__section">
+      <img src="/home/hero/image.png" alt="Hero banner" class="hero__image" />
+      <h2>Minecraft mod to ponify your world</h2>
+      <p>
+        Ponify everything, play with other ponies, kill angry pony zombies and
+        skeletons, trade with pony villagers and so on!
+      </p>
+    </div>
+
+    <div class="downloads hero__section">
+      <h2 class="downloads__title">Get the mod!</h2>
+
+      <div class="downloads__links">
+        <GitHubLink className="downloads__link downloads__link--release" repo={Links.modRepo} title="Download" />
+        <GitHubLink className="downloads__link downloads__link--prerelease" repo={Links.modRepo} title="Download Beta"
+          hidden />
+
+        <a href="https://fabricmc.net/use/installer/" class="downloads__link">Install Fabric</a>
+
+        <GitHubLink className="downloads__link downloads__link--hdskins" repo={Links.hdskinsRepo}
+          title="Download HD Skins" />
+      </div>
+
+      <div class="downloads__extra">
+        <a href={`${Links.modRepo}/releases`} class="downloads__extra-link">All releases</a>
+        <a href={Links.modRepo} class="downloads__extra-link">Source code</a>
+      </div>
+
+      <a href={Links.discordInvite} class="downloads__discord" title="Join our Discord server!">
+        <img src="/discord_logo.svg" alt="Discord logo" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "../../styles/mixins";
+
+  .hero {
+    background: url("/home/hero/pattern.png") #202020;
+    clip-path: polygon(0 var(--hero-clip-height),
+        100% 0,
+        100% 100%,
+        0 calc(100% - var(--hero-clip-height)));
+    color: white;
+    padding: var(--hero-clip-height) 0;
+
+    &.secret-solved {
+      background: url("/home/hero/batbanner.svg") no-repeat 0 0 / cover;
+    }
+
+    &.secret-solved &__image {
+      visibility: hidden;
+    }
+
+    &__content,
+    &__section {
+      display: flex;
+      flex-direction: column;
+      gap: var(--margin);
+    }
+
+    &__content {
+      padding: var(--gutter);
+
+      @media (min-width: 800px) {
+        display: grid;
+        gap: var(--gutter);
+        grid-template-columns: 1fr 350px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+
+  .downloads {
+    &__title {
+      text-align: center;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--margin) / 2);
+    }
+
+    &__extra {
+      display: flex;
+      gap: 0.5em;
+      justify-content: center;
+    }
+
+    &__link {
+      background: rgba(white, 0.9);
+      color: black;
+      display: block;
+      font-size: 1.25em;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none !important;
+      padding: calc(var(--margin) / 2) var(--margin);
+      transition: background 100ms;
+
+      &:first-child {
+        @include mixins.pastelstripe;
+
+        font-size: 1.5em;
+      }
+
+      @include mixins.hover {
+        background: white;
+      }
+    }
+
+    &__extra-link {
+      color: inherit;
+      border-bottom: 1px dashed;
+      opacity: 0.75;
+      text-decoration: none !important;
+
+      @include mixins.hover {
+        border-bottom-style: solid;
+        opacity: 1;
+      }
+    }
+
+    &__discord {
+      opacity: 0.8;
+      transition: opacity 100ms;
+
+      align-self: center;
+
+      @include mixins.hover {
+        opacity: 1;
+      }
+
+      img {
+        pointer-events: none;
+
+        height: 4em;
+      }
+    }
+  }
+</style>

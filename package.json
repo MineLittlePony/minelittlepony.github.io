@@ -1,0 +1,33 @@
+{
+  "name": "@minelittlepony/website",
+  "version": "1.0.0",
+  "description": "Source code of official Mine Little pony Minecraft mod website",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check && tsc --noEmit"
+  },
+  "dependencies": {
+    "@keupoz/typed-event-dispatcher": "^1.0.3",
+    "file-saver": "^2.0.5"
+  },
+  "devDependencies": {
+    "@astrojs/mdx": "^0.8.1",
+    "@keupoz/typescript-config": "^1.5.0",
+    "@octokit/types": "^6.40.0",
+    "@types/file-saver": "^2.0.5",
+    "@types/node": "^18.6.4",
+    "astro": "^1.0.0-beta.73",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.0.1",
+    "remark-gfm": "^3.0.1",
+    "remark-smartypants": "^2.0.0",
+    "remark-toc": "^8.0.1",
+    "sass": "^1.52.3",
+    "ts-standard": "^11.0.0",
+    "typescript": "^4.7.4"
+  }
+}

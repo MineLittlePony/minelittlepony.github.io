@@ -1,0 +1,35 @@
+@use "mixins";
+
+.heading-anchor {
+  color: #7f7f7f;
+  margin-right: 0.25em;
+
+  @include mixins.hover {
+    color: dodgerblue;
+  }
+}
+
+p img {
+  display: block;
+  margin: 0 auto;
+
+  max-width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: var(--margin);
+  }
+}
+
+table {
+  align-self: flex-start;
+  width: auto;
+
+  tbody tr:nth-child(odd) {
+    background: #eee;
+  }
+
+  th,
+  td {
+    padding: 5px 10px;
+  }
+}

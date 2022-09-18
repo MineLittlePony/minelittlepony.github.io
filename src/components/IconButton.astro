@@ -1,0 +1,25 @@
+---
+import Icon from './Icon.astro'
+
+export interface Props {
+  className: string
+  type: astroHTML.JSX.ButtonHTMLAttributes['type']
+  prefix: string
+  icon: string
+  title: string
+}
+
+const Props = Astro.props as Props
+---
+
+<button class={`icon-button ${Props.className}`} type={Props.type} title={Props.title}>
+  <Icon className="icon-button__icon" prefix={Props.prefix} icon={Props.icon} />
+</button>
+
+<style lang="scss">
+  .icon-button {
+    padding: 0;
+
+    min-width: var(--input-height);
+  }
+</style>

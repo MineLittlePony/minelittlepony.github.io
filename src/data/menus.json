@@ -1,0 +1,11 @@
+{
+  "main": [
+    { "title": "Home", "path": "/" },
+    { "title": "Installation", "path": "/installation/" },
+    { "title": "Skinning", "path": "/skinning/" },
+    { "title": "Legacy", "path": "/legacy/" },
+    { "title": "Tools", "path": "/tools/" },
+    { "title": "FAQ", "path": "/faq/" },
+    { "title": "About", "path": "/about/" }
+  ]
+}

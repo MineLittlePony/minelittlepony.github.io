@@ -1,0 +1,63 @@
+@use "mixins";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+
+@import "variables";
+
+@import "common";
+@import "inputs";
+@import "markdown";
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: whitesmoke;
+  font-family: "Roboto Slab";
+  line-height: 1.5;
+}
+
+.body-content,
+footer,
+.nav__link {
+  @include mixins.pastelstripe;
+}
+
+.body-content {
+  background: white;
+  box-shadow: var(--box-shadow);
+  margin: 0 auto;
+
+  min-height: 100vh;
+  max-width: var(--max-content-width);
+
+  position: relative;
+
+  &,
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__wrapper,
+  &__main {
+    flex-grow: 1;
+  }
+
+  &__main {
+    padding: var(--gutter);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+  }
+}

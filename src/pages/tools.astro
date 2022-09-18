@@ -1,0 +1,29 @@
+---
+import Tools from '@/components/tools/Tools.astro';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Tools" menuEntry="Tools" description="A collection of various tools to edit your skin">
+  <noscript>
+    <blockquote>
+      <p>You have to enable JavaScript in order to use this page</p>
+    </blockquote>
+  </noscript>
+
+  <blockquote>
+    <p>This page contains skin retriever, resizer, and pixels editor.</p>
+
+    <ul>
+      <li>Maximum skin size is 1024x1024</li>
+      <li>Skin retriever only loads skins from our server</li>
+      <li>Drag'n'drop and shortcuts (<code>Ctrl+O</code> and <code>Ctrl+S</code>) supported</li>
+      <li>Skins can only be converted to modern square pony layout</li>
+    </ul>
+  </blockquote>
+
+  <Tools />
+</Layout>
+
+<script>
+  import '@/scripts/pages/tools'
+</script>

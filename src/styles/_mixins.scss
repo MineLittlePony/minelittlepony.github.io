@@ -1,0 +1,25 @@
+@mixin pastelstripe {
+  border-top: var(--pastel-stripe-height) solid transparent;
+
+  position: relative;
+
+  &::before {
+    content: "";
+
+    background: var(--pastel-stripe-background);
+    image-rendering: pixelated;
+    pointer-events: none;
+
+    height: var(--pastel-stripe-height);
+
+    position: absolute;
+    inset: auto 0 100%;
+  }
+}
+
+@mixin hover {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}

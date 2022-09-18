@@ -1,68 +1,42 @@
-# Mine Little Pony mod site
+# Welcome to [Astro](https://astro.build)
 
-## Development Setup
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/starter)
 
-Requires: Ruby and the Gem package manager
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-To install run `bundle install`
+## 🚀 Project Structure
 
-To update run `bundle update`
+Inside of your Astro project, you'll see the following folders and files:
 
-To launch run `bundle exec jekyll serve`
-
-## Data files
-Most of the data are stored in `yml` files which are placed in `_data` directory of the repository.
-List of data files:
-- `menu` - list of links in menu on top of pages
-- `cards` - list of cards which are placed on the main page of the site
-- `faq` - list of questions and answers on FAQ page
-- `pixels` - pixels data for skinning guide
-
-## Data structure
-### Menu
-```yaml
-- permalink: "/absolute/path/to/page" # this must be the same as in front matter of page
-  title: "Name in menu"
+```
+/
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-### Cards
-All cards are placed on the main page of the site
-There are two types of cards: `features` and `links`. `features` cards show the mod's features, `links` cards are placed at the bottom of the main page
-```yaml
-features:
-    - title: "Name of a card"
-      description: "Card text"
-      color: "#1fb6f2"      # color of icon background
-      header: "headerimage" # filename without extension of picture placed in /assets/home/*.png
-      icon: "iconimage"     # filename without extension of picture placed in /assets/home/*.png
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-links:
-    - header: "headerimage"
-      hidden: true   # use it to hide the card
-      download: true # use it to make a downloadable link
-      url: "url"
-      color: "#1fb6f2"  # color of card's button
-      label: "Click me" # label of the button
-      description: "Card text"
-```
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components or layouts.
 
-### FAQ
-```yaml
-# Markdown syntax supported
-- question: "How do I get my skin?"
-  answer: "You can do it [here](:rel:/tools/#retriever)"
-  # Above is an example of adding relative links to the answer
-  # Just use regular link syntax but add :rel: before url
-```
+Any static assets, like images, can be placed in the `public/` directory.
 
-### Pixels
-```yaml
-- name: "Trigger pixel name"
-  description: "Pixel description"
-  pixels:
-    - color: "#f9b131" # acceptable color; may be empty if color is not required
-      description: "Description of the color"
-```
+## 🧞 Commands
 
-## First development history
-To see history of development of Jekyll remake before pushing it to official repository, go [here](https://github.com/keupoz/MineLPSite)
+All commands are run from the root of the project, from a terminal:
+
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm install`     | Installs dependencies                        |
+| `npm run dev`     | Starts local dev server at `localhost:3000`  |
+| `npm run build`   | Build your production site to `./dist/`      |
+| `npm run preview` | Preview your build locally, before deploying |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).

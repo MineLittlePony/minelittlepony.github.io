@@ -1,0 +1,37 @@
+---
+import { parseGitHubUrl } from '@/scripts/utils/github'
+
+export interface Props {
+  className: string
+  repo: string
+  title: string
+  hidden?: boolean
+}
+
+const Props = Astro.props as Props
+const Repo = parseGitHubUrl(Props.repo)
+const classList = ['github-link', Props.className]
+
+if (Props.hidden === true) {
+  classList.push('is-hidden')
+}
+---
+
+<a href={`https://github.com/${Repo.owner}/${Repo.name}/releases`} class:list={classList} data-owner={Repo.owner}
+  data-name={Repo.name}>{Props.title}</a>
+
+<style lang="scss">
+  .github-link {
+    &.is-hidden {
+      display: none;
+    }
+
+    &[data-version]::after {
+      content: " v" attr(data-version) " for " attr(data-mc);
+
+      color: #7f7f7f;
+      font-size: 0.75em;
+      vertical-align: super;
+    }
+  }
+</style>

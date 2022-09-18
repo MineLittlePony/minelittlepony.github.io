@@ -1,0 +1,190 @@
+---
+import Menus from '@/data/menus.json';
+
+export interface Props {
+  menuEntry?: string | undefined
+}
+
+const Props = Astro.props as Props
+
+const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
+---
+
+<header class="header">
+  <div class="header__logo">
+    <a href="/">
+      <img src="/logo.png" alt="Mine Little Pony logo">
+    </a>
+  </div>
+
+  <input id="nav-state" type="checkbox" />
+
+  <label class="header__bars" for="nav-state">
+    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-xmark"></i>
+  </label>
+
+  <nav class="header__nav nav">
+    {Menus.main.map(({ title, path }) => (
+    <a class:list={ ['nav__link', { 'nav__link--current' : isCurrentMenuEntry(title) }] } href={ path }>
+      { title }
+    </a>
+    ))}
+  </nav>
+</header>
+
+<style lang="scss">
+  @use '../styles/mixins';
+
+  .header {
+    user-select: none;
+
+    height: var(--header-height);
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo {
+      padding: calc(var(--margin) / 3) var(--gutter);
+      height: 100%;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    &__bars {
+      color: #323232;
+      cursor: default;
+      font-size: 1.5rem;
+      transition: color 100ms;
+
+      width: 4rem;
+      height: 4rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mixins.hover {
+        color: var(--primary-color);
+      }
+
+      .fa-xmark {
+        display: none;
+      }
+
+      #nav-state:checked~& {
+        .fa-bars {
+          display: none;
+        }
+
+        .fa-xmark {
+          display: block;
+        }
+      }
+    }
+
+    &__nav {
+      background: white;
+      box-shadow: var(--drop-shadow);
+      font-weight: bold;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 100ms;
+
+      position: absolute;
+      inset: 100% 0 auto;
+      z-index: 10;
+
+      display: flex;
+      flex-direction: column;
+
+      #nav-state:checked~& {
+        opacity: 1;
+        pointer-events: unset;
+      }
+    }
+  }
+
+  .nav__link {
+    border-top: none !important;
+    color: #323232;
+    display: block;
+    padding: var(--margin) var(--gutter);
+    text-decoration: none !important;
+    transition: background-color 100ms, color 100ms;
+
+    @include mixins.hover {
+      background: rgba(var(--primary-color-rgb), 0.75);
+      color: white;
+    }
+
+    &--current {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    &::before {
+      transition: height 100ms;
+
+      height: 0 !important;
+
+      inset: auto 0 0 !important;
+    }
+  }
+
+  #nav-state {
+    display: none;
+  }
+
+  @media (min-width: 950px) {
+    .header {
+      --navigation-height: 3rem;
+      --header-height: 6rem;
+
+      &__bars {
+        display: none;
+      }
+
+      &__nav {
+        background: none;
+        box-shadow: none;
+        margin-right: var(--gutter);
+        opacity: 1;
+        pointer-events: unset;
+
+        width: auto;
+
+        position: static;
+
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .nav__link {
+      padding: 0 var(--gutter);
+
+      line-height: var(--navigation-height);
+
+      &:not(:last-child) {
+        border-right: 2px solid #dedede;
+      }
+
+      &:hover,
+      &:focus,
+      &--current {
+        color: inherit;
+        background: none;
+
+        &::before {
+          height: var(--pastel-stripe-height) !important;
+        }
+      }
+    }
+  }
+</style>
