@@ -12,6 +12,7 @@ export interface InputFormEvents {
 export class InputForm extends Component<InputFormEvents> {
   public static readonly CLASS_NAME = 'input-form'
 
+  private readonly warning = this.getElement('warning', HTMLElement, true)
   private readonly error = this.getElement('error', HTMLElement, true)
   private readonly file = this.getElement('file', HTMLInputElement, true)
   private readonly form = this.getElement('form', HTMLFormElement, true)
@@ -116,6 +117,10 @@ export class InputForm extends Component<InputFormEvents> {
         void this.handleFile(file)
       }
     })
+  }
+
+  public setWarning (message: string): void {
+    this.warning.innerText = message
   }
 
   private setBusy (busy = true): void {

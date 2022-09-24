@@ -24,7 +24,7 @@ export class Tools extends Component {
   constructor (options: ComponentOptions) {
     super(options)
 
-    this.skinSize.setMaxSize(1024)
+    this.skinSize.setMaxSize(8192)
     this.convert.disable()
 
     for (const pixel of this.pixels) {
@@ -67,6 +67,12 @@ export class Tools extends Component {
     })
 
     this.skinSize.on('input', (sizeShift) => {
+      if (sizeShift > 4) {
+        this.inputForm.setWarning('You\'ve selected officially unsupported skin size')
+      } else {
+        this.inputForm.setWarning('')
+      }
+
       this.preview.resize(sizeShift)
 
       const [width, height] = this.preview.getSize()
@@ -84,6 +90,10 @@ export class Tools extends Component {
 
     this.fileInfo.setSize(width, height)
     this.skinSize.setSize(width)
+
+    if (width > 1024) {
+      this.inputForm.setWarning('Your skin size is officially unsupported')
+    }
 
     this.convert.setChecked(false)
     this.convert.disable(!this.preview.isConvertable())

@@ -3,6 +3,7 @@ import IconButton from "../IconButton.astro";
 ---
 
 <div class="input-form">
+  <div class="input-form__warning"></div>
   <div class="input-form__error"></div>
 
   <form class="input-form__form">
@@ -56,12 +57,33 @@ import IconButton from "../IconButton.astro";
     flex-direction: column;
     gap: var(--margin);
 
+    &__warning,
     &__error {
-      color: tomato;
+      --color: 239, 239, 239;
+
+      background: rgba(var(--color), 0.25);
+      border: 1px solid rgb(var(--color));
+      border-radius: var(--border-radius);
+      color: rgb(var(--color));
+      padding: 0 var(--margin);
+
+      min-height: var(--input-height);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       &:empty {
         display: none;
       }
+    }
+
+    &__warning {
+      --color: 218, 165, 32;
+    }
+
+    &__error {
+      --color: 255, 99, 71;
     }
 
     &__form {
