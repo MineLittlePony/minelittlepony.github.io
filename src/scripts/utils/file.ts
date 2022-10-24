@@ -1,6 +1,6 @@
 import { removeICC } from './icc'
 
-const SKINS_URL = 'https://keupoz.herokuapp.com/ponyskins/valhalla/%s'
+const SKINS_URL = 'https://minelp.deno.dev/skin/exact/valhalla/%s'
 
 let controller: AbortController | null = null
 
