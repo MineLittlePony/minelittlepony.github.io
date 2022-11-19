@@ -1,10 +1,15 @@
 ---
 import type { MemberInfo } from '@/data/cards/team';
+import SocialSites from '@/data/cards/socials';
 import SocialLink from './SocialLink.astro';
 
 export type Props = MemberInfo
 
 const Props = Astro.props as Props
+
+// Object.entries doesn't provide good key generics
+type EntriesFn = <T>(obj: T) => [keyof T, NonNullable<T[keyof T]>][]
+const entries: EntriesFn = Object.entries
 ---
 
 <div class="member">
@@ -20,17 +25,13 @@ const Props = Astro.props as Props
     </div>
 
     {Props.social!==undefined && <div class="member__social">
-      {Props.social.github !== undefined &&
-      <SocialLink className="member__github" prefix="fab" icon="github"
-        href={`https://github.com/${Props.social.github}`} title="GitHub" />}
-
-      {Props.social.twitter !== undefined &&
-      <SocialLink className="member__twitter" prefix="fab" icon="twitter"
-        href={`https://twitter.com/${Props.social.twitter}`} title="Twitter" />}
-
-      {Props.social.vk !== undefined &&
-      <SocialLink className="member__vk" prefix="fab" icon="vk" href={`https://vk.com/${Props.social.vk}`} title="VK" />
-      }
+      {entries(Props.social).map(([site, username]) => (
+      <SocialLink className={"member__" + site}
+        prefix="fab"
+        icon={SocialSites[site].icon}
+        href={SocialSites[site].url(username)}
+        title={SocialSites[site].title}
+      />))}
     </div>}
 
     <div class="member__description">{Props.description}</div>

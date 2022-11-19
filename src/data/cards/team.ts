@@ -1,13 +1,11 @@
+import type { Site } from "./socials";
+
 export interface MemberInfo {
   name: string
   description: string
   nickname?: string
   avatar: string
-  social?: {
-    github?: string
-    twitter?: string
-    vk?: string
-  }
+  social?: Partial<Record<Site, string>>
 }
 
 const Team: MemberInfo[] = [
