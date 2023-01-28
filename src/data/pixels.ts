@@ -94,8 +94,23 @@ const Pixels: PixelInfo[] = [
       { value: '32', label: 'Muffin' },
       { value: '64', label: 'Hat' },
       { value: '96', label: 'Antlers' },
-      { value: 'c8', label: 'Saddle Bags' },
+      { value: 'c6', label: 'Saddle Bags Left' },
+      { value: 'c7', label: 'Saddle Bags Right' },
+      { value: 'c8', label: 'Saddle Bags Both' },
       { value: 'fa', label: 'Stetson' }
+    ]
+  },
+  {
+    label: 'Tail shape',
+    determines: 'shape of your tail',
+    type: 'NORMAL',
+    x: 2,
+    y: 1,
+    options: [
+      { value: '000000', label: 'Straight' },
+      { value: 'fc539f', label: 'Bumpy' },
+      { value: '3eff22', label: 'Swirly' },
+      { value: '3308c7', label: 'Spiky' }
     ]
   }
 ]
