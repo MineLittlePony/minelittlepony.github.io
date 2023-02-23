@@ -25,22 +25,18 @@ export async function fetchReleases (owner: string, name: string): Promise<Relea
       Accept: 'application/vnd.github.v3+json'
     }
   })
+
+  const q = await fetch(`https://api.github.com/repos/${owner}/${name}/releases/latest`, {
+     headers: {
+       Accept: 'application/vnd.github.v3+json'
+     }
+  })
+
   const json = await r.json() as ReleasesReponse
+  const latestJson = await q.json()
 
-  let release: ReleaseInfo | null = null
-  let prerelease: ReleaseInfo | null = null
-
-  for (const value of json) {
-    if (value.prerelease && prerelease === undefined) {
-      prerelease = compileReleaseInfo(value)
-
-      continue
-    } else {
-      release = compileReleaseInfo(value)
-
-      break
-    }
-  }
+  let release = compileReleaseInfo(latestJson)
+  let prerelease = json.filter(value => value.prerelease).map(compileReleaseInfo)[0]
 
   return { release, prerelease }
 }
