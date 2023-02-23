@@ -11,6 +11,7 @@ export interface ReleaseInfo {
   prerelease: boolean
   version: string
   mcVersion: string
+  published_at: Date
   url: string
 }
 
@@ -36,7 +37,10 @@ export async function fetchReleases (owner: string, name: string): Promise<Relea
   const latestJson = await q.json()
 
   let release = compileReleaseInfo(latestJson)
-  let prerelease = json.filter(value => value.prerelease).map(compileReleaseInfo)[0]
+  let prerelease = json
+     .filter(value => value.prerelease)
+     .map(compileReleaseInfo)
+     .filter(value => value.published_at > release.published_at)[0]
 
   return { release, prerelease }
 }
@@ -46,6 +50,7 @@ function compileReleaseInfo (release: ReleasesReponse[number]): ReleaseInfo {
     prerelease: release.prerelease,
     version: release.tag_name,
     mcVersion: parseMCVersion(release),
+    published_at: new Date(release.published_at),
     url: release.html_url
   }
 }
