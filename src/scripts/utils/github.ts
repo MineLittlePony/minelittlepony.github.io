@@ -1,4 +1,4 @@
-import { Endpoints } from '@octokit/types'
+import type { Endpoints } from '@octokit/types'
 
 type ReleasesReponse = Endpoints['GET /repos/{owner}/{repo}/releases']['response']['data']
 
@@ -20,27 +20,35 @@ export interface Releases {
   prerelease: ReleaseInfo | null
 }
 
-export async function fetchReleases (owner: string, name: string): Promise<Releases> {
-  const r = await fetch(`https://api.github.com/repos/${owner}/${name}/releases`, {
+function interpolate(text: string, args: [string, unknown][]) {
+  for (const [key, val] of args) {
+    text = text.replace(`{${key}}`, String(val))
+  }
+  return text
+}
+
+async function fetchUrl<U extends keyof Endpoints>(url: U, args: Endpoints[U]["parameters"]): Promise<Endpoints[U]["response"]["data"]> {
+  let path = interpolate(url.split(" ", 2)[1]!, Object.entries(args))
+
+  const r = await fetch(`https://api.github.com${path}`, {
     headers: {
       Accept: 'application/vnd.github.v3+json'
     }
   })
+  return await r.json()
+}
 
-  const q = await fetch(`https://api.github.com/repos/${owner}/${name}/releases/latest`, {
-     headers: {
-       Accept: 'application/vnd.github.v3+json'
-     }
-  })
+export async function fetchReleases (owner: string, repo: string): Promise<Releases> {
+  const [json, latestJson] = await Promise.all([
+    fetchUrl("GET /repos/{owner}/{repo}/releases", {owner, repo}),
+    fetchUrl("GET /repos/{owner}/{repo}/releases/latest", {owner, repo}),
+  ])
 
-  const json = await r.json() as ReleasesReponse
-  const latestJson = await q.json()
-
-  let release = compileReleaseInfo(latestJson)
-  let prerelease = json
+  const release = compileReleaseInfo(latestJson)
+  const prerelease = json
      .filter(value => value.prerelease)
      .map(compileReleaseInfo)
-     .filter(value => value.published_at > release.published_at)[0]
+     .find(value => value.published_at > release.published_at) ?? null
 
   return { release, prerelease }
 }
@@ -50,7 +58,7 @@ function compileReleaseInfo (release: ReleasesReponse[number]): ReleaseInfo {
     prerelease: release.prerelease,
     version: release.tag_name,
     mcVersion: parseMCVersion(release),
-    published_at: new Date(release.published_at),
+    published_at: new Date(release.published_at!),
     url: release.html_url
   }
 }
