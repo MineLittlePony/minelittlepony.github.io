@@ -30,7 +30,7 @@ function interpolate(text: string, args: [string, unknown][]) {
 type GetEndpoints = keyof Endpoints & `GET ${string}`
 
 async function fetchUrl<U extends GetEndpoints>(url: U, args: Endpoints[U]["parameters"]): Promise<Endpoints[U]["response"]["data"]> {
-  let path = interpolate(url.split(" ", 2)[1]!, Object.entries(args))
+  const path = interpolate(url.split(" ", 2)[1]!, Object.entries(args))
 
   const r = await fetch(`https://api.github.com${path}`, {
     headers: {

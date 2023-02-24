@@ -26,7 +26,7 @@ export function getComponents<C extends Component> (type: ComponentType<C>, pare
   return roots.map((root) => new Component({ root, rootName: type.CLASS_NAME }))
 }
 
-export abstract class Component<Events = {}> extends EventDispatcher<Events> {
+export abstract class Component<Events = any> extends EventDispatcher<Events> {
   protected readonly root: HTMLElement
   protected readonly rootName: string
 
