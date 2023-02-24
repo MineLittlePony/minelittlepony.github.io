@@ -1,4 +1,4 @@
-import { SelectOption } from '@/components/SelectTypes'
+import type { SelectOption } from '@/components/SelectTypes'
 
 export interface PixelInfo {
   label: string
