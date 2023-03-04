@@ -37,7 +37,11 @@ async function fetchUrl<U extends GetEndpoints>(url: U, args: Endpoints[U]["para
       Accept: 'application/vnd.github.v3+json'
     }
   })
-  return await r.json()
+  const data = await r.json()
+  if (r.ok) {
+    return data
+  }
+  throw new Error(data.message)
 }
 
 export async function fetchReleases (owner: string, repo: string): Promise<Releases> {
