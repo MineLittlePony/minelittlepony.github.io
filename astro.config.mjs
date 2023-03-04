@@ -25,6 +25,9 @@ const autolinkOptions = {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://minelittlepony-mod.com/',
+  build: {
+    assets: "assets"
+  },
 
   integrations: [mdx({
     remarkPlugins: [remarkGfm, remarkSmartypants, remarkToc],
