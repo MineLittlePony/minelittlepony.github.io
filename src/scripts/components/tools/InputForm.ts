@@ -23,8 +23,8 @@ export class InputForm extends Component<InputFormEvents> {
   private readonly save = this.getComponent('save', IconButton)
   private readonly reset = this.getComponent('reset', IconButton)
 
-  public onSave = async (): Promise<void> => {}
-  public onReset = async (): Promise<void> => {}
+  public onSave = async (): Promise<void> => void {};
+  public onReset = async (): Promise<void> => void {}
 
   constructor (options: ComponentOptions) {
     super(options)

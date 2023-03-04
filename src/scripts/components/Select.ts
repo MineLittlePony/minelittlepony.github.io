@@ -5,14 +5,14 @@ export interface SelectEvents {
   change: string[]
 }
 
-let lastOpen: Select | null = null
-
 document.addEventListener('click', () => {
-  if (lastOpen !== null) lastOpen.close()
+  if (Select.lastOpen !== null) Select.lastOpen.close()
 })
 
 export class Select extends Component<SelectEvents> {
   public static readonly CLASS_NAME = 'select'
+
+  static lastOpen: Select | null = null;
 
   private readonly labelWrapper = this.getElement('label-wrapper', Element, true)
   private readonly label = this.getElement('label', HTMLElement, true)
@@ -79,15 +79,15 @@ export class Select extends Component<SelectEvents> {
     this.root.classList.remove('is-open')
     this.labelWrapper.classList.remove('focus')
 
-    if (lastOpen === this) lastOpen = null
+    if (Select.lastOpen === this) Select.lastOpen = null
   }
 
   public open (): void {
-    if (lastOpen !== null) lastOpen.close()
+    if (Select.lastOpen !== null) Select.lastOpen.close()
 
     this.root.classList.add('is-open')
     this.labelWrapper.classList.add('focus')
-    lastOpen = this
+    Select.lastOpen = this
 
     const rootRect = this.root.getBoundingClientRect()
     const optionsRect = this.options.getBoundingClientRect()

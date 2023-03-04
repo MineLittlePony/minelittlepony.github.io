@@ -1,10 +1,10 @@
-import { ReleaseInfo } from '@/scripts/utils/github'
+import type { ReleaseInfo } from '@/scripts/utils/github'
 import { Component } from '../Component'
 
 export class GitHubLink extends Component {
   public static readonly CLASS_NAME = 'github-link'
 
-  public getOwner (): string {
+  public get owner(): string {
     const owner = this.root.dataset['owner']
 
     if (owner === undefined) {
@@ -14,7 +14,7 @@ export class GitHubLink extends Component {
     return owner
   }
 
-  public getName (): string {
+  public get name(): string {
     const name = this.root.dataset['name']
 
     if (name === undefined) {
