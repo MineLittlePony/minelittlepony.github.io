@@ -26,7 +26,7 @@ const autolinkOptions = {
 export default defineConfig({
   site: 'https://minelittlepony-mod.com/',
   build: {
-    assets: "assets"
+    assets: 'assets'
   },
 
   integrations: [mdx({
