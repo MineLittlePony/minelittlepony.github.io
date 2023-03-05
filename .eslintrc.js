@@ -30,6 +30,15 @@ module.exports = {
     'no-undef': 'off',
     'no-redeclare': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off'
+    '@typescript-eslint/no-non-null-assertion': 'off',
+
+    // typescript false positives
+    'no-dupe-class-members': 'off',
+    '@typescript-eslint/no-dupe-class-members': 'error',
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error', {
+      functions: false,
+      classes: false
+    }]
   }
 }
