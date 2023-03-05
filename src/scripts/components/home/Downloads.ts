@@ -5,24 +5,24 @@ import { GitHubLink } from './GitHubLink'
 export class Downloads extends Component {
   public static readonly CLASS_NAME = 'downloads'
 
-  private readonly mods = ["minelp", "hdskins"];
+  private readonly mods = ['minelp', 'hdskins']
 
   constructor (options: ComponentOptions) {
-    super(options);
+    super(options)
 
     this.mods
       .map(this.getGithubLinkComponents)
       .forEach(async ([release, prerelease]) => {
-        const {owner, name} = release;
-        const releases = await fetchReleases(owner, name);
+        const { owner, name } = release
+        const releases = await fetchReleases(owner, name)
         if (releases.release !== null) {
-          release.setReleaseInfo(releases.release);
+          release.setReleaseInfo(releases.release)
         }
 
         if (prerelease && releases.prerelease !== null) {
-          prerelease.setReleaseInfo(releases.prerelease);
+          prerelease.setReleaseInfo(releases.prerelease)
         }
-      });
+      })
   }
 
   getGithubLinkComponents = (name: string) => {

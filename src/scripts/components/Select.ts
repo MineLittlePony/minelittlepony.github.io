@@ -12,7 +12,7 @@ document.addEventListener('click', () => {
 export class Select extends Component<SelectEvents> {
   public static readonly CLASS_NAME = 'select'
 
-  static lastOpen: Select | null = null;
+  static lastOpen: Select | null = null
 
   private readonly labelWrapper = this.getElement('label-wrapper', Element, true)
   private readonly label = this.getElement('label', HTMLElement, true)
@@ -26,7 +26,7 @@ export class Select extends Component<SelectEvents> {
   constructor (options: ComponentOptions) {
     super(options)
 
-    const max = parseInt(this.root.dataset['max'] ?? '1')
+    const max = parseInt(this.root.dataset.max ?? '1')
     this.max = isNaN(max) ? 1 : max
 
     this.initOptions()
@@ -55,7 +55,7 @@ export class Select extends Component<SelectEvents> {
   public setValue (value: string[]): void {
     this.selected.clear()
 
-    for (const [,option] of this.optionsMap) {
+    for (const [, option] of this.optionsMap) {
       const selected = value.includes(option.value)
       option.select(selected)
 
@@ -204,7 +204,7 @@ class SelectOption {
   }
 
   public static getValue (element: HTMLElement): string {
-    return element.dataset['value'] ?? element.innerText
+    return element.dataset.value ?? element.innerText
   }
 
   public isSelected (): boolean {

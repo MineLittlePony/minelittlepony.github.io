@@ -20,7 +20,7 @@ export interface Releases {
   prerelease: ReleaseInfo | null
 }
 
-function interpolate(text: string, args: [string, unknown][]) {
+function interpolate (text: string, args: [string, unknown][]) {
   for (const [key, val] of args) {
     text = text.replace(`{${key}}`, String(val))
   }
@@ -29,8 +29,8 @@ function interpolate(text: string, args: [string, unknown][]) {
 
 type GetEndpoints = keyof Endpoints & `GET ${string}`
 
-async function fetchUrl<U extends GetEndpoints>(url: U, args: Endpoints[U]["parameters"]): Promise<Endpoints[U]["response"]["data"]> {
-  const path = interpolate(url.split(" ", 2)[1]!, Object.entries(args))
+async function fetchUrl<U extends GetEndpoints> (url: U, args: Endpoints[U]['parameters']): Promise<Endpoints[U]['response']['data']> {
+  const path = interpolate(url.split(' ', 2)[1]!, Object.entries(args))
 
   const r = await fetch(`https://api.github.com${path}`, {
     headers: {
@@ -46,15 +46,15 @@ async function fetchUrl<U extends GetEndpoints>(url: U, args: Endpoints[U]["para
 
 export async function fetchReleases (owner: string, repo: string): Promise<Releases> {
   const [json, latestJson] = await Promise.all([
-    fetchUrl("GET /repos/{owner}/{repo}/releases", {owner, repo}),
-    fetchUrl("GET /repos/{owner}/{repo}/releases/latest", {owner, repo}),
+    fetchUrl('GET /repos/{owner}/{repo}/releases', { owner, repo }),
+    fetchUrl('GET /repos/{owner}/{repo}/releases/latest', { owner, repo })
   ])
 
   const release = compileReleaseInfo(latestJson)
   const prerelease = json
-     .filter(value => value.prerelease)
-     .map(compileReleaseInfo)
-     .find(value => value.published_at > release.published_at) ?? null
+    .filter(value => value.prerelease)
+    .map(compileReleaseInfo)
+    .find(value => value.published_at > release.published_at) ?? null
 
   return { release, prerelease }
 }

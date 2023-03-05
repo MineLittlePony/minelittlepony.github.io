@@ -1,6 +1,6 @@
 ---
-import type { MemberInfo } from '@/data/cards/team';
-import SocialLink from './SocialLink.astro';
+import type { MemberInfo } from '@/data/cards/team'
+import SocialLink from './SocialLink.astro'
 
 export type Props = MemberInfo
 
@@ -19,7 +19,7 @@ const Props = Astro.props as Props
       }
     </div>
 
-    {Props.social!==undefined && <div class="member__social">
+    {Props.social !== undefined && <div class="member__social">
       {Props.social.github !== undefined &&
       <SocialLink className="member__github" prefix="fab" icon="github"
         href={`https://github.com/${Props.social.github}`} title="GitHub" />}

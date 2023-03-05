@@ -23,7 +23,7 @@ export class InputForm extends Component<InputFormEvents> {
   private readonly save = this.getComponent('save', IconButton)
   private readonly reset = this.getComponent('reset', IconButton)
 
-  public onSave = async (): Promise<void> => void {};
+  public onSave = async (): Promise<void> => void {}
   public onReset = async (): Promise<void> => void {}
 
   constructor (options: ComponentOptions) {
@@ -146,7 +146,7 @@ export class InputForm extends Component<InputFormEvents> {
     this.setBusy(false)
   }
 
-  private async lockAndResolve<T>(promise: Promise<T>): Promise<T | null> {
+  private async lockAndResolve<T> (promise: Promise<T>): Promise<T | null> {
     this.error.innerText = ''
 
     try {

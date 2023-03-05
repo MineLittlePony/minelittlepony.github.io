@@ -1,6 +1,6 @@
 ---
-import type { PixelInfo } from '@/data/pixels';
-import Icon from '../Icon.astro';
+import type { PixelInfo } from '@/data/pixels'
+import Icon from '../Icon.astro'
 
 export type Props = PixelInfo
 
@@ -19,12 +19,12 @@ const Props = Astro.props as Props
 
   <div class="pixel__options">
     {Props.options.map((option) => {
-    const value = option.value.padStart(6, '0')
+      const value = option.value.padStart(6, '0')
 
-    return (<div class="pixel__option">
-      {value === '000000' ?
-      <Icon className="pixel__color-icon" prefix={'fas'} icon={'ban'} />
-      : <div class="pixel__color-preview" style={`background-color: #${value};`}></div>}
+      return (<div class="pixel__option">
+      {value === '000000'
+        ? <Icon className="pixel__color-icon" prefix={'fas'} icon={'ban'} />
+        : <div class="pixel__color-preview" style={`background-color: #${value};`}></div>}
 
       <code class="pixel__color-code">
         #{value === '000000' ? '------' : option.value}
