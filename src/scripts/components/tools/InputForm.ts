@@ -9,6 +9,8 @@ export interface InputFormEvents {
   }
 }
 
+const noop = () => Promise.resolve()
+
 export class InputForm extends Component<InputFormEvents> {
   public static readonly CLASS_NAME = 'input-form'
 
@@ -23,8 +25,8 @@ export class InputForm extends Component<InputFormEvents> {
   private readonly save = this.getComponent('save', IconButton)
   private readonly reset = this.getComponent('reset', IconButton)
 
-  public onSave = async (): Promise<void> => {}
-  public onReset = async (): Promise<void> => {}
+  public onSave = noop
+  public onReset = noop
 
   constructor (options: ComponentOptions) {
     super(options)
@@ -40,7 +42,7 @@ export class InputForm extends Component<InputFormEvents> {
       if (value.length === 0) {
         this.nickname.focus()
       } else {
-        void this.lockAndResolve(fetchSkin(value).then(this.processFile))
+        this.lockAndResolve(fetchSkin(value).then(this.processFile))
       }
     })
 
@@ -60,7 +62,7 @@ export class InputForm extends Component<InputFormEvents> {
           throw new Error('File is null')
         }
 
-        void this.handleFile(file).catch(this.handleError)
+        this.handleFile(file).catch(this.handleError)
       } catch (err) {
         this.handleError(err)
       }
@@ -76,13 +78,13 @@ export class InputForm extends Component<InputFormEvents> {
     this.save.addEventListener('click', (e) => {
       e.preventDefault()
 
-      void this.lockAndResolve(this.onSave())
+      this.lockAndResolve(this.onSave())
     })
 
     this.reset.addEventListener('click', (e) => {
       e.preventDefault()
 
-      void this.lockAndResolve(this.onReset())
+      this.lockAndResolve(this.onReset())
     })
 
     document.addEventListener('keydown', (e) => {
@@ -114,7 +116,7 @@ export class InputForm extends Component<InputFormEvents> {
       const file = e.dataTransfer.files.item(0)
 
       if (file !== null) {
-        void this.handleFile(file)
+        this.handleFile(file)
       }
     })
   }
@@ -146,7 +148,7 @@ export class InputForm extends Component<InputFormEvents> {
     this.setBusy(false)
   }
 
-  private async lockAndResolve<T>(promise: Promise<T>): Promise<T | null> {
+  private async lockAndResolve<T> (promise: Promise<T>): Promise<T | null> {
     this.error.innerText = ''
 
     try {

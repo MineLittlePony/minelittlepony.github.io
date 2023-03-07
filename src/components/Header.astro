@@ -1,5 +1,5 @@
 ---
-import Menus from '@/data/menus.json';
+import Menus from '@/data/menus.json'
 
 export interface Props {
   menuEntry?: string | undefined
@@ -26,7 +26,7 @@ const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
 
   <nav class="header__nav nav">
     {Menus.main.map(({ title, path }) => (
-    <a class:list={ ['nav__link', { 'nav__link--current' : isCurrentMenuEntry(title) }] } href={ path }>
+    <a class:list={ ['nav__link', { 'nav__link--current': isCurrentMenuEntry(title) }] } href={ path }>
       { title }
     </a>
     ))}

@@ -1,4 +1,4 @@
-import { Endpoints } from '@octokit/types'
+import type { Endpoints } from '@octokit/types'
 
 type ReleasesReponse = Endpoints['GET /repos/{owner}/{repo}/releases']['response']['data']
 
@@ -11,6 +11,7 @@ export interface ReleaseInfo {
   prerelease: boolean
   version: string
   mcVersion: string
+  published_at: Date
   url: string
 }
 
@@ -19,28 +20,41 @@ export interface Releases {
   prerelease: ReleaseInfo | null
 }
 
-export async function fetchReleases (owner: string, name: string): Promise<Releases> {
-  const r = await fetch(`https://api.github.com/repos/${owner}/${name}/releases`, {
+function interpolate (text: string, args: [string, unknown][]) {
+  for (const [key, val] of args) {
+    text = text.replace(`{${key}}`, String(val))
+  }
+  return text
+}
+
+type GetEndpoints = keyof Endpoints & `GET ${string}`
+
+async function fetchUrl<U extends GetEndpoints> (url: U, args: Endpoints[U]['parameters']): Promise<Endpoints[U]['response']['data']> {
+  const path = interpolate(url.split(' ', 2)[1]!, Object.entries(args))
+
+  const r = await fetch(`https://api.github.com${path}`, {
     headers: {
       Accept: 'application/vnd.github.v3+json'
     }
   })
-  const json = await r.json() as ReleasesReponse
-
-  let release: ReleaseInfo | null = null
-  let prerelease: ReleaseInfo | null = null
-
-  for (const value of json) {
-    if (value.prerelease && prerelease === undefined) {
-      prerelease = compileReleaseInfo(value)
-
-      continue
-    } else {
-      release = compileReleaseInfo(value)
-
-      break
-    }
+  const data = await r.json()
+  if (r.ok) {
+    return data
   }
+  throw new Error(data.message)
+}
+
+export async function fetchReleases (owner: string, repo: string): Promise<Releases> {
+  const [json, latestJson] = await Promise.all([
+    fetchUrl('GET /repos/{owner}/{repo}/releases', { owner, repo }),
+    fetchUrl('GET /repos/{owner}/{repo}/releases/latest', { owner, repo })
+  ])
+
+  const release = compileReleaseInfo(latestJson)
+  const prerelease = json
+    .filter(value => value.prerelease)
+    .map(compileReleaseInfo)
+    .find(value => value.published_at > release.published_at) ?? null
 
   return { release, prerelease }
 }
@@ -50,6 +64,7 @@ function compileReleaseInfo (release: ReleasesReponse[number]): ReleaseInfo {
     prerelease: release.prerelease,
     version: release.tag_name,
     mcVersion: parseMCVersion(release),
+    published_at: new Date(release.published_at!),
     url: release.html_url
   }
 }

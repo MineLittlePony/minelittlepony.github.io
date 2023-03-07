@@ -23,10 +23,10 @@ export class Pixel extends Component<PixelEvents> {
   constructor (options: ComponentOptions) {
     super(options)
 
-    this.x = parseInt(this.root.dataset['x'] ?? '0')
-    this.y = parseInt(this.root.dataset['y'] ?? '0')
+    this.x = parseInt(this.root.dataset.x ?? '0')
+    this.y = parseInt(this.root.dataset.y ?? '0')
 
-    const type = this.root.dataset['type']
+    const type = this.root.dataset.type
 
     switch (type) {
       case 'CONDENSED': this.setValue = this.initCondensed(); break

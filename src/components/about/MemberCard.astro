@@ -1,7 +1,7 @@
 ---
-import type { MemberInfo } from '@/data/cards/team';
-import SocialSites from '@/data/cards/socials';
-import SocialLink from './SocialLink.astro';
+import type { MemberInfo } from '@/data/cards/team'
+import SocialSites from '@/data/cards/socials'
+import SocialLink from './SocialLink.astro'
 
 export type Props = MemberInfo
 
@@ -24,7 +24,7 @@ const entries: EntriesFn = Object.entries
       }
     </div>
 
-    {Props.social!==undefined && <div class="member__social">
+    {Props.social !== undefined && <div class="member__social">
       {entries(Props.social).map(([site, username]) => (
       <SocialLink className={"member__" + site}
         prefix="fab"
