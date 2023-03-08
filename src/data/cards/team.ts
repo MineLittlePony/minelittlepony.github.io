@@ -16,7 +16,8 @@ const Team: MemberInfo[] = [
     avatar: '/about/team/killjoy.jpeg',
     social: {
       github: 'killjoy1221',
-      twitter: 'killjoy1221_'
+      twitter: 'killjoy1221_',
+      mastodon: '@killjoy1221@equestria.social'
     }
   },
   {
@@ -26,7 +27,8 @@ const Team: MemberInfo[] = [
     avatar: '/about/team/sollace.png',
     social: {
       github: 'Sollace',
-      twitter: 'SollaceTheBeard'
+      twitter: 'SollaceTheBeard',
+      mastodon: '@sollace@equestria.social'
     }
   },
   {
@@ -42,7 +44,8 @@ const Team: MemberInfo[] = [
     description: 'Website Maintainer',
     avatar: '/about/team/tikibat.jpg',
     social: {
-      twitter: 'TikiBat'
+      twitter: 'TikiBat',
+      mastodon: '@TikiBat@equestria.social'
     }
   },
   {
@@ -53,7 +56,8 @@ const Team: MemberInfo[] = [
     social: {
       github: 'keupoz',
       twitter: 'keupoz',
-      vk: 'keupoz'
+      vk: 'keupoz',
+      mastodon: '@keupoz@pony.social'
     }
   },
   {
