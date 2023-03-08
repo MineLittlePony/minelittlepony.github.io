@@ -26,14 +26,14 @@ const vk = declareSite({
   url: appendedUrl("https://vk.com/"),
 });
 
-const mastodon = declareSite(
+const mastodon = declareSite({
   title: "Mastodon",
   icon: "mastodon",
   url: (name: string) => {
     name = name.split('@');
     return `https://${name[2]}/@${name[1]}`;
   }
-);
+});
 
 const SocialSites = {
   github,
