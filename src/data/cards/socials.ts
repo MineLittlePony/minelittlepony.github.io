@@ -28,7 +28,7 @@ const vk = declareSite({
 
 const mastodon = declareSite(
   title: "Mastodon",
-  icon: "mstdn",
+  icon: "mastodon",
   url: (name: string) => {
     name = name.split('@');
     return `https://${name[2]}/@${name[1]}`;
