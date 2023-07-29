@@ -1,12 +1,12 @@
 export interface SocialSite {
   title: string;
   icon: string;
-  url: (name: string) => string;
+  url: (handle: string) => string;
 }
 
 const declareSite = (site: SocialSite) => site;
 
-const appendedUrl = (url: string) => (name: string) => `${url}${name}`;
+const appendedUrl = (url: string) => (handle: string) => `${url}${handle}`;
 
 const github = declareSite({
   title: "GitHub",
@@ -29,9 +29,9 @@ const vk = declareSite({
 const mastodon = declareSite({
   title: "Mastodon",
   icon: "mastodon",
-  url: (name: string) => {
-    name = name.split('@');
-    return `https://${name[2]}/@${name[1]}`;
+  url: (handle: string) => {
+    const [, name, instance] = handle.split('@');
+    return `https://${instance}/@${name}`;
   }
 });
 
