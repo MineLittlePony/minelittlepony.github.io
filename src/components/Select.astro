@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro'
 import type { SelectOption } from './SelectTypes'
 
 export interface Props {
@@ -12,7 +13,7 @@ const Props = Astro.props as Props
 <div class="select" data-max={Props.max}>
   <div class="select__label-wrapper input">
     <div class="select__label">Not initialized</div>
-    <i class="select__icon fa-solid fa-angle-down"></i>
+    <Icon icon="fa6-solid:angle-down" />
   </div>
 
   <div class="select__options">

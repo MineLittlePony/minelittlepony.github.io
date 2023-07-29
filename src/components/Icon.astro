@@ -1,12 +1,36 @@
 ---
+import {Icon as AstroIcon} from "astro-iconify"
 export interface Props {
-  className: string
-  prefix: string
+  className?: string
   icon: string
-  style?: string
+  size?: string
+  spin?: boolean
 }
 
 const Props = Astro.props as Props
----
 
-<i class={`${Props.className} ${Props.prefix} fa-${Props.icon}`} style={Props.style}></i>
+const style: Record<string, string> = {}
+if (Props.size) {
+  style['--size'] = Props.size
+}
+---
+<AstroIcon
+  class={Props.className}
+  name={Props.icon}
+  style={style}
+  data-spin={Props.spin}
+/>
+
+<style lang="scss">
+  @keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+  }
+  [astro-icon] {
+    width: var(--size, 1em);
+    height: var(--size, 1em);
+    &[data-spin] {
+      animation: spin 2s linear infinite;
+    }
+}
+</style>

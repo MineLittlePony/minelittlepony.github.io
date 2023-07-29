@@ -1,5 +1,6 @@
 ---
 import Menus from '@/data/menus.json'
+import Icon from '@/components/Icon.astro'
 
 export interface Props {
   menuEntry?: string | undefined
@@ -20,8 +21,8 @@ const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
   <input id="nav-state" type="checkbox" />
 
   <label class="header__bars" for="nav-state">
-    <i class="fa-solid fa-bars"></i>
-    <i class="fa-solid fa-xmark"></i>
+    <Icon icon="fa6-solid:bars" />
+    <Icon icon="fa6-solid:xmark" />
   </label>
 
   <nav class="header__nav nav">
@@ -33,7 +34,7 @@ const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
   </nav>
 </header>
 
-<style lang="scss">
+<style lang="scss" is:global>
   @use '../styles/mixins';
 
   .header {
@@ -73,16 +74,16 @@ const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
         color: var(--primary-color);
       }
 
-      .fa-xmark {
+      > [astro-icon="fa6-solid:xmark"] {
         display: none;
       }
 
       #nav-state:checked~& {
-        .fa-bars {
+        [astro-icon="fa6-solid:bars"] {
           display: none;
         }
 
-        .fa-xmark {
+        [astro-icon="fa6-solid:xmark"] {
           display: block;
         }
       }

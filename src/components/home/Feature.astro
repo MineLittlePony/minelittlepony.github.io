@@ -12,7 +12,9 @@ const iconStyle = `background-color: ${color};`
 
 <div class="feature">
   <img src={`/home/features/${Props.image}.png`} alt={`${Props.title} image`} class="feature__image">
-  <Icon className="feature__icon" prefix={Props.iconPrefix} icon={Props.iconName} style={iconStyle} />
+  <span class="feature__icon" style={iconStyle} >
+    <Icon icon={Props.iconName} size="55%"/>
+  </span>
 
   <div class="feature__body">
     <h4 class="feature__title">{Props.title}</h4>
@@ -33,13 +35,12 @@ const iconStyle = `background-color: ${color};`
     }
 
     &__icon {
-      background: gray;
       border-radius: 50%;
       box-shadow: 0 0 0 5px white;
       color: white;
-      display: block;
-      font-size: calc(var(--icon-size) / 2);
-      line-height: var(--icon-size);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: calc(var(--icon-size) / -2) auto 0;
 
       height: var(--icon-size);

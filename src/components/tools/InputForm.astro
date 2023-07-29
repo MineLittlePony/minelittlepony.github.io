@@ -18,32 +18,38 @@ import IconButton from '../IconButton.astro';
     <IconButton
       className="input-form__submit"
       type="submit"
-      prefix="fas"
-      icon="magnifying-glass"
+      icon="fa6-solid:magnifying-glass"
       title="Search for skin"
+    />
+
+    <IconButton
+      className="input-form__loading"
+      type="button"
+      icon="fa6-solid:arrows-rotate"
+      title="Loading..."
+      hidden
+      disabled
+      spin
     />
 
     <IconButton
       className="input-form__open"
       type="button"
-      prefix="fas"
-      icon="folder"
+      icon="fa6-solid:folder"
       title="Open file from device"
     />
 
     <IconButton
       className="input-form__save"
       type="button"
-      prefix="fas"
-      icon="floppy-disk"
+      icon="fa6-solid:floppy-disk"
       title="Save file to device"
     />
 
     <IconButton
       className="input-form__reset"
       type="button"
-      prefix="fas"
-      icon="rotate-right"
+      icon="fa6-solid:rotate-right"
       title="Reset the image"
     />
   </form>

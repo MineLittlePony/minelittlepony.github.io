@@ -4,16 +4,24 @@ import Icon from './Icon.astro'
 export interface Props {
   className: string
   type: astroHTML.JSX.ButtonHTMLAttributes['type']
-  prefix: string
   icon: string
   title: string
+  hidden?: boolean
+  disabled?: boolean
+  spin?: boolean
 }
 
 const Props = Astro.props as Props
 ---
 
-<button class={`icon-button ${Props.className}`} type={Props.type} title={Props.title}>
-  <Icon className="icon-button__icon" prefix={Props.prefix} icon={Props.icon} />
+<button
+  class={`icon-button ${Props.className}`}
+  type={Props.type}
+  title={Props.title}
+  hidden={Props.hidden}
+  disabled={Props.disabled}
+  >
+  <Icon className="icon-button__icon" icon={Props.icon} spin={Props.spin} size="45%"/>
 </button>
 
 <style lang="scss">
@@ -21,5 +29,8 @@ const Props = Astro.props as Props
     padding: 0;
 
     min-width: var(--input-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>

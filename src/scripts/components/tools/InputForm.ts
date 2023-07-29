@@ -21,6 +21,7 @@ export class InputForm extends Component<InputFormEvents> {
   private readonly nickname = this.getElement('nickname', HTMLInputElement, true)
 
   private readonly submit = this.getComponent('submit', IconButton)
+  private readonly loading = this.getComponent('loading', IconButton)
   private readonly open = this.getComponent('open', IconButton)
   private readonly save = this.getComponent('save', IconButton)
   private readonly reset = this.getComponent('reset', IconButton)
@@ -133,8 +134,8 @@ export class InputForm extends Component<InputFormEvents> {
     this.save.disable(busy)
     this.reset.disable(busy)
 
-    this.submit.setIcon('fas', busy ? 'rotate' : 'magnifying-glass')
-    this.submit.spin(busy)
+    this.submit.hide(busy)
+    this.loading.hide(!busy)
   }
 
   private readonly handleError = (err: any): void => {
