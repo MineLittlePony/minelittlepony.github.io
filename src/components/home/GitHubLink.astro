@@ -1,5 +1,5 @@
 ---
-import { parseGitHubUrl } from '@/scripts/utils/github'
+import { parseGitHubUrl } from '@/scripts/utils/links'
 
 export interface Props {
   className: string
@@ -27,10 +27,10 @@ if (Props.hidden === true) {
     }
 
     &[data-version]::after {
-      content: " v" attr(data-version) " for " attr(data-mc);
-
+      content: "v" attr(data-version) " for " attr(data-mc);
+      display: block;
       color: #7f7f7f;
-      font-size: 0.75em;
+      font-size: 0.65em;
       vertical-align: super;
     }
   }

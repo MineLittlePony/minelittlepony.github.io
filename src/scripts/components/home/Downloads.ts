@@ -1,4 +1,4 @@
-import { fetchReleases } from '@/scripts/utils/github'
+import { fetchReleases } from '@/scripts/utils/releases'
 import { Component, ComponentOptions } from '../Component'
 import { GitHubLink } from './GitHubLink'
 

@@ -1,4 +1,4 @@
-import type { ReleaseInfo } from '@/scripts/utils/github'
+import type { ReleaseInfo } from '@/scripts/utils/releases'
 import { Component } from '../Component'
 
 export class GitHubLink extends Component {

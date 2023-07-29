@@ -1,42 +1,95 @@
-import type { Endpoints } from '@octokit/types'
+// types copied from https://github.com/unjs/ungh/blob/main/types/index.ts
 
-type ReleasesReponse = Endpoints['GET /repos/{owner}/{repo}/releases']['response']['data']
-
-export interface GitHubRepo {
-  owner: string
-  name: string
+export interface GithubRepo {
+  id: number;
+  name: string;
+  repo: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+  pushedAt: string;
+  stars: number;
+  watchers: number;
+  forks: number;
+}
+export interface GithubOrg {
+  id: number;
+  name: string;
+  description: string;
+}
+export interface GithubUser {
+  id: string;
+  username: string;
+}
+export interface GithubContributor {
+  id: string;
+  username: string;
+  contributions: number;
+}
+export interface GithubFile {
+  path: string;
+  mode: string;
+  sha: string;
+  size: number;
 }
 
-export interface ReleaseInfo {
-  prerelease: boolean
-  version: string
-  mcVersion: string
-  published_at: Date
-  url: string
+export interface GithubRelease {
+  id: number;
+  tag: string;
+  author: string;
+  name: string;
+  draft: boolean;
+  prerelease: boolean;
+  createdAt: string;
+  publishedAt: string;
+  markdown: string;
+  html: string;
 }
 
-export interface Releases {
-  release: ReleaseInfo | null
-  prerelease: ReleaseInfo | null
+export interface GithubFileData {
+  contents: string;
+  html?: string;
 }
 
-function interpolate (text: string, args: [string, unknown][]) {
+export type Endpoints = {
+  "/repos/{owner}/{name}": { repo: GithubRepo };
+  "/repos/{owner}/{name}/contributors": { contributors: GithubContributor[] };
+  "/repos/{owner}/{name}/files/{branch}": { meta: { sha: string }; files: GithubFile[] };
+  "/repos/{owner}/{name}/files/{branch}/{...path}": { meta: { url: string }; file: GithubFileData };
+  "/repos/{owner}/{name}/readme": { html: string; markdown: string };
+  "/repos/{owner}/{name}/releases": { releases: GithubRelease[] };
+  "/repos/{owner}/{name}/releases/latest": { release: GithubRelease };
+  "/orgs/{owner}": { org: GithubOrg };
+  "/org/{owner}/repos": { repos: GithubRepo[] };
+  "/stars/{repo}": { totalStars: number; stars: Record<string, number> };
+  "/users/find/{query}": { user: GithubUser };
+}
+
+type EndpointArgNames<U extends string> = U extends `${string}{${infer A}}${infer B}`
+  ? A extends `...${infer C}`
+  ? C | EndpointArgNames<B>
+  : A | EndpointArgNames<B>
+  : never;
+
+type EndpointArgs<U extends keyof Endpoints> = Record<EndpointArgNames<U>, string>
+
+const UNGH_URL = "https://ungh.cc"
+
+function interpolate(text: string, args: [string, unknown][]) {
   for (const [key, val] of args) {
-    text = text.replace(`{${key}}`, String(val))
+    if (text.includes(`{...${key}}`)) {
+      text.replace(`{...${key}}`, String(val))
+    } else {
+      text = text.replace(`{${key}}`, String(val))
+    }
   }
   return text
 }
 
-type GetEndpoints = keyof Endpoints & `GET ${string}`
+export async function fetchUrl<U extends keyof Endpoints>(url: U, args: EndpointArgs<U>): Promise<Endpoints[U]> {
+  const path = interpolate(url, Object.entries(args))
 
-async function fetchUrl<U extends GetEndpoints> (url: U, args: Endpoints[U]['parameters']): Promise<Endpoints[U]['response']['data']> {
-  const path = interpolate(url.split(' ', 2)[1]!, Object.entries(args))
-
-  const r = await fetch(`https://api.github.com${path}`, {
-    headers: {
-      Accept: 'application/vnd.github.v3+json'
-    }
-  })
+  const r = await fetch(UNGH_URL + path)
   const data = await r.json()
   if (r.ok) {
     return data
@@ -44,67 +97,3 @@ async function fetchUrl<U extends GetEndpoints> (url: U, args: Endpoints[U]['par
   throw new Error(data.message)
 }
 
-export async function fetchReleases (owner: string, repo: string): Promise<Releases> {
-  const [json, latestJson] = await Promise.all([
-    fetchUrl('GET /repos/{owner}/{repo}/releases', { owner, repo }),
-    fetchUrl('GET /repos/{owner}/{repo}/releases/latest', { owner, repo })
-  ])
-
-  const release = compileReleaseInfo(latestJson)
-  const prerelease = json
-    .filter(value => value.prerelease)
-    .map(compileReleaseInfo)
-    .find(value => value.published_at > release.published_at) ?? null
-
-  return { release, prerelease }
-}
-
-function compileReleaseInfo (release: ReleasesReponse[number]): ReleaseInfo {
-  return {
-    prerelease: release.prerelease,
-    version: release.tag_name,
-    mcVersion: parseMCVersion(release),
-    published_at: new Date(release.published_at!),
-    url: release.html_url
-  }
-}
-
-function parseMCVersion (release: ReleasesReponse[number]): string {
-  const match = release.name?.match(/(.*) (.*) for Minecraft (.*)/)
-  const result = match?.[3]
-
-  return result ?? release.target_commitish
-}
-
-function isEmpty (value: string | undefined): value is undefined {
-  return value === undefined || value === ''
-}
-
-function parseProtocol (url: string): string {
-  if (url.startsWith('https://github.com/')) {
-    return url.replace('https://github.com/', '')
-  }
-
-  if (url.startsWith('git@github.com:')) {
-    return url.replace('git@github.com:', '')
-  }
-
-  throw new Error(`Unsupported URL. Only SSH- and HTTPS-like GitHub URLs are supported (${url})`)
-}
-
-function normalizeName (name: string, type: string | undefined): string {
-  return isEmpty(type) ? name.replace(/\.git$/, '') : name
-}
-
-export function parseGitHubUrl (url: string): GitHubRepo {
-  const [owner, name, type] = parseProtocol(url).split('/')
-
-  if (isEmpty(owner) || isEmpty(name)) {
-    throw new Error(`GitHub URL must contain repo's owner and name (${url})`)
-  }
-
-  return {
-    owner,
-    name: normalizeName(name, type)
-  }
-}
