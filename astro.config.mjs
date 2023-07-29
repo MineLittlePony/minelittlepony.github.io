@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config'
-
+import svelte from '@astrojs/svelte'
 import mdx from '@astrojs/mdx'
 
 import remarkGfm from 'remark-gfm'
@@ -28,12 +28,13 @@ export default defineConfig({
   build: {
     assets: 'assets'
   },
-
-  integrations: [mdx({
-    remarkPlugins: [remarkGfm, remarkSmartypants, remarkToc],
-    rehypePlugins: [rehypeSlug, [rehypeAutolink, autolinkOptions]]
-  })],
-
+  integrations: [
+    mdx({
+      remarkPlugins: [remarkGfm, remarkSmartypants, remarkToc],
+      rehypePlugins: [rehypeSlug, [rehypeAutolink, autolinkOptions]]
+    }),
+    svelte()
+  ],
   markdown: {
     remarkPlugins: [remarkGfm, remarkSmartypants, remarkToc],
     rehypePlugins: [rehypeSlug, [rehypeAutolink, autolinkOptions]]

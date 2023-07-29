@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Source code of official Mine Little pony Minecraft mod website",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,8 +13,10 @@
     "lint": "eslint --ext .astro,.ts src"
   },
   "dependencies": {
+    "@astrojs/svelte": "^3.1.0",
     "@keupoz/typed-event-dispatcher": "^1.0.3",
-    "file-saver": "^2.0.5"
+    "file-saver": "^2.0.5",
+    "svelte": "^4.0.0"
   },
   "devDependencies": {
     "@astrojs/mdx": "^0.17.2",
@@ -22,7 +25,7 @@
     "@types/node": "^18.14.1",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
-    "astro": "^2.0.15",
+    "astro": "^2.7.1",
     "astro-iconify": "^1.2.0",
     "eslint": "^8.35.0",
     "eslint-config-standard": "^17.0.0",
