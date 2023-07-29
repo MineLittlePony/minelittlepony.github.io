@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 [hidden] {
-  display: none;
+  display: none !important;
 }
 
 html {
