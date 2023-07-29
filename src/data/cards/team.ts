@@ -1,4 +1,4 @@
-import type { Site } from "./socials";
+import type { Site } from './socials'
 
 export interface MemberInfo {
   name: string

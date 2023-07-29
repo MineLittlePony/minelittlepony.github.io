@@ -1,4 +1,4 @@
-import { fetchUrl, GithubRelease } from "./github";
+import { fetchUrl, GithubRelease } from './github'
 
 export interface ReleaseInfo {
   prerelease: boolean
@@ -14,12 +14,12 @@ export interface Releases {
 }
 
 class Repo {
-  constructor(
+  constructor (
     private owner: string,
     private name: string
   ) { }
 
-  async releases(): Promise<Releases> {
+  async releases (): Promise<Releases> {
     const [{ releases }, { release }] = await Promise.all([
       fetchUrl('/repos/{owner}/{name}/releases', { owner: this.owner, name: this.name }),
       fetchUrl('/repos/{owner}/{name}/releases/latest', { owner: this.owner, name: this.name })
@@ -40,16 +40,16 @@ class Repo {
       version: release.tag,
       mcVersion: parseMCVersion(release),
       published_at: new Date(release.publishedAt),
-      url: `https://github.com/${this.owner}/${this.name}/releases/${release.tag}`,
+      url: `https://github.com/${this.owner}/${this.name}/releases/${release.tag}`
     }
   }
 }
 
-export async function fetchReleases(owner: string, name: string): Promise<Releases> {
-  return await new Repo(owner, name).releases();
+export async function fetchReleases (owner: string, name: string): Promise<Releases> {
+  return await new Repo(owner, name).releases()
 }
 
-function parseMCVersion(release: GithubRelease): string {
+function parseMCVersion (release: GithubRelease): string {
   const match = release.name?.match(/(.*) (.*) for Minecraft (.*)/)
   const result = match?.[3]
 

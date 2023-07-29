@@ -26,8 +26,7 @@ const entries: EntriesFn = Object.entries
 
     {Props.social !== undefined && <div class="member__social">
       {entries(Props.social).map(([site, username]) => (
-      <SocialLink className={"member__" + site}
-        prefix="fab"
+      <SocialLink className={'member__' + site}
         icon={SocialSites[site].icon}
         href={SocialSites[site].url(username)}
         title={SocialSites[site].title}

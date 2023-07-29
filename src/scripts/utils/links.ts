@@ -1,9 +1,9 @@
 
-function isEmpty(value: string | undefined): value is undefined {
+function isEmpty (value: string | undefined): value is undefined {
   return value === undefined || value === ''
 }
 
-function parseProtocol(url: string): string {
+function parseProtocol (url: string): string {
   if (url.startsWith('https://github.com/')) {
     return url.replace('https://github.com/', '')
   }
@@ -15,7 +15,7 @@ function parseProtocol(url: string): string {
   throw new Error(`Unsupported URL. Only SSH- and HTTPS-like GitHub URLs are supported (${url})`)
 }
 
-function normalizeName(name: string, type: string | undefined): string {
+function normalizeName (name: string, type: string | undefined): string {
   return isEmpty(type) ? name.replace(/\.git$/, '') : name
 }
 
@@ -24,7 +24,7 @@ interface ModRepo {
   name: string
 }
 
-export function parseGitHubUrl(url: string): ModRepo {
+export function parseGitHubUrl (url: string): ModRepo {
   const [owner, name, type] = parseProtocol(url).split('/')
 
   if (isEmpty(owner) || isEmpty(name)) {

@@ -29,6 +29,7 @@ module.exports = {
   rules: {
     'no-undef': 'off',
     'no-redeclare': 'off',
+    'no-useless-constructor': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
 
