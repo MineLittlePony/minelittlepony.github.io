@@ -1,7 +1,16 @@
 ---
 import Links from '@/data/links.json'
-import GitHubLink from './GitHubLink.astro';
+import GitHubLink from './GitHubLink.svelte';
 ---
+<script>
+  import { initKonami } from "@/scripts/konami";
+
+  document.querySelectorAll(".hero").forEach(el => {
+    initKonami(() => {
+      el.classList.add("secret-solved");
+    })
+  })
+</script>
 
 <div class="hero">
   <div class="hero__content">
@@ -17,15 +26,13 @@ import GitHubLink from './GitHubLink.astro';
     <div class="downloads hero__section">
       <h2 class="downloads__title">Get the mod!</h2>
 
-      <div class="downloads__links">
-        <GitHubLink className="downloads__link downloads__link--minelp" repo={Links.modRepo} title="Download" />
-        <GitHubLink className="downloads__link downloads__link--minelp-pre" repo={Links.modRepo} title="Download Beta"
-          hidden />
+      <div class="downloads__links" client:load>
+        <GitHubLink className="downloads__link" repo={Links.modRepo} title="Download" client:load />
 
         <a href="https://fabricmc.net/use/installer/" class="downloads__link">Install Fabric</a>
 
-        <GitHubLink className="downloads__link downloads__link--hdskins" repo={Links.hdskinsRepo}
-          title="Download HD Skins" />
+        <GitHubLink className="downloads__link" repo={Links.hdskinsRepo}
+          title="Download HD Skins" client:load/>
       </div>
 
       <div class="downloads__extra">

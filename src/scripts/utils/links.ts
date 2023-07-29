@@ -19,7 +19,7 @@ function normalizeName (name: string, type: string | undefined): string {
   return isEmpty(type) ? name.replace(/\.git$/, '') : name
 }
 
-interface ModRepo {
+export interface ModRepo {
   owner: string
   name: string
 }
