@@ -1,4 +1,3 @@
-
 function isEmpty (value: string | undefined): value is undefined {
   return value === undefined || value === ''
 }

@@ -1,24 +1,24 @@
 <script lang="ts">
-  import { parseGitHubUrl, type ModRepo } from "@/scripts/utils/links";
-  import { fetchReleases } from "@/scripts/utils/releases";
+  import { parseGitHubUrl, type ModRepo } from '@/scripts/utils/links'
+  import { fetchReleases } from '@/scripts/utils/releases'
 
-  export let className: string;
-  export let repo: string;
-  export let title: string;
+  export let className: string
+  export let repo: string
+  export let title: string
 
-  const promise = (async ({owner, name}: ModRepo) => {
-    const { release, prerelease } = await fetchReleases(owner, name);
+  const promise = (async ({ owner, name }: ModRepo) => {
+    const { release, prerelease } = await fetchReleases(owner, name)
 
-    const releases = [];
+    const releases = []
     if (release !== null) {
-      releases.push(release);
+      releases.push(release)
     }
 
     if (prerelease !== null) {
-      releases.push(prerelease);
+      releases.push(prerelease)
     }
-    return releases;
-  })(parseGitHubUrl(repo));
+    return releases
+  })(parseGitHubUrl(repo))
 </script>
 
 {#await promise}
@@ -28,7 +28,7 @@
 {:then releases}
   {#each releases as release}
     <a href={release.url} class={className}>
-      <span>{title} {release.prerelease ? "Beta" : ""}</span>
+      <span>{title} {release.prerelease ? 'Beta' : ''}</span>
       <span class="version-line">
         v {release?.version} for {release?.mcVersion}
       </span>

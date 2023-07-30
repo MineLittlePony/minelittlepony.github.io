@@ -10,6 +10,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:astro/recommended',
+    'plugin:svelte/recommended',
     'standard'
   ],
   overrides: [
@@ -24,6 +25,13 @@ module.exports = {
     },
     {
       files: ['**/*.astro/*.js', '*.astro/*.js']
+    },
+    {
+      files: ['*.svelte'],
+      parser: 'svelte-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser'
+      }
     }
   ],
   rules: {

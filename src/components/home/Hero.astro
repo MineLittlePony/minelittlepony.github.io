@@ -3,13 +3,13 @@ import Links from '@/data/links.json'
 import GitHubLink from './GitHubLink.svelte';
 ---
 <script>
-  import { initKonami } from "@/scripts/konami";
+import { initKonami } from '@/scripts/konami'
 
-  document.querySelectorAll(".hero").forEach(el => {
-    initKonami(() => {
-      el.classList.add("secret-solved");
-    })
+document.querySelectorAll('.hero').forEach(el => {
+  initKonami(() => {
+    el.classList.add('secret-solved')
   })
+})
 </script>
 
 <div class="hero">
