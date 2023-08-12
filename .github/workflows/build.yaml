@@ -28,18 +28,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
-          cache: yarn
+          cache: pnpm
 
       - name: 📃 Setup Pages
         id: pages
         uses: actions/configure-pages@v3
 
       - name: ⚙️ Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: 🛠️ Build with Astro
         run: |
-          yarn astro build \
+          pnpm astro build \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
 
