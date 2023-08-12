@@ -23,7 +23,12 @@ jobs:
     steps:
       - name: 🛎️ Checkout
         uses: actions/checkout@v3
-        
+
+      - name: ⚙️ Setup Pnpm
+        uses: pnpm/actions-setup@v2
+        with:
+          version: 8.x
+
       - name: 🤖 Setup Node
         uses: actions/setup-node@v3
         with:
