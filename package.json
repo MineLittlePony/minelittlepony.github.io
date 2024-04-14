@@ -17,12 +17,12 @@
     "@astrojs/check": "^0.5.10",
     "@keupoz/typed-event-dispatcher": "^1.0.3",
     "file-saver": "^2.0.5",
-    "svelte": "^4.2.0"
+    "svelte": "^4.2.14"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.13.3",
     "@astrojs/mdx": "^2.3.0",
-    "@astrojs/svelte": "^3.1.1",
+    "@astrojs/svelte": "^5.4.0",
     "@types/file-saver": "^2.0.5",
     "astro": "^4.6.1",
     "astro-eslint-parser": "^0.17.0",
@@ -32,11 +32,11 @@
     "eslint-plugin-format": "^0.1.0",
     "eslint-plugin-svelte": "2.37.0",
     "prettier-plugin-astro": "^0.13.0",
-    "rehype-autolink-headings": "^6.1.1",
-    "rehype-slug": "^5.1.0",
-    "remark-gfm": "^3.0.1",
-    "remark-smartypants": "^2.0.0",
-    "remark-toc": "^8.0.1",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-smartypants": "^2.1.0",
+    "remark-toc": "^9.0.0",
     "sass": "^1.65.1",
     "svelte-eslint-parser": "^0.34.1",
     "typescript": "^5.4.5"
