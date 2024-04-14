@@ -1,4 +1,4 @@
-import { Component, ComponentOptions } from './Component'
+import { Component, type ComponentOptions } from './Component'
 
 export interface SelectEvents {
   input: string
@@ -6,7 +6,9 @@ export interface SelectEvents {
 }
 
 document.addEventListener('click', () => {
-  if (Select.lastOpen !== null) Select.lastOpen.close()
+  if (Select.lastOpen !== null) {
+    Select.lastOpen.close()
+  }
 })
 
 export class Select extends Component<SelectEvents> {
@@ -23,11 +25,11 @@ export class Select extends Component<SelectEvents> {
 
   private readonly max: number
 
-  constructor (options: ComponentOptions) {
+  constructor(options: ComponentOptions) {
     super(options)
 
-    const max = parseInt(this.root.dataset.max ?? '1')
-    this.max = isNaN(max) ? 1 : max
+    const max = Number.parseInt(this.root.dataset.max ?? '1')
+    this.max = Number.isNaN(max) ? 1 : max
 
     this.initOptions()
 
@@ -42,17 +44,21 @@ export class Select extends Component<SelectEvents> {
       e.preventDefault()
       e.stopPropagation()
 
-      if (!(e.target instanceof Element)) return
+      if (!(e.target instanceof Element)) {
+        return
+      }
 
       const option = this.closest('option', e.target, HTMLElement)
 
-      if (option === null) return
+      if (option === null) {
+        return
+      }
 
       this.toggleOption(option)
     })
   }
 
-  public setValue (value: string[]): void {
+  public setValue(value: string[]): void {
     this.selected.clear()
 
     for (const [, option] of this.optionsMap) {
@@ -67,23 +73,28 @@ export class Select extends Component<SelectEvents> {
     this.update()
   }
 
-  public toggle (): void {
+  public toggle(): void {
     if (this.root.classList.contains('is-open')) {
       this.close()
-    } else {
+    }
+    else {
       this.open()
     }
   }
 
-  public close (): void {
+  public close(): void {
     this.root.classList.remove('is-open')
     this.labelWrapper.classList.remove('focus')
 
-    if (Select.lastOpen === this) Select.lastOpen = null
+    if (Select.lastOpen === this) {
+      Select.lastOpen = null
+    }
   }
 
-  public open (): void {
-    if (Select.lastOpen !== null) Select.lastOpen.close()
+  public open(): void {
+    if (Select.lastOpen !== null) {
+      Select.lastOpen.close()
+    }
 
     this.root.classList.add('is-open')
     this.labelWrapper.classList.add('focus')
@@ -112,11 +123,11 @@ export class Select extends Component<SelectEvents> {
     // `scrollIntoView` doesn't provide the same behaviour
     window.scrollTo({
       behavior: 'smooth',
-      top: pageOffset - clientOffset
+      top: pageOffset - clientOffset,
     })
   }
 
-  private initOptions (): void {
+  private initOptions(): void {
     for (const element of this.getElements('option', HTMLElement)) {
       const option = new SelectOption(element)
 
@@ -125,7 +136,8 @@ export class Select extends Component<SelectEvents> {
       if (option.isSelected()) {
         if (this.max >= this.selected.size) {
           option.select(false)
-        } else {
+        }
+        else {
           this.selected.add(option)
         }
       }
@@ -134,19 +146,23 @@ export class Select extends Component<SelectEvents> {
     this.update()
   }
 
-  private toggleOption (element: HTMLElement): void {
+  private toggleOption(element: HTMLElement): void {
     const option = this.optionsMap.get(element)
 
-    if (option === undefined) return
+    if (option === undefined) {
+      return
+    }
 
     if (this.max === 1) {
       if (!option.isSelected()) {
         this.setValue([option.value])
       }
-    } else {
+    }
+    else {
       if (option.isSelected()) {
         this.deselect(option)
-      } else {
+      }
+      else {
         this.select(option)
       }
     }
@@ -162,29 +178,32 @@ export class Select extends Component<SelectEvents> {
     this.dispatch('change', values)
   }
 
-  private select (option: SelectOption): void {
-    if (this.selected.size >= this.max) return
+  private select(option: SelectOption): void {
+    if (this.selected.size >= this.max) {
+      return
+    }
 
     option.select()
     this.selected.add(option)
   }
 
-  private deselect (option: SelectOption): void {
+  private deselect(option: SelectOption): void {
     option.select(false)
     this.selected.delete(option)
   }
 
-  private update (): void {
+  private update(): void {
     if (this.selected.size === 0) {
-      this.label.innerText = 'None selected'
-    } else {
+      this.label.textContent = 'None selected'
+    }
+    else {
       const labels: string[] = []
 
       for (const option of this.selected) {
         labels.push(option.label)
       }
 
-      this.label.innerText = labels.join(', ')
+      this.label.textContent = labels.join(', ')
     }
   }
 }
@@ -196,22 +215,22 @@ class SelectOption {
   public readonly value: string
   public readonly label: string
 
-  constructor (element: HTMLElement) {
+  constructor(element: HTMLElement) {
     this.element = element
     this.value = SelectOption.getValue(element)
-    this.label = element.innerText
+    this.label = element.textContent ?? ''
     this.selected = element.classList.contains('is-selected')
   }
 
-  public static getValue (element: HTMLElement): string {
-    return element.dataset.value ?? element.innerText
+  public static getValue(element: HTMLElement): string {
+    return element.dataset.value ?? element.textContent ?? ''
   }
 
-  public isSelected (): boolean {
+  public isSelected(): boolean {
     return this.selected
   }
 
-  public select (select = true): void {
+  public select(select = true): void {
     this.element.classList.toggle('is-selected', select)
     this.selected = select
   }

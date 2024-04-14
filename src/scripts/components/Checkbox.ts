@@ -1,4 +1,4 @@
-import { Component, ComponentOptions } from './Component'
+import { Component, type ComponentOptions } from './Component'
 
 export interface CheckboxEvents {
   input: boolean
@@ -10,7 +10,7 @@ export class Checkbox extends Component<CheckboxEvents> {
   private readonly input = this.getElement('input', HTMLInputElement, true)
   private readonly label = this.getElement('label', Element, true)
 
-  constructor (options: ComponentOptions) {
+  constructor(options: ComponentOptions) {
     super(options)
 
     this.input.addEventListener('input', () => {
@@ -18,11 +18,11 @@ export class Checkbox extends Component<CheckboxEvents> {
     })
   }
 
-  public setChecked (checked: boolean): void {
+  public setChecked(checked: boolean): void {
     this.input.checked = checked
   }
 
-  public disable (disabled = true): void {
+  public disable(disabled = true): void {
     this.label.classList.toggle('disabled', disabled)
     this.input.disabled = disabled
   }

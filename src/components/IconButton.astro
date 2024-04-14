@@ -20,8 +20,13 @@ const Props = Astro.props as Props
   title={Props.title}
   hidden={Props.hidden}
   disabled={Props.disabled}
-  >
-  <Icon className="icon-button__icon" icon={Props.icon} spin={Props.spin} size="45%"/>
+>
+  <Icon
+    className="icon-button__icon"
+    icon={Props.icon}
+    spin={Props.spin}
+    size="45%"
+  />
 </button>
 
 <style lang="scss">

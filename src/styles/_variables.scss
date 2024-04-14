@@ -9,11 +9,11 @@
   --navigation-height: 4rem;
   --header-height: var(--navigation-height);
 
-  --pastel-stripe-url: url("/pastel-stripe.png");
+  --pastel-stripe-url: url('/pastel-stripe.png');
   --pastel-stripe-background: var(--pastel-stripe-url) no-repeat top left / 100%;
   --pastel-stripe-height: 5px;
 
-  --checker-texture: url("/checker.png");
+  --checker-texture: url('/checker.png');
 
   --primary-color-rgb: 186, 56, 58;
   --primary-color: rgb(var(--primary-color-rgb));

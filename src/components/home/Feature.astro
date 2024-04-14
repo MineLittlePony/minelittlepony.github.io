@@ -5,20 +5,26 @@ import type { FeatureCard } from '@/data/cards/features'
 export type Props = FeatureCard
 
 const Props = Astro.props as Props
-const content = await (Astro as any).__renderMarkdown(Props.content, { mode: 'md' }) as string
+const content = (await (Astro as any).__renderMarkdown(Props.content, {
+  mode: 'md',
+})) as string
 const color = `#${(Props.color & 0xffffff).toString(16).padStart(6, '0')}`
 const iconStyle = `background-color: ${color};`
 ---
 
 <div class="feature">
-  <img src={`/home/features/${Props.image}.png`} alt={`${Props.title} image`} class="feature__image">
-  <span class="feature__icon" style={iconStyle} >
-    <Icon icon={Props.iconName} size="55%"/>
+  <img
+    src={`/home/features/${Props.image}.png`}
+    alt={`${Props.title} image`}
+    class="feature__image"
+  />
+  <span class="feature__icon" style={iconStyle}>
+    <Icon icon={Props.iconName} size="55%" />
   </span>
 
   <div class="feature__body">
     <h4 class="feature__title">{Props.title}</h4>
-    <div class="feature__content" set:html={ content }></div>
+    <div class="feature__content" set:html={content} />
   </div>
 </div>
 

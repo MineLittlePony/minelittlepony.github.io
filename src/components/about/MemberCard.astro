@@ -13,25 +13,39 @@ const entries: EntriesFn = Object.entries
 ---
 
 <div class="member">
-  <img src={Props.avatar} alt={`${Props.name}'s avatar`} class="member__avatar" />
+  <img
+    src={Props.avatar}
+    alt={`${Props.name}'s avatar`}
+    class="member__avatar"
+  />
 
   <div class="member__content">
     <div class="member__title">
       <span class="member__name">{Props.name}</span>
 
-      {Props.nickname !== undefined &&
-      <code class="member__nickname" title="Minecraft nickname">{Props.nickname}</code>
+      {
+        Props.nickname !== undefined && (
+          <code class="member__nickname" title="Minecraft nickname">
+            {Props.nickname}
+          </code>
+        )
       }
     </div>
 
-    {Props.social !== undefined && <div class="member__social">
-      {entries(Props.social).map(([site, username]) => (
-      <SocialLink className={'member__' + site}
-        icon={SocialSites[site].icon}
-        href={SocialSites[site].url(username)}
-        title={SocialSites[site].title}
-      />))}
-    </div>}
+    {
+      Props.social !== undefined && (
+        <div class="member__social">
+          {entries(Props.social).map(([site, username]) => (
+            <SocialLink
+              className={'member__' + site}
+              icon={SocialSites[site].icon}
+              href={SocialSites[site].url(username)}
+              title={SocialSites[site].title}
+            />
+          ))}
+        </div>
+      )
+    }
 
     <div class="member__description">{Props.description}</div>
   </div>

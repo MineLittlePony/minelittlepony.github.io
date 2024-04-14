@@ -14,7 +14,7 @@ const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
 <header class="header">
   <div class="header__logo">
     <a href="/">
-      <img src="/logo.png" alt="Mine Little Pony logo">
+      <img src="/logo.png" alt="Mine Little Pony logo" />
     </a>
   </div>
 
@@ -26,11 +26,19 @@ const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
   </label>
 
   <nav class="header__nav nav">
-    {Menus.main.map(({ title, path }) => (
-    <a class:list={ ['nav__link', { 'nav__link--current': isCurrentMenuEntry(title) }] } href={ path }>
-      { title }
-    </a>
-    ))}
+    {
+      Menus.main.map(({ title, path }) => (
+        <a
+          class:list={[
+            'nav__link',
+            { 'nav__link--current': isCurrentMenuEntry(title) },
+          ]}
+          href={path}
+        >
+          {title}
+        </a>
+      ))
+    }
   </nav>
 </header>
 
@@ -74,16 +82,16 @@ const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
         color: var(--primary-color);
       }
 
-      > [astro-icon="fa6-solid:xmark"] {
+      > [astro-icon='fa6-solid:xmark'] {
         display: none;
       }
 
-      #nav-state:checked~& {
-        [astro-icon="fa6-solid:bars"] {
+      #nav-state:checked ~ & {
+        [astro-icon='fa6-solid:bars'] {
           display: none;
         }
 
-        [astro-icon="fa6-solid:xmark"] {
+        [astro-icon='fa6-solid:xmark'] {
           display: block;
         }
       }
@@ -104,7 +112,7 @@ const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
       display: flex;
       flex-direction: column;
 
-      #nav-state:checked~& {
+      #nav-state:checked ~ & {
         opacity: 1;
         pointer-events: unset;
       }
@@ -117,7 +125,9 @@ const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
     display: block;
     padding: var(--margin) var(--gutter);
     text-decoration: none !important;
-    transition: background-color 100ms, color 100ms;
+    transition:
+      background-color 100ms,
+      color 100ms;
 
     @include mixins.hover {
       background: rgba(var(--primary-color-rgb), 0.75);

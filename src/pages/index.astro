@@ -4,7 +4,7 @@ import Feature from '@/components/home/Feature.astro'
 import Hero from '@/components/home/Hero.astro'
 import Extras from '@/data/cards/extra'
 import Features from '@/data/cards/features'
-import Layout from '@/layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title="Home" menuEntry="Home">
@@ -12,9 +12,7 @@ import Layout from '@/layouts/Layout.astro';
 
   <div class="home-content">
     <div class="features">
-      {Features.map((feature) => (
-      <Feature {...feature} />
-      ))}
+      {Features.map((feature) => <Feature {...feature} />)}
     </div>
   </div>
 
@@ -22,9 +20,7 @@ import Layout from '@/layouts/Layout.astro';
     <h3 class="footer__title">Extra downloads for better experience:</h3>
 
     <div class="extras">
-      {Extras.map((extra) => (
-      <Extra {...extra} />
-      ))}
+      {Extras.map((extra) => <Extra {...extra} />)}
     </div>
   </div>
 </Layout>

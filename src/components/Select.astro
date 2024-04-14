@@ -17,9 +17,13 @@ const Props = Astro.props as Props
   </div>
 
   <div class="select__options">
-    {Props.options.map((option) => (
-    <div class="select__option" data-value={option.value}>{option.label}</div>
-    ))}
+    {
+      Props.options.map((option) => (
+        <div class="select__option" data-value={option.value}>
+          {option.label}
+        </div>
+      ))
+    }
   </div>
 </div>
 

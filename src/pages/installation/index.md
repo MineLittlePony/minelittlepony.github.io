@@ -20,7 +20,7 @@ menuEntry: "Installation"
 
 Once you've downloaded all the files you need to install Fabric. Run the downloaded installer file, select the settings you want and click the "Install" button.
 
-![Fabric installer](/installation/fabric-installer.png "Fabric installer")
+![Fabric installer](/installation/fabric-installer.png 'Fabric installer')
 
 ## Installing the mod
 
@@ -30,11 +30,11 @@ After installing Fabric you need to add your mods to the game. Place downloaded 
 - `~/Library/Application Support/minecraft` on macOS
 - `~/.minecraft` on Linux
 
-![Mods folder](/installation/mods-folder.png "Mods folder")
+![Mods folder](/installation/mods-folder.png 'Mods folder')
 
 ## Play the game!
 
 If everything was done correctly, a new Minecraft profile called something like `fabric-loader-1.18.1` should appear. Select it and launch the game. Now you should turn into a pony!
 
-![Minecraft client with installed Fabric profile](/installation/minecraft-client.png "Minecraft client with installed Fabric profile")
-![Player pony](/installation/ingame.png "Player pony")
+![Minecraft client with installed Fabric profile](/installation/minecraft-client.png 'Minecraft client with installed Fabric profile')
+![Player pony](/installation/ingame.png 'Player pony')

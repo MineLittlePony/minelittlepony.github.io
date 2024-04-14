@@ -1,6 +1,6 @@
 import { createContext } from './canvas'
 
-export function isLegacy (ctx: CanvasRenderingContext2D): boolean {
+export function isLegacy(ctx: CanvasRenderingContext2D): boolean {
   const s = ctx.canvas.width / 64
   const { data } = ctx.getImageData(s * 4, 0, s * 4, s * 8)
 
@@ -9,23 +9,23 @@ export function isLegacy (ctx: CanvasRenderingContext2D): boolean {
   })
 }
 
-export function isSquare (ctx: CanvasRenderingContext2D): boolean {
+export function isSquare(ctx: CanvasRenderingContext2D): boolean {
   return ctx.canvas.width === ctx.canvas.height
 }
 
-export function clear (ctx: CanvasRenderingContext2D, s: number, x: number, y: number, w: number, h: number): void {
+export function clear(ctx: CanvasRenderingContext2D, s: number, x: number, y: number, w: number, h: number): void {
   ctx.clearRect(s * x, s * y, s * w, s * h)
 }
 
-export function draw (ctx: CanvasRenderingContext2D, src: CanvasImageSource, s: number, sx: number, sy: number, sw: number, sh: number, dx: number, dy: number, dw: number, dh: number): void {
+export function draw(ctx: CanvasRenderingContext2D, src: CanvasImageSource, s: number, sx: number, sy: number, sw: number, sh: number, dx: number, dy: number, dw: number, dh: number): void {
   ctx.drawImage(src, s * sx, s * sy, s * sw, s * sh, s * dx, s * dy, s * dw, s * dh)
 }
 
-export function translate (ctx: CanvasRenderingContext2D, s: number, x: number, y: number): void {
+export function translate(ctx: CanvasRenderingContext2D, s: number, x: number, y: number): void {
   ctx.translate(s * x, s * y)
 }
 
-export function convertFromLegacy (ctx: CanvasRenderingContext2D): void {
+export function convertFromLegacy(ctx: CanvasRenderingContext2D): void {
   const src = createContext(ctx.canvas.width, ctx.canvas.height)
 
   src.drawImage(ctx.canvas, 0, 0)
@@ -78,7 +78,7 @@ export function convertFromLegacy (ctx: CanvasRenderingContext2D): void {
   ctx.restore()
 }
 
-export function convertToSquare (ctx: CanvasRenderingContext2D, mirror: boolean): void {
+export function convertToSquare(ctx: CanvasRenderingContext2D, mirror: boolean): void {
   const src = createContext(ctx.canvas.width, ctx.canvas.height)
 
   src.drawImage(ctx.canvas, 0, 0)
@@ -134,7 +134,8 @@ export function convertToSquare (ctx: CanvasRenderingContext2D, mirror: boolean)
     _draw(62, 18, 2, 14, -62, 34, -2, 14) // Back
 
     ctx.restore()
-  } else {
+  }
+  else {
     // Left hind leg
     _draw(4, 16, 8, 4, 20, 48, 8, 4) // Top & bottom
     _draw(0, 20, 16, 12, 16, 52, 16, 12) // Other sides
@@ -149,18 +150,22 @@ export function convertToSquare (ctx: CanvasRenderingContext2D, mirror: boolean)
   }
 }
 
-export function convert (img: HTMLImageElement | HTMLCanvasElement, mirror: boolean): HTMLCanvasElement {
+export function convert(img: HTMLImageElement | HTMLCanvasElement, mirror: boolean): HTMLCanvasElement {
   const ctx = createContext(img.width, img.height)
 
   ctx.drawImage(img, 0, 0)
 
-  if (isLegacy(ctx)) convertFromLegacy(ctx)
-  if (!isSquare(ctx)) convertToSquare(ctx, mirror)
+  if (isLegacy(ctx)) {
+    convertFromLegacy(ctx)
+  }
+  if (!isSquare(ctx)) {
+    convertToSquare(ctx, mirror)
+  }
 
   return ctx.canvas
 }
 
-export function resize (img: HTMLImageElement | HTMLCanvasElement, sizeShift: number): HTMLCanvasElement {
+export function resize(img: HTMLImageElement | HTMLCanvasElement, sizeShift: number): HTMLCanvasElement {
   // Remove trigger pixels from source
   // Made to keep the whole pixels area in HD skins
   // But to remove the pixels from resized SD skins

@@ -14,29 +14,29 @@ const autolinkOptions = {
   properties: {
     ariaHidden: true,
     tabIndex: 0,
-    class: 'heading-anchor'
+    class: 'heading-anchor',
   },
   content: {
     type: 'text',
-    value: '#'
-  }
+    value: '#',
+  },
 }
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://minelittlepony-mod.com/',
   build: {
-    assets: 'assets'
+    assets: 'assets',
   },
   integrations: [
     mdx({
       remarkPlugins: [remarkGfm, remarkSmartypants, remarkToc],
-      rehypePlugins: [rehypeSlug, [rehypeAutolink, autolinkOptions]]
+      rehypePlugins: [rehypeSlug, [rehypeAutolink, autolinkOptions]],
     }),
-    svelte()
+    svelte(),
   ],
   markdown: {
     remarkPlugins: [remarkGfm, remarkSmartypants, remarkToc],
-    rehypePlugins: [rehypeSlug, [rehypeAutolink, autolinkOptions]]
-  }
+    rehypePlugins: [rehypeSlug, [rehypeAutolink, autolinkOptions]],
+  },
 })

@@ -10,17 +10,17 @@ const Extras: ExtraCard[] = [
   {
     image: 'lnt',
     url: 'https://love-tolerance.com/',
-    color: 0xfd3f9e,
+    color: 0xFD3F9E,
     label: 'Get Info',
-    description: 'Complete the Mine Little Pony experience with the Love&nbsp;&amp;&nbsp;Tolerance resource pack'
+    description: 'Complete the Mine Little Pony experience with the Love&nbsp;&amp;&nbsp;Tolerance resource pack',
   },
   {
     image: 'skinpack',
     url: 'https://github.com/MineLittlePony/Community-Skin-Pack',
-    color: 0x009dff,
+    color: 0x009DFF,
     label: 'Download',
-    description: 'Get a quick start with this pack of more than 200 canon Mine Little Pony compatible skins'
-  }
+    description: 'Get a quick start with this pack of more than 200 canon Mine Little Pony compatible skins',
+  },
 ]
 
 export default Extras

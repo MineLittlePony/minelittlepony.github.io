@@ -17,8 +17,8 @@ const Team: MemberInfo[] = [
     social: {
       github: 'killjoy1221',
       twitter: 'killjoy1221_',
-      mastodon: '@killjoy1221@equestria.social'
-    }
+      mastodon: '@killjoy1221@equestria.social',
+    },
   },
   {
     name: 'Sollace',
@@ -28,16 +28,16 @@ const Team: MemberInfo[] = [
     social: {
       github: 'Sollace',
       twitter: 'SollaceTheBeard',
-      mastodon: '@sollace@equestria.social'
-    }
+      mastodon: '@sollace@equestria.social',
+    },
   },
   {
     name: 'RollingTheOC',
     description: 'Discord Server Moderator',
     avatar: '/about/team/rolling.png',
     social: {
-      twitter: 'RollingTheOC'
-    }
+      twitter: 'RollingTheOC',
+    },
   },
   {
     name: 'Tiki Bat',
@@ -45,8 +45,8 @@ const Team: MemberInfo[] = [
     avatar: '/about/team/tikibat.jpg',
     social: {
       twitter: 'TikiBat',
-      mastodon: '@TikiBat@equestria.social'
-    }
+      mastodon: '@TikiBat@equestria.social',
+    },
   },
   {
     name: 'Ivan Sokolov',
@@ -57,14 +57,14 @@ const Team: MemberInfo[] = [
       github: 'keupoz',
       twitter: 'keupoz',
       vk: 'keupoz',
-      mastodon: '@keupoz@pony.social'
-    }
+      mastodon: '@keupoz@pony.social',
+    },
   },
   {
     name: 'Yury Polyacov',
     description: 'QA/Quality Assurance',
-    avatar: '/about/team/poly.png'
-  }
+    avatar: '/about/team/poly.png',
+  },
 ]
 
 export default Team

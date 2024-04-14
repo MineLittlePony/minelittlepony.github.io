@@ -1,6 +1,6 @@
-import { fetchSkin, file2image } from '@/scripts/utils/file'
-import { Component, ComponentOptions } from '../Component'
+import { Component, type ComponentOptions } from '../Component'
 import { IconButton } from '../IconButton'
+import { fetchSkin, file2image } from '@/scripts/utils/file'
 
 export interface InputFormEvents {
   data: {
@@ -29,7 +29,7 @@ export class InputForm extends Component<InputFormEvents> {
   public onSave = noop
   public onReset = noop
 
-  constructor (options: ComponentOptions) {
+  constructor(options: ComponentOptions) {
     super(options)
 
     this.save.disable()
@@ -42,7 +42,8 @@ export class InputForm extends Component<InputFormEvents> {
 
       if (value.length === 0) {
         this.nickname.focus()
-      } else {
+      }
+      else {
         this.lockAndResolve(fetchSkin(value).then(this.processFile))
       }
     })
@@ -55,7 +56,9 @@ export class InputForm extends Component<InputFormEvents> {
           throw new Error('Input property "files" is null')
         }
 
-        if (files.length === 0) return
+        if (files.length === 0) {
+          return
+        }
 
         const file = files.item(0)
 
@@ -64,7 +67,8 @@ export class InputForm extends Component<InputFormEvents> {
         }
 
         this.handleFile(file).catch(this.handleError)
-      } catch (err) {
+      }
+      catch (err) {
         this.handleError(err)
       }
     })
@@ -90,7 +94,9 @@ export class InputForm extends Component<InputFormEvents> {
 
     document.addEventListener('keydown', (e) => {
     // Handle Ctrl combinations only
-      if (!e.ctrlKey || e.shiftKey || e.metaKey || e.altKey) return
+      if (!e.ctrlKey || e.shiftKey || e.metaKey || e.altKey) {
+        return
+      }
 
       if (e.code === 'KeyO') {
         e.preventDefault()
@@ -122,11 +128,11 @@ export class InputForm extends Component<InputFormEvents> {
     })
   }
 
-  public setWarning (message: string): void {
-    this.warning.innerText = message
+  public setWarning(message: string): void {
+    this.warning.textContent = message
   }
 
-  private setBusy (busy = true): void {
+  private setBusy(busy = true): void {
     this.nickname.disabled = busy
 
     this.submit.disable(busy)
@@ -145,12 +151,12 @@ export class InputForm extends Component<InputFormEvents> {
       err = err.message
     }
 
-    this.error.innerText = String(err)
+    this.error.textContent = String(err)
     this.setBusy(false)
   }
 
-  private async lockAndResolve<T> (promise: Promise<T>): Promise<T | null> {
-    this.error.innerText = ''
+  private async lockAndResolve<T>(promise: Promise<T>): Promise<T | null> {
+    this.error.textContent = ''
 
     try {
       this.setBusy(true)
@@ -160,7 +166,8 @@ export class InputForm extends Component<InputFormEvents> {
       this.setBusy(false)
 
       return result
-    } catch (err) {
+    }
+    catch (err) {
       this.handleError(err)
     }
 
@@ -173,7 +180,7 @@ export class InputForm extends Component<InputFormEvents> {
     this.dispatch('data', { filename: file.name, image })
   }
 
-  private async handleFile (file: File): Promise<void> {
+  private async handleFile(file: File): Promise<void> {
     await this.lockAndResolve(this.processFile(file))
   }
 }

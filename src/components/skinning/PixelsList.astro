@@ -1,12 +1,10 @@
 ---
 import Pixels from '@/data/pixels'
-import Pixel from './Pixel.astro';
+import Pixel from './Pixel.astro'
 ---
 
 <div class="pixels-list">
-  {Pixels.map((pixel) => (
-  <Pixel {...pixel} />
-  ))}
+  {Pixels.map((pixel) => <Pixel {...pixel} />)}
 </div>
 
 <style lang="scss">

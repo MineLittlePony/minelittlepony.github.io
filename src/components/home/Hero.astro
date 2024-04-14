@@ -1,15 +1,16 @@
 ---
 import Links from '@/data/links.json'
-import GitHubLink from './GitHubLink.svelte';
+import GitHubLink from './GitHubLink.svelte'
 ---
-<script>
-import { initKonami } from '@/scripts/konami'
 
-document.querySelectorAll('.hero').forEach(el => {
-  initKonami(() => {
-    el.classList.add('secret-solved')
+<script>
+  import { initKonami } from '@/scripts/konami'
+
+  document.querySelectorAll('.hero').forEach((el) => {
+    initKonami(() => {
+      el.classList.add('secret-solved')
+    })
   })
-})
 </script>
 
 <div class="hero">
@@ -27,20 +28,37 @@ document.querySelectorAll('.hero').forEach(el => {
       <h2 class="downloads__title">Get the mod!</h2>
 
       <div class="downloads__links" client:load>
-        <GitHubLink className="downloads__link" repo={Links.modRepo} title="Download" client:load />
+        <GitHubLink
+          className="downloads__link"
+          repo={Links.modRepo}
+          title="Download"
+          client:load
+        />
 
-        <a href="https://fabricmc.net/use/installer/" class="downloads__link">Install Fabric</a>
+        <a href="https://fabricmc.net/use/installer/" class="downloads__link">
+          Install Fabric
+        </a>
 
-        <GitHubLink className="downloads__link" repo={Links.hdskinsRepo}
-          title="Download HD Skins" client:load/>
+        <GitHubLink
+          className="downloads__link"
+          repo={Links.hdskinsRepo}
+          title="Download HD Skins"
+          client:load
+        />
       </div>
 
       <div class="downloads__extra">
-        <a href={`${Links.modRepo}/releases`} class="downloads__extra-link">All releases</a>
+        <a href={`${Links.modRepo}/releases`} class="downloads__extra-link">
+          All releases
+        </a>
         <a href={Links.modRepo} class="downloads__extra-link">Source code</a>
       </div>
 
-      <a href={Links.discordInvite} class="downloads__discord" title="Join our Discord server!">
+      <a
+        href={Links.discordInvite}
+        class="downloads__discord"
+        title="Join our Discord server!"
+      >
         <img src="/discord_logo.svg" alt="Discord logo" />
       </a>
     </div>
@@ -48,19 +66,21 @@ document.querySelectorAll('.hero').forEach(el => {
 </div>
 
 <style lang="scss">
-  @use "../../styles/mixins";
+  @use '../../styles/mixins';
 
   .hero {
-    background: url("/home/hero/pattern.png") #202020;
-    clip-path: polygon(0 var(--hero-clip-height),
-        100% 0,
-        100% 100%,
-        0 calc(100% - var(--hero-clip-height)));
+    background: url('/home/hero/pattern.png') #202020;
+    clip-path: polygon(
+      0 var(--hero-clip-height),
+      100% 0,
+      100% 100%,
+      0 calc(100% - var(--hero-clip-height))
+    );
     color: white;
     padding: var(--hero-clip-height) 0;
 
     &.secret-solved {
-      background: url("/home/hero/batbanner.svg") no-repeat 0 0 / cover;
+      background: url('/home/hero/batbanner.svg') no-repeat 0 0 / cover;
     }
 
     &.secret-solved &__image {

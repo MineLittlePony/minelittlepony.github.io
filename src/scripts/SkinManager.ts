@@ -13,7 +13,7 @@ export class SkinManager {
   private converted = false
   private sizeShift = -1
 
-  private get output (): CanvasRenderingContext2D {
+  private get output(): CanvasRenderingContext2D {
     if (this._output === null) {
       throw new Error('Output is not initialized')
     }
@@ -21,22 +21,22 @@ export class SkinManager {
     return this._output
   }
 
-  public setOutput (output: HTMLCanvasElement): void {
+  public setOutput(output: HTMLCanvasElement): void {
     this._output = getContext(output, 64, 32)
   }
 
-  public getSize (): [width:number, height:number] {
+  public getSize(): [width: number, height: number] {
     return [
       this.output.canvas.width,
-      this.output.canvas.height
+      this.output.canvas.height,
     ]
   }
 
-  public getPixel (x: number, y: number): Color {
+  public getPixel(x: number, y: number): Color {
     return Color.fromArray(this.pixels.getImageData(x, y, 1, 1).data)
   }
 
-  public setPixel (x: number, y: number, color: Color): void {
+  public setPixel(x: number, y: number, color: Color): void {
     const alpha = color.isBlack() ? 0 : 255
     const pixel = [+color.r, +color.g, +color.b, alpha]
     const data = new ImageData(new Uint8ClampedArray(pixel), 1, 1)
@@ -45,29 +45,29 @@ export class SkinManager {
     this.output.putImageData(data, x, y)
   }
 
-  public convert (value = true): void {
+  public convert(value = true): void {
     this.converted = value
     this.render()
   }
 
-  public isSquare (): boolean {
+  public isSquare(): boolean {
     return isSquare(this.original)
   }
 
-  public isConvertable (): boolean {
+  public isConvertable(): boolean {
     return !this.isSquare()
   }
 
-  public isLegacy (): boolean {
+  public isLegacy(): boolean {
     return isLegacy(this.original)
   }
 
-  public resize (sizeShift: number): void {
+  public resize(sizeShift: number): void {
     this.sizeShift = sizeShift
     this.render()
   }
 
-  public clear (): void {
+  public clear(): void {
     this.converted = false
     this.sizeShift = -1
     this.convertedCanvas = null
@@ -76,7 +76,7 @@ export class SkinManager {
     this.pixels.clearRect(0, 0, 4, 2)
   }
 
-  public setImage (image: HTMLImageElement): void {
+  public setImage(image: HTMLImageElement): void {
     const width = floorPowerOfTwo(image.width)
     const height = image.width <= image.height ? width : width / 2
 
@@ -101,7 +101,7 @@ export class SkinManager {
     this.render()
   }
 
-  public render (): void {
+  public render(): void {
     let src = this.converted && this.convertedCanvas !== null ? this.convertedCanvas : this.original.canvas
     src = this.sizeShift > -1 ? resize(src, this.sizeShift) : src
 
@@ -115,7 +115,7 @@ export class SkinManager {
     this.output.putImageData(pixelsData, 0, 0)
   }
 
-  public async toBlob (): Promise<Blob | null> {
+  public async toBlob(): Promise<Blob | null> {
     return await new Promise((resolve) => {
       this.output.canvas.toBlob((blob) => {
         resolve(blob)

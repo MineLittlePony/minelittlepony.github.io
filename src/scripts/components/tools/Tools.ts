@@ -1,12 +1,12 @@
-import { querySelector } from '@/scripts/utils/dom'
 import { saveAs } from 'file-saver'
 import { Checkbox } from '../Checkbox'
-import { Component, ComponentOptions, getComponent, getComponents } from '../Component'
+import { Component, type ComponentOptions, getComponent, getComponents } from '../Component'
 import { FileInfo } from './FileInfo'
 import { InputForm } from './InputForm'
 import { Pixel } from './Pixel'
 import { Preview } from './Preview'
 import { SkinSize } from './SkinSize'
+import { querySelector } from '@/scripts/utils/dom'
 
 export class Tools extends Component {
   public static readonly CLASS_NAME = 'tools'
@@ -21,7 +21,7 @@ export class Tools extends Component {
   private image: HTMLImageElement | null = null
   private filename = 'None'
 
-  constructor (options: ComponentOptions) {
+  constructor(options: ComponentOptions) {
     super(options)
 
     this.skinSize.setMaxSize(8192)
@@ -69,7 +69,8 @@ export class Tools extends Component {
     this.skinSize.on('input', (sizeShift) => {
       if (sizeShift > 4) {
         this.inputForm.setWarning('You\'ve selected officially unsupported skin size')
-      } else {
+      }
+      else {
         this.inputForm.setWarning('')
       }
 
@@ -83,7 +84,7 @@ export class Tools extends Component {
     this.root.classList.remove('is-loading')
   }
 
-  private processImage (image: HTMLImageElement): void {
+  private processImage(image: HTMLImageElement): void {
     this.preview.setImage(image)
 
     const [width, height] = this.preview.getSize()

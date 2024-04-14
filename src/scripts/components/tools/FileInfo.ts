@@ -6,11 +6,11 @@ export class FileInfo extends Component {
   private readonly filename = this.getElement('filename', HTMLElement, true)
   private readonly size = this.getElement('size', HTMLElement, true)
 
-  public setFilename (name: string): void {
-    this.filename.innerText = name
+  public setFilename(name: string): void {
+    this.filename.textContent = name
   }
 
-  public setSize (width: number, height: number): void {
-    this.size.innerText = `${width}x${height}`
+  public setSize(width: number, height: number): void {
+    this.size.textContent = `${width}x${height}`
   }
 }

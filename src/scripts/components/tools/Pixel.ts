@@ -1,6 +1,6 @@
-import { Color } from '@/scripts/Color'
-import { Component, ComponentOptions, getComponent } from '../Component'
+import { Component, type ComponentOptions, getComponent } from '../Component'
 import { Select } from '../Select'
+import { Color } from '@/scripts/Color'
 
 export interface PixelEvents {
   change: {
@@ -20,23 +20,30 @@ export class Pixel extends Component<PixelEvents> {
   public readonly x: number
   public readonly y: number
 
-  constructor (options: ComponentOptions) {
+  constructor(options: ComponentOptions) {
     super(options)
 
-    this.x = parseInt(this.root.dataset.x ?? '0')
-    this.y = parseInt(this.root.dataset.y ?? '0')
+    this.x = Number.parseInt(this.root.dataset.x ?? '0')
+    this.y = Number.parseInt(this.root.dataset.y ?? '0')
 
     const type = this.root.dataset.type
 
     switch (type) {
-      case 'CONDENSED': this.setValue = this.initCondensed(); break
-      case 'NORMAL': this.setValue = this.initNormal(); break
-      case 'RAW': this.setValue = this.initRaw(); break
-      default: throw new Error(`Unknown pixel type '${String(type)}'`)
+      case 'CONDENSED':
+        this.setValue = this.initCondensed()
+        break
+      case 'NORMAL':
+        this.setValue = this.initNormal()
+        break
+      case 'RAW':
+        this.setValue = this.initRaw()
+        break
+      default:
+        throw new Error(`Unknown pixel type '${String(type)}'`)
     }
   }
 
-  private initCondensed (): ValueSetter {
+  private initCondensed(): ValueSetter {
     const select = getComponent(Select, this.root)
 
     select.on('change', (value) => {
@@ -48,7 +55,7 @@ export class Pixel extends Component<PixelEvents> {
     }
   }
 
-  private initNormal (): ValueSetter {
+  private initNormal(): ValueSetter {
     const select = getComponent(Select, this.root)
 
     select.on('input', (value) => {
@@ -60,7 +67,7 @@ export class Pixel extends Component<PixelEvents> {
     }
   }
 
-  private initRaw (): ValueSetter {
+  private initRaw(): ValueSetter {
     const input = this.getElement('input', HTMLInputElement, true)
 
     input.addEventListener('input', () => {
@@ -72,7 +79,7 @@ export class Pixel extends Component<PixelEvents> {
     }
   }
 
-  private dispatchColor (color: Color): void {
+  private dispatchColor(color: Color): void {
     this.dispatch('change', { x: this.x, y: this.y, color })
   }
 }

@@ -1,11 +1,16 @@
-export function initKonami (callback: () => void): void {
+export function initKonami(callback: () => void): void {
   // The 'official' Konami Code sequence
   const KONAMI_CODE = [
-    'ArrowUp', 'ArrowUp',
-    'ArrowDown', 'ArrowDown',
-    'ArrowLeft', 'ArrowRight',
-    'ArrowLeft', 'ArrowRight',
-    'KeyB', 'KeyA'
+    'ArrowUp',
+    'ArrowUp',
+    'ArrowDown',
+    'ArrowDown',
+    'ArrowLeft',
+    'ArrowRight',
+    'ArrowLeft',
+    'ArrowRight',
+    'KeyB',
+    'KeyA',
   ]
 
   // Variable to remember the 'position' the user has reached so far.
@@ -26,7 +31,8 @@ export function initKonami (callback: () => void): void {
         callback()
         konamiCodePosition = 0
       }
-    } else {
+    }
+    else {
       konamiCodePosition = 0
     }
   })

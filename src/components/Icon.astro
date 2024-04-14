@@ -14,6 +14,7 @@ if (Props.size) {
   style['--size'] = Props.size
 }
 ---
+
 <AstroIcon
   class={Props.className}
   name={Props.icon}
@@ -23,8 +24,12 @@ if (Props.size) {
 
 <style lang="scss">
   @keyframes spin {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
   [astro-icon] {
     width: var(--size, 1em);
@@ -32,5 +37,5 @@ if (Props.size) {
     &[data-spin] {
       animation: spin 2s linear infinite;
     }
-}
+  }
 </style>

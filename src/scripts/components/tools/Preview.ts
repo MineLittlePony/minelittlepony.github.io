@@ -1,8 +1,8 @@
+import { Component } from '../Component'
 import { Color } from '@/scripts/Color'
 import { createContext, getContext } from '@/scripts/utils/canvas'
 import { floorPowerOfTwo } from '@/scripts/utils/math'
 import { convert, isLegacy, isSquare, resize } from '@/scripts/utils/skin'
-import { Component } from '../Component'
 
 export class Preview extends Component {
   public static readonly CLASS_NAME = 'preview'
@@ -17,35 +17,35 @@ export class Preview extends Component {
   private converted = false
   private sizeShift = -1
 
-  public getSize (): [width: number, height: number] {
+  public getSize(): [width: number, height: number] {
     return [this.output.canvas.width, this.output.canvas.height]
   }
 
-  public isConvertable (): boolean {
+  public isConvertable(): boolean {
     return !this.isSquare()
   }
 
-  public isLegacy (): boolean {
+  public isLegacy(): boolean {
     return isLegacy(this.original)
   }
 
-  public isSquare (): boolean {
+  public isSquare(): boolean {
     return isSquare(this.original)
   }
 
-  public convert (convert = true): void {
+  public convert(convert = true): void {
     this.converted = convert
 
     this.update()
   }
 
-  public resize (sizeShift: number): void {
+  public resize(sizeShift: number): void {
     this.sizeShift = sizeShift
 
     this.update()
   }
 
-  public setImage (image: HTMLImageElement): void {
+  public setImage(image: HTMLImageElement): void {
     const width = floorPowerOfTwo(image.width)
     const height = image.width <= image.height ? width : width / 2
 
@@ -70,11 +70,11 @@ export class Preview extends Component {
     this.update()
   }
 
-  public getPixel (x: number, y: number): Color {
+  public getPixel(x: number, y: number): Color {
     return Color.fromArray(this.pixels.getImageData(x, y, 1, 1).data)
   }
 
-  public setPixel (x: number, y: number, color: Color): void {
+  public setPixel(x: number, y: number, color: Color): void {
     const alpha = color.isBlack() ? 0 : 255
     const rawData = [+color.r, +color.g, +color.b, alpha]
     const data = new ImageData(new Uint8ClampedArray(rawData), 1, 1)
@@ -83,13 +83,13 @@ export class Preview extends Component {
     this.output.putImageData(data, x, y)
   }
 
-  public async toBlob (): Promise<Blob | null> {
+  public async toBlob(): Promise<Blob | null> {
     return await new Promise((resolve) => {
       this.output.canvas.toBlob(resolve)
     })
   }
 
-  private update (): void {
+  private update(): void {
     let src = this.converted && this.convertedCanvas !== null ? this.convertedCanvas : this.original.canvas
     src = this.sizeShift > -1 ? resize(src, this.sizeShift) : src
 

@@ -7,15 +7,15 @@ export class IconButton extends Component {
 
   public readonly addEventListener = this.root.addEventListener.bind(this.root)
 
-  public click (): void {
+  public click(): void {
     this.root.click()
   }
 
-  public disable (disable = true): void {
+  public disable(disable = true): void {
     this.root.disabled = disable
   }
 
-  public hide (hide = true): void {
+  public hide(hide = true): void {
     this.root.hidden = hide
   }
 }

@@ -5,13 +5,15 @@ const SIGNATURE = [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]
  * Remove annoying image profile that affects original pixels when image is rendered by browser
  * @author keupoz <https://github.com/keupoz>
  */
-export function removeICC (buf: ArrayBuffer): Uint8Array | null {
+export function removeICC(buf: ArrayBuffer): Uint8Array | null {
   const reader = new BufferReader(buf)
 
   // Check if the file is actually PNG
   // PNG files must start with the signature
   for (const byte of SIGNATURE) {
-    if (byte !== reader.read8()) return null
+    if (byte !== reader.read8()) {
+      return null
+    }
   }
 
   let iccStart = -1
@@ -41,7 +43,9 @@ export function removeICC (buf: ArrayBuffer): Uint8Array | null {
     reader.skip(length + 4)
   }
 
-  if (iccStart === -1) return reader.bytes
+  if (iccStart === -1) {
+    return reader.bytes
+  }
 
   // Remove the iCCP chunk
   const bytes = Array.from(reader.bytes)
@@ -54,18 +58,18 @@ class BufferReader {
   public readonly bytes: Uint8Array
   public index: number
 
-  constructor (buf: ArrayBuffer) {
+  constructor(buf: ArrayBuffer) {
     this.bytes = new Uint8Array(buf)
     this.index = 0
   }
 
-  public raw (length: number): Uint8Array {
+  public raw(length: number): Uint8Array {
     const result = this.bytes.slice(this.index, this.index += length)
 
     return result
   }
 
-  public read8 (): number {
+  public read8(): number {
     const byte = this.bytes[this.index++]
 
     if (byte === undefined) {
@@ -75,15 +79,15 @@ class BufferReader {
     return byte
   }
 
-  public readLength (): number {
+  public readLength(): number {
     return (this.read8() << 24 | this.read8() << 16 | this.read8() << 8 | this.read8()) >>> 0
   }
 
-  public readType (): string {
+  public readType(): string {
     return String.fromCharCode(...this.raw(4))
   }
 
-  public skip (length: number): void {
+  public skip(length: number): void {
     this.index += length
   }
 }

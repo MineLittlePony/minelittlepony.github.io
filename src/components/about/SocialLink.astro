@@ -9,7 +9,11 @@ export interface Props extends IconProps {
 const Props = Astro.props as Props
 ---
 
-<a href={Props.href} class={`social-link ${Props.className}`} title={Props.title}>
+<a
+  href={Props.href}
+  class={`social-link ${Props.className}`}
+  title={Props.title}
+>
   <Icon {...Props} />
 </a>
 

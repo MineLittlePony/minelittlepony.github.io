@@ -1,4 +1,4 @@
-@use "mixins";
+@use 'mixins';
 
 .disabled,
 :disabled {
@@ -16,7 +16,7 @@ label {
   box-shadow: 0 0 0 4px rgba(dodgerblue, 0.25);
 }
 
-input:not([type="checkbox"]),
+input:not([type='checkbox']),
 .input {
   min-height: var(--input-height);
   width: 100%;
@@ -39,11 +39,11 @@ input:not([type="checkbox"]),
     @extend .focus;
   }
 
-  &[type="range"] {
+  &[type='range'] {
     padding: 0;
   }
 
-  &[type="color"] {
+  &[type='color'] {
     padding: 0.25em;
   }
 }

@@ -18,7 +18,7 @@ menuEntry: "Installation"
 
 Once you've downloaded all the files you need to install LiteLoader. Run the downloaded installer file, select the settings you want and click the "OK" button.
 
-![LiteLoader installer](/installation/legacy/liteloader-installer.png "LiteLoader installer")
+![LiteLoader installer](/installation/legacy/liteloader-installer.png 'LiteLoader installer')
 
 ## Installing the mod
 
@@ -28,11 +28,11 @@ After installing LiteLoader you need to add your mods to the game. Place downloa
 - `~/Library/Application Support/minecraft` on macOS
 - `~/.minecraft` on Linux
 
-![Mods folder](/installation/legacy/mods-folder.png "Mods folder")
+![Mods folder](/installation/legacy/mods-folder.png 'Mods folder')
 
 ## Play the game!
 
 If everything was done correctly, a new Minecraft profile called something like `LiteLoader 1.12.2` should appear. Select it and launch the game. Now you should turn into a pony!
 
-![Minecraft client with installed LiteLoader profile](/installation/legacy/minecraft-client.png "Minecraft client with installed Fabric profile")
-![Player pony](/installation/legacy/ingame.png "Player pony")
+![Minecraft client with installed LiteLoader profile](/installation/legacy/minecraft-client.png 'Minecraft client with installed Fabric profile')
+![Player pony](/installation/legacy/ingame.png 'Player pony')

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { parseGitHubUrl, type ModRepo } from '@/scripts/utils/links'
+  import { type ModRepo, parseGitHubUrl } from '@/scripts/utils/links'
   import { fetchReleases } from '@/scripts/utils/releases'
 
   export let className: string
@@ -38,7 +38,7 @@
   <a href={`${repo}/releases/latest`} class={className}>
     <span>{title}</span>
     <span class="version-error"
-      >There was an error while resolving the latest version</span
+    >There was an error while resolving the latest version</span
     >
   </a>
 {/await}

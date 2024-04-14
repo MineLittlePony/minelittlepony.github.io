@@ -18,21 +18,30 @@ const Props = Astro.props as Props
   </div>
 
   <div class="pixel__options">
-    {Props.options.map((option) => {
-      const value = option.value.padStart(6, '0')
+    {
+      Props.options.map((option) => {
+        const value = option.value.padStart(6, '0')
 
-      return (<div class="pixel__option">
-      {value === '000000'
-        ? <Icon className="pixel__color-icon" icon='fa6-solid:ban' />
-        : <div class="pixel__color-preview" style={`background-color: #${value};`}></div>}
+        return (
+          <div class="pixel__option">
+            {value === '000000' ? (
+              <Icon className="pixel__color-icon" icon="fa6-solid:ban" />
+            ) : (
+              <div
+                class="pixel__color-preview"
+                style={`background-color: #${value};`}
+              />
+            )}
 
-      <code class="pixel__color-code">
-        #{value === '000000' ? '------' : option.value}
-      </code>
+            <code class="pixel__color-code">
+              #{value === '000000' ? '------' : option.value}
+            </code>
 
-      <div class="pixel__color-label">{option.label}</div>
-    </div>)
-    })}
+            <div class="pixel__color-label">{option.label}</div>
+          </div>
+        )
+      })
+    }
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-export function getContext (canvas: HTMLCanvasElement, width: number, height: number): CanvasRenderingContext2D {
+export function getContext(canvas: HTMLCanvasElement, width: number, height: number): CanvasRenderingContext2D {
   const ctx = canvas.getContext('2d')
 
   if (ctx === null) {
@@ -12,7 +12,7 @@ export function getContext (canvas: HTMLCanvasElement, width: number, height: nu
   return ctx
 }
 
-export function createContext (width: number, height: number): CanvasRenderingContext2D {
+export function createContext(width: number, height: number): CanvasRenderingContext2D {
   const canvas = document.createElement('canvas')
 
   return getContext(canvas, width, height)

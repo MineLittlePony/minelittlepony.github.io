@@ -29,8 +29,8 @@ const Pixels: PixelInfo[] = [
       { value: 'd6ddac', label: 'Hippogriff' },
       { value: 'fa88af', label: 'Kirin' },
       { value: 'eeeeee', label: 'Batpony' },
-      { value: '3655dd', label: 'Seapony' }
-    ]
+      { value: '3655dd', label: 'Seapony' },
+    ],
   },
   {
     label: 'Tail length',
@@ -43,8 +43,8 @@ const Pixels: PixelInfo[] = [
       { value: 'd19fe4', label: 'Quarter' },
       { value: '534b76', label: 'Half' },
       { value: '8a6b7f', label: 'Three Quarters' },
-      { value: '000000', label: 'Full' }
-    ]
+      { value: '000000', label: 'Full' },
+    ],
   },
   {
     label: 'Snout shape',
@@ -55,8 +55,8 @@ const Pixels: PixelInfo[] = [
     options: [
       { value: '000000', label: 'Rounded' },
       { value: 'ffffff', label: 'Squared' },
-      { value: '888888', label: 'Flat' }
-    ]
+      { value: '888888', label: 'Flat' },
+    ],
   },
   {
     label: 'Body type',
@@ -70,8 +70,8 @@ const Pixels: PixelInfo[] = [
       { value: '3254ce', label: 'Lanky' },
       { value: '000000', label: 'Normal' },
       { value: '53beff', label: 'Yearling' },
-      { value: 'ffbe53', label: 'Foal' }
-    ]
+      { value: 'ffbe53', label: 'Foal' },
+    ],
   },
   {
     label: 'Magic glow',
@@ -80,8 +80,8 @@ const Pixels: PixelInfo[] = [
     x: 0,
     y: 1,
     options: [
-      { value: '000000', label: 'Any color you want' }
-    ]
+      { value: '000000', label: 'Any color you want' },
+    ],
   },
   {
     label: 'Wearables',
@@ -97,8 +97,8 @@ const Pixels: PixelInfo[] = [
       { value: 'c6', label: 'Saddle Bags Left' },
       { value: 'c7', label: 'Saddle Bags Right' },
       { value: 'c8', label: 'Saddle Bags Both' },
-      { value: 'fa', label: 'Stetson' }
-    ]
+      { value: 'fa', label: 'Stetson' },
+    ],
   },
   {
     label: 'Tail shape',
@@ -110,9 +110,9 @@ const Pixels: PixelInfo[] = [
       { value: '000000', label: 'Straight' },
       { value: 'fc539f', label: 'Bumpy' },
       { value: '3eff22', label: 'Swirly' },
-      { value: '3308c7', label: 'Spiky' }
-    ]
-  }
+      { value: '3308c7', label: 'Spiky' },
+    ],
+  },
 ]
 
 export default Pixels

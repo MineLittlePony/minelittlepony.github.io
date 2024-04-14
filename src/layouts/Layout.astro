@@ -11,45 +11,48 @@ export interface Props {
 }
 
 const Props = Astro.props as Props
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <title>
+      {Props.title === undefined ? '' : `${Props.title} - `}{Site.title}
+    </title>
 
-<head>
-  <title>{ Props.title === undefined ? '' : `${Props.title} - ` }{ Site.title }</title>
+    <meta name="viewport" content="width = device-width, user-scalable = no" />
+    <meta charset="utf-8" />
 
-  <meta name="viewport" content="width = device-width, user-scalable = no" />
-  <meta charset="utf-8" />
+    <!-- OpenGraph properties -->
+    <meta property="og:title" content={Props.title ?? Site.title} />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content={Props.description ?? Site.description} />
+    <meta
+      property="og:description"
+      content={Props.description ?? Site.description}
+    />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:url" content={Astro.site} />
+    <meta property="og:site_name" content={Site.name} />
 
-  <!-- OpenGraph properties -->
-  <meta property="og:title" content={ Props.title ?? Site.title } />
-  <meta property="og:locale" content="en_US" />
-  <meta name="description" content={ Props.description ?? Site.description } />
-  <meta property="og:description" content={ Props.description ?? Site.description } />
-  <link rel="canonical" href={ canonicalURL } />
-  <meta property="og:url" content={ Astro.site } />
-  <meta property="og:site_name" content={ Site.name } />
+    <meta property="og:image" content={new URL('/banner.png', Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <meta property="og:image" content={ new URL('/banner.png', Astro.site) }>
-  <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
 
-  <link rel="shortcut icon" href="/favicon.ico">
-</head>
+  <body>
+    <div class="body-content">
+      <div class="body-content__wrapper">
+        <Header menuEntry={Props.menuEntry} />
 
-<body>
-  <div class="body-content">
-    <div class="body-content__wrapper">
-      <Header menuEntry={ Props.menuEntry } />
+        <main class="body-content__main">
+          <slot />
+        </main>
 
-      <main class="body-content__main">
-        <slot />
-      </main>
-
-      <Footer />
+        <Footer />
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

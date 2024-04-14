@@ -4,7 +4,7 @@ const SKINS_URL = 'https://minelp.deno.dev/skin/exact/valhalla/%s'
 
 let controller: AbortController | null = null
 
-export async function fetchSkin (nickname: string): Promise<File> {
+export async function fetchSkin(nickname: string): Promise<File> {
   if (controller !== null) {
     controller.abort()
   }
@@ -25,7 +25,7 @@ export async function fetchSkin (nickname: string): Promise<File> {
   return new File([blob], `${xNickname}.png`)
 }
 
-export async function file2image (file: File): Promise<HTMLImageElement> {
+export async function file2image(file: File): Promise<HTMLImageElement> {
   const blob = await readPNG(file)
 
   return await new Promise((resolve, reject) => {
@@ -45,14 +45,14 @@ export async function file2image (file: File): Promise<HTMLImageElement> {
   })
 }
 
-async function readPNG (file: File): Promise<Blob> {
+async function readPNG(file: File): Promise<Blob> {
   return await new Promise((resolve, reject) => {
     const F = new FileReader()
 
     F.onload = () => {
       try {
         if (!(F.result instanceof ArrayBuffer)) {
-          throw new Error('FileReader result is not ArrayBuffer')
+          throw new TypeError('FileReader result is not ArrayBuffer')
         }
 
         const clean = removeICC(F.result)
@@ -62,11 +62,12 @@ async function readPNG (file: File): Promise<Blob> {
         }
 
         const blob = new Blob([clean], {
-          type: 'image/png'
+          type: 'image/png',
         })
 
         resolve(blob)
-      } catch (err) {
+      }
+      catch (err) {
         reject(err)
       }
     }

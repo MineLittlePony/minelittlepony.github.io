@@ -1,12 +1,10 @@
 ---
 import Team from '@/data/cards/team'
-import MemberCard from './MemberCard.astro';
+import MemberCard from './MemberCard.astro'
 ---
 
 <div class="members-list">
-  {Team.map((member) => (
-  <MemberCard {...member} />
-  ))}
+  {Team.map((member) => <MemberCard {...member} />)}
 </div>
 
 <style lang="scss">
@@ -15,7 +13,7 @@ import MemberCard from './MemberCard.astro';
     grid-template-columns: 1fr;
     gap: var(--margin);
 
-    @media (min-width:800px) {
+    @media (min-width: 800px) {
       grid-template-columns: 1fr 1fr;
     }
   }

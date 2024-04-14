@@ -8,9 +8,11 @@ const color = `#${(Props.color & 0xffffff).toString(16).padStart(6, '0')}`
 ---
 
 <a class="extra" href={Props.url}>
-  <img src={`/home/extra/${Props.image}.png`} class="extra__image">
-  <div class="extra__label" style={`background-color: ${color};`}>{Props.label}</div>
-  <div class="extra__description" set:html={Props.description}></div>
+  <img src={`/home/extra/${Props.image}.png`} class="extra__image" />
+  <div class="extra__label" style={`background-color: ${color};`}>
+    {Props.label}
+  </div>
+  <div class="extra__description" set:html={Props.description} />
 </a>
 
 <style lang="scss">
