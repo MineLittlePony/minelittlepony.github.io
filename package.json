@@ -3,6 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@8.15.7",
   "description": "Source code of official Mine Little pony Minecraft mod website",
   "scripts": {
     "dev": "astro dev",
