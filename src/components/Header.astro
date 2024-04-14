@@ -6,7 +6,7 @@ export interface Props {
   menuEntry?: string | undefined
 }
 
-const Props = Astro.props as Props
+const Props = Astro.props
 
 const isCurrentMenuEntry = (title: string) => title === Props.menuEntry
 ---

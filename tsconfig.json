@@ -5,7 +5,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "verbatimModuleSyntax": true
   },
   "exclude": ["node_modules/**/*", "dist/**/*"]
 }

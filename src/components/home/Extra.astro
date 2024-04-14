@@ -3,7 +3,7 @@ import type { ExtraCard } from '@/data/cards/extra'
 
 export type Props = ExtraCard
 
-const Props = Astro.props as Props
+const Props = Astro.props
 const color = `#${(Props.color & 0xffffff).toString(16).padStart(6, '0')}`
 ---
 

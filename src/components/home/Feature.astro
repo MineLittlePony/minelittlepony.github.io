@@ -4,7 +4,7 @@ import type { FeatureCard } from '@/data/cards/features'
 
 export type Props = FeatureCard
 
-const Props = Astro.props as Props
+const Props = Astro.props
 const content = (await (Astro as any).__renderMarkdown(Props.content, {
   mode: 'md',
 })) as string

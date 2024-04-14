@@ -4,7 +4,7 @@ import Select from '../Select.astro'
 
 export type Props = PixelInfo
 
-const Props = Astro.props as Props
+const Props = Astro.props
 ---
 
 <div class="pixel" data-type={Props.type} data-x={Props.x} data-y={Props.y}>

@@ -5,7 +5,7 @@ import SocialLink from './SocialLink.astro'
 
 export type Props = MemberInfo
 
-const Props = Astro.props as Props
+const Props = Astro.props
 
 // Object.entries doesn't provide good key generics
 type EntriesFn = <T>(obj: T) => [keyof T, NonNullable<T[keyof T]>][]
