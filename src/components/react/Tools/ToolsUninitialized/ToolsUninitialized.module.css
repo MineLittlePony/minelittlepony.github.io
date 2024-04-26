@@ -1,0 +1,5 @@
+.Container {
+  @apply bg-zinc-100 text-center text-zinc-500;
+  @apply aspect-video rounded-md p-8;
+  @apply flex flex-col items-center justify-center gap-4;
+}

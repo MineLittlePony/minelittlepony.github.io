@@ -1,0 +1,52 @@
+---
+import { type PixelInfo } from '@/data/pixels';
+
+export interface Props {
+  info: PixelInfo;
+}
+
+const { info } = Astro.props;
+---
+
+<div class="flex flex-col gap-2">
+  <div class="font-bold">{info.name}</div>
+
+  <div class="flex gap-2">
+    <code title="Pixel type">{info.type}</code>
+
+    <code title="Pixel coordinates">
+      x: {info.x}, y: {info.y}
+    </code>
+  </div>
+
+  <ul class="list-none">
+    {
+      info.options.map((option) => {
+        const value = option.color.toString(16).padStart(6, '0');
+
+        return (
+          <li class="flex items-center gap-2">
+            {value === '000000' ? (
+              <i class="fas fa-ban text-red-500" title="Transparent" />
+            ) : (
+              <div
+                class="h-4 w-4 rounded-full border border-zinc-500/50"
+                style={{ backgroundColor: `#${value}` }}
+              />
+            )}
+
+            <code
+              title={
+                value === '000000' && info.type !== 'RAW' ? 'Transparent' : ''
+              }
+            >
+              #{value === '000000' ? '------' : value}
+            </code>
+
+            <span>{option.label}</span>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>

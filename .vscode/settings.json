@@ -5,6 +5,7 @@
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
+  "editor.defaultFormatter": null,
 
   // Auto fix
   "editor.codeActionsOnSave": {
@@ -40,7 +41,12 @@
     "jsonc",
     "yaml",
     "toml",
+    "gql",
+    "graphql",
     "astro",
-    "svelte"
-  ]
+    "postcss",
+    "css"
+  ],
+
+  "editor.rulers": [120]
 }
