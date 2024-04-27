@@ -1,0 +1,19 @@
+---
+import { type NavigationInfo } from '@/data/navigation';
+import { addBase } from '@/utils/addBase';
+import classes from './NavigationLink.module.css';
+
+export type Props = NavigationInfo;
+
+const { href, title, description } = Astro.props;
+const path = addBase(href);
+---
+
+{
+  path !== Astro.url.pathname && (
+    <a class={classes.Link} href={href}>
+      <strong>{title}</strong>
+      <p>{description}</p>
+    </a>
+  )
+}

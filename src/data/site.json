@@ -1,5 +1,5 @@
 {
-  "title": "Mine Little Pony",
-  "name": "Mine Little Pony Official site",
-  "description": "Official site of Minecraft mod Mine Little Pony that turns player into a pony"
+  "siteDescription": "Official site of Minecraft mod Mine Little Pony that turns player into a pony",
+  "siteName": "Mine Little Pony Official site",
+  "titleTemplate": "%s - Mine Little Pony"
 }

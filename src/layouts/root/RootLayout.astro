@@ -1,0 +1,58 @@
+---
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import './global.css';
+
+import Site from '@/data/site.json';
+import { SEOMetadata } from 'astro-seo-metadata';
+import Footer from './Footer/Footer.astro';
+import Header from './Header/Header.astro';
+import Main, { type Props as MainProps } from './Main/Main.astro';
+
+export interface Props extends MainProps {
+  title: string;
+  description?: string;
+}
+
+const { title, description, ...mainProps } = Astro.props;
+const favicon = '/assets/favicon.ico';
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <SEOMetadata
+      siteName={Site.siteName}
+      title={Site.titleTemplate.replace('%s', title)}
+      description={description ?? Site.siteDescription}
+      favicon={favicon}
+      image={new URL(favicon, Astro.url).toString()}
+      canonicalUrl={Astro.url.toString()}
+      type="website"
+      astroSitemap
+      astroGenerator
+    />
+
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=roboto:400,700|roboto-mono:400,700|roboto-slab:400,700"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div
+      class="mx-auto flex min-h-screen max-w-6xl flex-col bg-white shadow-xl font-serif"
+    >
+      <Header />
+
+      <Main {...mainProps}>
+        <slot />
+      </Main>
+
+      <Footer />
+    </div>
+  </body>
+</html>

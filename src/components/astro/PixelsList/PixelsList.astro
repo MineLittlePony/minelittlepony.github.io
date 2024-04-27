@@ -1,0 +1,8 @@
+---
+import { Pixels } from '@/data/pixels';
+import Pixel from './Pixel.astro';
+---
+
+<div class="not-prose flex flex-col gap-2">
+  {Pixels.map((pixel) => <Pixel info={pixel} />)}
+</div>

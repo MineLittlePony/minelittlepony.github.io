@@ -1,0 +1,9 @@
+.TeamCarousel {
+  & :global(.swiper) {
+    @apply py-6;
+  }
+
+  & :global(.swiper-slide) {
+    @apply h-auto;
+  }
+}

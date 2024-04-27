@@ -1,118 +1,109 @@
-import type { SelectOption } from '@/components/SelectTypes'
-
-export interface PixelInfo {
-  label: string
-  determines: string
-  type: 'NORMAL' | 'CONDENSED' | 'RAW'
-  x: number
-  y: number
-  options: SelectOption[]
+export interface PixelValue {
+  color: number;
+  label: string;
 }
 
-const Pixels: PixelInfo[] = [
+export interface PixelInfo {
+  name: string;
+  type: 'CONDENSED' | 'NORMAL' | 'RAW';
+  x: number;
+  y: number;
+  options: [PixelValue, ...PixelValue[]];
+}
+
+export const Pixels: PixelInfo[] = [
   {
-    label: 'Race',
-    determines: 'your pony type',
+    name: 'Race',
     type: 'NORMAL',
     x: 0,
     y: 0,
     options: [
-      { value: '000000', label: 'Human' },
-      { value: 'f9b131', label: 'Earth pony' },
-      { value: '88caf0', label: 'Pegasus' },
-      { value: 'd19fe4', label: 'Unicorn' },
-      { value: 'fef9fc', label: 'Alicorn' },
-      { value: '282b29', label: 'Changeling' },
-      { value: 'd0cccf', label: 'Zebra' },
-      { value: 'caed5a', label: 'Reformed Changeling' },
-      { value: 'ae9145', label: 'Gryphon' },
-      { value: 'd6ddac', label: 'Hippogriff' },
-      { value: 'fa88af', label: 'Kirin' },
-      { value: 'eeeeee', label: 'Batpony' },
-      { value: '3655dd', label: 'Seapony' },
+      { color: 0x000000, label: 'Human' },
+      { color: 0xF9B131, label: 'Earth pony' },
+      { color: 0x88CAF0, label: 'Pegasus' },
+      { color: 0xD19FE4, label: 'Unicorn' },
+      { color: 0xFEF9FC, label: 'Alicorn' },
+      { color: 0x282B29, label: 'Changeling' },
+      { color: 0xD0CCCF, label: 'Zebra' },
+      { color: 0xCAED5A, label: 'Reformed Changeling' },
+      { color: 0xAE9145, label: 'Gryphon' },
+      { color: 0xD6DDAC, label: 'Hippogriff' },
+      { color: 0xFA88AF, label: 'Kirin' },
+      { color: 0xEEEEEE, label: 'Batpony' },
+      { color: 0x3655DD, label: 'Seapony' },
     ],
   },
   {
-    label: 'Tail length',
-    determines: 'how long your tail is',
+    name: 'Tail length',
     type: 'NORMAL',
     x: 1,
     y: 0,
     options: [
-      { value: '425844', label: 'Stub' },
-      { value: 'd19fe4', label: 'Quarter' },
-      { value: '534b76', label: 'Half' },
-      { value: '8a6b7f', label: 'Three Quarters' },
-      { value: '000000', label: 'Full' },
+      { color: 0x425844, label: 'Stub' },
+      { color: 0xD19FE4, label: 'Quarter' },
+      { color: 0x534B76, label: 'Half' },
+      { color: 0x8A6B7F, label: 'Three Quarters' },
+      { color: 0x000000, label: 'Full' },
     ],
   },
   {
-    label: 'Snout shape',
-    determines: 'the shape of your pony\'s snout',
+    name: 'Snout shape',
     type: 'NORMAL',
     x: 2,
     y: 0,
     options: [
-      { value: '000000', label: 'Rounded' },
-      { value: 'ffffff', label: 'Squared' },
-      { value: '888888', label: 'Flat' },
+      { color: 0x000000, label: 'Rounded' },
+      { color: 0xFFFFFF, label: 'Squared' },
+      { color: 0x888888, label: 'Flat' },
     ],
   },
   {
-    label: 'Body type',
-    determines: 'how large your pony is',
+    name: 'Body type',
     type: 'NORMAL',
     x: 3,
     y: 0,
     options: [
-      { value: '534b76', label: 'Tall' },
-      { value: 'ce3254', label: 'Bulky' },
-      { value: '3254ce', label: 'Lanky' },
-      { value: '000000', label: 'Normal' },
-      { value: '53beff', label: 'Yearling' },
-      { value: 'ffbe53', label: 'Foal' },
+      { color: 0x534B76, label: 'Tall' },
+      { color: 0xCE3254, label: 'Bulky' },
+      { color: 0x3254CE, label: 'Lanky' },
+      { color: 0x000000, label: 'Normal' },
+      { color: 0x53BEFF, label: 'Yearling' },
+      { color: 0xFFBE53, label: 'Foal' },
     ],
   },
   {
-    label: 'Magic glow',
-    determines: 'the color of your pony\'s magic',
+    name: 'Magic glow',
     type: 'RAW',
     x: 0,
     y: 1,
-    options: [
-      { value: '000000', label: 'Any color you want' },
-    ],
+    options: [{ color: 0x000000, label: 'Any color you want' }],
   },
   {
-    label: 'Wearables',
-    determines: 'what accessories your pony will have',
+    name: 'Wearables',
     type: 'CONDENSED',
     x: 1,
     y: 1,
     options: [
-      { value: '16', label: 'Crown' },
-      { value: '32', label: 'Muffin' },
-      { value: '64', label: 'Hat' },
-      { value: '96', label: 'Antlers' },
-      { value: 'c6', label: 'Saddle Bags Left' },
-      { value: 'c7', label: 'Saddle Bags Right' },
-      { value: 'c8', label: 'Saddle Bags Both' },
-      { value: 'fa', label: 'Stetson' },
+      { color: 0x16, label: 'Crown' },
+      { color: 0x32, label: 'Muffin' },
+      { color: 0x64, label: 'Hat' },
+      { color: 0x96, label: 'Antlers' },
+      { color: 0xC6, label: 'Saddle Bags Left' },
+      { color: 0xC7, label: 'Saddle Bags Right' },
+      { color: 0xC8, label: 'Saddle Bags Both' },
+      { color: 0xFA, label: 'Stetson' },
     ],
   },
   {
-    label: 'Tail shape',
-    determines: 'shape of your tail',
+    name: 'Tail shape',
     type: 'NORMAL',
     x: 2,
     y: 1,
     options: [
-      { value: '000000', label: 'Straight' },
-      { value: 'fc539f', label: 'Bumpy' },
-      { value: '3eff22', label: 'Swirly' },
-      { value: '3308c7', label: 'Spiky' },
+      { color: 0x000000, label: 'Straight' },
+      { color: 0xFC539F, label: 'Bumpy' },
+      { color: 0x3EFF22, label: 'Swirly' },
+      { color: 0x3308C7, label: 'Spiky' },
     ],
   },
-]
-
-export default Pixels
+];

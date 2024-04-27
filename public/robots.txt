@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://minelittlepony-mod.com/sitemap-index.xml
