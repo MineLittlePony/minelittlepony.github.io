@@ -6,26 +6,28 @@ import { ProjectSchema } from '@/schemas/modrinth';
 import { ModrinthProject } from './ModrinthProject';
 import { VersionContext } from './VersionContext';
 
+const RELEASE_REGEX = /^\d+\.\d+(.\d+)?$/;
+
 export function ModrinthDownloadsContent() {
   const [selectedVersion, setSelectedVersion] = useState<string | null>(null);
-  const [hideSnapshots, setHideSnapshots] = useState(true);
+  const [showAllVersions, setShowAllVersions] = useState(false);
 
   const versionsId = useId();
-  const hideSnapshotsId = useId();
+  const showAllVersionsId = useId();
 
   const { data } = useZodQuery(ProjectSchema, 'https://api.modrinth.com/v2/project/JBjInUXM');
 
   const versions = useMemo(() => {
     let result = data?.game_versions;
 
-    if (hideSnapshots) {
-      result = result?.filter(version => version.includes('.'));
-    } else {
+    if (showAllVersions) {
       result = result?.slice();
+    } else {
+      result = result?.filter(version => RELEASE_REGEX.test(version));
     }
 
     return result?.reverse();
-  }, [hideSnapshots, data?.game_versions]);
+  }, [showAllVersions, data?.game_versions]);
 
   const version = selectedVersion ?? versions?.[0];
 
@@ -61,15 +63,15 @@ export function ModrinthDownloadsContent() {
           </div>
 
           <div className="flex items-center gap-2">
-            <label className="select-none" htmlFor={hideSnapshotsId}>
-              Hide snapshots
+            <label className="select-none" htmlFor={showAllVersionsId}>
+              Show all versions
             </label>
 
             <input
-              id={hideSnapshotsId}
+              id={showAllVersionsId}
               type="checkbox"
-              checked={hideSnapshots}
-              onChange={e => setHideSnapshots(e.currentTarget.checked)}
+              checked={showAllVersions}
+              onChange={e => setShowAllVersions(e.currentTarget.checked)}
             />
           </div>
         </div>
