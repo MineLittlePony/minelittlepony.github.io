@@ -96,10 +96,7 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
           {version
             ? (
               <>
-                <span>
-                  Minecraft
-                  {gameVersion}
-                </span>
+                <span>{`Minecraft ${gameVersion}`}</span>
 
                 {!version.game_versions
                 || version.game_versions.length <= 1
