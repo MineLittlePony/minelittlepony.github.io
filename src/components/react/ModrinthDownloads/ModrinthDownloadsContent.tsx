@@ -8,6 +8,10 @@ import { VersionContext } from './VersionContext';
 
 const RELEASE_REGEX = /^\d+\.\d+(.\d+)?$/;
 
+function isRelease(version: string) {
+  return RELEASE_REGEX.test(version);
+}
+
 export function ModrinthDownloadsContent() {
   const [selectedVersion, setSelectedVersion] = useState<string | null>(null);
   const [showAllVersions, setShowAllVersions] = useState(false);
@@ -23,7 +27,7 @@ export function ModrinthDownloadsContent() {
     if (showAllVersions) {
       result = result?.slice();
     } else {
-      result = result?.filter(version => RELEASE_REGEX.test(version));
+      result = result?.filter(isRelease);
     }
 
     return result?.reverse();
@@ -35,6 +39,16 @@ export function ModrinthDownloadsContent() {
     const value = e.currentTarget.value;
 
     setSelectedVersion(value === 'latest' ? null : value);
+  }
+
+  function handleFilterChange(e: ChangeEvent<HTMLInputElement>) {
+    const newShowAllVersions = e.currentTarget.checked;
+
+    setShowAllVersions(newShowAllVersions);
+
+    if (selectedVersion && !newShowAllVersions && !isRelease(selectedVersion)) {
+      setSelectedVersion(null);
+    }
   }
 
   return (
@@ -71,7 +85,7 @@ export function ModrinthDownloadsContent() {
               id={showAllVersionsId}
               type="checkbox"
               checked={showAllVersions}
-              onChange={e => setShowAllVersions(e.currentTarget.checked)}
+              onChange={handleFilterChange}
             />
           </div>
         </div>
