@@ -15,16 +15,17 @@ export function TeamCarousel() {
       <Swiper
         modules={[FreeMode]}
         freeMode
-        slidesPerView={1.75}
+        slidesPerView={1.25}
         slidesOffsetAfter={16}
         slidesOffsetBefore={16}
         spaceBetween={16}
         breakpoints={{
-          640: {
+          420: {
             slidesOffsetAfter: 24,
             slidesOffsetBefore: 24,
+            slidesPerView: 1.75,
           },
-          768: {
+          640: {
             slidesOffsetAfter: 24,
             slidesOffsetBefore: 24,
             slidesPerView: 2.75,

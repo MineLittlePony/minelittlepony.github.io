@@ -11,7 +11,7 @@ export function ModrinthLink({ projectId, title, striped }: ModrinthLinkProps) {
     <a
       href={`https://modrinth.com/mod/${projectId}`}
       className={clsx(
-        'flex items-center justify-center gap-2 bg-white/80 p-4 text-2xl font-bold text-black hover:bg-white',
+        'flex items-center justify-center gap-2 bg-white/80 p-3 text-center text-xl font-bold text-black hover:bg-white sm:p-4 sm:text-2xl',
         {
           'pastel-stripe': striped,
         },
