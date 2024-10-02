@@ -19,11 +19,13 @@ Once you’ve downloaded all the files, you need to install LiteLoader. First, i
 
 ## Installing the mods
 
-After installing Fabric you need to add your mods to the game. Place downloaded `.jar` files into the `mods` folder in your Minecraft folder:
+After installing Fabric you need to add your mods to the game. Place downloaded `.jar` files into the `mods` folder in your Minecraft folder which may have one of the following paths:
 
 - `%APPDATA%\.minecraft` on Windows
 - `~/Library/Application Support/minecraft` on macOS
 - `~/.minecraft` on Linux
+
+Here's an example of how your mods folder might look (filenames might also be different):
 
 ![Mods folder](/assets/installation/liteloader/mods-folder.png)
 

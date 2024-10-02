@@ -20,17 +20,19 @@ Once you’ve downloaded all the files, you need to install Fabric. Run the down
 
 ## Installing the mods
 
-After installing Fabric you need to add your mods to the game. Place downloaded `.jar` files into the `mods` folder in your Minecraft folder:
+After installing Fabric you need to add your mods to the game. Place downloaded `.jar` files into the `mods` folder in your Minecraft folder which may have one of the following paths:
 
 - `%APPDATA%\.minecraft` on Windows
 - `~/Library/Application Support/minecraft` on macOS
 - `~/.minecraft` on Linux
 
+Here's an example of how your mods folder might look (filenames might also be different):
+
 ![Mods folder](/assets/installation/vanilla/mods-folder.png)
 
 ## Play the game!
 
-If everything was done correctly, a new Minecraft profile called something like `fabric-loader-1.20.4` should appear. Select it and launch the game. Now you should turn into a pony!
+If everything was done correctly, a new Minecraft profile called something like `fabric-loader-x.x.x` should appear. Select it and launch the game. Now you should turn into a pony!
 
 ![Minecraft launcher](/assets/installation/vanilla/minecraft-launcher.png)
 
