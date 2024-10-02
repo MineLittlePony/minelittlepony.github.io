@@ -1,7 +1,5 @@
 import { type FormEvent, useCallback, useRef } from 'react';
-
-import { fetchSkin } from '@/utils/skin/fetchSkin';
-
+import { fetchSkin } from '~/utils/skin/fetchSkin';
 import { loadFile } from '../store';
 
 export function useNicknameForm() {

@@ -1,5 +1,4 @@
 import { useDropzone } from 'react-dropzone';
-
 import { loadFile } from '../store';
 
 export function useToolsDropzone(noClick = false) {

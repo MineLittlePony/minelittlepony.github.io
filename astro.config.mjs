@@ -12,7 +12,7 @@ import remarkSmartypants from 'remark-smartypants';
 function setLayout() {
   /** @type {import('unified').Transformer} */
   return (_, file) => {
-    file.data.astro.frontmatter.layout = '@/layouts/markdown/MarkdownLayout.astro';
+    file.data.astro.frontmatter.layout = '~/layouts/markdown/MarkdownLayout.astro';
   };
 }
 

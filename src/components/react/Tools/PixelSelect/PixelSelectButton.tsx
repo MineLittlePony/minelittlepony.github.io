@@ -1,8 +1,6 @@
 import { Listbox } from '@headlessui/react';
 import { useContext } from 'react';
-
-import type { PixelValue } from '@/data/pixels';
-
+import type { PixelValue } from '~/data/pixels';
 import { SettingsRowContext } from '../PixelRow/SettingsRow';
 import { PixelLabel } from './PixelLabel';
 

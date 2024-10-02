@@ -1,14 +1,12 @@
 import { type ChangeEvent, useId } from 'react';
-
-import { Pixels } from '@/data/pixels';
-import { calculateSizeShift } from '@/utils/math';
-
+import { Pixels } from '~/data/pixels';
+import { calculateSizeShift } from '~/utils/math';
+import { useNicknameForm } from './hooks/useNicknameForm';
 import { PixelRow } from './PixelRow/PixelRow';
 import { SettingsRow } from './PixelRow/SettingsRow';
+import { reloadFile, saveFile, setToolsState, useToolsState } from './store';
 import { ToolsError } from './ToolsError';
 import { ToolsWarning } from './ToolsWarning';
-import { useNicknameForm } from './hooks/useNicknameForm';
-import { reloadFile, saveFile, setToolsState, useToolsState } from './store';
 
 const MIN_SIZE_SHIFT = calculateSizeShift(64);
 const MAX_SIZE_SHIFT = calculateSizeShift(8192);

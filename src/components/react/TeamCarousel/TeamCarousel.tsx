@@ -1,13 +1,10 @@
-import 'swiper/css';
-import 'swiper/css/free-mode';
 import { FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import { TeamMembers } from '@/data/team/team';
-
+import { TeamMembers } from '~/data/team/team';
 import { TeamCard } from './TeamCard/TeamCard';
-
 import classes from './TeamCarousel.module.css';
+import 'swiper/css';
+import 'swiper/css/free-mode';
 
 export function TeamCarousel() {
   return (

@@ -1,5 +1,4 @@
 import type { PropsWithChildren } from 'react';
-
 import { clsx } from 'clsx';
 
 export interface HeroIconLinkProps extends PropsWithChildren {

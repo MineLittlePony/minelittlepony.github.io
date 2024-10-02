@@ -1,5 +1,4 @@
-import type { PixelInfo } from '@/data/pixels';
-
+import type { PixelInfo } from '~/data/pixels';
 import { PixelRawRow } from './PixelRawRow';
 import { PixelSelectRow } from './PixelSelectRow';
 

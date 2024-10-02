@@ -1,9 +1,6 @@
 import { clsx } from 'clsx';
-
-import type { TeamMember } from '@/data/team/team';
-
-import { UnoptimizedImage } from '@/components/react/UnoptimizedImage';
-
+import { UnoptimizedImage } from '~/components/react/UnoptimizedImage';
+import type { TeamMember } from '~/data/team/team';
 import classes from './TeamPhoto.module.css';
 
 export function TeamPhoto({ avatar, contacts, name }: TeamMember) {

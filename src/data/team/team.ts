@@ -1,5 +1,4 @@
 import type { ImageMetadata } from 'astro';
-
 import POLY from './assets/poly.png';
 import ROLLING from './assets/rolling.png';
 import TIKIBAT from './assets/tikibat.jpg';

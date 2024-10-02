@@ -1,7 +1,7 @@
-import { ToolsError } from './ToolsError';
-import { ToolsUninitialized } from './ToolsUninitialized/ToolsUninitialized';
 import { useNicknameForm } from './hooks/useNicknameForm';
 import { useToolsDropzone } from './hooks/useToolsDropzone';
+import { ToolsError } from './ToolsError';
+import { ToolsUninitialized } from './ToolsUninitialized/ToolsUninitialized';
 
 export function ToolsDropzone() {
   const { getRootProps } = useToolsDropzone();

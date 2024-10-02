@@ -1,8 +1,6 @@
 import { clsx } from 'clsx';
-
-import type { PixelValue } from '@/data/pixels';
-
-import { hex } from '@/utils/color';
+import type { PixelValue } from '~/data/pixels';
+import { hex } from '~/utils/color';
 
 function getPixelColor(value: PixelValue | PixelValue[]) {
   let colorNumber = 0;

@@ -1,10 +1,9 @@
 import { saveAs } from 'file-saver';
 import { create } from 'zustand';
-
-import { Pixels } from '@/data/pixels';
-import { rgb2num } from '@/utils/color';
-import { calculateSizeShift } from '@/utils/math';
-import { file2canvas } from '@/utils/skin/file2canvas';
+import { Pixels } from '~/data/pixels';
+import { rgb2num } from '~/utils/color';
+import { calculateSizeShift } from '~/utils/math';
+import { file2canvas } from '~/utils/skin/file2canvas';
 
 export interface ToolsState {
   loading: boolean;

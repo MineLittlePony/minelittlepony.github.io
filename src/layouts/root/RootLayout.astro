@@ -2,7 +2,7 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './global.css';
 
-import Site from '@/data/site.json';
+import Site from '~/data/site.json';
 import { SEOMetadata } from 'astro-seo-metadata';
 import Footer from './Footer/Footer.astro';
 import Header from './Header/Header.astro';
@@ -43,9 +43,7 @@ const favicon = '/assets/favicon.ico';
   </head>
 
   <body>
-    <div
-      class="mx-auto flex min-h-screen max-w-6xl flex-col bg-white shadow-xl font-serif"
-    >
+    <div class="mx-auto flex min-h-screen max-w-6xl flex-col bg-white shadow-xl font-serif">
       <Header />
 
       <Main {...mainProps}>

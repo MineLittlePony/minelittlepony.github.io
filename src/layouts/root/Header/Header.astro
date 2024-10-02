@@ -1,7 +1,7 @@
 ---
-import { MenuEntries } from '@/data/menu';
-import { addBase } from '@/utils/addBase';
-import { isPathEqual } from '@/utils/isPathEqual';
+import { MenuEntries } from '~/data/menu';
+import { addBase } from '~/utils/addBase';
+import { isPathEqual } from '~/utils/isPathEqual';
 import classes from './Header.module.css';
 
 function mapEntries<T>(cb: (name: string, path: string) => T) {
@@ -12,12 +12,7 @@ function mapEntries<T>(cb: (name: string, path: string) => T) {
 <header class={classes.Header}>
   <!-- Logo -->
   <a href={import.meta.env.BASE_URL}>
-    <img
-      class={classes.Logo}
-      src="/assets/logo.png"
-      alt="Mine Little Pony logo"
-      loading="eager"
-    />
+    <img class={classes.Logo} src="/assets/logo.png" alt="Mine Little Pony logo" loading="eager" />
   </a>
 
   <input class={classes.NavState} id="nav-state" type="checkbox" hidden />
@@ -31,13 +26,7 @@ function mapEntries<T>(cb: (name: string, path: string) => T) {
   <nav class={classes.Nav}>
     {
       mapEntries((name, path) => (
-        <a
-          class:list={[
-            classes.Link,
-            { current: isPathEqual(path, Astro.url.pathname) },
-          ]}
-          href={path}
-        >
+        <a class:list={[classes.Link, { current: isPathEqual(path, Astro.url.pathname) }]} href={path}>
           {name}
         </a>
       ))

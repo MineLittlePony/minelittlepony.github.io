@@ -82,10 +82,10 @@ class BufferReader {
   public readLength(): number {
     return (
       ((this.read8() << 24)
-      | (this.read8() << 16)
-      | (this.read8() << 8)
-      | this.read8())
-      >>> 0
+        | (this.read8() << 16)
+        | (this.read8() << 8)
+        | this.read8())
+        >>> 0
     );
   }
 

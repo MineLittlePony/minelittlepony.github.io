@@ -1,12 +1,10 @@
 import { type ChangeEvent, useId, useMemo, useState } from 'react';
-
-import { useZodQuery } from '@/hooks/useZodQuery';
-import { ProjectSchema } from '@/schemas/modrinth';
-
+import { useZodQuery } from '~/hooks/useZodQuery';
+import { ProjectSchema } from '~/schemas/modrinth';
 import { ModrinthProject } from './ModrinthProject';
 import { VersionContext } from './VersionContext';
 
-const RELEASE_REGEX = /^\d+\.\d+(.\d+)?$/;
+const RELEASE_REGEX = /^\d+\.\d+(?:\.\d+)?$/;
 
 function isRelease(version: string) {
   return RELEASE_REGEX.test(version);

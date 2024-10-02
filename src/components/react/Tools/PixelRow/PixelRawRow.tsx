@@ -1,8 +1,6 @@
-import type { PixelInfo } from '@/data/pixels';
-
-import { hex } from '@/utils/color';
-import { colors2num } from '@/utils/colors2num';
-
+import type { PixelInfo } from '~/data/pixels';
+import { hex } from '~/utils/color';
+import { colors2num } from '~/utils/colors2num';
 import { Input } from '../Input';
 import { setPixelValue, useToolsState } from '../store';
 import { SettingsRow } from './SettingsRow';

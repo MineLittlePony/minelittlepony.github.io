@@ -1,4 +1,4 @@
-import type { SocialLink as SocialLinkTemplate } from '@/data/socials';
+import type { SocialLink as SocialLinkTemplate } from '~/data/socials';
 
 export interface SocialLinkProps {
   template: SocialLinkTemplate;

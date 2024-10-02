@@ -2,12 +2,7 @@
   @apply text-white;
 
   background: url('/assets/hero/pattern.png') #202020;
-  clip-path: polygon(
-    0 var(--hero-clip-height),
-    100% 0,
-    100% 100%,
-    0 calc(100% - var(--hero-clip-height))
-  );
+  clip-path: polygon(0 var(--hero-clip-height), 100% 0, 100% 100%, 0 calc(100% - var(--hero-clip-height)));
   padding: var(--hero-clip-height) 0;
 
   &.SecretSolved {

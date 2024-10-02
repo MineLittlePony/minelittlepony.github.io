@@ -1,11 +1,11 @@
 ---
-import ExtraCard from '@/components/astro/ExtraCard.astro';
-import FeatureCard from '@/components/astro/FeatureCard.astro';
-import { TeamCarousel } from '@/components/react/TeamCarousel/TeamCarousel';
-import { Extras } from '@/data/extras/extras';
-import { Features } from '@/data/features/features';
+import ExtraCard from '~/components/astro/ExtraCard.astro';
+import FeatureCard from '~/components/astro/FeatureCard.astro';
+import { TeamCarousel } from '~/components/react/TeamCarousel/TeamCarousel';
+import { Extras } from '~/data/extras/extras';
+import { Features } from '~/data/features/features';
 import RootLayout from '../layouts/root/RootLayout.astro';
-import { Hero } from '@/components/react/Hero/Hero';
+import { Hero } from '~/components/react/Hero/Hero';
 ---
 
 <RootLayout title="Home" applyContentStyles={false}>
@@ -27,14 +27,10 @@ import { Hero } from '@/components/react/Hero/Hero';
   <TeamCarousel client:load />
 
   <!-- Additional downloads -->
-  <h2 class="mb-6 mt-2 px-4 text-center sm:px-6">
-    Additional downloads for better experience
-  </h2>
+  <h2 class="mb-6 mt-2 px-4 text-center sm:px-6">Additional downloads for better experience</h2>
 
   <!-- Extras cards -->
-  <div
-    class="mb-6 flex flex-wrap items-center justify-center gap-6 px-4 sm:px-6"
-  >
+  <div class="mb-6 flex flex-wrap items-center justify-center gap-6 px-4 sm:px-6">
     {Extras.map((extra) => <ExtraCard {...extra} />)}
   </div>
 </RootLayout>

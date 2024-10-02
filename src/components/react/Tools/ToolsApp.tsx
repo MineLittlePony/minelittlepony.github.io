@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
-
+import { setToolsState, useToolsState } from './store';
 import { ToolsDropzone } from './ToolsDropzone';
 import { ToolsLoader } from './ToolsLoader';
 import { ToolsMain } from './ToolsMain';
-import { setToolsState, useToolsState } from './store';
 
 export function ToolsApp() {
   const loading = useToolsState(state => state.loading);

@@ -1,6 +1,6 @@
 ---
-import DerpibooruImage from '@/components/astro/DerpibooruImage/DerpibooruImage.astro';
-import RootLayout from '@/layouts/root/RootLayout.astro';
+import DerpibooruImage from '~/components/astro/DerpibooruImage/DerpibooruImage.astro';
+import RootLayout from '~/layouts/root/RootLayout.astro';
 ---
 
 <RootLayout
@@ -9,9 +9,5 @@ import RootLayout from '@/layouts/root/RootLayout.astro';
   heading="Requested page is not found"
   class="items-center justify-center"
 >
-  <DerpibooruImage
-    id={376307}
-    src="/assets/derpibooru/376307.jpg"
-    alt="The page is lost"
-  />
+  <DerpibooruImage id={376307} src="/assets/derpibooru/376307.jpg" alt="The page is lost" />
 </RootLayout>

@@ -1,11 +1,9 @@
 ---
 import './global.css';
 
-import { Navigation } from '@/data/navigation';
+import { Navigation } from '~/data/navigation';
 import type { MarkdownLayoutProps } from 'astro';
-import RootLayout, {
-  type Props as LayoutProps,
-} from '../root/RootLayout.astro';
+import RootLayout, { type Props as LayoutProps } from '../root/RootLayout.astro';
 import NavigationLink from './NavigationLink/NavigationLink.astro';
 
 export interface Frontmatter extends Partial<LayoutProps> {}

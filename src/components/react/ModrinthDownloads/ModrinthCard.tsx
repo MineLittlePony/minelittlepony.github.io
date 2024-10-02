@@ -1,12 +1,10 @@
 import { clsx } from 'clsx';
 import prettyBytes from 'pretty-bytes';
 import { useContext, useMemo } from 'react';
-
-import { UnoptimizedImage } from '@/components/react/UnoptimizedImage';
-import { useZodQuery } from '@/hooks/useZodQuery';
-import { type Project, ProjectVersionsSchema } from '@/schemas/modrinth';
-import { buildURL } from '@/utils/buildURL';
-
+import { UnoptimizedImage } from '~/components/react/UnoptimizedImage';
+import { useZodQuery } from '~/hooks/useZodQuery';
+import { type Project, ProjectVersionsSchema } from '~/schemas/modrinth';
+import { buildURL } from '~/utils/buildURL';
 import { VersionContext } from './VersionContext';
 
 export interface ModrinthCardProps {
@@ -45,16 +43,16 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
       <div className="flex grow items-center gap-3">
         {project.icon_url
           ? (
-            <UnoptimizedImage
-              className="size-12 rounded"
-              src={project.icon_url}
-              alt={project.title ?? 'N/A'}
-              width={48}
-              height={48}
-            />
+              <UnoptimizedImage
+                className="size-12 rounded"
+                src={project.icon_url}
+                alt={project.title ?? 'N/A'}
+                width={48}
+                height={48}
+              />
             )
           : (
-            <div className="size-12 rounded bg-zinc-500" />
+              <div className="size-12 rounded bg-zinc-500" />
             )}
 
         <div className="grow">
@@ -86,14 +84,14 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
           <div className="flex gap-2 opacity-50">
             {versionString
               ? (
-                <a
-                  className="underline"
-                  href={`https://modrinth.com/mod/${project.slug}/version/${version?.version_number}`}
-                  title="Go to version page"
-                >
-                  v
-                  {versionString}
-                </a>
+                  <a
+                    className="underline"
+                    href={`https://modrinth.com/mod/${project.slug}/version/${version?.version_number}`}
+                    title="Go to version page"
+                  >
+                    v
+                    {versionString}
+                  </a>
                 )
               : <span>Unavailable</span>}
 

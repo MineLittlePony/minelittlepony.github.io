@@ -1,5 +1,4 @@
 import type { ImageMetadata } from 'astro';
-
 import LNT from './assets/lnt.png';
 import SKINPACK from './assets/skinpack.png';
 

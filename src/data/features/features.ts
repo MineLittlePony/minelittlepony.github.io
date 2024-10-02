@@ -1,5 +1,4 @@
 import type { ImageMetadata } from 'astro';
-
 import ARMOR from './assets/armor.png';
 import CLIENTSIDE from './assets/clientside.png';
 import CUSTOMIZABLE from './assets/customizable.png';

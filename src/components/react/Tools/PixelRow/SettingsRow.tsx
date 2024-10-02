@@ -1,4 +1,4 @@
-import { type PropsWithChildren, createContext, useId } from 'react';
+import { createContext, type PropsWithChildren, useId } from 'react';
 
 export interface SettingsRowProps {
   label: string;

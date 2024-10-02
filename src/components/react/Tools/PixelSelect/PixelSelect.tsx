@@ -1,9 +1,7 @@
 import { Listbox } from '@headlessui/react';
 import { clsx } from 'clsx';
 import { Fragment, useMemo } from 'react';
-
-import type { PixelValue } from '@/data/pixels';
-
+import type { PixelValue } from '~/data/pixels';
 import { PixelLabel } from './PixelLabel';
 import { PixelSelectButton } from './PixelSelectButton';
 

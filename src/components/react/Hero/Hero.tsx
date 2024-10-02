@@ -1,12 +1,9 @@
 import { clsx } from 'clsx';
-
-import Links from '@/data/links.json';
-import { useKonami } from '@/hooks/useKonami';
-
+import Links from '~/data/links.json';
+import { useKonami } from '~/hooks/useKonami';
 import { ModrinthDownloads } from '../ModrinthDownloads/ModrinthDownloads';
-import { HeroIconLink } from './HeroIconLink';
-
 import classes from './Hero.module.css';
+import { HeroIconLink } from './HeroIconLink';
 
 export function Hero() {
   const konamiResolved = useKonami();

@@ -1,12 +1,9 @@
 import { useEffect } from 'react';
-
-import { Pixels } from '@/data/pixels';
-import { num2rgba } from '@/utils/color';
-import { colors2num } from '@/utils/colors2num';
-import { convertSkin } from '@/utils/skin/convertSkin';
-
+import { Pixels } from '~/data/pixels';
+import { num2rgba } from '~/utils/color';
+import { colors2num } from '~/utils/colors2num';
+import { convertSkin } from '~/utils/skin/convertSkin';
 import { getToolsState, setToolsState, useToolsState } from '../store';
-
 import classes from './SkinPreview.module.css';
 
 export interface SkinPreviewProps {

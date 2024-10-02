@@ -1,5 +1,4 @@
-import type { PixelInfo } from '@/data/pixels';
-
+import type { PixelInfo } from '~/data/pixels';
 import { PixelSelect } from '../PixelSelect/PixelSelect';
 import { setPixelValue, useToolsState } from '../store';
 import { SettingsRow } from './SettingsRow';
