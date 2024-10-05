@@ -1,4 +1,5 @@
 import type { ImageMetadata } from 'astro';
+import type { SocialLinkID } from '../socials';
 import POLY from './assets/poly.png';
 import ROLLING from './assets/rolling.png';
 import TIKIBAT from './assets/tikibat.jpg';
@@ -8,7 +9,7 @@ export interface TeamMember {
   role: string;
   avatar?: ImageMetadata;
   nickname?: string;
-  contacts?: Record<string, string>;
+  contacts?: Partial<Record<SocialLinkID, string>>;
 }
 
 export const TeamMembers: TeamMember[] = [

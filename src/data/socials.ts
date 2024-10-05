@@ -1,11 +1,17 @@
-export interface SocialLink {
-  id: string;
+export interface SocialLink<ID extends string = string> {
+  id: ID;
   icon: string;
   title: string;
   url?: ((handle: string) => string) | string;
 }
 
-export const SocialLinks: SocialLink[] = [
+function declareSocialLinks<ID extends string>(links: SocialLink<ID>[]) {
+  return links;
+}
+
+export type SocialLinkID = typeof SocialLinks[number]['id'];
+
+export const SocialLinks = declareSocialLinks([
   {
     id: 'minecraft',
     icon: 'fas fa-gamepad',
@@ -49,4 +55,4 @@ export const SocialLinks: SocialLink[] = [
     icon: 'fab fa-discord',
     title: 'Discord tag',
   },
-];
+]);
