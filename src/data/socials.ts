@@ -33,9 +33,9 @@ export const SocialLinks = declareSocialLinks([
   },
   {
     id: 'twitter',
-    icon: 'fab fa-twitter',
-    title: 'Twitter',
-    url: 'https://twitter.com/%s',
+    icon: 'fab fa-x-twitter',
+    title: 'X (Twitter)',
+    url: 'https://x.com/%s',
   },
   {
     id: 'mastodon',
