@@ -17,7 +17,7 @@ export const TeamMembers: TeamMember[] = [
     role: 'Mod Development Lead',
     contacts: {
       minecraft: 'JoyJoy',
-      github: 'killjoy1221',
+      github: 'mattmess1221',
       twitter: 'killjoy1221_',
       mastodon: '@killjoy1221@equestria.social',
     },
