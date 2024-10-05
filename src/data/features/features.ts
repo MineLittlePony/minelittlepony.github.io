@@ -1,4 +1,5 @@
 import type { ImageMetadata } from 'astro';
+import type { FontAwesomeIcon } from '~/utils/types';
 import ARMOR from './assets/armor.png';
 import CLIENTSIDE from './assets/clientside.png';
 import CUSTOMIZABLE from './assets/customizable.png';
@@ -8,7 +9,7 @@ import PONYTYPE from './assets/ponytype.png';
 
 export interface Feature {
   image: ImageMetadata;
-  icon: string;
+  icon: FontAwesomeIcon;
   color: number;
   title: string;
   content: string;

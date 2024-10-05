@@ -1,6 +1,8 @@
+import type { FontAwesomeIcon } from '~/utils/types';
+
 export interface SocialLink<ID extends string = string> {
   id: ID;
-  icon: string;
+  icon: FontAwesomeIcon;
   title: string;
   url?: ((handle: string) => string) | string;
 }
