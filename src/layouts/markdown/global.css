@@ -49,8 +49,8 @@
 
 .toc {
   @apply rounded-lg border bg-zinc-50 p-4;
-  @apply flex-shrink-0;
-  @apply top-4 md:sticky md:max-w-80;
+  @apply flex-shrink-0 overflow-auto;
+  @apply top-4 md:sticky md:max-w-80 md:max-h-[calc(100svh-2rem)];
 
   ol {
     @apply m-0;
