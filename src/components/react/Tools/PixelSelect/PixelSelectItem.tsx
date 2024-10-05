@@ -1,4 +1,4 @@
-import { Listbox } from '@headlessui/react';
+import { ListboxOption } from '@headlessui/react';
 import { clsx } from 'clsx';
 import { type FC, Fragment } from 'react';
 import type { PixelValue } from '~/data/pixels';
@@ -10,7 +10,7 @@ export interface PixelSelectItemProps {
 
 export const PixelSelectItem: FC<PixelSelectItemProps> = ({ value }) => {
   return (
-    <Listbox.Option key={value.color} value={value} as={Fragment}>
+    <ListboxOption key={value.color} value={value} as={Fragment}>
       {({ selected }) => (
         <li
           className={clsx(
@@ -23,6 +23,6 @@ export const PixelSelectItem: FC<PixelSelectItemProps> = ({ value }) => {
           <PixelLabel value={value} />
         </li>
       )}
-    </Listbox.Option>
+    </ListboxOption>
   );
 };

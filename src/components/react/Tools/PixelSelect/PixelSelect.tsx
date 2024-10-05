@@ -1,4 +1,4 @@
-import { Listbox } from '@headlessui/react';
+import { Listbox, ListboxOption, ListboxOptions } from '@headlessui/react';
 import { clsx } from 'clsx';
 import { Fragment, useMemo } from 'react';
 import type { PixelValue } from '~/data/pixels';
@@ -47,9 +47,9 @@ export function PixelSelect({ options, value, onChange }: PixelSelectProps) {
       <div className="relative">
         <PixelSelectButton value={pixelValue} />
 
-        <Listbox.Options className="absolute z-10 mt-2 w-full divide-y divide-zinc-500/25 overflow-hidden rounded-md border bg-white drop-shadow-md">
+        <ListboxOptions className="absolute z-10 mt-2 w-full divide-y divide-zinc-500/25 overflow-hidden rounded-md border bg-white drop-shadow-md">
           {options.map(option => (
-            <Listbox.Option
+            <ListboxOption
               key={option.color}
               value={option.color}
               as={Fragment}
@@ -66,9 +66,9 @@ export function PixelSelect({ options, value, onChange }: PixelSelectProps) {
                   <PixelLabel value={option} />
                 </li>
               )}
-            </Listbox.Option>
+            </ListboxOption>
           ))}
-        </Listbox.Options>
+        </ListboxOptions>
       </div>
     </Listbox>
   );
