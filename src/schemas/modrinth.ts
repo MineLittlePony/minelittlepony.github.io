@@ -4,10 +4,10 @@ export type Project = z.infer<typeof ProjectSchema>;
 
 export const ProjectSchema = z.object({
   id: z.string(),
-  slug: z.string(),
+  slug: z.string().nullable(),
   title: z.string(),
   description: z.string(),
-  icon_url: z.string(),
+  icon_url: z.string().nullable(),
   source_url: z.string().nullable(),
   issues_url: z.string().nullable(),
   game_versions: z.array(z.string()),
