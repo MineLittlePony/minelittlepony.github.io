@@ -3,7 +3,7 @@ import prettyBytes from 'pretty-bytes';
 import { useContext, useMemo } from 'react';
 import { UnoptimizedImage } from '~/components/react/UnoptimizedImage';
 import { useZodQuery } from '~/hooks/useZodQuery';
-import { type Project, ProjectVersionsSchema } from '~/schemas/modrinth';
+import { type Project, VersionsSchema } from '~/schemas/modrinth';
 import { buildURL } from '~/utils/buildURL';
 import { VersionContext } from './VersionContext';
 
@@ -23,7 +23,7 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
     });
   }, [gameVersion, project.id]);
 
-  const { data: versions } = useZodQuery(ProjectVersionsSchema, versionURL, !!gameVersion);
+  const { data: versions } = useZodQuery(VersionsSchema, versionURL, !!gameVersion);
 
   const version = versions?.[0];
   const versionNumber = version?.version_number;

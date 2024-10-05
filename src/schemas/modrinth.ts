@@ -1,6 +1,8 @@
 import { z } from 'zod';
 
 export type Project = z.infer<typeof ProjectSchema>;
+export type VersionFile = z.infer<typeof VersionFileSchema>;
+export type Version = z.infer<typeof VersionSchema>;
 
 export const ProjectSchema = z.object({
   id: z.string(),
@@ -13,21 +15,17 @@ export const ProjectSchema = z.object({
   game_versions: z.array(z.string()),
 });
 
-export type ProjectVersionFile = z.infer<typeof ProjectVersionFileSchema>;
-
-export const ProjectVersionFileSchema = z.object({
+export const VersionFileSchema = z.object({
   url: z.string(),
   primary: z.boolean(),
   size: z.number(),
 });
 
-export type ProjectVersion = z.infer<typeof ProjectVersionSchema>;
-
-export const ProjectVersionSchema = z.object({
+export const VersionSchema = z.object({
   id: z.string(),
   version_number: z.string(),
-  files: z.array(ProjectVersionFileSchema),
+  files: z.array(VersionFileSchema),
   game_versions: z.array(z.string()),
 });
 
-export const ProjectVersionsSchema = z.array(ProjectVersionSchema);
+export const VersionsSchema = z.array(VersionSchema);
