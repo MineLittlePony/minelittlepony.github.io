@@ -3,7 +3,8 @@
     "astro-build.astro-vscode",
     "editorconfig.editorconfig",
     "bradlc.vscode-tailwindcss",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "unifiedjs.vscode-mdx"
   ],
   "unwantedRecommendations": []
 }
