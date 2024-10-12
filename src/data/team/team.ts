@@ -39,6 +39,7 @@ export const TeamMembers: TeamMember[] = [
     contacts: {
       minecraft: 'Keupoz',
       github: 'keupoz',
+      twitter: 'keupoz',
       vk: 'keupoz',
     },
   },
