@@ -7,13 +7,15 @@ export interface ToolsMainProps {
 }
 
 export function ToolsMain({ ctx }: ToolsMainProps) {
-  const { getRootProps, open } = useToolsDropzone(true);
+  const { getRootProps, getInputProps, open } = useToolsDropzone(true);
 
   return (
     <div
       className="flex grid-cols-2 flex-col gap-4 lg:grid"
       {...getRootProps()}
     >
+      <input {...getInputProps()} />
+
       <SkinPreview ctx={ctx} />
 
       <Settings requestFile={open} />
