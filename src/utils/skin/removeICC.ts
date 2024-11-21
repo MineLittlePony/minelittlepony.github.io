@@ -85,7 +85,7 @@ class BufferReader {
         | (this.read8() << 16)
         | (this.read8() << 8)
         | this.read8())
-        >>> 0
+      >>> 0
     );
   }
 

@@ -4,6 +4,7 @@ export interface SettingsRowProps {
   label: string;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const SettingsRowContext = createContext<string | undefined>(undefined);
 
 export function SettingsRow({
