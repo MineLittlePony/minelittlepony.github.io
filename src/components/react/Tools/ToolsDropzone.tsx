@@ -4,11 +4,13 @@ import { ToolsError } from './ToolsError';
 import { ToolsUninitialized } from './ToolsUninitialized/ToolsUninitialized';
 
 export function ToolsDropzone() {
-  const { getRootProps } = useToolsDropzone();
+  const { getRootProps, getInputProps } = useToolsDropzone();
   const { inputRef, handleSubmit } = useNicknameForm();
 
   return (
     <ToolsUninitialized {...getRootProps()}>
+      <input {...getInputProps()} />
+
       <div className="h2">Drop a file here or click to open</div>
 
       <form
