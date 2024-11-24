@@ -57,4 +57,10 @@ export const SocialLinks = declareSocialLinks([
     icon: 'fab fa-discord',
     title: 'Discord tag',
   },
+  {
+    id: 'bluesky',
+    icon: 'fab fa-bluesky',
+    title: 'Bluesky Profile',
+    url: 'https://bsky.app/profile/%s'
+  }
 ]);
