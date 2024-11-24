@@ -19,7 +19,6 @@ export const TeamMembers: TeamMember[] = [
     contacts: {
       minecraft: 'Sollace',
       github: 'Sollace',
-      twitter: 'SollaceTheBeard',
       mastodon: '@sollace@equestria.social',
     },
   },
