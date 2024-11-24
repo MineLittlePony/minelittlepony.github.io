@@ -61,6 +61,6 @@ export const SocialLinks = declareSocialLinks([
     id: 'bluesky',
     icon: 'fab fa-bluesky',
     title: 'Bluesky Profile',
-    url: 'https://bsky.app/profile/%s'
-  }
+    url: 'https://bsky.app/profile/%s',
+  },
 ]);
