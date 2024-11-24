@@ -14,16 +14,6 @@ export interface TeamMember {
 
 export const TeamMembers: TeamMember[] = [
   {
-    name: 'Matthew Messinger',
-    role: 'Mod Development Lead',
-    contacts: {
-      minecraft: 'JoyJoy',
-      github: 'mattmess1221',
-      mastodon: '@killjoy1221@equestria.social',
-      bluesky: 'mattmess.bsky.social',
-    },
-  },
-  {
     name: 'Sollace',
     role: 'Mod Developer',
     contacts: {
@@ -31,6 +21,16 @@ export const TeamMembers: TeamMember[] = [
       github: 'Sollace',
       twitter: 'SollaceTheBeard',
       mastodon: '@sollace@equestria.social',
+    },
+  },
+  {
+    name: 'Matthew Messinger',
+    role: 'Backend Developer',
+    contacts: {
+      minecraft: 'JoyJoy',
+      github: 'mattmess1221',
+      mastodon: '@killjoy1221@equestria.social',
+      bluesky: 'mattmess.bsky.social',
     },
   },
   {
@@ -45,7 +45,7 @@ export const TeamMembers: TeamMember[] = [
   },
   {
     name: 'RollingTheOC',
-    role: 'Discord Server Moderator',
+    role: 'Community Moderator',
     avatar: ROLLING,
     contacts: {
       twitter: 'RollingTheOC',
