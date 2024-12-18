@@ -1,12 +1,7 @@
 import { createContext } from '../canvas';
 import { floorPowerOfTwo } from '../math';
-import { readPNG } from './readPNG';
 
 export async function file2canvas(file: File) {
-  // We don't need to remove ICC profile anymore?..
-  // Let's keep this line anyway just in case
-  const cleanFile = await readPNG(file);
-
   return new Promise<CanvasRenderingContext2D>((resolve, reject) => {
     const image = new Image();
 
@@ -34,6 +29,6 @@ export async function file2canvas(file: File) {
 
     image.onerror = reject;
 
-    image.src = URL.createObjectURL(cleanFile);
+    image.src = URL.createObjectURL(file);
   });
 }
