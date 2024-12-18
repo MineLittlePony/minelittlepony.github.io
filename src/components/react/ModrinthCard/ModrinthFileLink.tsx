@@ -1,5 +1,5 @@
-import prettyBytes from 'pretty-bytes';
 import type { Version } from '~/schemas/modrinth';
+import prettyBytes from 'pretty-bytes';
 
 export interface ModrinthFileLinkProps {
   version: Version | undefined;

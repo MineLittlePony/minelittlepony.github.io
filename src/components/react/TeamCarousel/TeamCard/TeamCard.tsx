@@ -1,5 +1,5 @@
-import { SocialLinks } from '~/data/socials';
 import type { TeamMember } from '~/data/team/team';
+import { SocialLinks } from '~/data/socials';
 import { SocialLink } from './SocialLink';
 import { TeamPhoto } from './TeamPhoto/TeamPhoto';
 

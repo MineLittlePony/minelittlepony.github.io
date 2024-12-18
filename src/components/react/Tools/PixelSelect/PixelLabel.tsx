@@ -1,5 +1,5 @@
-import { clsx } from 'clsx';
 import type { PixelValue } from '~/data/pixels';
+import { clsx } from 'clsx';
 import { hex } from '~/utils/color';
 
 function getPixelColor(value: PixelValue | PixelValue[]) {

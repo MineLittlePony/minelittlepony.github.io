@@ -1,5 +1,5 @@
-import { ListboxOptions } from '@headlessui/react';
 import type { PixelValue } from '~/data/pixels';
+import { ListboxOptions } from '@headlessui/react';
 import { PixelSelectItem } from './PixelSelectItem';
 
 export interface PixelSelectOptionsProps {
