@@ -1,7 +1,8 @@
+import type { Project } from '~/schemas/modrinth';
 import { clsx } from 'clsx';
 import { useContext, useMemo } from 'react';
 import { useZodQuery } from '~/hooks/useZodQuery';
-import { type Project, VersionsSchema } from '~/schemas/modrinth';
+import { VersionsSchema } from '~/schemas/modrinth';
 import { buildURL } from '~/utils/buildURL';
 import { VersionContext } from '../ModrinthDownloads/VersionContext';
 import classes from './ModrinthCard.module.css';

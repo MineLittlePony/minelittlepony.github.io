@@ -1,5 +1,7 @@
-import { useQuery, type UseQueryResult } from '@tanstack/react-query';
-import { ZodError, type ZodTypeAny } from 'zod';
+import type { UseQueryResult } from '@tanstack/react-query';
+import type { ZodTypeAny } from 'zod';
+import { useQuery } from '@tanstack/react-query';
+import { ZodError } from 'zod';
 
 export function useZodQuery<Schema extends ZodTypeAny>(
   schema: Schema,

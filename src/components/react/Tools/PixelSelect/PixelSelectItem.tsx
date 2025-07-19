@@ -1,7 +1,8 @@
+import type { FC } from 'react';
 import type { PixelValue } from '~/data/pixels';
 import { ListboxOption } from '@headlessui/react';
 import { clsx } from 'clsx';
-import { type FC, Fragment } from 'react';
+import { Fragment } from 'react';
 import { PixelLabel } from './PixelLabel';
 
 export interface PixelSelectItemProps {

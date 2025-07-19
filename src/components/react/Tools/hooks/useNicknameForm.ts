@@ -1,4 +1,5 @@
-import { type FormEvent, useCallback, useRef } from 'react';
+import type { FormEvent } from 'react';
+import { useCallback, useRef } from 'react';
 import { fetchSkin } from '~/utils/skin/fetchSkin';
 import { loadFile } from '../store';
 

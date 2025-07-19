@@ -1,4 +1,5 @@
-import { type ChangeEvent, useId, useMemo, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useId, useMemo, useState } from 'react';
 import { useZodQuery } from '~/hooks/useZodQuery';
 import { ProjectSchema } from '~/schemas/modrinth';
 import { ModrinthProject } from '../ModrinthProject';

@@ -1,4 +1,5 @@
-import { type ChangeEvent, type InputHTMLAttributes, useContext } from 'react';
+import type { ChangeEvent, InputHTMLAttributes } from 'react';
+import { useContext } from 'react';
 import { SettingsRowContext } from './PixelRow/SettingsRow';
 
 export interface InputProps {

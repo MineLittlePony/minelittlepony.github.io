@@ -1,5 +1,6 @@
+import type { HTMLAttributes } from 'react';
 import clsx from 'clsx';
-import { forwardRef, type HTMLAttributes } from 'react';
+import { forwardRef } from 'react';
 import classes from './ToolsUninitialized.module.css';
 
 export const ToolsUninitialized = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({

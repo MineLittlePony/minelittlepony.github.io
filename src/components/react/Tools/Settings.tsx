@@ -1,4 +1,5 @@
-import { type ChangeEvent, useId } from 'react';
+import type { ChangeEvent } from 'react';
+import { useId } from 'react';
 import { Pixels } from '~/data/pixels';
 import { calculateSizeShift } from '~/utils/math';
 import { useNicknameForm } from './hooks/useNicknameForm';
