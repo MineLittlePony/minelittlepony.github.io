@@ -1,20 +1,20 @@
 ---
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import './global.css';
+import '@fortawesome/fontawesome-free/css/all.min.css'
+import './global.css'
 
-import Site from '~/data/site.json';
-import { SEOMetadata } from 'astro-seo-metadata';
-import Footer from './Footer/Footer.astro';
-import Header from './Header/Header.astro';
-import Main, { type Props as MainProps } from './Main/Main.astro';
+import Site from '~/data/site.json'
+import { SEOMetadata } from 'astro-seo-metadata'
+import Footer from './Footer/Footer.astro'
+import Header from './Header/Header.astro'
+import Main, { type Props as MainProps } from './Main/Main.astro'
 
 export interface Props extends MainProps {
-  title: string;
-  description?: string;
+  title: string
+  description?: string
 }
 
-const { title, description, ...mainProps } = Astro.props;
-const favicon = '/assets/favicon.ico';
+const { title, description, ...mainProps } = Astro.props
+const favicon = '/assets/favicon.ico'
 ---
 
 <!doctype html>

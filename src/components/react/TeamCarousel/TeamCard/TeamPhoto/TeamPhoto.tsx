@@ -1,11 +1,11 @@
-import type { TeamMember } from '~/data/team/team';
-import { clsx } from 'clsx';
-import { UnoptimizedImage } from '~/components/react/UnoptimizedImage';
-import classes from './TeamPhoto.module.css';
+import type { TeamMember } from '~/data/team/team'
+import { clsx } from 'clsx'
+import { UnoptimizedImage } from '~/components/react/UnoptimizedImage'
+import classes from './TeamPhoto.module.css'
 
 export function TeamPhoto({ avatar, contacts, name }: TeamMember) {
   if (avatar) {
-    return <img className={classes.Photo} src={avatar.src} alt={name} />;
+    return <img className={classes.Photo} src={avatar.src} alt={name} />
   }
 
   if (contacts?.github) {
@@ -17,7 +17,7 @@ export function TeamPhoto({ avatar, contacts, name }: TeamMember) {
         width={96}
         height={96}
       />
-    );
+    )
   }
 
   return (
@@ -29,5 +29,5 @@ export function TeamPhoto({ avatar, contacts, name }: TeamMember) {
     >
       <i className="fas fa-user fa-2xl" />
     </div>
-  );
+  )
 }

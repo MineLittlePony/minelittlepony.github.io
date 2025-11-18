@@ -1,36 +1,36 @@
-import type { Project } from '~/schemas/modrinth';
-import { clsx } from 'clsx';
-import { useContext, useMemo } from 'react';
-import { useZodQuery } from '~/hooks/useZodQuery';
-import { VersionsSchema } from '~/schemas/modrinth';
-import { buildURL } from '~/utils/buildURL';
-import { VersionContext } from '../ModrinthDownloads/VersionContext';
-import classes from './ModrinthCard.module.css';
-import { ModrinthFileLink } from './ModrinthFileLink';
-import { ModrinthProjectGameVersionsCounter } from './ModrinthProjectGameVersionsCounter';
-import { ModrinthProjectIcon } from './ModrinthProjectIcon';
-import { ModrinthProjectVersion } from './ModrinthProjectVersion';
+import type { Project } from '~/schemas/modrinth'
+import { clsx } from 'clsx'
+import { useContext, useMemo } from 'react'
+import { useZodQuery } from '~/hooks/useZodQuery'
+import { VersionsSchema } from '~/schemas/modrinth'
+import { buildURL } from '~/utils/buildURL'
+import { VersionContext } from '../ModrinthDownloads/VersionContext'
+import classes from './ModrinthCard.module.css'
+import { ModrinthFileLink } from './ModrinthFileLink'
+import { ModrinthProjectGameVersionsCounter } from './ModrinthProjectGameVersionsCounter'
+import { ModrinthProjectIcon } from './ModrinthProjectIcon'
+import { ModrinthProjectVersion } from './ModrinthProjectVersion'
 
 export interface ModrinthCardProps {
-  project: Project;
+  project: Project
 }
 
 export function ModrinthCard({ project }: ModrinthCardProps) {
-  const gameVersion = useContext(VersionContext);
+  const gameVersion = useContext(VersionContext)
 
   const versionURL = useMemo(() => {
-    const baseURL = `https://api.modrinth.com/v2/project/${project.id}/version`;
+    const baseURL = `https://api.modrinth.com/v2/project/${project.id}/version`
 
     return buildURL(baseURL, {
       featured: true,
       game_versions: [gameVersion],
-    });
-  }, [gameVersion, project.id]);
+    })
+  }, [gameVersion, project.id])
 
-  const { data: versions } = useZodQuery(VersionsSchema, versionURL, !!gameVersion);
+  const { data: versions } = useZodQuery(VersionsSchema, versionURL, !!gameVersion)
 
-  const projectId = project.slug ?? project.id;
-  const version = versions?.[0];
+  const projectId = project.slug ?? project.id
+  const version = versions?.[0]
 
   return (
     <div
@@ -80,5 +80,5 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
 
       <ModrinthFileLink version={version} />
     </div>
-  );
+  )
 }

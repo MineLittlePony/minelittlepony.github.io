@@ -1,18 +1,18 @@
-import type { ImageMetadata } from 'astro';
-import type { FontAwesomeIcon } from '~/utils/types';
-import ARMOR from './assets/armor.png';
-import CLIENTSIDE from './assets/clientside.png';
-import CUSTOMIZABLE from './assets/customizable.png';
-import HDSKINS from './assets/hdskins.png';
-import MOBS from './assets/mobs.png';
-import PONYTYPE from './assets/ponytype.png';
+import type { ImageMetadata } from 'astro'
+import type { FontAwesomeIcon } from '~/utils/types'
+import ARMOR from './assets/armor.png'
+import CLIENTSIDE from './assets/clientside.png'
+import CUSTOMIZABLE from './assets/customizable.png'
+import HDSKINS from './assets/hdskins.png'
+import MOBS from './assets/mobs.png'
+import PONYTYPE from './assets/ponytype.png'
 
 export interface Feature {
-  image: ImageMetadata;
-  icon: FontAwesomeIcon;
-  color: number;
-  title: string;
-  content: string;
+  image: ImageMetadata
+  icon: FontAwesomeIcon
+  color: number
+  title: string
+  content: string
 }
 
 export const Features: Feature[] = [
@@ -58,4 +58,4 @@ export const Features: Feature[] = [
     title: 'Armor Compatibility',
     content: 'Minecraft armor pieces fit on Mine Little Pony models and can also be textured using resource packs',
   },
-];
+]

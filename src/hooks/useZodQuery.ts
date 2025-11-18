@@ -1,7 +1,7 @@
-import type { UseQueryResult } from '@tanstack/react-query';
-import type { ZodTypeAny } from 'zod';
-import { useQuery } from '@tanstack/react-query';
-import { ZodError } from 'zod';
+import type { UseQueryResult } from '@tanstack/react-query'
+import type { ZodTypeAny } from 'zod'
+import { useQuery } from '@tanstack/react-query'
+import { ZodError } from 'zod'
 
 export function useZodQuery<Schema extends ZodTypeAny>(
   schema: Schema,
@@ -12,20 +12,20 @@ export function useZodQuery<Schema extends ZodTypeAny>(
     enabled,
     queryKey: [String(url)],
     queryFn: async () => {
-      const r = await fetch(url);
-      const json = await r.json();
-      const data = schema.parse(json);
+      const r = await fetch(url)
+      const json = await r.json()
+      const data = schema.parse(json)
 
-      return data;
+      return data
     },
     retry: (retryCount, error) => {
-      return !(retryCount > 3 || error instanceof ZodError);
+      return !(retryCount > 3 || error instanceof ZodError)
     },
-  });
+  })
 
   if (result.error) {
-    console.error(result.error);
+    console.error(result.error)
   }
 
-  return result;
+  return result
 }

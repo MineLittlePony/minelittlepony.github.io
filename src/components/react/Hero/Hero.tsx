@@ -1,12 +1,12 @@
-import { clsx } from 'clsx';
-import Links from '~/data/links.json';
-import { useKonami } from '~/hooks/useKonami';
-import { ModrinthDownloads } from '../ModrinthDownloads/ModrinthDownloads';
-import classes from './Hero.module.css';
-import { HeroIconLink } from './HeroIconLink';
+import { clsx } from 'clsx'
+import Links from '~/data/links.json'
+import { useKonami } from '~/hooks/useKonami'
+import { ModrinthDownloads } from '../ModrinthDownloads/ModrinthDownloads'
+import classes from './Hero.module.css'
+import { HeroIconLink } from './HeroIconLink'
 
 export function Hero() {
-  const konamiResolved = useKonami();
+  const konamiResolved = useKonami()
 
   return (
     <div className={clsx(classes.Hero, {
@@ -71,5 +71,5 @@ export function Hero() {
         </div>
       </div>
     </div>
-  );
+  )
 }

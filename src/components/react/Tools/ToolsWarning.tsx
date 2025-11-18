@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react'
 
 export function ToolsWarning({ children }: PropsWithChildren) {
   return (
@@ -6,5 +6,5 @@ export function ToolsWarning({ children }: PropsWithChildren) {
       <i className="fas fa-triangle-exclamation" />
       <span>{children}</span>
     </div>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-import { clsx } from 'clsx';
+import { clsx } from 'clsx'
 
 export interface ModrinthLinkProps {
-  projectId: string;
-  title: string;
-  striped?: boolean | undefined;
+  projectId: string
+  title: string
+  striped?: boolean | undefined
 }
 
 export function ModrinthLink({ projectId, title, striped }: ModrinthLinkProps) {
@@ -21,5 +21,5 @@ export function ModrinthLink({ projectId, title, striped }: ModrinthLinkProps) {
 
       <i className="fas fa-arrow-up-right-from-square fa-sm opacity-50" />
     </a>
-  );
+  )
 }

@@ -1,5 +1,4 @@
-// eslint-disable-next-line unused-imports/no-unused-imports
-import { addBase } from './addBase';
+import { addBase } from './addBase'
 
 /**
  * Check if path is equal to or sub path of sample
@@ -8,8 +7,8 @@ import { addBase } from './addBase';
  */
 export function isPathEqual(sample: string, path: string) {
   if (sample === import.meta.env.BASE_URL) {
-    return path === sample;
+    return path === sample
   }
 
-  return path.startsWith(sample);
+  return path.startsWith(sample)
 }

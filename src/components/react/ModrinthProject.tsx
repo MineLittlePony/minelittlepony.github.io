@@ -1,12 +1,12 @@
-import { useZodQuery } from '~/hooks/useZodQuery';
-import { ProjectSchema } from '~/schemas/modrinth';
-import { ModrinthCard } from './ModrinthCard';
-import { ModrinthLink } from './ModrinthLink';
+import { useZodQuery } from '~/hooks/useZodQuery'
+import { ProjectSchema } from '~/schemas/modrinth'
+import { ModrinthCard } from './ModrinthCard'
+import { ModrinthLink } from './ModrinthLink'
 
 export interface ModrinthProjectProps {
-  projectId: string;
-  title: string;
-  striped?: boolean;
+  projectId: string
+  title: string
+  striped?: boolean
 }
 
 export function ModrinthProject({
@@ -14,11 +14,11 @@ export function ModrinthProject({
   title,
   striped,
 }: ModrinthProjectProps) {
-  const { data } = useZodQuery(ProjectSchema, `https://api.modrinth.com/v2/project/${projectId}`);
+  const { data } = useZodQuery(ProjectSchema, `https://api.modrinth.com/v2/project/${projectId}`)
 
   if (data) {
-    return <ModrinthCard project={data} />;
+    return <ModrinthCard project={data} />
   }
 
-  return <ModrinthLink projectId={projectId} title={title} striped={striped} />;
+  return <ModrinthLink projectId={projectId} title={title} striped={striped} />
 }

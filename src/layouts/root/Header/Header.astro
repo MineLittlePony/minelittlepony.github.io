@@ -1,11 +1,11 @@
 ---
-import { MenuEntries } from '~/data/menu';
-import { addBase } from '~/utils/addBase';
-import { isPathEqual } from '~/utils/isPathEqual';
-import classes from './Header.module.css';
+import { MenuEntries } from '~/data/menu'
+import { addBase } from '~/utils/addBase'
+import { isPathEqual } from '~/utils/isPathEqual'
+import classes from './Header.module.css'
 
 function mapEntries<T>(cb: (name: string, path: string) => T) {
-  return MenuEntries.map(({ name, path }) => cb(name, addBase(path)));
+  return MenuEntries.map(({ name, path }) => cb(name, addBase(path)))
 }
 ---
 

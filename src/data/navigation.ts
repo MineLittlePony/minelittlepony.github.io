@@ -1,7 +1,7 @@
 export interface NavigationInfo {
-  href: string;
-  title: string;
-  description: string;
+  href: string
+  title: string
+  description: string
 }
 
 export const Navigation: Record<string, NavigationInfo[]> = {
@@ -22,4 +22,4 @@ export const Navigation: Record<string, NavigationInfo[]> = {
       description: 'Go to instructions for installing LiteLoader version',
     },
   ],
-};
+}

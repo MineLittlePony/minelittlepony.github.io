@@ -1,23 +1,19 @@
-import type { Version } from '~/schemas/modrinth';
-import prettyBytes from 'pretty-bytes';
+import type { Version } from '~/schemas/modrinth'
+import prettyBytes from 'pretty-bytes'
 
 export interface ModrinthFileLinkProps {
-  version: Version | undefined;
+  version: Version | undefined
 }
 
 export function ModrinthFileLink({ version }: ModrinthFileLinkProps) {
-  if (!version) {
-    return null;
-  }
+  if (!version) return null
 
-  const file = version.files.find(file => file.primary) ?? version.files[0];
+  const file = version.files.find(file => file.primary) ?? version.files[0]
 
-  if (!file) {
-    return null;
-  }
+  if (!file) return null
 
-  const fileSize = prettyBytes(file.size);
-  const label = `Download (${fileSize})`;
+  const fileSize = prettyBytes(file.size)
+  const label = `Download (${fileSize})`
 
   return (
     <a
@@ -28,5 +24,5 @@ export function ModrinthFileLink({ version }: ModrinthFileLinkProps) {
       <i className="fas fa-download text-2xl/6" />
       <span className="sm:sr-only">{label}</span>
     </a>
-  );
+  )
 }

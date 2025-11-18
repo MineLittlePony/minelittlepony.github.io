@@ -1,8 +1,8 @@
-import type { SocialLink as SocialLinkTemplate } from '~/data/socials';
+import type { SocialLink as SocialLinkTemplate } from '~/data/socials'
 
 export interface SocialLinkProps {
-  template: SocialLinkTemplate;
-  value: string;
+  template: SocialLinkTemplate
+  value: string
 }
 
 export function SocialLink({ template, value }: SocialLinkProps) {
@@ -10,7 +10,7 @@ export function SocialLink({ template, value }: SocialLinkProps) {
     const url
       = typeof template.url === 'string'
         ? template.url.replace('%s', value)
-        : template.url(value);
+        : template.url(value)
 
     return (
       <a
@@ -20,7 +20,7 @@ export function SocialLink({ template, value }: SocialLinkProps) {
       >
         <i className={template.icon} />
       </a>
-    );
+    )
   }
 
   return (
@@ -32,5 +32,5 @@ export function SocialLink({ template, value }: SocialLinkProps) {
 
       <span>{value}</span>
     </div>
-  );
+  )
 }

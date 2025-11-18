@@ -1,52 +1,52 @@
-import type { ChangeEvent } from 'react';
-import { useId, useMemo, useState } from 'react';
-import { useZodQuery } from '~/hooks/useZodQuery';
-import { ProjectSchema } from '~/schemas/modrinth';
-import { ModrinthProject } from '../ModrinthProject';
-import { VersionContext } from './VersionContext';
+import type { ChangeEvent } from 'react'
+import { useId, useMemo, useState } from 'react'
+import { useZodQuery } from '~/hooks/useZodQuery'
+import { ProjectSchema } from '~/schemas/modrinth'
+import { ModrinthProject } from '../ModrinthProject'
+import { VersionContext } from './VersionContext'
 
-const RELEASE_REGEX = /^\d+\.\d+(?:\.\d+)?$/;
+const RELEASE_REGEX = /^\d+\.\d+(?:\.\d+)?$/
 
 function isRelease(version: string) {
-  return RELEASE_REGEX.test(version);
+  return RELEASE_REGEX.test(version)
 }
 
 export function ModrinthDownloadsContent() {
-  const [selectedVersion, setSelectedVersion] = useState<string | null>(null);
-  const [showAllVersions, setShowAllVersions] = useState(false);
+  const [selectedVersion, setSelectedVersion] = useState<string | null>(null)
+  const [showAllVersions, setShowAllVersions] = useState(false)
 
-  const versionsId = useId();
-  const showAllVersionsId = useId();
+  const versionsId = useId()
+  const showAllVersionsId = useId()
 
-  const { data } = useZodQuery(ProjectSchema, 'https://api.modrinth.com/v2/project/JBjInUXM');
+  const { data } = useZodQuery(ProjectSchema, 'https://api.modrinth.com/v2/project/JBjInUXM')
 
   const versions = useMemo(() => {
-    let result = data?.game_versions;
+    let result = data?.game_versions
 
     if (showAllVersions) {
-      result = result?.slice();
+      result = result?.slice()
     } else {
-      result = result?.filter(isRelease);
+      result = result?.filter(isRelease)
     }
 
-    return result?.reverse();
-  }, [showAllVersions, data?.game_versions]);
+    return result?.reverse()
+  }, [showAllVersions, data?.game_versions])
 
-  const version = selectedVersion ?? versions?.[0];
+  const version = selectedVersion ?? versions?.[0]
 
   function handleVersionChange(e: ChangeEvent<HTMLSelectElement>) {
-    const value = e.currentTarget.value;
+    const value = e.currentTarget.value
 
-    setSelectedVersion(value === 'latest' ? null : value);
+    setSelectedVersion(value === 'latest' ? null : value)
   }
 
   function handleFilterChange(e: ChangeEvent<HTMLInputElement>) {
-    const newShowAllVersions = e.currentTarget.checked;
+    const newShowAllVersions = e.currentTarget.checked
 
-    setShowAllVersions(newShowAllVersions);
+    setShowAllVersions(newShowAllVersions)
 
     if (selectedVersion && !newShowAllVersions && !isRelease(selectedVersion)) {
-      setSelectedVersion(null);
+      setSelectedVersion(null)
     }
   }
 
@@ -107,5 +107,5 @@ export function ModrinthDownloadsContent() {
         <ModrinthProject projectId="9K7RJlvM" title="Unicopia" />
       </div>
     </VersionContext.Provider>
-  );
+  )
 }

@@ -1,13 +1,13 @@
 ---
-import classes from './DerpibooruImage.module.css';
+import classes from './DerpibooruImage.module.css'
 
 export interface Props {
-  id: number;
-  src: string;
-  alt: string;
+  id: number
+  src: string
+  alt: string
 }
 
-const { id, src, alt } = Astro.props;
+const { id, src, alt } = Astro.props
 ---
 
 <a href={`https://derpibooru.org/images/${id}`} title={`Derpibooru: ${id}`}>

@@ -1,18 +1,18 @@
-import type { PropsWithChildren } from 'react';
-import { createContext, useId } from 'react';
+import type { PropsWithChildren } from 'react'
+import { createContext, useId } from 'react'
 
 export interface SettingsRowProps {
-  label: string;
+  label: string
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const SettingsRowContext = createContext<string | undefined>(undefined);
+export const SettingsRowContext = createContext<string | undefined>(undefined)
 
 export function SettingsRow({
   label,
   children,
 }: PropsWithChildren<SettingsRowProps>) {
-  const id = useId();
+  const id = useId()
 
   return (
     <div className="grid grid-cols-4 items-center gap-2 py-2">
@@ -26,5 +26,5 @@ export function SettingsRow({
         </SettingsRowContext.Provider>
       </div>
     </div>
-  );
+  )
 }
