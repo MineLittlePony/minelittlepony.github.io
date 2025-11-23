@@ -1,6 +1,7 @@
 ---
-import { hex } from '~/utils/color'
 import { Image } from 'astro:assets'
+import { hex } from '~/utils/color'
+
 export { type Feature as Props } from '~/data/features/features'
 
 const { image, icon, color, title, content } = Astro.props
@@ -8,7 +9,7 @@ const { image, icon, color, title, content } = Astro.props
 
 <div class="bg-white shadow-lg">
   <!-- Image -->
-  <Image class="w-full h-auto" src={image} alt={title} />
+  <Image class="h-auto w-full" src={image} alt={title} />
 
   <!-- Icon -->
   <div

@@ -1,5 +1,5 @@
 ---
-import { type PixelInfo } from '~/data/pixels'
+import type { PixelInfo } from '~/data/pixels'
 
 export interface Props {
   info: PixelInfo
@@ -29,7 +29,7 @@ const { info } = Astro.props
             {value === '000000' ? (
               <i class="fas fa-ban text-red-500" title="Transparent" />
             ) : (
-              <div class="h-4 w-4 rounded-full border border-zinc-500/50" style={{ backgroundColor: `#${value}` }} />
+              <div class="size-4 rounded-full border border-zinc-500/50" style={{ backgroundColor: `#${value}` }} />
             )}
 
             <code title={value === '000000' && info.type !== 'RAW' ? 'Transparent' : ''}>

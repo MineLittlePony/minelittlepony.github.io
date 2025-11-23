@@ -22,4 +22,14 @@ export default antfu({
   rules: {
     'tailwindcss/no-custom-classname': 'off',
   },
-}))
+})).override('antfu/formatter/astro', {
+  languageOptions: {
+    // fix overriding astro parser with plain parser
+    parser: undefined,
+  },
+}).override('antfu/formatter/astro/disables', {
+  rules: {
+    // fix conflicts with formatter
+    'style/multiline-ternary': 'off',
+  },
+})
