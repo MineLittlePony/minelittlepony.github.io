@@ -8,12 +8,12 @@ export interface ModrinthProjectIconProps {
 
 export function ModrinthProjectIcon({ url, alt }: ModrinthProjectIconProps) {
   if (!url) {
-    return <div className="size-12 rounded bg-zinc-500" />
+    return <div className="size-12 rounded-sm bg-zinc-500" />
   }
 
   return (
     <UnoptimizedImage
-      className="size-12 rounded"
+      className="size-12 rounded-sm"
       src={url}
       alt={alt}
       width={48}

@@ -62,7 +62,7 @@ export function ModrinthDownloadsContent() {
             </label>
 
             <select
-              className="rounded bg-zinc-800 p-1 backdrop-blur"
+              className="rounded-sm bg-zinc-800 p-1 backdrop-blur-sm"
               id={versionsId}
               value={version}
               onChange={handleVersionChange}

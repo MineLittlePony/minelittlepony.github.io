@@ -1,3 +1,5 @@
+@reference "../../../../../layouts/root/global.css";
+
 .Photo {
   @apply size-24 rounded-full;
 }

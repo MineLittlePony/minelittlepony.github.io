@@ -18,7 +18,7 @@ export function ModrinthFileLink({ version }: ModrinthFileLinkProps) {
   return (
     <a
       href={file.url}
-      className="flex grow items-center justify-center gap-3 rounded bg-white/5 p-3 hover:bg-white/10 sm:grow-0 sm:bg-transparent sm:hover:bg-white/5"
+      className="flex grow items-center justify-center gap-3 rounded-sm bg-white/5 p-3 hover:bg-white/10 sm:grow-0 sm:bg-transparent sm:hover:bg-white/5"
       title={label}
     >
       <i className="fas fa-download text-2xl/6" />

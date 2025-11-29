@@ -1,3 +1,5 @@
+@reference "../root/global.css";
+
 .article {
   @apply prose prose-zinc max-w-none;
   @apply flex flex-col items-start gap-4 md:flex-row-reverse;
@@ -11,7 +13,7 @@
   }
 
   code {
-    @apply inline-block rounded border border-zinc-200 bg-zinc-50 px-1 py-0 leading-6 before:content-none after:content-none;
+    @apply inline-block rounded-sm border border-zinc-200 bg-zinc-50 px-1 py-0 leading-6 before:content-none after:content-none;
   }
 
   blockquote {
@@ -49,7 +51,7 @@
 
 .toc {
   @apply rounded-lg border bg-zinc-50 p-4;
-  @apply flex-shrink-0 overflow-auto;
+  @apply shrink-0 overflow-auto;
   @apply top-4 md:sticky md:max-w-80 md:max-h-[calc(100svh-2rem)];
 
   ol {

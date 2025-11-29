@@ -121,7 +121,7 @@ export function Settings({ requestFile }: SettingsProps) {
             onChange={handleSkinSizeChange}
           />
 
-          <div className="rounded border bg-zinc-50 px-2 font-mono">
+          <div className="rounded-sm border bg-zinc-50 px-2 font-mono">
             {`${64 << skinSizeShift}px`}
           </div>
         </div>

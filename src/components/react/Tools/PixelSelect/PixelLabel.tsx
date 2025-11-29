@@ -41,14 +41,14 @@ export function PixelLabel({ value }: PixelLabelProps) {
       })}
     >
       <div
-        className="aspect-square w-4 rounded-sm border border-zinc-500/25"
+        className="aspect-square w-4 rounded-xs border border-zinc-500/25"
         style={{ backgroundColor: color }}
         title={color}
       />
 
       <span className="grow">{label}</span>
 
-      <span className="select-text rounded border bg-zinc-50 px-2 font-mono text-zinc-950">
+      <span className="select-text rounded-sm border bg-zinc-50 px-2 font-mono text-zinc-950">
         {color}
       </span>
     </div>

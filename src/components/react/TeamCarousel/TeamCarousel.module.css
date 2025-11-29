@@ -1,3 +1,5 @@
+@reference "../../../layouts/root/global.css";
+
 .TeamCarousel {
   & :global(.swiper) {
     @apply py-6;

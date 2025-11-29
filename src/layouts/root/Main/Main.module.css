@@ -1,3 +1,5 @@
+@reference "../global.css";
+
 .Main {
   @apply grow;
 }
