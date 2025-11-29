@@ -1,5 +1,5 @@
 import antfu from '@antfu/eslint-config'
-import tailwind from 'eslint-plugin-tailwindcss'
+import tailwindcss from 'eslint-plugin-better-tailwindcss'
 
 export default antfu({
   formatters: true,
@@ -33,8 +33,22 @@ export default antfu({
       'style/multiline-ternary': 'off',
     },
   })
-  .append(tailwind.configs['flat/recommended'], {
+  .append({
+    plugins: {
+      'better-tailwindcss': tailwindcss,
+    },
     rules: {
-      'tailwindcss/no-custom-classname': 'off',
+      'better-tailwindcss/enforce-consistent-class-order': ['error'],
+      'better-tailwindcss/enforce-consistent-variable-syntax': ['error'],
+      'better-tailwindcss/enforce-consistent-important-position': ['error'],
+      'better-tailwindcss/enforce-shorthand-classes': ['error'],
+      'better-tailwindcss/no-duplicate-classes': ['error'],
+      'better-tailwindcss/no-deprecated-classes': ['error'],
+      'better-tailwindcss/no-conflicting-classes': ['error'],
+    },
+    settings: {
+      'better-tailwindcss': {
+        entryPoint: 'src/layouts/root/global.css',
+      },
     },
   })

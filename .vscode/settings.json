@@ -3,6 +3,8 @@
     "*.css": "tailwindcss"
   },
 
+  "tailwindCSS.lint.cssConflict": "ignore",
+
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.defaultFormatter": null,
