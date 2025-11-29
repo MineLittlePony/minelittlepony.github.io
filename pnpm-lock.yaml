@@ -69,9 +69,6 @@ importers:
       '@eslint-react/eslint-plugin':
         specifier: ^2.3.5
         version: 2.3.5(eslint@9.39.1(jiti@1.21.6))(typescript@5.9.3)
-      '@eslint/eslintrc':
-        specifier: ^3.3.1
-        version: 3.3.1
       '@fortawesome/fontawesome-common-types':
         specifier: ^6.7.2
         version: 6.7.2
