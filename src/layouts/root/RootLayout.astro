@@ -1,12 +1,11 @@
 ---
-import type { Props as MainProps } from './Main/Main.astro'
+import type { Props as MainProps } from './components/Main.astro'
 import { SEOMetadata } from 'astro-seo-metadata'
 import Site from '~/data/site.json'
-import Footer from './Footer/Footer.astro'
-import Header from './Header/Header.astro'
-import Main from './Main/Main.astro'
-import '@fortawesome/fontawesome-free/css/all.min.css'
-import './global.css'
+import Footer from './components/Footer.astro'
+import Header from './components/Header.astro'
+import Main from './components/Main.astro'
+import '~/styles/index.css'
 
 export interface Props extends MainProps {
   title: string

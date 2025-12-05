@@ -1,5 +1,0 @@
-@reference "../../root/global.css";
-
-.Link {
-  @apply rounded-lg border bg-zinc-50 px-4 py-2 underline hover:text-primary;
-}

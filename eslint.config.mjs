@@ -44,11 +44,12 @@ export default antfu({
       'better-tailwindcss/enforce-shorthand-classes': ['error'],
       'better-tailwindcss/no-duplicate-classes': ['error'],
       'better-tailwindcss/no-deprecated-classes': ['error'],
+      'better-tailwindcss/no-unnecessary-whitespace': ['error'],
       'better-tailwindcss/no-conflicting-classes': ['error'],
     },
     settings: {
       'better-tailwindcss': {
-        entryPoint: 'src/layouts/root/global.css',
+        entryPoint: 'src/styles/index.css',
       },
     },
   })

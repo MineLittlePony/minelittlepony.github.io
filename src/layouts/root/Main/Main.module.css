@@ -1,9 +1,0 @@
-@reference "../global.css";
-
-.Main {
-  @apply grow;
-}
-
-.ContentStyles {
-  @apply flex flex-col gap-4 p-6;
-}

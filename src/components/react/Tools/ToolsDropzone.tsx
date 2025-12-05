@@ -1,7 +1,7 @@
 import { useNicknameForm } from './hooks/useNicknameForm'
 import { useToolsDropzone } from './hooks/useToolsDropzone'
 import { ToolsError } from './ToolsError'
-import { ToolsUninitialized } from './ToolsUninitialized/ToolsUninitialized'
+import { ToolsUninitialized } from './ToolsUninitialized'
 
 export function ToolsDropzone() {
   const { getRootProps, getInputProps } = useToolsDropzone()
@@ -11,7 +11,7 @@ export function ToolsDropzone() {
     <ToolsUninitialized {...getRootProps()}>
       <input {...getInputProps()} />
 
-      <div className="h2">Drop a file here or click to open</div>
+      <div className="text-3xl font-bold">Drop a file here or click to open</div>
 
       <form
         className="flex gap-2"

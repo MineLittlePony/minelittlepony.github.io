@@ -1,0 +1,215 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-sans: Roboto;
+  --font-serif: Roboto Slab;
+  --font-mono: Roboto Mono;
+
+  --color-primary: #3485df;
+}
+
+@utility border-stripe {
+  border-image: url('./assets/border-stripe.png') 1;
+  image-rendering: pixelated;
+
+  /* TODO add bat variant */
+}
+
+@utility bg-checker-* {
+  background: url('./assets/check-pattern.png') top left / calc(100% / (--value(number) / 2));
+  image-rendering: pixelated;
+}
+
+@layer base {
+  h1 {
+    @apply font-bold text-4xl;
+  }
+
+  h2 {
+    @apply font-bold text-3xl;
+  }
+
+  h3 {
+    @apply font-bold text-2xl;
+  }
+
+  h4 {
+    @apply font-bold text-xl;
+  }
+
+  h5 {
+    @apply font-bold text-lg;
+  }
+
+  h6 {
+    @apply font-bold text-base;
+  }
+
+  code {
+    @apply rounded-sm border border-zinc-300 bg-zinc-100 px-1 py-0 leading-6 whitespace-nowrap;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply border-zinc-950/30 bg-primary text-white;
+    @apply h-10 rounded-md border-b-4 px-4;
+    @apply hover:opacity-90 active:border-b-0;
+    @apply disabled:border-none disabled:opacity-50;
+  }
+
+  .input {
+    @apply border-zinc-200 ring-primary/25 bg-white;
+    @apply h-10 rounded-md border px-4 outline-hidden transition;
+    @apply placeholder:text-zinc-400;
+    @apply focus:border-primary/50 focus:ring-3;
+
+    &[type='color'] {
+      @apply py-1;
+    }
+  }
+
+  .markdown {
+    @apply flex flex-col items-start gap-4 md:flex-row-reverse;
+
+    @apply text-base;
+
+    .markdown-content {
+      @apply grow;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-block-start: 0.75em;
+      margin-block-end: 0.5em;
+
+      &:first-child {
+        margin-block-start: 0;
+      }
+
+      &:last-child {
+        margin-block-end: 0;
+      }
+    }
+
+    blockquote,
+    p,
+    img,
+    ul,
+    ol,
+    table {
+      margin-block: 1em;
+
+      &:first-child {
+        margin-block-start: 0;
+      }
+
+      &:last-child {
+        margin-block-end: 0;
+      }
+    }
+
+    h1 {
+      @apply text-5xl;
+    }
+
+    h2 {
+      @apply text-4xl;
+    }
+
+    h3 {
+      @apply text-3xl;
+    }
+
+    h4 {
+      @apply text-2xl;
+    }
+
+    h5 {
+      @apply text-xl;
+    }
+
+    h6 {
+      @apply text-lg;
+    }
+
+    .heading-anchor {
+      @apply mr-1 font-bold text-zinc-400 no-underline hover:text-primary hover:underline;
+    }
+
+    blockquote {
+      @apply border-l-5 border-zinc-300 bg-zinc-100 rounded-md px-4 py-3;
+    }
+
+    a {
+      @apply text-primary no-underline hover:underline;
+    }
+
+    img {
+      @apply mx-auto;
+    }
+
+    ul,
+    ol {
+      @apply ps-7;
+
+      ul,
+      ol {
+        margin-block: 0;
+      }
+    }
+
+    ul {
+      @apply list-disc;
+    }
+
+    ol {
+      @apply list-decimal;
+    }
+
+    li {
+      margin-block: 0.5em;
+    }
+
+    table {
+      @apply border-separate border-spacing-0;
+
+      :first-child tr:first-child {
+        @apply *:first:rounded-tl-md;
+        @apply *:last:rounded-tr-md;
+      }
+
+      :last-child tr:last-child {
+        @apply *:first:rounded-bl-md;
+        @apply *:last:rounded-br-md;
+      }
+
+      th,
+      td {
+        @apply px-2 py-1 border border-zinc-300;
+      }
+
+      th {
+        @apply bg-zinc-200;
+      }
+
+      td {
+        @apply bg-zinc-100;
+      }
+    }
+  }
+
+  .toc {
+    @apply rounded-lg border border-zinc-200 bg-zinc-50 ps-3 py-3 pe-4;
+    @apply shrink-0 overflow-auto box-border;
+    @apply top-6 bottom-6 md:sticky md:max-w-80 md:max-h-[calc(100svh-(--spacing(12)))];
+  }
+}

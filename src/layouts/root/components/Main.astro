@@ -1,6 +1,4 @@
 ---
-import classes from './Main.module.css'
-
 export interface Props {
   /** Extend default class name */
   class?: string
@@ -18,7 +16,7 @@ export interface Props {
 const { class: className, heading, applyContentStyles = true } = Astro.props
 ---
 
-<main class:list={[classes.Main, { [classes.ContentStyles ?? '']: applyContentStyles }, className]}>
+<main class:list={['grow', { 'flex flex-col gap-4 p-6': applyContentStyles }, className]}>
   {heading && <h1 class="sr-only">{heading}</h1>}
 
   <slot />

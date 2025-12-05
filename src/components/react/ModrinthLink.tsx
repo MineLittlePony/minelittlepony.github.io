@@ -13,7 +13,7 @@ export function ModrinthLink({ projectId, title, striped }: ModrinthLinkProps) {
       className={clsx(
         'flex items-center justify-center gap-2 bg-white/80 p-3 text-center text-xl font-bold text-black hover:bg-white sm:p-4 sm:text-2xl',
         {
-          'pastel-stripe': striped,
+          'border-t-5 border-stripe': striped,
         },
       )}
     >

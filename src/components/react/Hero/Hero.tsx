@@ -9,18 +9,18 @@ export function Hero() {
   const konamiResolved = useKonami()
 
   return (
-    <div className={clsx(classes.Hero, {
+    <div className={clsx(classes.Hero, 'text-white', {
       [classes.SecretSolved ?? '.SecretSolved']: konamiResolved,
     })}
     >
       {/* Hero content */}
-      <div className={classes.Content}>
+      <div className="grid flex-col gap-6 px-4 py-6 pb-12 sm:px-6 lg:grid-cols-12">
         {/* Info section */}
-        <div className={classes.InfoSection}>
+        <div className="flex flex-col justify-center gap-6 lg:col-span-7">
           {/* Description */}
-          <div className={classes.Description}>
+          <div className="flex flex-col gap-4">
             <img
-              className={classes.HeroImage}
+              className={konamiResolved ? 'hidden' : undefined}
               src="/assets/hero/banner.png"
               alt="Hero banner"
             />
@@ -33,10 +33,10 @@ export function Hero() {
             </p>
           </div>
 
-          <hr className={classes.Divider} />
+          <hr className="border-b-2 border-dashed border-white/10" />
 
           {/* Links */}
-          <div className={classes.Links}>
+          <div className="flex items-center justify-center gap-6 pb-4 sm:justify-start">
             {/* Archive */}
             <HeroIconLink
               href={Links.cloudArchive}

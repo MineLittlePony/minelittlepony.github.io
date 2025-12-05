@@ -1,9 +1,0 @@
-@reference "../../../layouts/root/global.css";
-
-.Card {
-  @apply flex flex-col gap-3 rounded-sm bg-white/5 p-2 backdrop-blur-sm sm:flex-row sm:items-center;
-}
-
-.Muted {
-  @apply opacity-25 hover:opacity-100;
-}

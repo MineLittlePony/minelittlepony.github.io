@@ -3,8 +3,7 @@ import type { MarkdownLayoutProps } from 'astro'
 import type { Props as LayoutProps } from '../root/RootLayout.astro'
 import { Navigation } from '~/data/navigation'
 import RootLayout from '../root/RootLayout.astro'
-import NavigationLink from './NavigationLink/NavigationLink.astro'
-import './global.css'
+import NavigationLink from './components/NavigationLink.astro'
 
 export interface Frontmatter extends Partial<LayoutProps> {}
 
@@ -28,7 +27,7 @@ const navigation = section && Navigation[section]
     )
   }
 
-  <div class="article">
+  <div class="markdown">
     <slot />
   </div>
 </RootLayout>

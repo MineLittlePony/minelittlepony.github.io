@@ -1,4 +1,0 @@
-@reference "../global.css";
-.Footer {
-  @apply pastel-stripe bg-zinc-200 p-6 text-center leading-loose text-zinc-600;
-}

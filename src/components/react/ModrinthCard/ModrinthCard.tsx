@@ -5,7 +5,6 @@ import { useZodQuery } from '~/hooks/useZodQuery'
 import { VersionsSchema } from '~/schemas/modrinth'
 import { buildURL } from '~/utils/buildURL'
 import { VersionContext } from '../ModrinthDownloads/VersionContext'
-import classes from './ModrinthCard.module.css'
 import { ModrinthFileLink } from './ModrinthFileLink'
 import { ModrinthProjectGameVersionsCounter } from './ModrinthProjectGameVersionsCounter'
 import { ModrinthProjectIcon } from './ModrinthProjectIcon'
@@ -34,8 +33,8 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
 
   return (
     <div
-      className={clsx(classes.Card, {
-        [classes.Muted ?? '']: !version,
+      className={clsx('flex flex-col gap-3 rounded-sm bg-white/5 p-2 backdrop-blur-sm sm:flex-row sm:items-center', {
+        'opacity-25 hover:opacity-100': !version,
       })}
     >
       <div className="flex grow items-center gap-3">

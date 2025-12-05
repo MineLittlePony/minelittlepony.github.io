@@ -44,7 +44,7 @@ export function PixelSelect({ options, value, onChange }: PixelSelectProps) {
       <div className="relative">
         <PixelSelectButton value={pixelValue} />
 
-        <ListboxOptions className="absolute z-10 mt-2 w-full divide-y divide-zinc-500/25 overflow-hidden rounded-md border bg-white drop-shadow-md">
+        <ListboxOptions className="absolute z-10 mt-2 w-full divide-y divide-zinc-500/25 overflow-hidden rounded-md border border-zinc-200 bg-white drop-shadow-md">
           {options.map(option => (
             <ListboxOption
               key={option.color}
@@ -54,7 +54,7 @@ export function PixelSelect({ options, value, onChange }: PixelSelectProps) {
               {({ selected }) => (
                 <li
                   className={clsx(
-                    'flex h-10 select-none items-center gap-2 px-4 hover:bg-primary hover:text-white',
+                    'flex h-10 items-center gap-2 px-4 select-none hover:bg-primary hover:text-white',
                     {
                       'bg-primary text-white': selected,
                     },

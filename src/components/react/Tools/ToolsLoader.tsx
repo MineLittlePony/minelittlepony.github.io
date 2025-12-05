@@ -1,4 +1,4 @@
-import { ToolsUninitialized } from './ToolsUninitialized/ToolsUninitialized'
+import { ToolsUninitialized } from './ToolsUninitialized'
 
 export function ToolsLoader() {
   return (

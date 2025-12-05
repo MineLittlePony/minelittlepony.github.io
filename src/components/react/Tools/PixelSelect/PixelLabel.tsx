@@ -48,9 +48,9 @@ export function PixelLabel({ value }: PixelLabelProps) {
 
       <span className="grow">{label}</span>
 
-      <span className="select-text rounded-sm border bg-zinc-50 px-2 font-mono text-zinc-950">
+      <code className="text-black! select-text">
         {color}
-      </span>
+      </code>
     </div>
   )
 }

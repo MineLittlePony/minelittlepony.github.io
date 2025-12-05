@@ -1,6 +1,6 @@
 import { useToolsDropzone } from './hooks/useToolsDropzone'
 import { Settings } from './Settings'
-import { SkinPreview } from './SkinPreview/SkinPreview'
+import { SkinPreview } from './SkinPreview'
 
 export interface ToolsMainProps {
   ctx: CanvasRenderingContext2D

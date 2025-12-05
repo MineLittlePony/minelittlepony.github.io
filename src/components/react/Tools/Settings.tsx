@@ -45,7 +45,7 @@ export function Settings({ requestFile }: SettingsProps) {
   }
 
   return (
-    <div className="divide-y">
+    <div className="divide-y divide-zinc-200">
       <div className="flex flex-col gap-2 py-2">
         <form className="flex gap-2" onSubmit={handleSubmit}>
           <input
@@ -121,9 +121,9 @@ export function Settings({ requestFile }: SettingsProps) {
             onChange={handleSkinSizeChange}
           />
 
-          <div className="rounded-sm border bg-zinc-50 px-2 font-mono">
+          <code>
             {`${64 << skinSizeShift}px`}
-          </div>
+          </code>
         </div>
 
         {skinSizeShift > MAX_SUPPORTED_SIZE_SHIFT && (

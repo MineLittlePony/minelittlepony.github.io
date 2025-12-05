@@ -3,8 +3,7 @@ import { Pixels } from '~/data/pixels'
 import { num2rgba } from '~/utils/color'
 import { colors2num } from '~/utils/colors2num'
 import { convertSkin } from '~/utils/skin/convertSkin'
-import { getToolsState, setToolsState, useToolsState } from '../store'
-import classes from './SkinPreview.module.css'
+import { getToolsState, setToolsState, useToolsState } from './store'
 
 export interface SkinPreviewProps {
   ctx: CanvasRenderingContext2D
@@ -50,7 +49,7 @@ export function SkinPreview({ ctx }: SkinPreviewProps) {
 
   return (
     <canvas
-      className={classes.Output}
+      className="w-full shadow-lg bg-checker-64"
       ref={handleCanvas}
       width={64}
       height={32}

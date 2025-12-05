@@ -17,7 +17,7 @@ function setLayout() {
 }
 
 const wrapOptions = {
-  wrapper: 'article.article-content',
+  wrapper: 'article.markdown-content',
 }
 
 /** @type {import('rehype-toc').Options} */

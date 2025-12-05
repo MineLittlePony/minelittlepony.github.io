@@ -1,17 +1,18 @@
 import type { TeamMember } from '~/data/team/team'
 import { clsx } from 'clsx'
 import { UnoptimizedImage } from '~/components/react/UnoptimizedImage'
-import classes from './TeamPhoto.module.css'
+
+const photoClassName = clsx('size-24 rounded-full')
 
 export function TeamPhoto({ avatar, contacts, name }: TeamMember) {
   if (avatar) {
-    return <img className={classes.Photo} src={avatar.src} alt={name} />
+    return <img className={photoClassName} src={avatar.src} alt={name} />
   }
 
   if (contacts?.github) {
     return (
       <UnoptimizedImage
-        className={classes.Photo}
+        className={photoClassName}
         src={`https://github.com/${contacts.github}.png`}
         alt={name}
         width={96}
@@ -23,7 +24,7 @@ export function TeamPhoto({ avatar, contacts, name }: TeamMember) {
   return (
     <div
       className={clsx(
-        classes.Photo,
+        photoClassName,
         'flex items-center justify-center bg-zinc-200 text-white',
       )}
     >
