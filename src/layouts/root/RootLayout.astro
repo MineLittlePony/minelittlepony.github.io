@@ -2,6 +2,7 @@
 import type { Props as MainProps } from './components/Main.astro'
 import { SEOMetadata } from 'astro-seo-metadata'
 import Site from '~/data/site.json'
+import FAVICON from './assets/favicon.ico?url'
 import Footer from './components/Footer.astro'
 import Header from './components/Header.astro'
 import Main from './components/Main.astro'
@@ -13,7 +14,6 @@ export interface Props extends MainProps {
 }
 
 const { title, description, ...mainProps } = Astro.props
-const favicon = '/assets/favicon.ico'
 ---
 
 <!doctype html>
@@ -26,8 +26,8 @@ const favicon = '/assets/favicon.ico'
       siteName={Site.siteName}
       title={Site.titleTemplate.replace('%s', title)}
       description={description ?? Site.siteDescription}
-      favicon={favicon}
-      image={new URL(favicon, Astro.url).toString()}
+      favicon={FAVICON}
+      image={new URL(FAVICON, Astro.url).toString()}
       canonicalUrl={Astro.url.toString()}
       type="website"
       astroSitemap

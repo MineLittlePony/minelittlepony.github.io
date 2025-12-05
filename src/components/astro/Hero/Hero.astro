@@ -1,6 +1,9 @@
 ---
+import { Image } from 'astro:assets'
 import { ModrinthDownloads } from '~/components/react/ModrinthDownloads/ModrinthDownloads'
 import Links from '~/data/links.json'
+import BANNER from './assets/banner.png'
+import DISCORD_LOGO from './assets/discord.svg'
 import classes from './Hero.module.css'
 import HeroIconLink from './HeroIconLink.astro'
 ---
@@ -12,7 +15,7 @@ import HeroIconLink from './HeroIconLink.astro'
     <div class="flex flex-col justify-center gap-6 lg:col-span-7">
       {/* Description */}
       <div class="flex flex-col gap-4">
-        <img class="konami:invisible" src="/assets/hero/banner.png" alt="Hero banner" />
+        <Image class="konami:invisible" src={BANNER} alt="Hero banner" />
 
         <h1>Minecraft mod to ponify your world</h1>
 
@@ -34,7 +37,7 @@ import HeroIconLink from './HeroIconLink.astro'
 
         {/* Discord */}
         <HeroIconLink href={Links.discordInvite} title="Join our Discord server">
-          <img class="h-8 w-auto" src="/assets/discord.svg" alt="Discord logo" />
+          <Image class="h-8 w-auto" src={DISCORD_LOGO} alt="Discord logo" />
         </HeroIconLink>
       </div>
     </div>

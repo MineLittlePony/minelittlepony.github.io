@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets'
 import { MenuEntries } from '~/data/menu'
 import { addBase } from '~/utils/addBase'
 import { isPathEqual } from '~/utils/isPathEqual'
+import LOGO from '../assets/logo.png'
 
 function mapEntries<T>(cb: (name: string, path: string) => T) {
   return MenuEntries.map(({ name, path }) => cb(name, addBase(path)))
@@ -13,7 +15,7 @@ function mapEntries<T>(cb: (name: string, path: string) => T) {
 >
   <!-- Logo -->
   <a href={import.meta.env.BASE_URL}>
-    <img class="h-16 w-auto md:h-24" src="/assets/logo.png" alt="Mine Little Pony logo" loading="eager" />
+    <Image class="h-16 w-auto md:h-24" src={LOGO} alt="Mine Little Pony logo" />
   </a>
 
   <input class="peer" id="nav-state" type="checkbox" hidden />
