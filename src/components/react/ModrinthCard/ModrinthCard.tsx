@@ -42,7 +42,7 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
 
         <div className="grow">
           <div className="flex items-baseline gap-2">
-            <div className="h4 flex items-baseline gap-2">
+            <div className="flex items-baseline gap-2 text-xl font-bold">
               <a
                 href={`https://modrinth.com/mod/${project.slug}`}
                 title="Modrinth page"
