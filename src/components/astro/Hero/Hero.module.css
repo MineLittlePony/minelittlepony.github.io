@@ -1,9 +1,11 @@
+@reference "~/styles/index.css";
+
 .Hero {
   background: url('/assets/hero/pattern.png') #202020;
   clip-path: polygon(0 var(--hero-clip-height), 100% 0, 100% 100%, 0 calc(100% - var(--hero-clip-height)));
   padding: var(--hero-clip-height) 0;
 
-  &.SecretSolved {
-    background: url('/assets/hero/batbanner.svg') no-repeat 0 0 / cover;
+  @variant konami {
+    background: url('/assets/hero/batbanner.svg') no-repeat center 0 / cover;
   }
 }

@@ -1,7 +1,7 @@
 ---
 import ExtraCard from '~/components/astro/ExtraCard.astro'
 import FeatureCard from '~/components/astro/FeatureCard.astro'
-import { Hero } from '~/components/react/Hero/Hero'
+import Hero from '~/components/astro/Hero/Hero.astro'
 import { TeamCarousel } from '~/components/react/TeamCarousel/TeamCarousel'
 import { Extras } from '~/data/extras/extras'
 import { Features } from '~/data/features/features'
@@ -21,13 +21,13 @@ import RootLayout from '../layouts/root/RootLayout.astro'
     </div>
   </div>
 
-  <h2 class="mb-6 mt-8 px-4 text-center sm:px-6">Team</h2>
+  <h2 class="mt-8 mb-6 px-4 text-center sm:px-6">Team</h2>
 
   <!-- Team cards -->
   <TeamCarousel client:load />
 
   <!-- Additional downloads -->
-  <h2 class="mb-6 mt-2 px-4 text-center sm:px-6">Additional downloads for better experience</h2>
+  <h2 class="mt-2 mb-6 px-4 text-center sm:px-6">Additional downloads for better experience</h2>
 
   <!-- Extras cards -->
   <div class="mb-6 flex flex-wrap items-center justify-center gap-6 px-4 sm:px-6">

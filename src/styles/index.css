@@ -12,6 +12,8 @@
   --color-primary: #3485df;
 }
 
+@custom-variant konami (&:where([data-konami-state="solved"] *));
+
 @utility border-stripe {
   border-image: url('./assets/border-stripe.png') 1;
   image-rendering: pixelated;

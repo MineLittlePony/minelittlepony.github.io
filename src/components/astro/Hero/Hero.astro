@@ -1,0 +1,47 @@
+---
+import { ModrinthDownloads } from '~/components/react/ModrinthDownloads/ModrinthDownloads'
+import Links from '~/data/links.json'
+import classes from './Hero.module.css'
+import HeroIconLink from './HeroIconLink.astro'
+---
+
+<div class:list={[classes.Hero, 'text-white']}>
+  {/* Hero content */}
+  <div class="grid flex-col gap-6 px-4 py-6 pb-12 sm:px-6 lg:grid-cols-12">
+    {/* Info section */}
+    <div class="flex flex-col justify-center gap-6 lg:col-span-7">
+      {/* Description */}
+      <div class="flex flex-col gap-4">
+        <img class="konami:invisible" src="/assets/hero/banner.png" alt="Hero banner" />
+
+        <h1>Minecraft mod to ponify your world</h1>
+
+        <p>
+          Play as a pony, communicate with other ponies, kill angry pony zombies and skeletons, trade with pony
+          villagers and so on!
+        </p>
+      </div>
+
+      <hr class="border-b-2 border-dashed border-white/10" />
+
+      {/* Links */}
+      <div class="flex items-center justify-center gap-6 pb-4 sm:justify-start">
+        {/* Archive */}
+        <HeroIconLink href={Links.cloudArchive} title="Legacy versions archive" icon="fas fa-file-zipper" />
+
+        {/* GitHub */}
+        <HeroIconLink href={Links.githubOrganization} title="Team page on GitHub" icon="fab fa-github" />
+
+        {/* Discord */}
+        <HeroIconLink href={Links.discordInvite} title="Join our Discord server">
+          <img class="h-8 w-auto" src="/assets/discord.svg" alt="Discord logo" />
+        </HeroIconLink>
+      </div>
+    </div>
+
+    {/* Downloads section */}
+    <div class="flex flex-col gap-4 lg:col-span-5">
+      <ModrinthDownloads client:load />
+    </div>
+  </div>
+</div>
