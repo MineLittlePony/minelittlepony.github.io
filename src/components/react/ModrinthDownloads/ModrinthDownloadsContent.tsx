@@ -91,20 +91,16 @@ export function ModrinthDownloadsContent() {
       )}
 
       <div className="flex flex-col gap-2">
-        <ModrinthProject
-          projectId="JBjInUXM"
-          title="Mine Little Pony"
-          striped
-        />
-        <ModrinthProject projectId="P7dR8mSH" title="Fabric API" />
+        <ModrinthProject projectId="JBjInUXM" name="Mine Little Pony" />
+        <ModrinthProject projectId="P7dR8mSH" name="Fabric API" />
       </div>
 
       <h2 className="text-center">Additional mods</h2>
 
       <div className="flex flex-col gap-2">
-        <ModrinthProject projectId="FzE9gshV" title="HD Skins" striped />
-        <ModrinthProject projectId="h9pJxJR9" title="Big Pony" />
-        <ModrinthProject projectId="9K7RJlvM" title="Unicopia" />
+        <ModrinthProject projectId="FzE9gshV" name="HD Skins" />
+        <ModrinthProject projectId="h9pJxJR9" name="Big Pony" />
+        <ModrinthProject projectId="9K7RJlvM" name="Unicopia" />
       </div>
     </VersionContext.Provider>
   )

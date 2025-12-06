@@ -7,7 +7,7 @@ export interface ModrinthProjectVersionProps {
 
 export function ModrinthProjectVersion({ projectId, version }: ModrinthProjectVersionProps) {
   if (!version) {
-    return <span>Unavailable</span>
+    return <span>Not available</span>
   }
 
   const fullVersion = version.version_number

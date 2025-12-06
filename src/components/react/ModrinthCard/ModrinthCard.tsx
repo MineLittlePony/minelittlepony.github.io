@@ -34,11 +34,11 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
   return (
     <div
       className={clsx('flex flex-col gap-3 rounded-sm bg-white/5 p-2 backdrop-blur-sm sm:flex-row sm:items-center', {
-        'opacity-25 hover:opacity-100': !version,
+        'not-hover:opacity-25': !version,
       })}
     >
       <div className="flex grow items-center gap-3">
-        <ModrinthProjectIcon url={project.icon_url} alt={project.title ?? 'N/A'} />
+        <ModrinthProjectIcon url={project.icon_url} alt={project.title} />
 
         <div className="grow">
           <div className="flex items-baseline gap-2">
@@ -57,7 +57,7 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
             {project.source_url && (
               <a
                 href={project.source_url}
-                className="opacity-50 hover:opacity-100"
+                className="not-hover:opacity-50"
                 title="Source code"
               >
                 <span className="sr-only">Go to source code</span>
@@ -66,11 +66,11 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
             )}
           </div>
 
-          <div className="flex gap-2 opacity-50">
+          <div className="opacity-50">
             <ModrinthProjectVersion projectId={projectId} version={version} />
 
-            <span>for</span>
-            <span>{gameVersion}</span>
+            {/* Spaces are required here */}
+            <span> for {gameVersion} </span>
 
             <ModrinthProjectGameVersionsCounter version={version} />
           </div>
