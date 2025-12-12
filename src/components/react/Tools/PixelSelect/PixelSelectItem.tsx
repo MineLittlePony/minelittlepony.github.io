@@ -15,7 +15,7 @@ export const PixelSelectItem: FC<PixelSelectItemProps> = ({ value }) => {
       {({ selected }) => (
         <li
           className={clsx(
-            'flex h-10 select-none items-center gap-2 px-4 hover:bg-primary hover:text-white',
+            'flex h-10 items-center gap-2 px-4 select-none hover:bg-primary hover:text-white',
             {
               'bg-primary text-white': selected,
             },
