@@ -5,6 +5,9 @@
   "private": true,
   "packageManager": "pnpm@10.25.0",
   "description": "Source code of official Mine Little pony Minecraft mod website",
+  "imports": {
+    "#tailwind.css": "./src/styles/index.css"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

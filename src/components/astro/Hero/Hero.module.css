@@ -1,4 +1,4 @@
-@reference "~/styles/index.css";
+@reference "#tailwind.css";
 
 .Hero {
   background: url('./assets/pattern.png') #202020;
