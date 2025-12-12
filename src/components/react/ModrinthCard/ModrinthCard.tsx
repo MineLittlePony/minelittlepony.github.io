@@ -1,6 +1,6 @@
 import type { Project } from '~/schemas/modrinth'
 import { clsx } from 'clsx'
-import { useContext, useMemo } from 'react'
+import { use, useMemo } from 'react'
 import { useZodQuery } from '~/hooks/useZodQuery'
 import { VersionsSchema } from '~/schemas/modrinth'
 import { buildURL } from '~/utils/buildURL'
@@ -15,7 +15,7 @@ export interface ModrinthCardProps {
 }
 
 export function ModrinthCard({ project }: ModrinthCardProps) {
-  const gameVersion = useContext(VersionContext)
+  const gameVersion = use(VersionContext)
 
   const versionURL = useMemo(() => {
     const baseURL = `https://api.modrinth.com/v2/project/${project.id}/version`

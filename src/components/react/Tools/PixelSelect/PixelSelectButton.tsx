@@ -1,6 +1,6 @@
 import type { PixelValue } from '~/data/pixels'
 import { ListboxButton } from '@headlessui/react'
-import { useContext } from 'react'
+import { use } from 'react'
 import { SettingsRowContext } from '../PixelRow/SettingsRow'
 import { PixelLabel } from './PixelLabel'
 
@@ -9,7 +9,7 @@ export interface PixelSelectButtonProps {
 }
 
 export function PixelSelectButton({ value }: PixelSelectButtonProps) {
-  const id = useContext(SettingsRowContext)
+  const id = use(SettingsRowContext)
 
   return (
     <ListboxButton id={id} className="input flex w-full items-center gap-2">

@@ -51,7 +51,7 @@ export function ModrinthDownloadsContent() {
   }
 
   return (
-    <VersionContext.Provider value={version ?? null}>
+    <VersionContext value={version ?? null}>
       <h2 className="text-center">Get the mod</h2>
 
       {version && (
@@ -102,6 +102,6 @@ export function ModrinthDownloadsContent() {
         <ModrinthProject projectId="h9pJxJR9" name="Big Pony" />
         <ModrinthProject projectId="9K7RJlvM" name="Unicopia" />
       </div>
-    </VersionContext.Provider>
+    </VersionContext>
   )
 }

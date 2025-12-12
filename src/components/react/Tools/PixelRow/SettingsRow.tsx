@@ -21,9 +21,9 @@ export function SettingsRow({
       </label>
 
       <div className="col-span-3">
-        <SettingsRowContext.Provider value={id}>
+        <SettingsRowContext value={id}>
           {children}
-        </SettingsRowContext.Provider>
+        </SettingsRowContext>
       </div>
     </div>
   )
