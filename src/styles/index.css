@@ -1,0 +1,248 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-sans: Roboto;
+  --font-serif: Roboto Slab;
+  --font-mono: Roboto Mono;
+
+  --color-primary: #3485df;
+}
+
+@custom-variant konami (&:where([data-konami-state="solved"] *));
+
+@utility border-stripe {
+  border-image: url('./assets/border-stripe.png') 1;
+  image-rendering: pixelated;
+
+  /* TODO add bat variant */
+}
+
+@utility bg-checker-* {
+  background: url('./assets/check-pattern.png') top left / calc(100% / (--value(number) / 2));
+  image-rendering: pixelated;
+}
+
+@layer base {
+  h1 {
+    @apply font-bold text-4xl;
+  }
+
+  h2 {
+    @apply font-bold text-3xl;
+  }
+
+  h3 {
+    @apply font-bold text-2xl;
+  }
+
+  h4 {
+    @apply font-bold text-xl;
+  }
+
+  h5 {
+    @apply font-bold text-lg;
+  }
+
+  h6 {
+    @apply font-bold text-base;
+  }
+
+  code {
+    @apply rounded-sm border border-zinc-300 bg-zinc-100 px-1 py-0 leading-6;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply border-zinc-950/30 bg-primary text-white;
+    @apply h-10 rounded-md border-b-4 px-4;
+
+    @variant hover {
+      @apply opacity-90;
+    }
+
+    @variant active {
+      @apply opacity-90;
+    }
+
+    @variant disabled {
+      @apply border-none opacity-50;
+    }
+  }
+
+  .input {
+    @apply border-zinc-200 ring-primary/25 bg-white;
+    @apply h-10 rounded-md border px-4 outline-hidden transition;
+
+    &[type='color'] {
+      @apply py-1;
+    }
+
+    @variant focus {
+      @apply border-primary/50 ring-3;
+    }
+
+    @variant placeholder {
+      @apply text-zinc-400;
+    }
+  }
+
+  .markdown {
+    @apply text-base flex flex-col items-start gap-4;
+
+    @variant md {
+      @apply flex-row-reverse;
+    }
+
+    .markdown-content {
+      @apply grow;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-block-start: 1em;
+      margin-block-end: 0.5em;
+
+      @variant first {
+        margin-block-start: 0;
+      }
+
+      @variant last {
+        margin-block-end: 0;
+      }
+    }
+
+    blockquote,
+    p,
+    img,
+    ul,
+    ol,
+    table {
+      margin-block: 1em;
+
+      @variant first {
+        margin-block-start: 0;
+      }
+
+      @variant last {
+        margin-block-end: 0;
+      }
+    }
+
+    h1 {
+      @apply text-5xl;
+    }
+
+    h2 {
+      @apply text-4xl;
+    }
+
+    h3 {
+      @apply text-3xl;
+    }
+
+    h4 {
+      @apply text-2xl;
+    }
+
+    h5 {
+      @apply text-xl;
+    }
+
+    h6 {
+      @apply text-lg;
+    }
+
+    .heading-anchor {
+      @apply mr-1 font-bold text-zinc-400 no-underline;
+
+      @variant hover {
+        @apply text-primary underline;
+      }
+    }
+
+    blockquote {
+      @apply border-l-5 border-zinc-300 bg-zinc-100 rounded-md px-4 py-3;
+    }
+
+    a {
+      @apply text-primary no-underline;
+
+      @variant hover {
+        @apply underline;
+      }
+    }
+
+    img {
+      @apply mx-auto;
+    }
+
+    ul,
+    ol {
+      @apply ps-7;
+
+      ul,
+      ol {
+        margin-block: 0;
+      }
+    }
+
+    ul {
+      @apply list-disc;
+    }
+
+    ol {
+      @apply list-decimal;
+    }
+
+    li {
+      margin-block: 0.5em;
+    }
+
+    table {
+      @apply border-separate border-spacing-0;
+
+      :first-child tr:first-child {
+        @apply *:first:rounded-tl-md;
+        @apply *:last:rounded-tr-md;
+      }
+
+      :last-child tr:last-child {
+        @apply *:first:rounded-bl-md;
+        @apply *:last:rounded-br-md;
+      }
+
+      th,
+      td {
+        @apply px-2 py-1 border border-zinc-300;
+      }
+
+      th {
+        @apply bg-zinc-200;
+      }
+
+      td {
+        @apply bg-zinc-100;
+      }
+    }
+  }
+
+  .toc {
+    @apply rounded-lg border border-zinc-200 bg-zinc-50 ps-3 py-3 pe-4;
+    @apply shrink-0 overflow-auto box-border;
+
+    @variant md {
+      @apply top-6 bottom-6 sticky max-w-80;
+
+      max-height: calc(100svh - --spacing(12));
+    }
+  }
+}

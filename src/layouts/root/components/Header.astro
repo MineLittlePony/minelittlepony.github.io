@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets'
+import { MenuEntries } from '~/data/menu'
+import { addBase } from '~/utils/addBase'
+import { isPathEqual } from '~/utils/isPathEqual'
+import LOGO from '../assets/logo.png'
+
+function mapEntries<T>(cb: (name: string, path: string) => T) {
+  return MenuEntries.map(({ name, path }) => cb(name, addBase(path)))
+}
+---
+
+<header
+  class="relative flex items-center justify-between border-t-5 bg-white p-2 border-stripe select-none md:px-6 md:py-1"
+>
+  <!-- Logo -->
+  <a href={import.meta.env.BASE_URL}>
+    <Image class="h-16 w-auto md:h-24" src={LOGO} alt="Mine Little Pony logo" />
+  </a>
+
+  <input class="peer" id="nav-state" type="checkbox" hidden />
+
+  <label class="group p-4 hover:text-primary lg:hidden" for="nav-state">
+    <i class="fas fa-bars fa-xl group-peer-checked:hidden!"></i>
+    <i class="fas fa-xmark fa-xl group-peer-not-checked:hidden!"></i>
+  </label>
+
+  <!-- The navigation -->
+  <nav
+    class="max-lg:absolute max-lg:top-full max-lg:left-0 max-lg:z-50 max-lg:w-full max-lg:bg-inherit max-lg:p-2 max-lg:shadow-lg max-lg:peer-not-checked:hidden"
+  >
+    <ul class="flex max-lg:flex-col max-lg:gap-1 lg:divide-x-2 lg:divide-gray-200">
+      {
+        mapEntries((name, path) => (
+          <li class="lg:px-1">
+            <a
+              href={path}
+              class:list={[
+                'rounded-lg px-4 py-3 hover:bg-gray-200 max-lg:block',
+                { 'bg-gray-100 border-stripe max-lg:border-l-5 lg:border-b-5': isPathEqual(path, Astro.url.pathname) },
+              ]}
+            >
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

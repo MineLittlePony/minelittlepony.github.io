@@ -1,14 +1,15 @@
 ---
-import { hex } from '~/utils/color';
-import { Image } from 'astro:assets';
-export { type ExtraInfo as Props } from '~/data/extras/extras';
+import { Image } from 'astro:assets'
+import { hex } from '~/utils/color'
 
-const { image, alt, url, color, label, description } = Astro.props;
+export { type ExtraInfo as Props } from '~/data/extras/extras'
+
+const { image, alt, url, color, label, description } = Astro.props
 ---
 
 <a
   href={url}
-  class="basis-[328px] flex-col bg-white text-center text-black shadow-lg transition-transform hover:scale-105 flex"
+  class="flex basis-[328px] flex-col bg-white text-center text-black shadow-lg transition-transform hover:scale-105"
 >
   <Image src={image} alt={alt} />
 

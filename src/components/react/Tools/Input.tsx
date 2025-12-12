@@ -1,19 +1,19 @@
-import type { ChangeEvent, InputHTMLAttributes } from 'react';
-import { useContext } from 'react';
-import { SettingsRowContext } from './PixelRow/SettingsRow';
+import type { ChangeEvent, InputHTMLAttributes } from 'react'
+import { use } from 'react'
+import { SettingsRowContext } from './PixelRow/SettingsRow'
 
 export interface InputProps {
-  type?: InputHTMLAttributes<HTMLInputElement>['type'];
-  placeholder?: string;
-  value: string;
-  onChange: (value: string) => void;
+  type?: InputHTMLAttributes<HTMLInputElement>['type']
+  placeholder?: string
+  value: string
+  onChange: (value: string) => void
 }
 
 export function Input({ type, placeholder, value, onChange }: InputProps) {
-  const id = useContext(SettingsRowContext);
+  const id = use(SettingsRowContext)
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    onChange(e.currentTarget.value);
+    onChange(e.currentTarget.value)
   }
 
   return (
@@ -25,5 +25,5 @@ export function Input({ type, placeholder, value, onChange }: InputProps) {
       value={value}
       onChange={handleChange}
     />
-  );
+  )
 }

@@ -1,14 +1,14 @@
-import type { ImageMetadata } from 'astro';
-import LNT from './assets/lnt.png';
-import SKINPACK from './assets/skinpack.png';
+import type { ImageMetadata } from 'astro'
+import LNT from './assets/lnt.png'
+import SKINPACK from './assets/skinpack.png'
 
 export interface ExtraInfo {
-  image: ImageMetadata;
-  alt: string;
-  url: string;
-  color: number;
-  label: string;
-  description: string;
+  image: ImageMetadata
+  alt: string
+  url: string
+  color: number
+  label: string
+  description: string
 }
 
 export const Extras: ExtraInfo[] = [
@@ -28,4 +28,4 @@ export const Extras: ExtraInfo[] = [
     label: 'Go to GitHub',
     description: 'Get a quick start with this pack of more than 200 canon Mine Little Pony compatible skins',
   },
-];
+]

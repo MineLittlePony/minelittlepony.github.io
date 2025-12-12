@@ -1,57 +1,57 @@
-import type { ChangeEvent } from 'react';
-import { useId, useMemo, useState } from 'react';
-import { useZodQuery } from '~/hooks/useZodQuery';
-import { ProjectSchema } from '~/schemas/modrinth';
-import { ModrinthProject } from '../ModrinthProject';
-import { VersionContext } from './VersionContext';
+import type { ChangeEvent } from 'react'
+import { useId, useMemo, useState } from 'react'
+import { useZodQuery } from '~/hooks/useZodQuery'
+import { ProjectSchema } from '~/schemas/modrinth'
+import { ModrinthProject } from '../ModrinthProject'
+import { VersionContext } from './VersionContext'
 
-const RELEASE_REGEX = /^\d+\.\d+(?:\.\d+)?$/;
+const RELEASE_REGEX = /^\d+\.\d+(?:\.\d+)?$/
 
 function isRelease(version: string) {
-  return RELEASE_REGEX.test(version);
+  return RELEASE_REGEX.test(version)
 }
 
 export function ModrinthDownloadsContent() {
-  const [selectedVersion, setSelectedVersion] = useState<string | null>(null);
-  const [showAllVersions, setShowAllVersions] = useState(false);
+  const [selectedVersion, setSelectedVersion] = useState<string | null>(null)
+  const [showAllVersions, setShowAllVersions] = useState(false)
 
-  const versionsId = useId();
-  const showAllVersionsId = useId();
+  const versionsId = useId()
+  const showAllVersionsId = useId()
 
-  const { data } = useZodQuery(ProjectSchema, 'https://api.modrinth.com/v2/project/JBjInUXM');
+  const { data } = useZodQuery(ProjectSchema, 'https://api.modrinth.com/v2/project/JBjInUXM')
 
   const versions = useMemo(() => {
-    let result = data?.game_versions;
+    let result = data?.game_versions
 
     if (showAllVersions) {
-      result = result?.slice();
+      result = result?.slice()
     } else {
-      result = result?.filter(isRelease);
+      result = result?.filter(isRelease)
     }
 
-    return result?.reverse();
-  }, [showAllVersions, data?.game_versions]);
+    return result?.reverse()
+  }, [showAllVersions, data?.game_versions])
 
-  const version = selectedVersion ?? versions?.[0];
+  const version = selectedVersion ?? versions?.[0]
 
   function handleVersionChange(e: ChangeEvent<HTMLSelectElement>) {
-    const value = e.currentTarget.value;
+    const value = e.currentTarget.value
 
-    setSelectedVersion(value === 'latest' ? null : value);
+    setSelectedVersion(value === 'latest' ? null : value)
   }
 
   function handleFilterChange(e: ChangeEvent<HTMLInputElement>) {
-    const newShowAllVersions = e.currentTarget.checked;
+    const newShowAllVersions = e.currentTarget.checked
 
-    setShowAllVersions(newShowAllVersions);
+    setShowAllVersions(newShowAllVersions)
 
     if (selectedVersion && !newShowAllVersions && !isRelease(selectedVersion)) {
-      setSelectedVersion(null);
+      setSelectedVersion(null)
     }
   }
 
   return (
-    <VersionContext.Provider value={version ?? null}>
+    <VersionContext value={version ?? null}>
       <h2 className="text-center">Get the mod</h2>
 
       {version && (
@@ -62,7 +62,7 @@ export function ModrinthDownloadsContent() {
             </label>
 
             <select
-              className="rounded bg-zinc-800 p-1 backdrop-blur"
+              className="rounded-sm bg-zinc-800 p-1 backdrop-blur-sm"
               id={versionsId}
               value={version}
               onChange={handleVersionChange}
@@ -91,21 +91,17 @@ export function ModrinthDownloadsContent() {
       )}
 
       <div className="flex flex-col gap-2">
-        <ModrinthProject
-          projectId="JBjInUXM"
-          title="Mine Little Pony"
-          striped
-        />
-        <ModrinthProject projectId="P7dR8mSH" title="Fabric API" />
+        <ModrinthProject projectId="JBjInUXM" name="Mine Little Pony" />
+        <ModrinthProject projectId="P7dR8mSH" name="Fabric API" />
       </div>
 
       <h2 className="text-center">Additional mods</h2>
 
       <div className="flex flex-col gap-2">
-        <ModrinthProject projectId="FzE9gshV" title="HD Skins" striped />
-        <ModrinthProject projectId="h9pJxJR9" title="Big Pony" />
-        <ModrinthProject projectId="9K7RJlvM" title="Unicopia" />
+        <ModrinthProject projectId="FzE9gshV" name="HD Skins" />
+        <ModrinthProject projectId="h9pJxJR9" name="Big Pony" />
+        <ModrinthProject projectId="9K7RJlvM" name="Unicopia" />
       </div>
-    </VersionContext.Provider>
-  );
+    </VersionContext>
+  )
 }

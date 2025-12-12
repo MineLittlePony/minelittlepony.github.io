@@ -1,6 +1,6 @@
 export interface MenuEntry {
-  name: string;
-  path: string;
+  name: string
+  path: string
 }
 
 export const MenuEntries: MenuEntry[] = [
@@ -10,4 +10,4 @@ export const MenuEntries: MenuEntry[] = [
   { name: 'Tools', path: '/tools' },
   { name: 'FAQ', path: '/faq' },
   { name: 'About', path: '/about' },
-];
+]

@@ -1,17 +1,17 @@
-import type { FontAwesomeIcon } from '~/utils/types';
+import type { FontAwesomeIcon } from '~/utils/types'
 
 export interface SocialLink<ID extends string = string> {
-  id: ID;
-  icon: FontAwesomeIcon;
-  title: string;
-  url?: ((handle: string) => string) | string;
+  id: ID
+  icon: FontAwesomeIcon
+  title: string
+  url?: ((handle: string) => string) | string
 }
 
 function declareSocialLinks<ID extends string>(links: SocialLink<ID>[]) {
-  return links;
+  return links
 }
 
-export type SocialLinkID = typeof SocialLinks[number]['id'];
+export type SocialLinkID = typeof SocialLinks[number]['id']
 
 export const SocialLinks = declareSocialLinks([
   {
@@ -42,8 +42,8 @@ export const SocialLinks = declareSocialLinks([
     icon: 'fab fa-mastodon',
     title: 'Mastodon',
     url(handle) {
-      const [, name, instance] = handle.split('@');
-      return `https://${instance}/@${name}`;
+      const [, name, instance] = handle.split('@')
+      return `https://${instance}/@${name}`
     },
   },
   {
@@ -63,4 +63,4 @@ export const SocialLinks = declareSocialLinks([
     title: 'Bluesky Profile',
     url: 'https://bsky.app/profile/%s',
   },
-]);
+])

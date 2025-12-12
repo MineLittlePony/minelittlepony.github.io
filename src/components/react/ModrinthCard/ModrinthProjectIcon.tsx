@@ -1,23 +1,23 @@
-import type { Project } from '~/schemas/modrinth';
-import { UnoptimizedImage } from '../UnoptimizedImage';
+import type { Project } from '~/schemas/modrinth'
+import { UnoptimizedImage } from '../UnoptimizedImage'
 
 export interface ModrinthProjectIconProps {
-  url: Project['icon_url'];
-  alt: string;
+  url: Project['icon_url']
+  alt: string
 }
 
 export function ModrinthProjectIcon({ url, alt }: ModrinthProjectIconProps) {
   if (!url) {
-    return <div className="size-12 rounded bg-zinc-500" />;
+    return <div className="size-12 rounded-sm bg-zinc-500" />
   }
 
   return (
     <UnoptimizedImage
-      className="size-12 rounded"
+      className="size-12 rounded-sm"
       src={url}
       alt={alt}
       width={48}
       height={48}
     />
-  );
+  )
 }

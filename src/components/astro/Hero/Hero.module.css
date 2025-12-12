@@ -1,0 +1,11 @@
+@reference "#tailwind.css";
+
+.Hero {
+  background: url('./assets/pattern.png') #202020;
+  clip-path: polygon(0 var(--hero-clip-height), 100% 0, 100% 100%, 0 calc(100% - var(--hero-clip-height)));
+  padding: var(--hero-clip-height) 0;
+
+  @variant konami {
+    background: url('./assets/batbanner.svg') no-repeat center 0 / cover;
+  }
+}

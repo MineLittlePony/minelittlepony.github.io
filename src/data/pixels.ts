@@ -1,14 +1,14 @@
 export interface PixelValue {
-  color: number;
-  label: string;
+  color: number
+  label: string
 }
 
 export interface PixelInfo {
-  name: string;
-  type: 'CONDENSED' | 'NORMAL' | 'RAW';
-  x: number;
-  y: number;
-  options: [PixelValue, ...PixelValue[]];
+  name: string
+  type: 'CONDENSED' | 'NORMAL' | 'RAW'
+  x: number
+  y: number
+  options: [PixelValue, ...PixelValue[]]
 }
 
 export const Pixels: PixelInfo[] = [
@@ -106,4 +106,4 @@ export const Pixels: PixelInfo[] = [
       { color: 0x3308C7, label: 'Spiky' },
     ],
   },
-];
+]

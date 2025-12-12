@@ -1,3 +1,3 @@
-import { createContext } from 'react';
+import { createContext } from 'react'
 
-export const VersionContext = createContext<string | null>(null);
+export const VersionContext = createContext<string | null>(null)

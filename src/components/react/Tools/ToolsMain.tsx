@@ -1,13 +1,13 @@
-import { useToolsDropzone } from './hooks/useToolsDropzone';
-import { Settings } from './Settings';
-import { SkinPreview } from './SkinPreview/SkinPreview';
+import { useToolsDropzone } from './hooks/useToolsDropzone'
+import { Settings } from './Settings'
+import { SkinPreview } from './SkinPreview'
 
 export interface ToolsMainProps {
-  ctx: CanvasRenderingContext2D;
+  ctx: CanvasRenderingContext2D
 }
 
 export function ToolsMain({ ctx }: ToolsMainProps) {
-  const { getRootProps, getInputProps, open } = useToolsDropzone(true);
+  const { getRootProps, getInputProps, open } = useToolsDropzone(true)
 
   return (
     <div
@@ -20,5 +20,5 @@ export function ToolsMain({ ctx }: ToolsMainProps) {
 
       <Settings requestFile={open} />
     </div>
-  );
+  )
 }

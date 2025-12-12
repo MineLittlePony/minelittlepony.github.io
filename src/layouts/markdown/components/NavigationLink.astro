@@ -1,0 +1,18 @@
+---
+import type { NavigationInfo } from '~/data/navigation'
+import { addBase } from '~/utils/addBase'
+
+export type Props = NavigationInfo
+
+const { href, title, description } = Astro.props
+const path = addBase(href)
+---
+
+{
+  path !== Astro.url.pathname && (
+    <a class="rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-2 underline hover:text-primary" href={href}>
+      <strong>{title}</strong>
+      <p>{description}</p>
+    </a>
+  )
+}

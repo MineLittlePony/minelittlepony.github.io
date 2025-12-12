@@ -1,18 +1,17 @@
-import type { Version } from '~/schemas/modrinth';
+import type { Version } from '~/schemas/modrinth'
 
 export interface ModrinthProjectVersionProps {
-  projectId: string;
-  version: Version | undefined;
+  projectId: string
+  version: Version | undefined
 }
 
 export function ModrinthProjectVersion({ projectId, version }: ModrinthProjectVersionProps) {
   if (!version) {
-    return <span>Unavailable</span>;
+    return <span>Not available</span>
   }
 
-  const fullVersion = version.version_number;
-  const shortVersion = fullVersion.split('+')[0] ?? fullVersion;
-  const versionDisplay = `v${shortVersion}`;
+  const fullVersion = version.version_number
+  const shortVersion = fullVersion.split('+')[0] ?? fullVersion
 
   return (
     <a
@@ -20,7 +19,7 @@ export function ModrinthProjectVersion({ projectId, version }: ModrinthProjectVe
       href={`https://modrinth.com/mod/${projectId}/version/${fullVersion}`}
       title="Go to version page"
     >
-      {versionDisplay}
+      v{shortVersion}
     </a>
-  );
+  )
 }

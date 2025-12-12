@@ -1,51 +1,51 @@
-import type { ChangeEvent } from 'react';
-import { useId } from 'react';
-import { Pixels } from '~/data/pixels';
-import { calculateSizeShift } from '~/utils/math';
-import { useNicknameForm } from './hooks/useNicknameForm';
-import { PixelRow } from './PixelRow/PixelRow';
-import { SettingsRow } from './PixelRow/SettingsRow';
-import { reloadFile, saveFile, setToolsState, useToolsState } from './store';
-import { ToolsError } from './ToolsError';
-import { ToolsWarning } from './ToolsWarning';
+import type { ChangeEvent } from 'react'
+import { useId } from 'react'
+import { Pixels } from '~/data/pixels'
+import { calculateSizeShift } from '~/utils/math'
+import { useNicknameForm } from './hooks/useNicknameForm'
+import { PixelRow } from './PixelRow/PixelRow'
+import { SettingsRow } from './PixelRow/SettingsRow'
+import { reloadFile, saveFile, setToolsState, useToolsState } from './store'
+import { ToolsError } from './ToolsError'
+import { ToolsWarning } from './ToolsWarning'
 
-const MIN_SIZE_SHIFT = calculateSizeShift(64);
-const MAX_SIZE_SHIFT = calculateSizeShift(8192);
-const MAX_SUPPORTED_SIZE_SHIFT = calculateSizeShift(1024);
+const MIN_SIZE_SHIFT = calculateSizeShift(64)
+const MAX_SIZE_SHIFT = calculateSizeShift(8192)
+const MAX_SUPPORTED_SIZE_SHIFT = calculateSizeShift(1024)
 
 export interface SettingsProps {
-  requestFile: () => void;
+  requestFile: () => void
 }
 
 export function Settings({ requestFile }: SettingsProps) {
-  const fileName = useToolsState(state => state.fileName);
-  const supportConversion = useToolsState(state => state.supportConversion);
-  const convert = useToolsState(state => state.convert);
-  const mirrorConvert = useToolsState(state => state.mirrorConvert);
-  const skinSizeShift = useToolsState(state => state.skinSizeShift);
+  const fileName = useToolsState(state => state.fileName)
+  const supportConversion = useToolsState(state => state.supportConversion)
+  const convert = useToolsState(state => state.convert)
+  const mirrorConvert = useToolsState(state => state.mirrorConvert)
+  const skinSizeShift = useToolsState(state => state.skinSizeShift)
 
-  const convertId = useId();
-  const mirrorConvertId = useId();
+  const convertId = useId()
+  const mirrorConvertId = useId()
 
-  const { inputRef, handleSubmit } = useNicknameForm();
+  const { inputRef, handleSubmit } = useNicknameForm()
 
   function handleConvertChange(e: ChangeEvent<HTMLInputElement>) {
-    const value = e.currentTarget.checked;
-    setToolsState({ convert: value });
+    const value = e.currentTarget.checked
+    setToolsState({ convert: value })
   }
 
   function handleMirrorConvertChange(e: ChangeEvent<HTMLInputElement>) {
-    const value = e.currentTarget.checked;
-    setToolsState({ mirrorConvert: value });
+    const value = e.currentTarget.checked
+    setToolsState({ mirrorConvert: value })
   }
 
   function handleSkinSizeChange(e: ChangeEvent<HTMLInputElement>) {
-    const value = Number.parseInt(e.currentTarget.value);
-    setToolsState({ skinSizeShift: value });
+    const value = Number.parseInt(e.currentTarget.value)
+    setToolsState({ skinSizeShift: value })
   }
 
   return (
-    <div className="divide-y">
+    <div className="divide-y divide-zinc-200">
       <div className="flex flex-col gap-2 py-2">
         <form className="flex gap-2" onSubmit={handleSubmit}>
           <input
@@ -121,9 +121,9 @@ export function Settings({ requestFile }: SettingsProps) {
             onChange={handleSkinSizeChange}
           />
 
-          <div className="rounded border bg-zinc-50 px-2 font-mono">
+          <code>
             {`${64 << skinSizeShift}px`}
-          </div>
+          </code>
         </div>
 
         {skinSizeShift > MAX_SUPPORTED_SIZE_SHIFT && (
@@ -137,5 +137,5 @@ export function Settings({ requestFile }: SettingsProps) {
         <PixelRow key={pixel.name} info={pixel} />
       ))}
     </div>
-  );
+  )
 }

@@ -1,7 +1,0 @@
-.Card {
-  @apply flex flex-col gap-3 rounded bg-white/5 p-2 backdrop-blur sm:flex-row sm:items-center;
-}
-
-.Muted {
-  @apply opacity-25 hover:opacity-100;
-}

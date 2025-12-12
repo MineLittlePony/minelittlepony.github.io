@@ -1,24 +1,22 @@
 ---
-import classes from './Main.module.css';
-
 export interface Props {
   /** Extend default class name */
-  class?: string;
+  class?: string
 
   /** Use to add hidden `H1` for screen readers if no `H1` is present in the content */
-  heading?: string;
+  heading?: string
 
   /**
    * Apply content styles like padding and flex
    * @default true
    */
-  applyContentStyles?: boolean;
+  applyContentStyles?: boolean
 }
 
-const { class: className, heading, applyContentStyles = true } = Astro.props;
+const { class: className, heading, applyContentStyles = true } = Astro.props
 ---
 
-<main class:list={[classes.Main, { [classes.ContentStyles ?? '']: applyContentStyles }, className]}>
+<main class:list={['grow', { 'flex flex-col gap-4 p-6': applyContentStyles }, className]}>
   {heading && <h1 class="sr-only">{heading}</h1>}
 
   <slot />

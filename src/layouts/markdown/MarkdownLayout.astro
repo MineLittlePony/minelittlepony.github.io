@@ -1,20 +1,19 @@
 ---
-import './global.css';
-
-import { Navigation } from '~/data/navigation';
-import type { MarkdownLayoutProps } from 'astro';
-import RootLayout, { type Props as LayoutProps } from '../root/RootLayout.astro';
-import NavigationLink from './NavigationLink/NavigationLink.astro';
+import type { MarkdownLayoutProps } from 'astro'
+import type { Props as LayoutProps } from '../root/RootLayout.astro'
+import { Navigation } from '~/data/navigation'
+import RootLayout from '../root/RootLayout.astro'
+import NavigationLink from './components/NavigationLink.astro'
 
 export interface Frontmatter extends Partial<LayoutProps> {}
 
-export type Props = MarkdownLayoutProps<Frontmatter>;
+export type Props = MarkdownLayoutProps<Frontmatter>
 
-const { frontmatter, url } = Astro.props;
-const { title = 'Some article', class: className, ...props } = frontmatter;
+const { frontmatter, url } = Astro.props
+const { title = 'Some article', class: className, ...props } = frontmatter
 
-const section = url?.replace(import.meta.env.BASE_URL, '').split('/')[0];
-const navigation = section && Navigation[section];
+const section = url?.replace(import.meta.env.BASE_URL, '').split('/')[0]
+const navigation = section && Navigation[section]
 ---
 
 <RootLayout title={title} class:list={['gap-8', className]} {...props}>
@@ -28,7 +27,7 @@ const navigation = section && Navigation[section];
     )
   }
 
-  <div class="article">
+  <div class="markdown">
     <slot />
   </div>
 </RootLayout>
