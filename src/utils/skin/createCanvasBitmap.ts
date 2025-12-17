@@ -1,4 +1,4 @@
-import { createContext } from '../canvas'
+import { createCanvasContext } from '../canvas'
 import { floorPowerOfTwo } from '../math'
 
 export async function createCanvasBitmap(source: ImageBitmapSource) {
@@ -12,7 +12,7 @@ export async function createCanvasBitmap(source: ImageBitmapSource) {
       console.warn(`Image size has been floored from ${image.width}x${image.height} to ${width}x${height}`)
     }
 
-    const ctx = createContext(width, height)
+    const ctx = createCanvasContext(width, height)
     ctx.drawImage(image, 0, 0, width, height)
 
     return ctx

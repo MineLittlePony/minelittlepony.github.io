@@ -1,5 +1,5 @@
 import { useDropzone } from 'react-dropzone'
-import { loadFile } from '../store'
+import { $file } from '../context'
 
 export function useToolsDropzone(noClick = false) {
   return useDropzone({
@@ -7,7 +7,7 @@ export function useToolsDropzone(noClick = false) {
     accept: { 'image/png': ['.png'] },
     onDrop(acceptedFiles) {
       const file = acceptedFiles[0]
-      if (file) loadFile(file)
+      if (file) $file.set(file)
     },
   })
 }

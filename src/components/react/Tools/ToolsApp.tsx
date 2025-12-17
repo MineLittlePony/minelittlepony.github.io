@@ -1,24 +1,20 @@
-import { useEffect } from 'react'
-import { setToolsState, useToolsState } from './store'
+import { useAtomValue } from '@atomous/react'
+import { $contextState } from './context'
 import { ToolsDropzone } from './ToolsDropzone'
 import { ToolsLoader } from './ToolsLoader'
 import { ToolsMain } from './ToolsMain'
 
 export function ToolsApp() {
-  const loading = useToolsState(state => state.loading)
-  const ctx = useToolsState(state => state.ctx)
+  const state = useAtomValue($contextState)
 
-  useEffect(() => {
-    setToolsState({ loading: false })
-  }, [])
-
-  if (loading) {
+  // TODO do not replace the whole app if value is available
+  if (state.status === 'loading') {
     return <ToolsLoader />
   }
 
-  if (ctx === null) {
-    return <ToolsDropzone />
+  if (state.value) {
+    return <ToolsMain />
   }
 
-  return <ToolsMain ctx={ctx} />
+  return <ToolsDropzone />
 }

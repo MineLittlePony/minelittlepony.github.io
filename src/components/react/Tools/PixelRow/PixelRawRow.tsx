@@ -1,21 +1,23 @@
+import type { Atom } from 'atomous'
 import type { PixelInfo } from '~/data/pixels'
+import { useAtomValue } from '@atomous/react'
 import { hex } from '~/utils/color'
 import { colors2num } from '~/utils/colors2num'
 import { Input } from '../Input'
-import { setPixelValue, useToolsState } from '../store'
 import { SettingsRow } from './SettingsRow'
 
 export interface PixelRawRowProps {
   info: PixelInfo
+  atom: Atom<number | number[]>
 }
 
-export function PixelRawRow({ info }: PixelRawRowProps) {
-  const storeValue = useToolsState(state => state.pixels[info.name])
-  const value = hex(colors2num(storeValue ?? info.options[0].color))
+export function PixelRawRow({ info, atom }: PixelRawRowProps) {
+  const atomValue = useAtomValue(atom)
+  const value = hex(colors2num(atomValue))
 
   function handleChange(value: string) {
     const color = Number.parseInt(value.replace(/^#/, ''), 16)
-    setPixelValue(info.name, color)
+    atom.set(color)
   }
 
   return (

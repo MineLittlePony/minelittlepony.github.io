@@ -17,10 +17,12 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@atomous/react": "^0.1.2",
     "@fortawesome/fontawesome-free": "^7.1.0",
     "@headlessui/react": "^2.2.9",
     "@tanstack/react-query": "^5.90.12",
     "astro-seo-metadata": "^0.6.0",
+    "atomous": "^0.3.0",
     "clsx": "^2.1.1",
     "file-saver": "^2.0.5",
     "pretty-bytes": "^7.1.0",
@@ -28,8 +30,7 @@
     "react-dom": "^19.2.3",
     "react-dropzone": "^14.3.8",
     "swiper": "^12.0.3",
-    "zod": "^4.1.13",
-    "zustand": "^5.0.9"
+    "zod": "^4.1.13"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.6.1",

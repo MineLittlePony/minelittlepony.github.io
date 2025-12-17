@@ -1,11 +1,12 @@
 import type { ChangeEvent } from 'react'
+import { useAtomValue } from '@atomous/react'
+import saveAs from 'file-saver'
 import { useId } from 'react'
-import { Pixels } from '~/data/pixels'
 import { calculateSizeShift } from '~/utils/math'
+import { reloadContext, useToolsContext } from './context'
 import { useNicknameForm } from './hooks/useNicknameForm'
 import { PixelRow } from './PixelRow/PixelRow'
 import { SettingsRow } from './PixelRow/SettingsRow'
-import { reloadFile, saveFile, setToolsState, useToolsState } from './store'
 import { ToolsError } from './ToolsError'
 import { ToolsWarning } from './ToolsWarning'
 
@@ -18,30 +19,36 @@ export interface SettingsProps {
 }
 
 export function Settings({ requestFile }: SettingsProps) {
-  const fileName = useToolsState(state => state.fileName)
-  const supportConversion = useToolsState(state => state.supportConversion)
-  const convert = useToolsState(state => state.convert)
-  const mirrorConvert = useToolsState(state => state.mirrorConvert)
-  const skinSizeShift = useToolsState(state => state.skinSizeShift)
+  const context = useToolsContext()
+
+  const convert = useAtomValue(context.$convert)
+  const mirrorConvert = useAtomValue(context.$mirrorConvert)
+  const skinSizeShift = useAtomValue(context.$skinSizeShift)
 
   const convertId = useId()
   const mirrorConvertId = useId()
 
   const { inputRef, handleSubmit } = useNicknameForm()
 
+  function saveFile() {
+    context.$output.get().toBlob((blob) => {
+      if (!blob) throw new Error('Failed to convert canvas to blob')
+
+      saveAs(blob, context.fileName)
+    })
+  }
+
   function handleConvertChange(e: ChangeEvent<HTMLInputElement>) {
-    const value = e.currentTarget.checked
-    setToolsState({ convert: value })
+    context.$convert.set(e.currentTarget.checked)
   }
 
   function handleMirrorConvertChange(e: ChangeEvent<HTMLInputElement>) {
-    const value = e.currentTarget.checked
-    setToolsState({ mirrorConvert: value })
+    context.$mirrorConvert.set(e.currentTarget.checked)
   }
 
   function handleSkinSizeChange(e: ChangeEvent<HTMLInputElement>) {
     const value = Number.parseInt(e.currentTarget.value)
-    setToolsState({ skinSizeShift: value })
+    context.$skinSizeShift.set(value)
   }
 
   return (
@@ -67,7 +74,7 @@ export function Settings({ requestFile }: SettingsProps) {
             <i className="fas fa-floppy-disk" />
           </button>
 
-          <button className="btn" type="button" onClick={reloadFile}>
+          <button className="btn" type="button" onClick={reloadContext}>
             <i className="fas fa-rotate-right" />
           </button>
         </form>
@@ -76,10 +83,10 @@ export function Settings({ requestFile }: SettingsProps) {
       </div>
 
       <SettingsRow label="File info">
-        <div className="flex h-10 items-center">{fileName}</div>
+        <div className="flex h-10 items-center">{context.fileName}</div>
       </SettingsRow>
 
-      {supportConversion && (
+      {context.supportsConversion && (
         <SettingsRow label="Skin layout">
           <div className="flex h-10 items-center gap-2">
             <input
@@ -133,8 +140,8 @@ export function Settings({ requestFile }: SettingsProps) {
         )}
       </SettingsRow>
 
-      {Pixels.map(pixel => (
-        <PixelRow key={pixel.name} info={pixel} />
+      {context.pixels.map(([pixel, atom]) => (
+        <PixelRow key={pixel.name} info={pixel} atom={atom} />
       ))}
     </div>
   )

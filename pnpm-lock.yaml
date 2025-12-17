@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@atomous/react':
+        specifier: ^0.1.2
+        version: 0.1.2(atomous@0.3.0)(react@19.2.3)
       '@fortawesome/fontawesome-free':
         specifier: ^7.1.0
         version: 7.1.0
@@ -20,6 +23,9 @@ importers:
       astro-seo-metadata:
         specifier: ^0.6.0
         version: 0.6.0
+      atomous:
+        specifier: ^0.3.0
+        version: 0.3.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -44,9 +50,6 @@ importers:
       zod:
         specifier: ^4.1.13
         version: 4.1.13
-      zustand:
-        specifier: ^5.0.9
-        version: 5.0.9(@types/react@19.2.7)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^6.6.1
@@ -254,6 +257,12 @@ packages:
 
   '@astrojs/yaml2ts@0.2.2':
     resolution: {integrity: sha512-GOfvSr5Nqy2z5XiwqTouBBpy5FyI6DEe+/g/Mk5am9SjILN1S5fOEvYK0GuWHg98yS/dobP4m8qyqw/URW35fQ==}
+
+  '@atomous/react@0.1.2':
+    resolution: {integrity: sha512-PoD+WwVBB2Kgxqavk/L+KF92m/90HxIiPHuT8zVJDTYEU6S+2Zb4BGYu/P3+fJO9ilMa8bLFkWp4GA3c1PJDZA==}
+    peerDependencies:
+      atomous: '>=0.1.0'
+      react: ^18 || ^19
 
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
@@ -1467,6 +1476,9 @@ packages:
     engines: {node: ^18.18.0 || >=20.9.0}
     peerDependencies:
       '@astrojs/compiler': '>=0.27.0'
+
+  atomous@0.3.0:
+    resolution: {integrity: sha512-tORxwqgaIt1QSUd7BIUWS3Q4LG+sVjEkGVzdmwGQ5I46DfXEVes0JfWKaJmWfWW3tP9SuQ7kp3PEJidt4amOPg==}
 
   attr-accept@2.2.5:
     resolution: {integrity: sha512-0bDNnY/u6pPwHDMoF0FieU354oBi0a8rD9FcsLwzcGWbc8KS8KPIi7y+s13OlVY+gMWc/9xEMUgNE6Qm8ZllYQ==}
@@ -3862,24 +3874,6 @@ packages:
   zod@4.1.13:
     resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
 
-  zustand@5.0.9:
-    resolution: {integrity: sha512-ALBtUj0AfjJt3uNRQoL1tL2tMvj6Gp/6e39dnfT6uzpelGru8v1tPOGBzayOWbPJvujM8JojDk3E1LxeFisBNg==}
-    engines: {node: '>=12.20.0'}
-    peerDependencies:
-      '@types/react': '>=18.0.0'
-      immer: '>=9.0.6'
-      react: '>=18.0.0'
-      use-sync-external-store: '>=1.2.0'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      immer:
-        optional: true
-      react:
-        optional: true
-      use-sync-external-store:
-        optional: true
-
   zwitch@1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
 
@@ -4081,6 +4075,11 @@ snapshots:
   '@astrojs/yaml2ts@0.2.2':
     dependencies:
       yaml: 2.8.2
+
+  '@atomous/react@0.1.2(atomous@0.3.0)(react@19.2.3)':
+    dependencies:
+      atomous: 0.3.0
+      react: 19.2.3
 
   '@babel/code-frame@7.27.1':
     dependencies:
@@ -5422,6 +5421,8 @@ snapshots:
     dependencies:
       '@astrojs/compiler': 2.13.0
       synckit: 0.11.11
+
+  atomous@0.3.0: {}
 
   attr-accept@2.2.5: {}
 
@@ -8311,12 +8312,6 @@ snapshots:
   zod@3.25.76: {}
 
   zod@4.1.13: {}
-
-  zustand@5.0.9(@types/react@19.2.7)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3)):
-    optionalDependencies:
-      '@types/react': 19.2.7
-      react: 19.2.3
-      use-sync-external-store: 1.6.0(react@19.2.3)
 
   zwitch@1.0.5: {}
 

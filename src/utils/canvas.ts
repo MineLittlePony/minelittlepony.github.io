@@ -16,7 +16,7 @@ export function getContext(
   return ctx
 }
 
-export function createContext(
+export function createCanvasContext(
   width: number,
   height: number,
 ): CanvasRenderingContext2D {

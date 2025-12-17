@@ -1,4 +1,4 @@
-import { createContext } from '../canvas'
+import { createCanvasContext } from '../canvas'
 
 function isLegacy(ctx: CanvasRenderingContext2D): boolean {
   const s = ctx.canvas.width / 64
@@ -60,7 +60,7 @@ function translate(
 }
 
 function convertFromLegacy(ctx: CanvasRenderingContext2D): void {
-  const src = createContext(ctx.canvas.width, ctx.canvas.height)
+  const src = createCanvasContext(ctx.canvas.width, ctx.canvas.height)
 
   src.drawImage(ctx.canvas, 0, 0)
 
@@ -111,7 +111,7 @@ function convertFromLegacy(ctx: CanvasRenderingContext2D): void {
 }
 
 function convertToSquare(ctx: CanvasRenderingContext2D, mirror: boolean): void {
-  const src = createContext(ctx.canvas.width, ctx.canvas.height)
+  const src = createCanvasContext(ctx.canvas.width, ctx.canvas.height)
 
   src.drawImage(ctx.canvas, 0, 0)
 
@@ -183,7 +183,7 @@ export function convertSkin(
   img: HTMLCanvasElement | HTMLImageElement,
   mirror: boolean,
 ): HTMLCanvasElement {
-  const ctx = createContext(img.width, img.height)
+  const ctx = createCanvasContext(img.width, img.height)
 
   ctx.drawImage(img, 0, 0)
 

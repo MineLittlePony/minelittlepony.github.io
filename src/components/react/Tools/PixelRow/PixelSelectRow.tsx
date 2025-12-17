@@ -1,26 +1,23 @@
+import type { Atom } from 'atomous'
 import type { PixelInfo } from '~/data/pixels'
+import { useAtomValue } from '@atomous/react'
 import { PixelSelect } from '../PixelSelect/PixelSelect'
-import { setPixelValue, useToolsState } from '../store'
 import { SettingsRow } from './SettingsRow'
 
 export interface PixelSelectRowProps {
   info: PixelInfo
+  atom: Atom<number | number[]>
 }
 
-export function PixelSelectRow({ info }: PixelSelectRowProps) {
-  const storeValue = useToolsState(state => state.pixels[info.name])
-  const value = storeValue ?? info.options[0].color
-
-  function handleChange(value: number | number[]) {
-    setPixelValue(info.name, value)
-  }
+export function PixelSelectRow({ info, atom }: PixelSelectRowProps) {
+  const value = useAtomValue(atom)
 
   return (
     <SettingsRow label={info.name}>
       <PixelSelect
         options={info.options}
         value={value}
-        onChange={handleChange}
+        onChange={atom.set}
       />
     </SettingsRow>
   )
