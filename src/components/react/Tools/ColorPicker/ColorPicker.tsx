@@ -1,0 +1,45 @@
+import type { ColorPickerRootProps } from '@ark-ui/react'
+import { ColorPickerArea, ColorPickerAreaBackground, ColorPickerAreaThumb, ColorPickerChannelInput, ColorPickerContent, ColorPickerControl, ColorPickerEyeDropperTrigger, ColorPickerPositioner, ColorPickerRoot, ColorPickerTrigger, ColorPickerValueSwatch, ColorPickerView } from '@ark-ui/react'
+import { use } from 'react'
+import { SettingsRowContext } from '../PixelRow/SettingsRow'
+import { ColorPickerClasses } from './classes'
+import { ColorPickerSlider } from './ColorPickerSlider'
+import { ColorPickerSliderInput } from './ColorPickerSliderInput'
+
+export function ColorPicker(props: ColorPickerRootProps) {
+  const id = use(SettingsRowContext)
+
+  return (
+    <ColorPickerRoot {...props}>
+      <ColorPickerControl className="flex gap-2">
+        <ColorPickerChannelInput channel="hex" id={id} className="input grow" />
+
+        <ColorPickerTrigger className="input p-2">
+          <ColorPickerValueSwatch className="size-6" />
+        </ColorPickerTrigger>
+      </ColorPickerControl>
+
+      <ColorPickerPositioner>
+        <ColorPickerContent className="z-10 flex w-64 flex-col gap-2 rounded-sm border border-zinc-200 bg-white p-2 shadow-xl">
+          <ColorPickerArea>
+            <ColorPickerAreaBackground className="aspect-square rounded-sm" />
+            <ColorPickerAreaThumb className={ColorPickerClasses.thumb} />
+          </ColorPickerArea>
+
+          <ColorPickerSlider channel="hue" />
+
+          <ColorPickerView format="rgba" className="space-y-2">
+            <ColorPickerSliderInput channel="red" />
+            <ColorPickerSliderInput channel="green" />
+            <ColorPickerSliderInput channel="blue" />
+          </ColorPickerView>
+
+          <ColorPickerEyeDropperTrigger className="btn flex items-center justify-center gap-2">
+            <i className="fas fa-eye-dropper fa-sm" />
+            <span>Pick color</span>
+          </ColorPickerEyeDropperTrigger>
+        </ColorPickerContent>
+      </ColorPickerPositioner>
+    </ColorPickerRoot>
+  )
+}
