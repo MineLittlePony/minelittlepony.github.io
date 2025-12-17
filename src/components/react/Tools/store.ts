@@ -3,7 +3,7 @@ import { create } from 'zustand'
 import { Pixels } from '~/data/pixels'
 import { rgb2num } from '~/utils/color'
 import { calculateSizeShift } from '~/utils/math'
-import { file2canvas } from '~/utils/skin/file2canvas'
+import { createCanvasBitmap } from '~/utils/skin/createCanvasBitmap'
 
 export interface ToolsState {
   loading: boolean
@@ -46,7 +46,7 @@ export async function loadFile(fileFetch: (() => Promise<File>) | File) {
 
   try {
     const file = fileFetch instanceof File ? fileFetch : await fileFetch()
-    const ctx = await file2canvas(file)
+    const ctx = await createCanvasBitmap(file)
     const pixels = collectPixelsState(ctx)
     const skinSizeShift = calculateSizeShift(ctx.canvas.width)
 
