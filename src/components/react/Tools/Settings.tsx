@@ -1,4 +1,5 @@
 import type { ChangeEvent } from 'react'
+import { Slider } from '@ark-ui/react'
 import { useAtomValue } from '@atomous/react'
 import saveAs from 'file-saver'
 import { useId } from 'react'
@@ -44,11 +45,6 @@ export function Settings({ requestFile }: SettingsProps) {
 
   function handleMirrorConvertChange(e: ChangeEvent<HTMLInputElement>) {
     context.$mirrorConvert.set(e.currentTarget.checked)
-  }
-
-  function handleSkinSizeChange(e: ChangeEvent<HTMLInputElement>) {
-    const value = Number.parseInt(e.currentTarget.value)
-    context.$skinSizeShift.set(value)
   }
 
   return (
@@ -118,15 +114,26 @@ export function Settings({ requestFile }: SettingsProps) {
 
       <SettingsRow label="Skin size">
         <div className="flex h-10 items-center gap-2">
-          <input
+          <Slider.Root
             className="grow"
-            type="range"
             min={MIN_SIZE_SHIFT}
             max={MAX_SIZE_SHIFT}
             step={1}
-            value={skinSizeShift}
-            onChange={handleSkinSizeChange}
-          />
+            value={[skinSizeShift]}
+            onValueChange={(e) => {
+              const value = e.value[0]
+              if (value === undefined) return
+              context.$skinSizeShift.set(value)
+            }}
+          >
+            <Slider.Control className="flex items-center">
+              <Slider.Track className="h-2 grow rounded-full bg-zinc-400">
+                <Slider.Range className="h-full rounded-full bg-primary" />
+              </Slider.Track>
+
+              <Slider.Thumb index={0} className="box-content size-3 rounded-full border-4 border-zinc-50 bg-primary shadow-md ring-1 shadow-zinc-700/25 ring-zinc-300" />
+            </Slider.Control>
+          </Slider.Root>
 
           <code>
             {`${64 << skinSizeShift}px`}
