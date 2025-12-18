@@ -1,9 +1,7 @@
 import type { PixelValue } from '~/data/pixels'
-import { Listbox, ListboxOption, ListboxOptions } from '@headlessui/react'
-import { clsx } from 'clsx'
-import { Fragment, useMemo } from 'react'
+import { createListCollection, Select } from '@ark-ui/react'
+import { useMemo } from 'react'
 import { PixelLabel } from './PixelLabel'
-import { PixelSelectButton } from './PixelSelectButton'
 
 export interface PixelSelectProps {
   options: PixelValue[]
@@ -27,46 +25,53 @@ export function PixelSelect({ options, value, onChange }: PixelSelectProps) {
     return options.filter(item => item.color === value)
   }, [options, value])
 
-  function handleChange(value: number | number[]) {
-    if (Array.isArray(value)) {
-      value = value.slice(0, 3)
-    }
+  const collection = createListCollection({
+    items: options,
+    itemToValue(item) {
+      return item.color.toString()
+    },
+  })
 
-    onChange(value)
-  }
+  const multiple = Array.isArray(value)
 
   return (
-    <Listbox
-      value={value}
-      onChange={handleChange}
-      multiple={Array.isArray(value)}
+    <Select.Root
+      collection={collection}
+      value={pixelValue.map(item => item.color.toString())}
+      positioning={{ sameWidth: true }}
+      multiple={multiple}
+      onValueChange={(e) => {
+        if (multiple) {
+          onChange(e.items.slice(0, 3).map(item => item.color))
+        } else {
+          const value = e.items[0]
+          if (value) onChange(value.color)
+        }
+      }}
     >
-      <div className="relative">
-        <PixelSelectButton value={pixelValue} />
+      <Select.Control>
+        <Select.Trigger className="input flex w-full grow items-center gap-2 text-start">
+          <Select.ValueText placeholder="None selected" className="grow">
+            <PixelLabel value={pixelValue} />
+          </Select.ValueText>
 
-        <ListboxOptions className="absolute z-10 mt-2 w-full divide-y divide-zinc-500/25 overflow-hidden rounded-md border border-zinc-200 bg-white drop-shadow-md">
-          {options.map(option => (
-            <ListboxOption
-              key={option.color}
-              value={option.color}
-              as={Fragment}
-            >
-              {({ selected }) => (
-                <li
-                  className={clsx(
-                    'flex h-10 items-center gap-2 px-4 select-none hover:bg-primary hover:text-white',
-                    {
-                      'bg-primary text-white': selected,
-                    },
-                  )}
-                >
-                  <PixelLabel value={option} />
-                </li>
-              )}
-            </ListboxOption>
+          <Select.Indicator>
+            <i className="fas fa-chevron-down" />
+          </Select.Indicator>
+        </Select.Trigger>
+      </Select.Control>
+
+      <Select.Positioner>
+        <Select.Content className="z-10 flex max-h-(--available-height) flex-col gap-1 overflow-y-auto rounded-md border border-zinc-200 bg-white p-2 shadow-xl">
+          {collection.items.map(item => (
+            <Select.Item key={item.color} item={item} className="h-10 shrink-0 rounded-sm px-2 select-none hover:bg-zinc-200 data-[state=checked]:bg-primary data-[state=checked]:text-white">
+              <Select.ItemText className="flex h-full items-center gap-2">
+                <PixelLabel value={item} />
+              </Select.ItemText>
+            </Select.Item>
           ))}
-        </ListboxOptions>
-      </div>
-    </Listbox>
+        </Select.Content>
+      </Select.Positioner>
+    </Select.Root>
   )
 }

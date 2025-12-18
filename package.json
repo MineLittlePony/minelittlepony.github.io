@@ -20,7 +20,6 @@
     "@ark-ui/react": "^5.30.0",
     "@atomous/react": "^0.1.2",
     "@fortawesome/fontawesome-free": "^7.1.0",
-    "@headlessui/react": "^2.2.9",
     "@tanstack/react-query": "^5.90.12",
     "astro-seo-metadata": "^0.6.0",
     "atomous": "^0.3.0",

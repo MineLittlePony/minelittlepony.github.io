@@ -35,13 +35,13 @@ export function PixelLabel({ value }: PixelLabelProps) {
   const label = getPixelLabel(value)
 
   return (
-    <div
+    <span
       className={clsx('flex grow items-center gap-2 text-start', {
         'opacity-50': Array.isArray(value) && value.length === 0,
       })}
     >
-      <div
-        className="aspect-square w-4 rounded-xs border border-zinc-500/25"
+      <span
+        className="block aspect-square w-4 rounded-xs border border-zinc-500/25"
         style={{ backgroundColor: color }}
         title={color}
       />
@@ -51,6 +51,6 @@ export function PixelLabel({ value }: PixelLabelProps) {
       <code className="text-black! select-text">
         {color}
       </code>
-    </div>
+    </span>
   )
 }
