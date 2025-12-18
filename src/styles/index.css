@@ -26,6 +26,10 @@
   image-rendering: pixelated;
 }
 
+@utility surface {
+  @apply bg-white border border-zinc-200 rounded-md;
+}
+
 @layer base {
   h1 {
     @apply font-bold text-4xl;
@@ -75,8 +79,8 @@
   }
 
   .input {
-    @apply border-zinc-200 ring-primary/25 bg-white;
-    @apply h-10 rounded-md border px-4 outline-hidden transition;
+    @apply surface h-10 px-4;
+    @apply ring-primary/25 outline-hidden transition;
 
     &[type='color'] {
       @apply py-1;

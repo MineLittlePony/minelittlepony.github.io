@@ -62,7 +62,7 @@ export function PixelSelect({ options, value, onChange }: PixelSelectProps) {
       </Select.Control>
 
       <Select.Positioner>
-        <Select.Content className="z-10 flex max-h-(--available-height) flex-col gap-1 overflow-y-auto rounded-md border border-zinc-200 bg-white p-2 shadow-xl">
+        <Select.Content className="z-10 flex max-h-(--available-height) flex-col gap-1 overflow-y-auto surface p-2 shadow-xl">
           {collection.items.map(item => (
             <Select.Item key={item.color} item={item} className="h-10 shrink-0 rounded-sm px-2 select-none hover:bg-zinc-200 data-[state=checked]:bg-primary data-[state=checked]:text-white">
               <Select.ItemText className="flex h-full items-center gap-2">

@@ -20,7 +20,7 @@ export function ColorPicker(props: ColorPickerRootProps) {
       </ColorPickerControl>
 
       <ColorPickerPositioner>
-        <ColorPickerContent className="z-10 flex w-64 flex-col gap-2 rounded-sm border border-zinc-200 bg-white p-2 shadow-xl">
+        <ColorPickerContent className="z-10 flex w-64 flex-col gap-2 surface p-2 shadow-xl">
           <ColorPickerArea>
             <ColorPickerAreaBackground className="aspect-square rounded-sm" />
             <ColorPickerAreaThumb className={ColorPickerClasses.thumb} />
