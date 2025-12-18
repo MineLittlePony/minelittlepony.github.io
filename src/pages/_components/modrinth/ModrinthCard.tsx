@@ -1,14 +1,14 @@
-import type { Project } from '~/schemas/modrinth'
+import type { Project } from '~/pages/_components/modrinth/schemas'
 import { clsx } from 'clsx'
 import { use, useMemo } from 'react'
 import { useZodQuery } from '~/hooks/useZodQuery'
-import { VersionsSchema } from '~/schemas/modrinth'
+import { VersionsSchema } from '~/pages/_components/modrinth/schemas'
 import { buildURL } from '~/utils/buildURL'
-import { VersionContext } from '../ModrinthDownloads/VersionContext'
 import { ModrinthFileLink } from './ModrinthFileLink'
 import { ModrinthProjectGameVersionsCounter } from './ModrinthProjectGameVersionsCounter'
 import { ModrinthProjectIcon } from './ModrinthProjectIcon'
 import { ModrinthProjectVersion } from './ModrinthProjectVersion'
+import { VersionContext } from './VersionContext'
 
 export interface ModrinthCardProps {
   project: Project

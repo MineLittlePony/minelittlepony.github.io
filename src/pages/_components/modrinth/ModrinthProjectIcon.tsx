@@ -1,5 +1,5 @@
-import type { Project } from '~/schemas/modrinth'
-import { UnoptimizedImage } from '../UnoptimizedImage'
+import type { Project } from '~/pages/_components/modrinth/schemas'
+import { UnoptimizedImage } from '~/components/UnoptimizedImage'
 
 export interface ModrinthProjectIconProps {
   url: Project['icon_url']

@@ -1,6 +1,6 @@
 import type { TeamMember } from '~/data/team/team'
 import { clsx } from 'clsx'
-import { UnoptimizedImage } from '~/components/react/UnoptimizedImage'
+import { UnoptimizedImage } from '~/components/UnoptimizedImage'
 
 const photoClassName = clsx('size-24 rounded-full')
 

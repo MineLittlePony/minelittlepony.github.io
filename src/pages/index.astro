@@ -1,11 +1,11 @@
 ---
-import ExtraCard from '~/components/astro/ExtraCard.astro'
-import FeatureCard from '~/components/astro/FeatureCard.astro'
-import Hero from '~/components/astro/Hero/Hero.astro'
-import { TeamCarousel } from '~/components/react/TeamCarousel/TeamCarousel'
 import { Extras } from '~/data/extras/extras'
 import { Features } from '~/data/features/features'
-import RootLayout from '../layouts/root/RootLayout.astro'
+import RootLayout from '~/layouts/root/RootLayout.astro'
+import ExtraCard from './_components/ExtraCard.astro'
+import FeatureCard from './_components/FeatureCard.astro'
+import Hero from './_components/hero/Hero.astro'
+import { TeamCarousel } from './_components/team/TeamCarousel'
 ---
 
 <RootLayout title="Home" applyContentStyles={false}>

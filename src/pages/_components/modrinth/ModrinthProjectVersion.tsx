@@ -1,4 +1,4 @@
-import type { Version } from '~/schemas/modrinth'
+import type { Version } from '~/pages/_components/modrinth/schemas'
 
 export interface ModrinthProjectVersionProps {
   projectId: string

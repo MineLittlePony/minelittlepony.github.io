@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { useToolsContext } from './context'
+import { useToolsContext } from '../_context'
 
 export function SkinPreview() {
   const context = useToolsContext()

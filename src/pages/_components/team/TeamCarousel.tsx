@@ -1,7 +1,7 @@
 import { FreeMode } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { TeamMembers } from '~/data/team/team'
-import { TeamCard } from './TeamCard/TeamCard'
+import { TeamCard } from './TeamCard'
 import 'swiper/css'
 import 'swiper/css/free-mode'
 

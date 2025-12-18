@@ -1,7 +1,7 @@
 import type { FormEvent } from 'react'
 import { useCallback, useRef } from 'react'
 import { fetchSkin } from '~/utils/skin/fetchSkin'
-import { $file } from '../context'
+import { $file } from '../_context'
 
 export function useNicknameForm() {
   const inputRef = useRef<HTMLInputElement>(null)

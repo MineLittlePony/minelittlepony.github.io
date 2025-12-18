@@ -1,5 +1,5 @@
 import { useZodQuery } from '~/hooks/useZodQuery'
-import { ProjectSchema } from '~/schemas/modrinth'
+import { ProjectSchema } from '~/pages/_components/modrinth/schemas'
 import { ModrinthCard } from './ModrinthCard'
 import { ModrinthLink } from './ModrinthLink'
 

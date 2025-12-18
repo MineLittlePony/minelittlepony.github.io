@@ -1,5 +1,5 @@
-import { useNicknameForm } from './hooks/useNicknameForm'
-import { useToolsDropzone } from './hooks/useToolsDropzone'
+import { useNicknameForm } from '../_hooks/useNicknameForm'
+import { useToolsDropzone } from '../_hooks/useToolsDropzone'
 import { ToolsError } from './ToolsError'
 import { ToolsUninitialized } from './ToolsUninitialized'
 

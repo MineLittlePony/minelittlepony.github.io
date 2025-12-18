@@ -1,8 +1,8 @@
 import type { ChangeEvent } from 'react'
 import { useId, useMemo, useState } from 'react'
 import { useZodQuery } from '~/hooks/useZodQuery'
-import { ProjectSchema } from '~/schemas/modrinth'
-import { ModrinthProject } from '../ModrinthProject'
+import { ProjectSchema } from '~/pages/_components/modrinth/schemas'
+import { ModrinthProject } from './ModrinthProject'
 import { VersionContext } from './VersionContext'
 
 const RELEASE_REGEX = /^\d+\.\d+(?:\.\d+)?$/

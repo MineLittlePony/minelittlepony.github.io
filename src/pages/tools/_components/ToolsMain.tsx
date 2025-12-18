@@ -1,4 +1,4 @@
-import { useToolsDropzone } from './hooks/useToolsDropzone'
+import { useToolsDropzone } from '../_hooks/useToolsDropzone'
 import { Settings } from './Settings'
 import { SkinPreview } from './SkinPreview'
 

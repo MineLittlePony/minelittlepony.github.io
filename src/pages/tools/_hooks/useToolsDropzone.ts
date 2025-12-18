@@ -1,5 +1,5 @@
 import { useDropzone } from 'react-dropzone'
-import { $file } from '../context'
+import { $file } from '../_context'
 
 export function useToolsDropzone(noClick = false) {
   return useDropzone({

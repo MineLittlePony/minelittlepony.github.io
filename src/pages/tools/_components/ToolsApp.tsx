@@ -1,5 +1,5 @@
 import { useAtomValue } from '@atomous/react'
-import { $contextState } from './context'
+import { $contextState } from '../_context'
 import { ToolsDropzone } from './ToolsDropzone'
 import { ToolsLoader } from './ToolsLoader'
 import { ToolsMain } from './ToolsMain'
