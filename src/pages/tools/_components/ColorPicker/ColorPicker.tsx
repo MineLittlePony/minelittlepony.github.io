@@ -1,18 +1,22 @@
 import type { ColorPickerRootProps } from '@ark-ui/react'
-import { ColorPickerArea, ColorPickerAreaBackground, ColorPickerAreaThumb, ColorPickerChannelInput, ColorPickerContent, ColorPickerControl, ColorPickerEyeDropperTrigger, ColorPickerPositioner, ColorPickerRoot, ColorPickerTrigger, ColorPickerValueSwatch, ColorPickerView } from '@ark-ui/react'
-import { use } from 'react'
-import { SettingsRowContext } from '../PixelRow/SettingsRow'
+import { ColorPickerArea, ColorPickerAreaBackground, ColorPickerAreaThumb, ColorPickerChannelInput, ColorPickerContent, ColorPickerControl, ColorPickerEyeDropperTrigger, ColorPickerLabel, ColorPickerPositioner, ColorPickerRoot, ColorPickerTrigger, ColorPickerValueSwatch, ColorPickerView } from '@ark-ui/react'
+import { clsx } from 'clsx'
+import { SettingsRowClassName } from '../PixelRow/SettingsRow'
 import { ColorPickerClasses } from './classes'
 import { ColorPickerSlider } from './ColorPickerSlider'
 import { ColorPickerSliderInput } from './ColorPickerSliderInput'
 
-export function ColorPicker(props: ColorPickerRootProps) {
-  const id = use(SettingsRowContext)
+export interface ColorPickerProps extends ColorPickerRootProps {
+  label: string
+}
 
+export function ColorPicker({ label, className, ...props }: ColorPickerProps) {
   return (
-    <ColorPickerRoot {...props}>
+    <ColorPickerRoot className={clsx(SettingsRowClassName, className)} {...props}>
+      <ColorPickerLabel>{label}</ColorPickerLabel>
+
       <ColorPickerControl className="flex gap-2">
-        <ColorPickerChannelInput channel="hex" id={id} className="input grow" />
+        <ColorPickerChannelInput channel="hex" className="input grow" />
 
         <ColorPickerTrigger className="input p-2">
           <ColorPickerValueSwatch className="size-6" />

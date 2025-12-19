@@ -7,7 +7,7 @@ import { calculateSizeShift } from '~/utils/math'
 import { reloadContext, useToolsContext } from '../_context'
 import { useNicknameForm } from '../_hooks/useNicknameForm'
 import { PixelRow } from './PixelRow/PixelRow'
-import { SettingsRow } from './PixelRow/SettingsRow'
+import { SettingsRowClassName } from './PixelRow/SettingsRow'
 import { ToolsError } from './ToolsError'
 import { ToolsWarning } from './ToolsWarning'
 
@@ -78,12 +78,15 @@ export function Settings({ requestFile }: SettingsProps) {
         <ToolsError />
       </div>
 
-      <SettingsRow label="File info">
+      <div className={SettingsRowClassName}>
+        <label>File info</label>
         <div className="flex h-10 items-center">{context.fileName}</div>
-      </SettingsRow>
+      </div>
 
       {context.supportsConversion && (
-        <SettingsRow label="Skin layout">
+        <div className={SettingsRowClassName}>
+          <label>Skin layout</label>
+
           <div className="flex h-10 items-center gap-2">
             <input
               id={convertId}
@@ -109,43 +112,45 @@ export function Settings({ requestFile }: SettingsProps) {
               Flip some converted parts
             </label>
           </div>
-        </SettingsRow>
+        </div>
       )}
 
-      <SettingsRow label="Skin size">
-        <div className="flex h-10 items-center gap-2">
-          <Slider.Root
-            className="grow"
-            min={MIN_SIZE_SHIFT}
-            max={MAX_SIZE_SHIFT}
-            step={1}
-            value={[skinSizeShift]}
-            onValueChange={(e) => {
-              const value = e.value[0]
-              if (value === undefined) return
-              context.$skinSizeShift.set(value)
-            }}
-          >
-            <Slider.Control className="flex items-center">
+      <Slider.Root
+        className={SettingsRowClassName}
+        min={MIN_SIZE_SHIFT}
+        max={MAX_SIZE_SHIFT}
+        step={1}
+        value={[skinSizeShift]}
+        onValueChange={(e) => {
+          const value = e.value[0]
+          if (value === undefined) return
+          context.$skinSizeShift.set(value)
+        }}
+      >
+        <Slider.Label>Skin size</Slider.Label>
+
+        <div>
+          <div className="flex items-center gap-2">
+            <Slider.Control className="flex h-10 grow items-center">
               <Slider.Track className="h-2 grow rounded-full bg-zinc-400">
                 <Slider.Range className="h-full rounded-full bg-primary" />
               </Slider.Track>
 
               <Slider.Thumb index={0} className="box-content size-3 rounded-full border-4 border-zinc-50 bg-primary shadow-md ring-1 shadow-zinc-700/25 ring-zinc-300" />
             </Slider.Control>
-          </Slider.Root>
 
-          <code>
-            {`${64 << skinSizeShift}px`}
-          </code>
+            <code>
+              {`${64 << skinSizeShift}px`}
+            </code>
+          </div>
+
+          {skinSizeShift > MAX_SUPPORTED_SIZE_SHIFT && (
+            <ToolsWarning>
+              You exceeded maximum officially supported size
+            </ToolsWarning>
+          )}
         </div>
-
-        {skinSizeShift > MAX_SUPPORTED_SIZE_SHIFT && (
-          <ToolsWarning>
-            You exceeded maximum officially supported size
-          </ToolsWarning>
-        )}
-      </SettingsRow>
+      </Slider.Root>
 
       {context.pixels.map(([pixel, atom]) => (
         <PixelRow key={pixel.name} info={pixel} atom={atom} />

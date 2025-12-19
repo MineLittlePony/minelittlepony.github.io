@@ -1,15 +1,17 @@
 import type { PixelValue } from '~/data/pixels'
 import { createListCollection, Select } from '@ark-ui/react'
 import { useMemo } from 'react'
+import { SettingsRowClassName } from '../PixelRow/SettingsRow'
 import { PixelLabel } from './PixelLabel'
 
 export interface PixelSelectProps {
+  label: string
   options: PixelValue[]
   value: number | number[]
   onChange: (value: number | number[]) => void
 }
 
-export function PixelSelect({ options, value, onChange }: PixelSelectProps) {
+export function PixelSelect({ label, options, value, onChange }: PixelSelectProps) {
   const pixelValue = useMemo(() => {
     if (Array.isArray(value)) {
       const result: PixelValue[] = []
@@ -36,6 +38,7 @@ export function PixelSelect({ options, value, onChange }: PixelSelectProps) {
 
   return (
     <Select.Root
+      className={SettingsRowClassName}
       collection={collection}
       value={pixelValue.map(item => item.color.toString())}
       positioning={{ sameWidth: true }}
@@ -49,6 +52,8 @@ export function PixelSelect({ options, value, onChange }: PixelSelectProps) {
         }
       }}
     >
+      <Select.Label>{label}</Select.Label>
+
       <Select.Control>
         <Select.Trigger className="input flex w-full grow items-center gap-2 text-start">
           <Select.ValueText placeholder="None selected" className="grow">

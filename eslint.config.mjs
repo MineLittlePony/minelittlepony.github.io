@@ -50,6 +50,7 @@ export default antfu({
     settings: {
       'better-tailwindcss': {
         entryPoint: 'src/styles/index.css',
+        variables: ['.*ClassName'],
       },
     },
   })

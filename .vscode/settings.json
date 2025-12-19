@@ -5,6 +5,13 @@
 
   "tailwindCSS.lint.cssConflict": "ignore",
   "tailwindCSS.classFunctions": ["clsx"],
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "class:list",
+    ".*ClassName"
+  ],
 
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,

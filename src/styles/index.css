@@ -58,6 +58,10 @@
   code {
     @apply rounded-sm border border-zinc-300 bg-zinc-100 px-1 py-0 leading-6;
   }
+
+  label {
+    @apply select-none;
+  }
 }
 
 @layer components {
