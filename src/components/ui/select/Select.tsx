@@ -4,7 +4,7 @@ import type { SelectValueDisplayProps } from './SelectValueDisplay'
 import { SelectContent, SelectControl, SelectIndicator, SelectItem, SelectItemText, SelectLabel, SelectPositioner, SelectRoot, SelectTrigger } from '@ark-ui/react'
 import { SelectValueDisplay } from './SelectValueDisplay'
 
-export interface SelectProps<T> extends SelectRootProps<T> {
+export interface SelectProps<T> extends Omit<SelectRootProps<T>, 'children'> {
   label?: ReactNode
   placeholder?: string
   renderValue?: SelectValueDisplayProps<T>['render']

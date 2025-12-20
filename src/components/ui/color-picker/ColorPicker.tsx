@@ -5,7 +5,7 @@ import { ColorPickerThumbClassName } from './classes'
 import { ColorPickerSlider } from './ColorPickerSlider'
 import { ColorPickerSliderInput } from './ColorPickerSliderInput'
 
-export interface ColorPickerProps extends ColorPickerRootProps {
+export interface ColorPickerProps extends Omit<ColorPickerRootProps, 'children'> {
   label?: ReactNode
 }
 

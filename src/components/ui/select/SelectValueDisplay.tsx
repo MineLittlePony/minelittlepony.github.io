@@ -2,7 +2,7 @@ import type { SelectValueTextProps } from '@ark-ui/react'
 import type { ReactNode } from 'react'
 import { SelectValueText, useSelectContext } from '@ark-ui/react'
 
-export interface SelectValueDisplayProps<T> extends SelectValueTextProps {
+export interface SelectValueDisplayProps<T> extends Omit<SelectValueTextProps, 'children'> {
   render?: (value: T[]) => ReactNode
 }
 
