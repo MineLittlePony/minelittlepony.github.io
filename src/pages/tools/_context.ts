@@ -25,15 +25,20 @@ const $context = computed(async (get) => {
 
   ctx.clearRect(0, 0, 4, 2)
 
+  const supportsConversion = ctx.canvas.width !== ctx.canvas.height
+  const $layout = atom<'original' | 'convert' | 'convert-flip'>('convert-flip')
+
   const initialSkinSizeShift = calculateSizeShift(ctx.canvas.width)
   const $skinSizeShift = atom(initialSkinSizeShift)
 
-  const supportsConversion = ctx.canvas.width !== ctx.canvas.height
-  const $convert = atom(supportsConversion)
-  const $mirrorConvert = atom(true)
-
   const $convertedCanvas = computed(() => {
-    return $convert.get() ? convertSkin(ctx.canvas, $mirrorConvert.get()) : ctx.canvas
+    if (!supportsConversion) return ctx.canvas
+
+    const layout = $layout.get()
+
+    if (layout === 'original') return ctx.canvas
+
+    return convertSkin(ctx.canvas, layout === 'convert-flip')
   })
 
   const $resizedCanvas = computed(() => {
@@ -66,9 +71,8 @@ const $context = computed(async (get) => {
     fileName: file.name,
     ctx,
     supportsConversion,
+    $layout,
     $skinSizeShift,
-    $convert,
-    $mirrorConvert,
     $output,
     pixels,
   }

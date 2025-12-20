@@ -1,8 +1,7 @@
-import type { ChangeEvent } from 'react'
 import { Slider } from '@ark-ui/react'
 import { useAtomValue } from '@atomous/react'
 import saveAs from 'file-saver'
-import { useId } from 'react'
+import { ToggleGroup } from '~/components/ui/toggle-group'
 import { calculateSizeShift } from '~/utils/math'
 import { reloadContext, useToolsContext } from '../_context'
 import { useNicknameForm } from '../_hooks/useNicknameForm'
@@ -22,12 +21,8 @@ export interface SettingsProps {
 export function Settings({ requestFile }: SettingsProps) {
   const context = useToolsContext()
 
-  const convert = useAtomValue(context.$convert)
-  const mirrorConvert = useAtomValue(context.$mirrorConvert)
+  const layout = useAtomValue(context.$layout)
   const skinSizeShift = useAtomValue(context.$skinSizeShift)
-
-  const convertId = useId()
-  const mirrorConvertId = useId()
 
   const { inputRef, handleSubmit } = useNicknameForm()
 
@@ -37,14 +32,6 @@ export function Settings({ requestFile }: SettingsProps) {
 
       saveAs(blob, context.fileName)
     })
-  }
-
-  function handleConvertChange(e: ChangeEvent<HTMLInputElement>) {
-    context.$convert.set(e.currentTarget.checked)
-  }
-
-  function handleMirrorConvertChange(e: ChangeEvent<HTMLInputElement>) {
-    context.$mirrorConvert.set(e.currentTarget.checked)
   }
 
   return (
@@ -87,31 +74,15 @@ export function Settings({ requestFile }: SettingsProps) {
         <div className={SettingsRowClassName}>
           <label>Skin layout</label>
 
-          <div className="flex h-10 items-center gap-2">
-            <input
-              id={convertId}
-              type="checkbox"
-              checked={convert}
-              onChange={handleConvertChange}
-            />
-
-            <label htmlFor={convertId} className="select-none">
-              Convert to modern layout
-            </label>
-          </div>
-
-          <div className="flex h-10 items-center gap-2">
-            <input
-              id={mirrorConvertId}
-              type="checkbox"
-              checked={mirrorConvert}
-              onChange={handleMirrorConvertChange}
-            />
-
-            <label htmlFor={mirrorConvertId} className="select-none">
-              Flip some converted parts
-            </label>
-          </div>
+          <ToggleGroup
+            items={[
+              { value: 'original', label: 'Original' },
+              { value: 'convert', label: 'Converted' },
+              { value: 'convert-flip', label: 'Converted & flipped' },
+            ]}
+            value={[layout]}
+            onValueChange={({ value }) => value[0] && context.$layout.set(value[0])}
+          />
         </div>
       )}
 
