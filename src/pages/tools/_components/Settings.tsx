@@ -1,5 +1,5 @@
-import { Slider } from '@ark-ui/react'
 import saveAs from 'file-saver'
+import { Slider } from '~/components/ui/slider'
 import { ToggleGroup } from '~/components/ui/toggle-group'
 import { WithAtomValue } from '~/components/WithAtomValue'
 import { calculateSizeShift } from '~/utils/math'
@@ -88,8 +88,9 @@ export function Settings({ requestFile }: SettingsProps) {
 
       <WithAtomValue atom={context.$skinSizeShift}>
         {value => (
-          <Slider.Root
+          <Slider
             className={SettingsRowClassName}
+            label="Skin size"
             min={MIN_SIZE_SHIFT}
             max={MAX_SIZE_SHIFT}
             step={1}
@@ -99,31 +100,14 @@ export function Settings({ requestFile }: SettingsProps) {
               if (value === undefined) return
               context.$skinSizeShift.set(value)
             }}
+            renderValue={([value = 0]) => <code>{64 << value}px</code>}
           >
-            <Slider.Label>Skin size</Slider.Label>
-
-            <div>
-              <div className="flex items-center gap-2">
-                <Slider.Control className="flex h-10 grow items-center">
-                  <Slider.Track className="h-2 grow rounded-full bg-zinc-400">
-                    <Slider.Range className="h-full rounded-full bg-primary" />
-                  </Slider.Track>
-
-                  <Slider.Thumb index={0} className="box-content size-3 rounded-full border-4 border-zinc-50 bg-primary shadow-md ring-1 shadow-zinc-700/25 ring-zinc-300" />
-                </Slider.Control>
-
-                <code>
-                  {`${64 << value}px`}
-                </code>
-              </div>
-
-              {value > MAX_SUPPORTED_SIZE_SHIFT && (
-                <ToolsWarning>
-                  You exceeded maximum officially supported size
-                </ToolsWarning>
-              )}
-            </div>
-          </Slider.Root>
+            {value > MAX_SUPPORTED_SIZE_SHIFT && (
+              <ToolsWarning>
+                You exceeded maximum officially supported size
+              </ToolsWarning>
+            )}
+          </Slider>
         )}
       </WithAtomValue>
 
