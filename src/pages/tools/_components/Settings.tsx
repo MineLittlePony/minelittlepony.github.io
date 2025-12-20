@@ -1,7 +1,7 @@
 import { Slider } from '@ark-ui/react'
-import { useAtomValue } from '@atomous/react'
 import saveAs from 'file-saver'
 import { ToggleGroup } from '~/components/ui/toggle-group'
+import { WithAtomValue } from '~/components/WithAtomValue'
 import { calculateSizeShift } from '~/utils/math'
 import { reloadContext, useToolsContext } from '../_context'
 import { useNicknameForm } from '../_hooks/useNicknameForm'
@@ -20,10 +20,6 @@ export interface SettingsProps {
 
 export function Settings({ requestFile }: SettingsProps) {
   const context = useToolsContext()
-
-  const layout = useAtomValue(context.$layout)
-  const skinSizeShift = useAtomValue(context.$skinSizeShift)
-
   const { inputRef, handleSubmit } = useNicknameForm()
 
   function saveFile() {
@@ -71,57 +67,65 @@ export function Settings({ requestFile }: SettingsProps) {
       </div>
 
       {context.supportsConversion && (
-        <div className={SettingsRowClassName}>
-          <label>Skin layout</label>
+        <WithAtomValue atom={context.$layout}>
+          {value => (
+            <div className={SettingsRowClassName}>
+              <label>Skin layout</label>
 
-          <ToggleGroup
-            items={[
-              { value: 'original', label: 'Original' },
-              { value: 'convert', label: 'Converted' },
-              { value: 'convert-flip', label: 'Converted & flipped' },
-            ]}
-            value={[layout]}
-            onValueChange={({ value }) => value[0] && context.$layout.set(value[0])}
-          />
-        </div>
+              <ToggleGroup
+                items={[
+                  { value: 'original', label: 'Original' },
+                  { value: 'convert', label: 'Converted' },
+                  { value: 'convert-flip', label: 'Converted & flipped' },
+                ]}
+                value={[value]}
+                onValueChange={({ value }) => value[0] && context.$layout.set(value[0])}
+              />
+            </div>
+          )}
+        </WithAtomValue>
       )}
 
-      <Slider.Root
-        className={SettingsRowClassName}
-        min={MIN_SIZE_SHIFT}
-        max={MAX_SIZE_SHIFT}
-        step={1}
-        value={[skinSizeShift]}
-        onValueChange={(e) => {
-          const value = e.value[0]
-          if (value === undefined) return
-          context.$skinSizeShift.set(value)
-        }}
-      >
-        <Slider.Label>Skin size</Slider.Label>
+      <WithAtomValue atom={context.$skinSizeShift}>
+        {value => (
+          <Slider.Root
+            className={SettingsRowClassName}
+            min={MIN_SIZE_SHIFT}
+            max={MAX_SIZE_SHIFT}
+            step={1}
+            value={[value]}
+            onValueChange={(e) => {
+              const value = e.value[0]
+              if (value === undefined) return
+              context.$skinSizeShift.set(value)
+            }}
+          >
+            <Slider.Label>Skin size</Slider.Label>
 
-        <div>
-          <div className="flex items-center gap-2">
-            <Slider.Control className="flex h-10 grow items-center">
-              <Slider.Track className="h-2 grow rounded-full bg-zinc-400">
-                <Slider.Range className="h-full rounded-full bg-primary" />
-              </Slider.Track>
+            <div>
+              <div className="flex items-center gap-2">
+                <Slider.Control className="flex h-10 grow items-center">
+                  <Slider.Track className="h-2 grow rounded-full bg-zinc-400">
+                    <Slider.Range className="h-full rounded-full bg-primary" />
+                  </Slider.Track>
 
-              <Slider.Thumb index={0} className="box-content size-3 rounded-full border-4 border-zinc-50 bg-primary shadow-md ring-1 shadow-zinc-700/25 ring-zinc-300" />
-            </Slider.Control>
+                  <Slider.Thumb index={0} className="box-content size-3 rounded-full border-4 border-zinc-50 bg-primary shadow-md ring-1 shadow-zinc-700/25 ring-zinc-300" />
+                </Slider.Control>
 
-            <code>
-              {`${64 << skinSizeShift}px`}
-            </code>
-          </div>
+                <code>
+                  {`${64 << value}px`}
+                </code>
+              </div>
 
-          {skinSizeShift > MAX_SUPPORTED_SIZE_SHIFT && (
-            <ToolsWarning>
-              You exceeded maximum officially supported size
-            </ToolsWarning>
-          )}
-        </div>
-      </Slider.Root>
+              {value > MAX_SUPPORTED_SIZE_SHIFT && (
+                <ToolsWarning>
+                  You exceeded maximum officially supported size
+                </ToolsWarning>
+              )}
+            </div>
+          </Slider.Root>
+        )}
+      </WithAtomValue>
 
       {context.pixels.map(([pixel, atom]) => (
         <PixelRow key={pixel.name} info={pixel} atom={atom} />
