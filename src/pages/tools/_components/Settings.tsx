@@ -66,7 +66,7 @@ export function Settings({ requestFile }: SettingsProps) {
         <div className="flex h-10 items-center">{context.fileName}</div>
       </div>
 
-      {context.supportsConversion && (
+      {context.$layout && (
         <WithAtomValue atom={context.$layout}>
           {(value, atom) => (
             <div className={SettingsRowClassName}>

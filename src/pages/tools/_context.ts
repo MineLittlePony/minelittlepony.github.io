@@ -25,24 +25,12 @@ const $context = computed(async (get) => {
 
   ctx.clearRect(0, 0, 4, 2)
 
-  const supportsConversion = ctx.canvas.width !== ctx.canvas.height
-  const $layout = atom<'original' | 'convert' | 'convert-flip'>('convert-flip')
-
+  const convertedCanvas = createConvertedCanvasAtom(ctx)
   const initialSkinSizeShift = calculateSizeShift(ctx.canvas.width)
   const $skinSizeShift = atom(initialSkinSizeShift)
 
-  const $convertedCanvas = computed(() => {
-    if (!supportsConversion) return ctx.canvas
-
-    const layout = $layout.get()
-
-    if (layout === 'original') return ctx.canvas
-
-    return convertSkin(ctx.canvas, layout === 'convert-flip')
-  })
-
   const $resizedCanvas = computed(() => {
-    const source = $convertedCanvas.get()
+    const source = convertedCanvas?.$canvas.get() ?? ctx.canvas
     const skinSizeShift = $skinSizeShift.get()
 
     const width = 64 << skinSizeShift
@@ -70,8 +58,7 @@ const $context = computed(async (get) => {
   return {
     fileName: file.name,
     ctx,
-    supportsConversion,
-    $layout,
+    $layout: convertedCanvas?.$layout,
     $skinSizeShift,
     $output,
     pixels,
@@ -115,4 +102,19 @@ function getPixelData(pixel: PixelInfo, ctx: CanvasRenderingContext2D) {
 
     return (pixelValue ?? pixel.options[0]).color
   }
+}
+
+function createConvertedCanvasAtom(ctx: CanvasRenderingContext2D) {
+  if (ctx.canvas.width === ctx.canvas.height) return
+
+  const $layout = atom<'original' | 'convert' | 'convert-flip'>('convert-flip')
+  const $canvas = computed(() => {
+    const layout = $layout.get()
+
+    if (layout === 'original') return ctx.canvas
+
+    return convertSkin(ctx.canvas, layout === 'convert-flip')
+  })
+
+  return { $layout, $canvas }
 }
