@@ -68,7 +68,7 @@ export function Settings({ requestFile }: SettingsProps) {
 
       {context.supportsConversion && (
         <WithAtomValue atom={context.$layout}>
-          {value => (
+          {(value, atom) => (
             <div className={SettingsRowClassName}>
               <label>Skin layout</label>
 
@@ -79,7 +79,7 @@ export function Settings({ requestFile }: SettingsProps) {
                   { value: 'convert-flip', label: 'Converted & flipped' },
                 ]}
                 value={[value]}
-                onValueChange={({ value }) => value[0] && context.$layout.set(value[0])}
+                onValueChange={({ value }) => value[0] && atom.set(value[0])}
               />
             </div>
           )}
@@ -87,7 +87,7 @@ export function Settings({ requestFile }: SettingsProps) {
       )}
 
       <WithAtomValue atom={context.$skinSizeShift}>
-        {value => (
+        {(value, atom) => (
           <Slider
             className={SettingsRowClassName}
             label="Skin size"
@@ -98,7 +98,7 @@ export function Settings({ requestFile }: SettingsProps) {
             onValueChange={(e) => {
               const value = e.value[0]
               if (value === undefined) return
-              context.$skinSizeShift.set(value)
+              atom.set(value)
             }}
             renderValue={([value = 0]) => <code>{64 << value}px</code>}
           >

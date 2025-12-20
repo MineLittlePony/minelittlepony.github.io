@@ -4,9 +4,9 @@ import { useAtomValue } from '@atomous/react'
 
 export interface WithAtomValueProps<T> {
   atom: Atom<T>
-  children: (value: T) => ReactNode
+  children: (value: T, atom: Atom<T>) => ReactNode
 }
 
 export function WithAtomValue<T>({ atom, children }: WithAtomValueProps<T>) {
-  return children(useAtomValue(atom))
+  return children(useAtomValue(atom), atom)
 }
