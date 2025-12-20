@@ -1,6 +1,7 @@
 import type { PixelValue } from '~/data/pixels'
-import { createListCollection, Select } from '@ark-ui/react'
+import { createListCollection } from '@ark-ui/react'
 import { useMemo } from 'react'
+import { Select } from '~/components/ui/select'
 import { SettingsRowClassName } from '../PixelRow/SettingsRow'
 import { PixelLabel } from './PixelLabel'
 
@@ -37,11 +38,11 @@ export function PixelSelect({ label, options, value, onChange }: PixelSelectProp
   const multiple = Array.isArray(value)
 
   return (
-    <Select.Root
+    <Select
       className={SettingsRowClassName}
+      label={label}
       collection={collection}
       value={pixelValue.map(item => item.color.toString())}
-      positioning={{ sameWidth: true }}
       multiple={multiple}
       onValueChange={(e) => {
         if (multiple) {
@@ -51,32 +52,9 @@ export function PixelSelect({ label, options, value, onChange }: PixelSelectProp
           if (value) onChange(value.color)
         }
       }}
-    >
-      <Select.Label>{label}</Select.Label>
 
-      <Select.Control>
-        <Select.Trigger className="input flex w-full grow items-center gap-2 text-start">
-          <Select.ValueText placeholder="None selected" className="grow">
-            <PixelLabel value={pixelValue} />
-          </Select.ValueText>
-
-          <Select.Indicator>
-            <i className="fas fa-chevron-down" />
-          </Select.Indicator>
-        </Select.Trigger>
-      </Select.Control>
-
-      <Select.Positioner>
-        <Select.Content className="z-10 flex max-h-(--available-height) flex-col gap-1 overflow-y-auto surface p-2 shadow-xl">
-          {collection.items.map(item => (
-            <Select.Item key={item.color} item={item} className="h-10 shrink-0 rounded-sm px-2 select-none hover:bg-zinc-200 data-[state=checked]:bg-primary data-[state=checked]:text-white">
-              <Select.ItemText className="flex h-full items-center gap-2">
-                <PixelLabel value={item} />
-              </Select.ItemText>
-            </Select.Item>
-          ))}
-        </Select.Content>
-      </Select.Positioner>
-    </Select.Root>
+      renderValue={value => <PixelLabel value={value} />}
+      renderItem={item => <PixelLabel value={item} />}
+    />
   )
 }
