@@ -1,5 +1,5 @@
 import type { HTMLAttributes, Ref } from 'react'
-import clsx from 'clsx'
+import { clsx } from 'clsx/lite'
 
 export interface ToolsUninitializedProps extends HTMLAttributes<HTMLDivElement> {
   ref?: Ref<HTMLDivElement>

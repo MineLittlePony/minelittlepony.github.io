@@ -1,5 +1,4 @@
 import type { Project } from '~/pages/_components/modrinth/schemas'
-import { clsx } from 'clsx'
 import { use, useMemo } from 'react'
 import { useZodQuery } from '~/hooks/useZodQuery'
 import { VersionsSchema } from '~/pages/_components/modrinth/schemas'
@@ -33,9 +32,8 @@ export function ModrinthCard({ project }: ModrinthCardProps) {
 
   return (
     <div
-      className={clsx('flex flex-col gap-3 rounded-sm bg-white/5 p-2 backdrop-blur-sm sm:flex-row sm:items-center', {
-        'not-hover:opacity-25': !version,
-      })}
+      className="flex flex-col gap-3 rounded-sm bg-white/5 p-2 backdrop-blur-sm data-[no-version=true]:not-hover:opacity-25 sm:flex-row sm:items-center"
+      data-no-version={!version}
     >
       <div className="flex grow items-center gap-3">
         <ModrinthProjectIcon url={project.icon_url} alt={project.title} />

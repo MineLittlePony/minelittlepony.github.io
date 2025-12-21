@@ -1,7 +1,7 @@
 import type { ToggleGroupRootProps } from '@ark-ui/react'
 import type { ReactNode } from 'react'
 import { ToggleGroupItem, ToggleGroupRoot } from '@ark-ui/react'
-import { clsx } from 'clsx'
+import { clsx } from 'clsx/lite'
 
 export interface ToggleGroupValueItem<T extends string> {
   value: T

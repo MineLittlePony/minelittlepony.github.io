@@ -1,6 +1,5 @@
 import type { Color } from '@ark-ui/react'
 import type { PixelInfo } from '~/data/pixels'
-import { clsx } from 'clsx'
 
 function computeLabel(info: PixelInfo, color: Color, condensed?: boolean) {
   if (condensed) {
@@ -34,9 +33,8 @@ export function PixelLabel({ info, color, condensed }: PixelLabelProps) {
 
   return (
     <span
-      className={clsx('flex grow items-center gap-2 text-start', {
-        'opacity-50': condensed && color.toHexInt() === 0,
-      })}
+      className="flex grow items-center gap-2 text-start data-[empty=true]:opacity-50"
+      data-empty={condensed && color.toHexInt() === 0}
     >
       <span
         className="block aspect-square w-4 shrink-0 rounded-xs border border-zinc-500/25"

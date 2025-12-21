@@ -1,6 +1,6 @@
 import type { ColorPickerChannelSliderProps } from '@ark-ui/react'
 import { ColorPickerChannelSlider, ColorPickerChannelSliderThumb, ColorPickerChannelSliderTrack } from '@ark-ui/react'
-import { clsx } from 'clsx'
+import { clsx } from 'clsx/lite'
 import { ColorPickerThumbClassName } from './classes'
 
 export interface ColorPickerSliderProps {
