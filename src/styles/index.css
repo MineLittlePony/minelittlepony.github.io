@@ -2,8 +2,6 @@
 
 @import 'tailwindcss';
 
-@plugin '@tailwindcss/typography';
-
 @theme {
   --font-sans: Roboto;
   --font-serif: Roboto Slab;
