@@ -1,5 +1,5 @@
 import type { Project } from '~/pages/_components/modrinth/schemas'
-import { use, useMemo } from 'react'
+import { use } from 'react'
 import { useZodQuery } from '~/hooks/useZodQuery'
 import { VersionsSchema } from '~/pages/_components/modrinth/schemas'
 import { buildURL } from '~/utils/buildURL'
@@ -16,14 +16,10 @@ export interface ModrinthCardProps {
 export function ModrinthCard({ project }: ModrinthCardProps) {
   const gameVersion = use(VersionContext)
 
-  const versionURL = useMemo(() => {
-    const baseURL = `https://api.modrinth.com/v2/project/${project.id}/version`
-
-    return buildURL(baseURL, {
-      featured: true,
-      game_versions: [gameVersion],
-    })
-  }, [gameVersion, project.id])
+  const versionURL = buildURL(`https://api.modrinth.com/v2/project/${project.id}/version`, {
+    featured: true,
+    game_versions: [gameVersion],
+  })
 
   const { data: versions } = useZodQuery(VersionsSchema, versionURL, !!gameVersion)
 

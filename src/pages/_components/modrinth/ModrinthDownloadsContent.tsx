@@ -1,5 +1,6 @@
 import type { ChangeEvent } from 'react'
-import { useId, useMemo, useState } from 'react'
+import type { Project } from '~/pages/_components/modrinth/schemas'
+import { useId, useState } from 'react'
 import { useZodQuery } from '~/hooks/useZodQuery'
 import { ProjectSchema } from '~/pages/_components/modrinth/schemas'
 import { ModrinthProject } from './ModrinthProject'
@@ -11,6 +12,18 @@ function isRelease(version: string) {
   return RELEASE_REGEX.test(version)
 }
 
+function getVersions(data: Project, showAllVersions: boolean) {
+  let result = data.game_versions
+
+  if (showAllVersions) {
+    result = result.slice()
+  } else {
+    result = result.filter(isRelease)
+  }
+
+  return result.reverse()
+}
+
 export function ModrinthDownloadsContent() {
   const [selectedVersion, setSelectedVersion] = useState<string | null>(null)
   const [showAllVersions, setShowAllVersions] = useState(false)
@@ -19,19 +32,7 @@ export function ModrinthDownloadsContent() {
   const showAllVersionsId = useId()
 
   const { data } = useZodQuery(ProjectSchema, 'https://api.modrinth.com/v2/project/JBjInUXM')
-
-  const versions = useMemo(() => {
-    let result = data?.game_versions
-
-    if (showAllVersions) {
-      result = result?.slice()
-    } else {
-      result = result?.filter(isRelease)
-    }
-
-    return result?.reverse()
-  }, [showAllVersions, data?.game_versions])
-
+  const versions = data && getVersions(data, showAllVersions)
   const version = selectedVersion ?? versions?.[0]
 
   function handleVersionChange(e: ChangeEvent<HTMLSelectElement>) {
