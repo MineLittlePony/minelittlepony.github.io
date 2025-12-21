@@ -58,7 +58,7 @@ export const Pixels: PixelInfo[] = [
     ],
   },
   {
-    name: 'Body type',
+    name: 'Body size',
     type: 'NORMAL',
     x: 3,
     y: 0,
@@ -67,6 +67,8 @@ export const Pixels: PixelInfo[] = [
       { color: 0xCE3254, label: 'Bulky' },
       { color: 0x3254CE, label: 'Lanky' },
       { color: 0x000000, label: 'Normal' },
+      { color: 0xB2E7DD, label: 'Stocky' },
+      { color: 0xA3D2C7, label: 'Squat' },
       { color: 0x53BEFF, label: 'Yearling' },
       { color: 0xFFBE53, label: 'Foal' },
     ],
