@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@10.26.1",
   "description": "Source code of official Mine Little pony Minecraft mod website",
   "imports": {
     "#tailwind.css": "./src/styles/index.css"
@@ -30,10 +30,10 @@
     "react-dom": "^19.2.3",
     "react-dropzone": "^14.3.8",
     "swiper": "^12.0.3",
-    "zod": "^4.1.13"
+    "zod": "^4.2.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^6.6.1",
+    "@antfu/eslint-config": "^6.7.1",
     "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/react": "^4.4.2",
@@ -44,16 +44,16 @@
     "@tailwindcss/vite": "^4.1.18",
     "@total-typescript/tsconfig": "^1.0.4",
     "@types/file-saver": "^2.0.7",
-    "@types/node": "^25.0.1",
+    "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "astro": "^5.16.5",
-    "eslint": "^9.39.1",
+    "astro": "^5.16.6",
+    "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
     "eslint-plugin-better-tailwindcss": "^3.8.0",
     "eslint-plugin-format": "^1.1.0",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
+    "eslint-plugin-react-refresh": "^0.4.26",
     "prettier-plugin-astro": "^0.14.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
