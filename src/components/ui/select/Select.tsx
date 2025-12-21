@@ -29,7 +29,7 @@ export function Select<T>({ label, placeholder, positioning, renderValue, render
       <SelectPositioner>
         <SelectContent className="z-10 flex max-h-(--available-height) flex-col gap-1 overflow-y-auto surface p-2 shadow-xl">
           {props.collection.items.map(item => (
-            <SelectItem key={props.collection.getItemValue(item)} item={item} className="h-10 shrink-0 rounded-sm px-2 select-none hover:bg-zinc-200 data-[state=checked]:bg-primary data-[state=checked]:text-white">
+            <SelectItem key={props.collection.getItemValue(item)} item={item} className="h-input shrink-0 rounded-sm px-2 select-none hover:bg-zinc-200 data-[state=checked]:bg-primary data-[state=checked]:text-white">
               <SelectItemText className="flex h-full items-center gap-2">
                 {renderItem?.(item) ?? props.collection.stringifyItem(item)}
               </SelectItemText>

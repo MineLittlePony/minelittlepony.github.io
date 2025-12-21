@@ -21,7 +21,7 @@ export interface ToggleGroupProps<T extends string> extends Omit<ToggleGroupRoot
 export function ToggleGroup<T extends string>({ items, value, onValueChange, className, ...props }: ToggleGroupProps<T>) {
   return (
     <ToggleGroupRoot
-      className={clsx('flex h-10 justify-between gap-1 surface p-1', className)}
+      className={clsx('flex h-input justify-between gap-1 surface p-1', className)}
       value={value}
       onValueChange={onValueChange as ToggleGroupRootProps['onValueChange']}
       {...props}

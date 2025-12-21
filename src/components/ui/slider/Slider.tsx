@@ -20,7 +20,7 @@ export function Slider({ label, children, renderValue, ...props }: SliderProps) 
       {!!label && <SliderLabel>{label}</SliderLabel>}
 
       <div>
-        <div className="flex h-10 items-center gap-2">
+        <div className="flex h-input items-center gap-2">
           <SliderControl className="flex grow items-center">
             <SliderTrack className="h-2 grow rounded-full bg-zinc-400">
               <SliderRange className="h-full rounded-full bg-primary" />

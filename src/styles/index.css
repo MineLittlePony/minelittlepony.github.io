@@ -30,6 +30,10 @@
   @apply bg-white border border-zinc-200 rounded-md;
 }
 
+@utility h-input {
+  @apply h-10;
+}
+
 @layer base {
   h1 {
     @apply font-bold text-4xl;
@@ -67,7 +71,7 @@
 @layer components {
   .btn {
     @apply border-zinc-950/30 bg-primary text-white;
-    @apply h-10 rounded-md border-b-4 px-4;
+    @apply h-input rounded-md border-b-4 px-4;
 
     @variant hover {
       @apply opacity-90;
@@ -83,7 +87,7 @@
   }
 
   .input {
-    @apply surface h-10 px-4;
+    @apply surface h-input px-4;
     @apply ring-primary/25 outline-hidden transition;
 
     &[type='color'] {

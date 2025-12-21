@@ -63,7 +63,7 @@ export function Settings({ requestFile }: SettingsProps) {
 
       <div className={SettingsRowClassName}>
         <label>File info</label>
-        <div className="flex h-10 items-center">{context.fileName}</div>
+        <div className="flex h-input items-center">{context.fileName}</div>
       </div>
 
       {context.$layout && (
