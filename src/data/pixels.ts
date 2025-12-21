@@ -5,7 +5,7 @@ export interface PixelValue {
 
 export interface PixelInfo {
   name: string
-  type: 'CONDENSED' | 'NORMAL' | 'RAW'
+  type: 'CONDENSED' | 'NORMAL' | 'RAW' | 'NUMBER'
   x: number
   y: number
   options: [PixelValue, ...PixelValue[]]
@@ -107,5 +107,12 @@ export const Pixels: PixelInfo[] = [
       { color: 0x3EFF22, label: 'Swirly' },
       { color: 0x3308C7, label: 'Spiky' },
     ],
+  },
+  {
+    name: 'Priority',
+    type: 'NUMBER',
+    x: 2,
+    y: 2,
+    options: [{ color: 0x000000, label: `Any integer between 0 and ${0xFFFFFF}` }],
   },
 ]
