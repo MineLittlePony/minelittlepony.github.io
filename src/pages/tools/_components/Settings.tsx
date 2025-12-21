@@ -5,8 +5,8 @@ import { WithAtomValue } from '~/components/WithAtomValue'
 import { calculateSizeShift } from '~/utils/math'
 import { reloadContext, useToolsContext } from '../_context'
 import { useNicknameForm } from '../_hooks/useNicknameForm'
-import { PixelRow } from './PixelRow/PixelRow'
-import { SettingsRowClassName } from './PixelRow/SettingsRow'
+import { PixelInput } from './pixel-input'
+import { SettingsRowClassName } from './SettingsRow'
 import { ToolsError } from './ToolsError'
 import { ToolsWarning } from './ToolsWarning'
 
@@ -111,8 +111,8 @@ export function Settings({ requestFile }: SettingsProps) {
         )}
       </WithAtomValue>
 
-      {context.pixels.map(([pixel, atom]) => (
-        <PixelRow key={pixel.name} info={pixel} atom={atom} />
+      {context.pixels.map(pixel => (
+        <PixelInput key={pixel.info.name} pixel={pixel} />
       ))}
     </div>
   )
