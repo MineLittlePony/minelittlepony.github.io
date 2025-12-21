@@ -1,6 +1,6 @@
 ---
 import RootLayout from '~/layouts/root/RootLayout.astro'
-import { ToolsApp } from './_components/ToolsApp'
+import { ToolsIsland } from './_components/ToolsIsland'
 ---
 
 <RootLayout
@@ -8,5 +8,5 @@ import { ToolsApp } from './_components/ToolsApp'
   description="This page contains a helpful editor which you can use to change your trigger pixels, skin size or convert the skin from legacy format"
   heading="Welcome to tools page"
 >
-  <ToolsApp client:only="react" />
+  <ToolsIsland client:load />
 </RootLayout>
