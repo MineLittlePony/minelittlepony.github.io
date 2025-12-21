@@ -51,7 +51,15 @@ export default defineConfig({
       [rehypeAutolink, autolinkOptions],
     ],
   },
-  integrations: [mdx(), react(), sitemap()],
+  integrations: [
+    mdx(),
+    react({
+      babel: {
+        plugins: ['babel-plugin-react-compiler'],
+      },
+    }),
+    sitemap(),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
