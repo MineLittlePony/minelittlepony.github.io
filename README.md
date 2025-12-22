@@ -8,4 +8,4 @@ Some used stack:
 - [React](https://react.dev/) - Reactive framework for interactive components.
 - [Tanstack React Query](https://tanstack.com/query/) - React state manager for fetching remote data.
 - [Zod](https://zod.dev/) - TypeScript-first schema validation, used to validate API responses.
-- [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction) - Global state manager.
+- [Atomous](https://github.com/keupoz/atomous) - Atom-based state manager.
