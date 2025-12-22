@@ -15,7 +15,8 @@ function mapEntries<T>(cb: (name: string, path: string) => T) {
 >
   <!-- Logo -->
   <a href={import.meta.env.BASE_URL}>
-    <Image class="h-16 w-auto md:h-24" src={LOGO} alt="Mine Little Pony logo" />
+    <!-- Id required for theme -->
+    <Image id="header-logo" class="h-16 w-auto md:h-24" src={LOGO} alt="Mine Little Pony logo" />
   </a>
 
   <input class="peer" id="nav-state" type="checkbox" hidden />

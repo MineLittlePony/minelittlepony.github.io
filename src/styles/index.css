@@ -10,13 +10,18 @@
   --color-primary: #3485df;
 }
 
+@custom-variant bat (&:where([data-theme="bat"] *));
 @custom-variant konami (&:where([data-konami-state="solved"] *));
 
 @utility border-stripe {
-  border-image: url('./assets/border-stripe.png') 1;
+  --border-image: url('./assets/border-stripe.png');
+
+  border-image: var(--border-image) 1;
   image-rendering: pixelated;
 
-  /* TODO add bat variant */
+  @variant bat {
+    --border-image: url('./assets/border-stripe-bat.png');
+  }
 }
 
 @utility bg-checker-* {
