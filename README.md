@@ -6,5 +6,4 @@ Some used stack:
 - [Astro](https://astro.build/) - Static Site Generator
 - [TailwindCSS](https://tailwindcss.com/) - Utility first CSS framework.
 - [React](https://react.dev/) - Reactive framework for interactive components.
-- [Tanstack React Query](https://tanstack.com/query/) - React state manager for fetching remote data.
 - [Atomous](https://github.com/keupoz/atomous) - Atom-based state manager.
