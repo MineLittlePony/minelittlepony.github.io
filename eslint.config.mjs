@@ -14,6 +14,7 @@ export default antfu({
     'style/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
   },
   isInEditor: false,
+  ignores: ['src/**/*.gen.*'],
 })
   .override('antfu/formatter/astro', {
     languageOptions: {

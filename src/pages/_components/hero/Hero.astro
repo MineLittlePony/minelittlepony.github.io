@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import Links from '~/data/links.json'
-import { ModrinthDownloads } from '../modrinth/ModrinthDownloads'
+import { DownloadsIsland } from '../downloads/DownloadsIsland'
 import BANNER from './assets/banner.png'
 import DISCORD_LOGO from './assets/discord.svg'
 import classes from './Hero.module.css'
@@ -46,7 +46,7 @@ import HeroIconLink from './HeroIconLink.astro'
 
     {/* Downloads section */}
     <div class="flex flex-col gap-4 lg:col-span-5">
-      <ModrinthDownloads client:load />
+      <DownloadsIsland client:load />
     </div>
   </div>
 </div>
