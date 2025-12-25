@@ -1,5 +1,6 @@
 import type { components } from '~/api/modrinth.gen'
-import { UnoptimizedImage } from '~/components/UnoptimizedImage'
+import { AvatarFallback, AvatarImage, AvatarRoot } from '@ark-ui/react'
+import { clsx } from 'clsx/lite'
 
 export interface ProjectIconProps {
   url: components['schemas']['Project']['icon_url']
@@ -7,15 +8,13 @@ export interface ProjectIconProps {
 }
 
 export function ProjectIcon({ url, alt }: ProjectIconProps) {
-  if (!url) return <div className="size-12 rounded-sm bg-zinc-500" />
-
   return (
-    <UnoptimizedImage
-      className="size-12 rounded-sm"
-      src={url}
-      alt={alt}
-      width={48}
-      height={48}
-    />
+    <AvatarRoot className="size-12 overflow-hidden rounded-sm">
+      <AvatarFallback className="flex size-full items-center justify-center bg-zinc-600/50 text-zinc-400">
+        <i className={clsx('fas fa-xl', url ? 'fa-spinner fa-spin-pulse' : 'fa-box')} />
+      </AvatarFallback>
+
+      <AvatarImage src={url ?? undefined} alt={alt} className="size-full object-contain" />
+    </AvatarRoot>
   )
 }
