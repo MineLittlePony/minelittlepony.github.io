@@ -33,13 +33,11 @@ export const TeamMembers: TeamMember[] = [
     },
   },
   {
-    name: 'Ivan Sokolov',
+    name: 'Keupoz',
     role: 'Website Maintainer',
     contacts: {
       minecraft: 'Keupoz',
       github: 'keupoz',
-      twitter: 'keupoz',
-      vk: 'keupoz',
     },
   },
   {
