@@ -1,13 +1,11 @@
 import type { PixelInputProps } from './PixelInput'
-import { parseColor } from '@ark-ui/react'
 import { useAtomValue } from '@atomous/react'
 import { NumberInput } from '~/components/ui/number-input'
-import { hex } from '~/utils/color'
+import { normalizeColor } from '../../_context'
 import { SettingsRowClassName } from '../SettingsRow'
 
 export function PixelNumberInput({ pixel }: PixelInputProps) {
-  const color = useAtomValue(pixel.atom)
-  const value = color.toHexInt()
+  const value = normalizeColor(useAtomValue(pixel.atom))
 
   return (
     <NumberInput
@@ -17,7 +15,7 @@ export function PixelNumberInput({ pixel }: PixelInputProps) {
       max={0xFFFFFF}
       step={1}
       value={value.toString()}
-      onValueChange={({ valueAsNumber }) => pixel.atom.set(parseColor(hex(valueAsNumber)))}
+      onValueChange={({ valueAsNumber }) => pixel.atom.set(valueAsNumber)}
     />
   )
 }

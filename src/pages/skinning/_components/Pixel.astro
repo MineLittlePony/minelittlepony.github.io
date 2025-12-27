@@ -1,28 +1,13 @@
 ---
 import type { PixelInfo } from '~/data/pixels'
-import { hex } from '~/utils/color'
+import { color2strings } from '~/utils/color'
 
 export interface Props {
   info: PixelInfo
 }
 
 const { info } = Astro.props
-const hexMinLength = info.type === 'CONDENSED' ? 2 : 6
 const transparentHint = info.options.length > 1 ? 'Transparent' : 'Any color'
-
-function normalizeColor(color: number) {
-  if (!color) return
-
-  let result = color
-
-  if (info.type === 'CONDENSED') {
-    for (let i = 0; i < 3; i++) {
-      result = (result << 8) | color
-    }
-  }
-
-  return hex(result)
-}
 ---
 
 <div class="space-y-2">
@@ -50,6 +35,7 @@ function normalizeColor(color: number) {
     <tbody>
       {
         info.options.map((item) => {
+          const strings = color2strings(item.color, info.type === 'CONDENSED')
           const isTransparent = !item.color
 
           return (
@@ -57,14 +43,12 @@ function normalizeColor(color: number) {
               <td>
                 <div
                   class:list={['size-4 rounded-full border border-zinc-500/50', isTransparent && 'bg-checker-3']}
-                  style={{ backgroundColor: normalizeColor(item.color) }}
+                  style={{ backgroundColor: strings.hex }}
                 />
               </td>
 
               <td>
-                <code title={isTransparent ? transparentHint : undefined}>
-                  {isTransparent ? '-------' : hex(item.color, hexMinLength)}
-                </code>
+                <code title={isTransparent ? transparentHint : undefined}>{strings.display}</code>
               </td>
 
               <td>{item.label}</td>

@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import { hex } from '~/utils/color'
+import { int2hex } from '~/utils/color'
 
 export { type ExtraInfo as Props } from '~/data/extras/extras'
 
@@ -15,7 +15,7 @@ const { image, alt, url, color, label, description } = Astro.props
 
   <div
     class="flex items-center justify-center gap-2 px-6 py-2 text-lg font-bold text-white"
-    style={{ backgroundColor: hex(color) }}
+    style={{ backgroundColor: int2hex(color) }}
   >
     <span>{label}</span>
 

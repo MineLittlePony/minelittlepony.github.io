@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import { hex } from '~/utils/color'
+import { int2hex } from '~/utils/color'
 
 export { type Feature as Props } from '~/data/features/features'
 
@@ -14,9 +14,7 @@ const { image, icon, color, title, content } = Astro.props
   <!-- Icon -->
   <div
     class="relative mx-auto -mt-12 flex size-24 items-center justify-center rounded-full border-8 border-white text-white"
-    style={{
-      backgroundColor: hex(color),
-    }}
+    style={{ backgroundColor: int2hex(color) }}
   >
     <i class:list={[icon, 'fa-2xl']}></i>
   </div>

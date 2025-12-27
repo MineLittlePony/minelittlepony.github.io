@@ -1,27 +1,18 @@
-import type { Color, ListCollection } from '@ark-ui/react'
+import type { Color } from '@ark-ui/react'
 import type { Atom } from 'atomous'
 import type { PixelInfo } from '~/data/pixels'
-import { createListCollection, parseColor } from '@ark-ui/react'
 import { useAtomValue } from '@atomous/react'
 import { atom, computed, loadable } from 'atomous'
 import { Pixels } from '~/data/pixels'
 import { createCanvasContext } from '~/utils/canvas'
-import { hex } from '~/utils/color'
+import { int2rgb, rgb2int } from '~/utils/color'
 import { calculateSizeShift } from '~/utils/math'
 import { convertSkin } from '~/utils/skin/convertSkin'
 import { createCanvasBitmap } from '~/utils/skin/createCanvasBitmap'
 
-export interface ContextPixelItem {
-  label: string
-  value: string
-  color: Color
-  raw: number
-}
-
 export interface ContextPixel {
-  atom: Atom<Color>
+  atom: Atom<number | Color>
   info: PixelInfo
-  collection: ListCollection<ContextPixelItem>
 }
 
 export const $file = atom<Promise<File> | File | null>(null)
@@ -33,24 +24,10 @@ const $context = computed(async (get) => {
 
   const ctx = await createCanvasBitmap(file)
 
-  const pixels = Pixels.map<ContextPixel>((info) => {
-    return {
-      atom: atom(getPixelColor(info, ctx)),
-      info,
-      collection: createListCollection({
-        items: info.options.map((item) => {
-          const value = hex(item.color)
-
-          return {
-            label: item.label,
-            value,
-            color: parseColor(value),
-            raw: item.color,
-          }
-        }),
-      }),
-    }
-  })
+  const pixels = Pixels.map<ContextPixel>(info => ({
+    atom: atom(getPixelColor(info, ctx)),
+    info,
+  }))
 
   ctx.clearRect(0, 0, 4, 2)
 
@@ -74,16 +51,11 @@ const $context = computed(async (get) => {
   const $output = computed(() => {
     const ctx = $resizedCanvas.get()
 
-    for (const { atom, info } of pixels) {
-      const color = atom.get().toFormat('rgba')
-
-      const r = color.getChannelValue('red')
-      const g = color.getChannelValue('green')
-      const b = color.getChannelValue('blue')
-
-      const transparent = r === 0 && g === 0 && b === 0
-      const alpha = transparent ? 0x00 : 0xFF
-      const imageData = new ImageData(new Uint8ClampedArray([r, g, b, alpha]), 1, 1)
+    for (const { info, atom: $value } of pixels) {
+      const color = normalizeColor($value.get())
+      const rgb = int2rgb(color)
+      const alpha = color ? 0xFF : 0x00
+      const imageData = new ImageData(new Uint8ClampedArray([...rgb, alpha]), 1, 1)
 
       ctx.putImageData(imageData, info.x, info.y)
     }
@@ -115,11 +87,11 @@ export function useToolsContext() {
 
 function getPixelColor(pixel: PixelInfo, ctx: CanvasRenderingContext2D) {
   const { data } = ctx.getImageData(pixel.x, pixel.y, 1, 1)
-  const hexInt = data.slice(0, 3).reduce((result, item) => {
-    return (result << 8) + item
-  }, 0)
+  return rgb2int(data)
+}
 
-  return parseColor(hex(hexInt))
+export function normalizeColor(color: number | Color) {
+  return typeof color === 'number' ? color : color.toHexInt()
 }
 
 function createConvertedCanvasAtom(ctx: CanvasRenderingContext2D) {
