@@ -3,7 +3,7 @@ import type { Atom } from 'atomous'
 import type { PixelInfo } from '~/data/pixels'
 import { useAtomValue } from '@atomous/react'
 import { atom, computed, loadable } from 'atomous'
-import { Pixels } from '~/data/pixels'
+import { MAX_COORDS, Pixels } from '~/data/pixels'
 import { createCanvasContext } from '~/utils/canvas'
 import { int2rgb, rgb2int } from '~/utils/color'
 import { calculateSizeShift } from '~/utils/math'
@@ -29,7 +29,7 @@ const $context = computed(async (get) => {
     info,
   }))
 
-  ctx.clearRect(0, 0, 4, 2)
+  ctx.clearRect(0, 0, MAX_COORDS.x + 1, MAX_COORDS.y + 1)
 
   const convertedCanvas = createConvertedCanvasAtom(ctx)
   const initialSkinSizeShift = calculateSizeShift(ctx.canvas.width)

@@ -116,3 +116,10 @@ export const Pixels: PixelInfo[] = [
     options: [{ color: 0x000000, label: `Any integer between 0 and ${0xFFFFFF}` }],
   },
 ]
+
+export const MAX_COORDS = Pixels.reduce((result, pixel) => {
+  return {
+    x: Math.max(result.x, pixel.x),
+    y: Math.max(result.y, pixel.y),
+  }
+}, { x: 0, y: 0 })
