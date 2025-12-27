@@ -78,7 +78,7 @@ export const Pixels: PixelInfo[] = [
     type: 'RAW',
     x: 0,
     y: 1,
-    options: [{ color: 0x000000, label: 'Any color you want' }],
+    options: [{ color: 0x000000, label: 'Any color of your choice' }],
   },
   {
     name: 'Wearables',

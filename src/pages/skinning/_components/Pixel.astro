@@ -1,11 +1,28 @@
 ---
 import type { PixelInfo } from '~/data/pixels'
+import { hex } from '~/utils/color'
 
 export interface Props {
   info: PixelInfo
 }
 
 const { info } = Astro.props
+const hexMinLength = info.type === 'CONDENSED' ? 2 : 6
+const transparentHint = info.options.length > 1 ? 'Transparent' : 'Any color'
+
+function normalizeColor(color: number) {
+  if (!color) return
+
+  let result = color
+
+  if (info.type === 'CONDENSED') {
+    for (let i = 0; i < 3; i++) {
+      result = (result << 8) | color
+    }
+  }
+
+  return hex(result)
+}
 ---
 
 <div class="space-y-2">
@@ -26,32 +43,31 @@ const { info } = Astro.props
       <tr>
         <th></th>
         <th>HEX</th>
-        <th>Name</th>
+        <th>Description</th>
       </tr>
     </thead>
 
     <tbody>
       {
-        info.options.map((option) => {
-          const value = option.color.toString(16).padStart(6, '0')
+        info.options.map((item) => {
+          const isTransparent = !item.color
 
           return (
             <tr>
               <td>
-                {value === '000000' ? (
-                  <i class="fas fa-ban text-red-500" title="Transparent" />
-                ) : (
-                  <div class="size-4 rounded-full border border-zinc-500/50" style={{ backgroundColor: `#${value}` }} />
-                )}
+                <div
+                  class:list={['size-4 rounded-full border border-zinc-500/50', isTransparent && 'bg-checker-3']}
+                  style={{ backgroundColor: normalizeColor(item.color) }}
+                />
               </td>
 
               <td>
-                <code title={value === '000000' && info.type !== 'RAW' ? 'Transparent' : ''}>
-                  #{value === '000000' ? '------' : value}
+                <code title={isTransparent ? transparentHint : undefined}>
+                  {isTransparent ? '-------' : hex(item.color, hexMinLength)}
                 </code>
               </td>
 
-              <td>{option.label}</td>
+              <td>{item.label}</td>
             </tr>
           )
         })
