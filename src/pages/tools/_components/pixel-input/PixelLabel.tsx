@@ -1,5 +1,6 @@
 import type { Color } from '@ark-ui/react'
 import type { PixelInfo } from '~/data/pixels'
+import { hex } from '~/utils/color'
 
 function computeLabel(info: PixelInfo, color: Color, condensed?: boolean) {
   if (condensed) {
@@ -21,15 +22,35 @@ function computeLabel(info: PixelInfo, color: Color, condensed?: boolean) {
   return info.options.find(item => item.color === hexInt)?.label
 }
 
+function computeStrings(color: Color, partial?: boolean) {
+  if (!partial) {
+    const hex = color.toString('hex')
+    return { hex, display: hex }
+  }
+
+  const channelValue = color.toFormat('rgba').getChannelValue('blue')
+  let hexInt = channelValue
+
+  for (let i = 0; i < 3; i++) {
+    hexInt = hexInt << 8 | channelValue
+  }
+
+  return {
+    hex: hex(hexInt),
+    display: hex(channelValue, 2),
+  }
+}
+
 export interface PixelLabelProps {
   info: PixelInfo
   color: Color
   condensed?: boolean
+  partial?: boolean
 }
 
-export function PixelLabel({ info, color, condensed }: PixelLabelProps) {
-  const hex = color.toString('hex')
+export function PixelLabel({ info, color, condensed, partial }: PixelLabelProps) {
   const label = computeLabel(info, color, condensed)
+  const strings = computeStrings(color, partial)
 
   return (
     <span
@@ -38,13 +59,13 @@ export function PixelLabel({ info, color, condensed }: PixelLabelProps) {
     >
       <span
         className="block aspect-square w-4 shrink-0 rounded-xs border border-zinc-500/25"
-        style={{ backgroundColor: hex }}
+        style={{ backgroundColor: strings.hex }}
       />
 
       <span className="grow">{label}</span>
 
       <code className="text-black! select-text">
-        {hex}
+        {strings.display}
       </code>
     </span>
   )

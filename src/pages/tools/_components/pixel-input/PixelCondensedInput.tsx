@@ -34,7 +34,7 @@ export function PixelCondensedInput({ pixel }: PixelInputProps) {
       multiple
       onValueChange={({ items }) => items.length <= 3 && pixel.atom.set(computeColor(items))}
       renderValue={items => <PixelLabel info={pixel.info} color={computeColor(items)} condensed />}
-      renderItem={item => <PixelLabel info={pixel.info} color={item.color} />}
+      renderItem={item => <PixelLabel info={pixel.info} color={item.color} partial />}
     />
   )
 }
