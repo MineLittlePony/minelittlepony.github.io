@@ -13,25 +13,12 @@ export default antfu({
     'style/brace-style': ['error', '1tbs'],
     'style/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
   },
-  isInEditor: false,
   ignores: ['src/**/*.gen.*'],
 })
-  .override('antfu/formatter/astro', {
-    languageOptions: {
-      // fix overriding astro parser with plain parser
-      parser: undefined,
-    },
-  })
-  .override('antfu/formatter/astro', {
-    languageOptions: {
-      // fix overriding astro parser with plain parser
-      parser: undefined,
-    },
-  })
-  .override('antfu/formatter/astro/disables', {
+  .override('antfu/react/rules', {
     rules: {
-      // fix conflicts with formatter
-      'style/multiline-ternary': 'off',
+    // workaround for https://github.com/antfu/eslint-config/issues/811
+      'react/no-implicit-key': ['off'],
     },
   })
   .append({
