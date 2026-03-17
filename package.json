@@ -34,7 +34,7 @@
     "swiper": "^12.1.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^6.7.3",
+    "@antfu/eslint-config": "^7.0.0",
     "@astrojs/check": "^0.9.8",
     "@astrojs/mdx": "^4.3.14",
     "@astrojs/react": "^4.4.2",
