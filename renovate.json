@@ -1,4 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":maintainLockFilesMonthly"]
+  "extends": [
+    "config:recommended",
+    "config:js-app",
+    "config:semverAllMonthly",
+    ":configMigration"
+  ]
 }
