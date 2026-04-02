@@ -108,6 +108,9 @@ importers:
       eslint-plugin-format:
         specifier: ^2.0.0
         version: 2.0.1(eslint@10.0.3(jiti@2.6.1))
+      eslint-plugin-react-refresh:
+        specifier: ^0.5.2
+        version: 0.5.2(eslint@10.0.3(jiti@2.6.1))
       openapi-typescript:
         specifier: ^7.13.0
         version: 7.13.0(typescript@5.9.3)
@@ -7023,7 +7026,6 @@ snapshots:
   eslint-plugin-react-refresh@0.5.2(eslint@10.0.3(jiti@2.6.1)):
     dependencies:
       eslint: 10.0.3(jiti@2.6.1)
-    optional: true
 
   eslint-plugin-react-rsc@3.0.0(eslint@10.0.3(jiti@2.6.1))(typescript@5.9.3):
     dependencies:
