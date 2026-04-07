@@ -4,9 +4,15 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "moduleResolution": "bundler",
+    "noUncheckedSideEffectImports": false,
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["./src", "./*.{ts,js,cjs,mjs}"]
+  "include": [
+    "./src",
+    "./*.{ts,js,cjs,mjs}"
+  ]
 }
