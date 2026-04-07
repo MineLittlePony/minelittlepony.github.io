@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.32.1",
+  "packageManager": "pnpm@10.33.0",
   "description": "Source code of official Mine Little pony Minecraft mod website",
   "imports": {
     "#tailwind.css": "./src/styles/index.css"
