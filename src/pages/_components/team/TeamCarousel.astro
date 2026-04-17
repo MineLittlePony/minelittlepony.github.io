@@ -1,0 +1,40 @@
+---
+import { TeamMembers } from '~/data/team/team'
+import { TeamCard } from './TeamCard'
+import { Swiper, SwiperWrapper, SwiperSlide } from 'astro-swiper';
+---
+<Swiper
+  class="py-6!"
+  options={{
+     slidesPerView: 1.25,
+     spaceBetween: 16,
+     freeMode: true,
+     breakpoints: {
+       420: {
+         slidesOffsetAfter: 24,
+         slidesOffsetBefore: 24,
+         slidesPerView: 1.75,
+       },
+       640: {
+         slidesOffsetAfter: 24,
+         slidesOffsetBefore: 24,
+         slidesPerView: 2.75,
+       },
+       1024: {
+         slidesOffsetAfter: 24,
+         slidesOffsetBefore: 24,
+         slidesPerView: 3.75,
+        },
+      },
+      slidesOffsetAfter: 16,
+      slidesOffsetBefore: 16,
+  }}
+>
+  <SwiperWrapper>
+    {TeamMembers.map(member => (
+      <SwiperSlide class="h-auto!">
+        <TeamCard {...member} client:load/>
+      </SwiperSlide>
+    ))}
+  </SwiperWrapper>
+</Swiper>

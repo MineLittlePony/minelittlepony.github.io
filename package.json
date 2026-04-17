@@ -22,6 +22,7 @@
     "@atomous/react": "^0.1.2",
     "@fortawesome/fontawesome-free": "^7.2.0",
     "astro-seo-metadata": "^0.6.0",
+    "astro-swiper": "^2.5.1",
     "atomous": "^0.3.0",
     "clsx": "^2.1.1",
     "file-saver": "^2.0.5",
@@ -30,8 +31,7 @@
     "radashi": "^12.7.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-dropzone": "^15.0.0",
-    "swiper": "^12.1.2"
+    "react-dropzone": "^15.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^8.0.0",

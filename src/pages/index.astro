@@ -5,7 +5,7 @@ import RootLayout from '~/layouts/root/RootLayout.astro'
 import ExtraCard from './_components/ExtraCard.astro'
 import FeatureCard from './_components/FeatureCard.astro'
 import Hero from './_components/hero/Hero.astro'
-import { TeamCarousel } from './_components/team/TeamCarousel'
+import TeamCarousel from './_components/team/TeamCarousel.astro'
 ---
 
 <RootLayout title="Home" applyContentStyles={false}>
@@ -24,7 +24,7 @@ import { TeamCarousel } from './_components/team/TeamCarousel'
   <h2 class="mt-8 mb-6 px-4 text-center sm:px-6">Team</h2>
 
   <!-- Team cards -->
-  <TeamCarousel client:load />
+  <TeamCarousel />
 
   <!-- Additional downloads -->
   <h2 class="mt-2 mb-6 px-4 text-center sm:px-6">Additional downloads for better experience</h2>
