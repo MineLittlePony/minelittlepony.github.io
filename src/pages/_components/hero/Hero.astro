@@ -3,7 +3,6 @@ import { Image } from 'astro:assets'
 import Links from '~/data/links.json'
 import { DownloadsIsland } from '../downloads/DownloadsIsland'
 import BANNER from './assets/banner.png'
-import DISCORD_LOGO from './assets/discord.svg'
 import classes from './Hero.module.css'
 import HeroIconLink from './HeroIconLink.astro'
 ---
@@ -38,9 +37,10 @@ import HeroIconLink from './HeroIconLink.astro'
         <HeroIconLink href={Links.githubOrganization} title="Team page on GitHub" icon="fab fa-github" />
 
         {/* Discord */}
-        <HeroIconLink href={Links.discordInvite} title="Join our Discord server">
-          <Image class="h-8 w-auto" src={DISCORD_LOGO} alt="Discord logo" />
-        </HeroIconLink>
+        <HeroIconLink href={Links.discordInvite} title="Join our Discord server" icon="fab fa-discord" />
+
+        {/* Matrix */}
+        <HeroIconLink href={Links.matrixRoom} title="Join our Matrix room" icon="fas fa-comments" />
       </div>
     </div>
 
