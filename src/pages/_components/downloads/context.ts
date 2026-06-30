@@ -26,7 +26,7 @@ const ids = JSON.stringify(unique(Downloads.groups.map((group) => {
   return group.items.map(item => item.id)
 }).flat()))
 
-export const $context = loadable(computed(async (get, signal) => {
+export const $context = loadable(computed(async (_get, signal) => {
   const { data } = await getProjects({ ids }, { signal })
 
   const projectsDict = objectify(data, project => project.id)

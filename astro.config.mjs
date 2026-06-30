@@ -1,3 +1,4 @@
+import { unified } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
@@ -43,13 +44,16 @@ export default defineConfig({
   site: 'https://minelittlepony-mod.com/',
   trailingSlash: 'always',
   markdown: {
-    remarkPlugins: [setLayout, remarkSmartypants],
-    rehypePlugins: [
-      rehypeSlug,
-      [rehypeWrap, wrapOptions],
-      [rehypeToc, tocOptions],
-      [rehypeAutolink, autolinkOptions],
-    ],
+    processor: unified({
+      remarkPlugins: [setLayout, remarkSmartypants],
+      rehypePlugins: [
+        rehypeSlug,
+        [rehypeWrap, wrapOptions],
+        [rehypeToc, tocOptions],
+        [rehypeAutolink, autolinkOptions],
+      ],
+    }),
+
   },
   integrations: [
     mdx(),

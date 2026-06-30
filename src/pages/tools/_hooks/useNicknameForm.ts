@@ -1,4 +1,4 @@
-import type { FormEvent } from 'react'
+import type { SubmitEvent } from 'react'
 import { useRef } from 'react'
 import { fetchSkin } from '~/utils/skin/fetchSkin'
 import { $file } from '../_context'
@@ -6,7 +6,7 @@ import { $file } from '../_context'
 export function useNicknameForm() {
   const inputRef = useRef<HTMLInputElement>(null)
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: SubmitEvent<HTMLFormElement>) {
     e.preventDefault()
 
     const nickname = inputRef.current?.value
