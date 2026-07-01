@@ -62,7 +62,7 @@
     "rehype-toc": "^3.0.2",
     "rehype-wrap": "^1.1.0",
     "remark-smartypants": "^3.0.2",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.0",
     "tailwindcss": "^4.3.2",
     "typescript": "^6.0.3"
   }
