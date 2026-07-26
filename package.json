@@ -25,6 +25,7 @@
     "atomous": "^0.3.0",
     "clsx": "^2.1.1",
     "file-saver": "^2.0.5",
+    "ofetch": "^1.5.1",
     "openapi-typescript-fetch": "^2.2.1",
     "pretty-bytes": "^7.1.1",
     "radashi": "^12.9.1",

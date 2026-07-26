@@ -29,6 +29,9 @@ importers:
       file-saver:
         specifier: ^2.0.5
         version: 2.0.5
+      ofetch:
+        specifier: ^1.5.1
+        version: 1.5.1
       openapi-typescript-fetch:
         specifier: ^2.2.1
         version: 2.2.1
