@@ -25,7 +25,7 @@ export async function fetchSkin(nickname: string): Promise<File> {
   const textures = await fetch<Textures>(SKINS_URL.replace('%s', nickname))
   const url = textures.textures?.skin?.url
   if (!url) {
-    throw new Error(`No skin found for name: \${nickname}`)
+    throw new Error(`No skin found for name: ${nickname}`)
   }
 
   const blob = await fetch(url, { responseType: 'blob' })
