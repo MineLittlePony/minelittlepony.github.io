@@ -1,18 +1,10 @@
 {
-  "extends": "@total-typescript/tsconfig/bundler/dom/app",
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "baseUrl": ".",
-    "moduleResolution": "bundler",
-    "noUncheckedSideEffectImports": false,
     "paths": {
       "~/*": [
         "./src/*"
       ]
     }
   },
-  "include": [
-    "./src",
-    "./*.{ts,js,cjs,mjs}"
-  ]
 }
