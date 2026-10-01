@@ -32,6 +32,7 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-dropzone": "^19.1.1",
+    "rehype-callouts": "^2.2.0",
     "swiper": "^14.0.6"
   },
   "devDependencies": {

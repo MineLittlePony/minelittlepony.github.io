@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 import rehypeAutolink from 'rehype-autolink-headings'
+import rehypeCallouts from 'rehype-callouts'
 import rehypeSlug from 'rehype-slug'
 import rehypeToc from 'rehype-toc'
 import rehypeWrap from 'rehype-wrap'
@@ -51,6 +52,7 @@ export default defineConfig({
         [rehypeWrap, wrapOptions],
         [rehypeToc, tocOptions],
         [rehypeAutolink, autolinkOptions],
+        rehypeCallouts,
       ],
     }),
 

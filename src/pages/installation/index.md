@@ -12,6 +12,14 @@ description: "A step-by-step guide on how to install Mine Little Pony mod for Va
 - [HD Skins](https://modrinth.com/mod/hd-skins) (optional) - adds an in-game interface to manage your skins. Also allows to use HD skins and to upload them to our server.
 - [Mine Little Pony](https://modrinth.com/mod/mine-little-pony) - the mod itself.
 
+> [!WARNING] Mod Incompatibilities
+> Some mods are incompatible. Be aware that installing them may effect functionality. 
+> 
+> The following table is not exaustive.
+> | Effected mod                      | Reason for incompatibility   | Potential fix   | 
+> | --------------------------------- | ---------------------------- | --------------- |
+> | [Essential](https://essential.gg) | Cosmetics override HD Skins. | Revoke TOS & PP. |
+
 ## Installing Fabric
 
 Once you’ve downloaded all the files, you need to install Fabric. Run the downloaded installer file, select the settings you want and click the “Install” button.
