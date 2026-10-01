@@ -13,11 +13,12 @@ description: "A step-by-step guide on how to install Mine Little Pony mod for Va
 - [Mine Little Pony](https://modrinth.com/mod/mine-little-pony) - the mod itself.
 
 > [!WARNING] Mod Incompatibilities
-> Some mods are incompatible. Be aware that installing them may effect functionality. 
-> 
+> Some mods are incompatible. Be aware that installing them may effect functionality.
+>
 > The following table is not exaustive.
-> | Effected mod                      | Reason for incompatibility   | Potential fix   | 
-> | --------------------------------- | ---------------------------- | --------------- |
+>
+> | Effected mod                      | Reason for incompatibility   | Potential fix    |
+> | --------------------------------- | ---------------------------- | ---------------- |
 > | [Essential](https://essential.gg) | Cosmetics override HD Skins. | Revoke TOS & PP. |
 
 ## Installing Fabric
