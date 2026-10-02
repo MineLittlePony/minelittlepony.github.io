@@ -15,7 +15,9 @@ const transparentHint = info.options.length > 1 ? 'Transparent' : 'Any color'
     <span>{info.name}</span>
 
     <span class="whitespace-nowrap">
-      <code class="text-base" title="Pixel type">{info.type}</code>
+      <code class="text-base" title="Pixel type">
+        {info.type}
+      </code>
 
       <code class="text-base" title="Pixel coordinates">
         x: {info.x}, y: {info.y}
@@ -33,29 +35,27 @@ const transparentHint = info.options.length > 1 ? 'Transparent' : 'Any color'
     </thead>
 
     <tbody>
-      {
-        info.options.map((item) => {
-          const strings = color2strings(item.color, info.type === 'CONDENSED')
-          const isTransparent = !item.color
+      {info.options.map((item) => {
+        const strings = color2strings(item.color, info.type === 'CONDENSED')
+        const isTransparent = !item.color
 
-          return (
-            <tr>
-              <td>
-                <div
-                  class:list={['size-4 rounded-full border border-zinc-500/50', isTransparent && 'bg-checker-3']}
-                  style={{ backgroundColor: strings.hex }}
-                />
-              </td>
+        return (
+          <tr>
+            <td>
+              <div
+                class:list={['size-4 rounded-full border border-zinc-500/50', isTransparent && 'bg-checker-3']}
+                style={{ backgroundColor: strings.hex }}
+              />
+            </td>
 
-              <td>
-                <code title={isTransparent ? transparentHint : undefined}>{strings.display}</code>
-              </td>
+            <td>
+              <code title={isTransparent ? transparentHint : undefined}>{strings.display}</code>
+            </td>
 
-              <td>{item.label}</td>
-            </tr>
-          )
-        })
-      }
+            <td>{item.label}</td>
+          </tr>
+        )
+      })}
     </tbody>
   </table>
 </div>

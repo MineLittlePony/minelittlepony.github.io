@@ -17,7 +17,9 @@ import { TeamCarousel } from './_components/team/TeamCarousel'
 
     <!-- Feature cards -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {Features.map((feature) => <FeatureCard {...feature} />)}
+      {Features.map((feature) => (
+        <FeatureCard {...feature} />
+      ))}
     </div>
   </div>
 
@@ -31,7 +33,9 @@ import { TeamCarousel } from './_components/team/TeamCarousel'
 
   <!-- Extras cards -->
   <div class="mb-6 flex flex-wrap items-center justify-center gap-6 px-4 sm:px-6">
-    {Extras.map((extra) => <ExtraCard {...extra} />)}
+    {Extras.map((extra) => (
+      <ExtraCard {...extra} />
+    ))}
   </div>
 </RootLayout>
 
