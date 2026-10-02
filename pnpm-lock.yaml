@@ -296,9 +296,6 @@ importers:
       satteri-slug:
         specifier: ^0.1.1
         version: 0.1.1(satteri@0.10.5)
-      satteri-toc:
-        specifier: ^1.0.1
-        version: 1.0.1(satteri@0.10.5)
       sharp:
         specifier: ^0.35.5
         version: 0.35.5(@types/node@26.6.3)
@@ -4013,11 +4010,6 @@ packages:
     engines: {node: '>=20'}
     peerDependencies:
       satteri: ^0.9.5
-
-  satteri-toc@1.0.1:
-    resolution: {integrity: sha512-ZkzwQCCgXgsBP0oAWhqroZr4OpO4oOPuBXkFNsyphajM2CWLtpVNVPokBRLxN/KdKQ8qOUqJf40GcpZnRl+Rhg==}
-    peerDependencies:
-      satteri: ^0.10.5
 
   satteri@0.10.5:
     resolution: {integrity: sha512-Ao1LKpAEa9Wdg0otgbVKViZHEq9ebdXe4DMrp3s9vQAU0HNIuHnFEuMuOcm0ZIXyV0Yzxj91NvhLpvXZJO/5ZQ==}
@@ -9252,11 +9244,6 @@ snapshots:
       satteri: 0.10.5
 
   satteri-slug@0.1.1(satteri@0.10.5):
-    dependencies:
-      github-slugger: 2.0.0
-      satteri: 0.10.5
-
-  satteri-toc@1.0.1(satteri@0.10.5):
     dependencies:
       github-slugger: 2.0.0
       satteri: 0.10.5
