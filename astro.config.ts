@@ -47,11 +47,7 @@ export default defineConfig({
   },
   integrations: [
     mdx(),
-    react({
-      babel: {
-        plugins: ['babel-plugin-react-compiler'],
-      },
-    }),
+    react(),
     sitemap(),
   ],
   vite: {
