@@ -2,6 +2,8 @@
 
 @import 'tailwindcss';
 
+@import 'satteri-callouts/theme/docusaurus';
+
 @theme {
   --font-sans: Roboto;
   --font-serif: Roboto Slab;
