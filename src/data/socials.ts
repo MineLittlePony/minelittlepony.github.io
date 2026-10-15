@@ -1,8 +1,6 @@
-import type { FontAwesomeIcon } from '~/utils/types'
-
 export interface SocialLink<ID extends string = string> {
   id: ID
-  icon: FontAwesomeIcon
+  icon: string
   title: string
   url?: ((handle: string) => string) | string
 }
@@ -16,30 +14,30 @@ export type SocialLinkID = typeof SocialLinks[number]['id']
 export const SocialLinks = declareSocialLinks([
   {
     id: 'minecraft',
-    icon: 'fas fa-gamepad',
+    icon: 'icon-[fa7-solid--gamepad]',
     title: 'Minecraft nickname',
   },
   {
     id: 'email',
-    icon: 'fas fa-envelope',
+    icon: 'icon-[fa7-solid--envelope]',
     title: 'E-Mail',
     url: 'mailto:%s',
   },
   {
     id: 'github',
-    icon: 'fab fa-github',
+    icon: 'icon-[fa7-brands--github]',
     title: 'GitHub',
     url: 'https://github.com/%s',
   },
   {
     id: 'twitter',
-    icon: 'fab fa-x-twitter',
+    icon: 'icon-[fa7-brands--x-twitter]',
     title: 'X (Twitter)',
     url: 'https://x.com/%s',
   },
   {
     id: 'mastodon',
-    icon: 'fab fa-mastodon',
+    icon: 'icon-[fa7-brands--mastodon]',
     title: 'Mastodon',
     url(handle) {
       const [, name, instance] = handle.split('@')
@@ -48,18 +46,18 @@ export const SocialLinks = declareSocialLinks([
   },
   {
     id: 'vk',
-    icon: 'fab fa-vk',
+    icon: 'icon-[fa7-brands--vk]',
     title: 'VK',
     url: 'https://vk.com/%s',
   },
   {
     id: 'discord',
-    icon: 'fab fa-discord',
+    icon: 'icon-[fa7-brands--discord]',
     title: 'Discord tag',
   },
   {
     id: 'bluesky',
-    icon: 'fab fa-bluesky',
+    icon: 'icon-[fa7-brands--bluesky]',
     title: 'Bluesky Profile',
     url: 'https://bsky.app/profile/%s',
   },

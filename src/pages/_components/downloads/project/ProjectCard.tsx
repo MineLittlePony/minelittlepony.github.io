@@ -35,7 +35,7 @@ export function ProjectCard({ gameVersion, projectId, name, project, versionsAto
                 {name}
               </a>
 
-              <i className="fas fa-arrow-up-right-from-square fa-xs opacity-50" />
+              <i className="icon-[fa7-solid--arrow-up-right-from-square] text-xs opacity-50" />
             </div>
 
             {project.source_url && (
@@ -45,7 +45,7 @@ export function ProjectCard({ gameVersion, projectId, name, project, versionsAto
                 title="Source code"
               >
                 <span className="sr-only">Go to source code</span>
-                <i className="fas fa-code" />
+                <i className="icon-[fa7-solid--code]" />
               </a>
             )}
           </div>

@@ -38,7 +38,7 @@ export function ColorPicker({ label, ...props }: ColorPickerProps) {
           </ColorPickerView>
 
           <ColorPickerEyeDropperTrigger className="btn flex items-center justify-center gap-2">
-            <i className="fas fa-eye-dropper fa-sm" />
+            <i className="icon-[fa7-solid--eye-dropper] text-sm" />
             <span>Pick color</span>
           </ColorPickerEyeDropperTrigger>
         </ColorPickerContent>

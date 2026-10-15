@@ -16,18 +16,18 @@ export function NumberInput({ label, ...props }: NumberInputProps) {
 
       <div className="flex">
         <NumberInputScrubber className="flex w-4 items-center justify-center surface rounded-r-none bg-zinc-100 text-zinc-400">
-          <i className="fas fa-grip-lines-vertical" />
+          <i className="icon-[fa7-solid--grip-lines-vertical]" />
         </NumberInputScrubber>
 
         <NumberInputInput className="input z-1 grow rounded-none px-2" />
 
         <NumberInputControl className="grid h-input w-6 grid-rows-2 text-zinc-400">
           <NumberInputIncrementTrigger className={clsx(triggerClassName, 'rounded-b-none')}>
-            <i className="fas fa-angle-up fa-xs" />
+            <i className="icon-[fa7-solid--angle-up] text-xs" />
           </NumberInputIncrementTrigger>
 
           <NumberInputDecrementTrigger className={clsx(triggerClassName, 'rounded-t-none')}>
-            <i className="fas fa-angle-down fa-xs" />
+            <i className="icon-[fa7-solid--angle-down] text-xs" />
           </NumberInputDecrementTrigger>
         </NumberInputControl>
       </div>

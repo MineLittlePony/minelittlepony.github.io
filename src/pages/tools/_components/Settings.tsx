@@ -42,19 +42,19 @@ export function Settings({ requestFile }: SettingsProps) {
           />
 
           <button className="btn" type="submit">
-            <i className="fas fa-search" />
+            <i className="icon-[fa7-solid--search]" />
           </button>
 
           <button className="btn" type="button" onClick={requestFile}>
-            <i className="fas fa-folder-open" />
+            <i className="icon-[fa7-solid--folder-open]" />
           </button>
 
           <button className="btn" type="button" onClick={saveFile}>
-            <i className="fas fa-floppy-disk" />
+            <i className="icon-[fa7-solid--floppy-disk]" />
           </button>
 
           <button className="btn" type="button" onClick={reloadContext}>
-            <i className="fas fa-rotate-right" />
+            <i className="icon-[fa7-solid--rotate-right]" />
           </button>
         </form>
 

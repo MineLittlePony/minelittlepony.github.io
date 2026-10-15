@@ -26,7 +26,7 @@ export function ToolsDropzone() {
         />
 
         <button type="submit" className="btn">
-          <i className="fas fa-search" />
+          <i className="icon-[fa7-solid--search]" />
         </button>
       </form>
 

@@ -11,7 +11,7 @@ export function ProjectIcon({ url, alt }: ProjectIconProps) {
   return (
     <AvatarRoot className="size-12 overflow-hidden rounded-sm">
       <AvatarFallback className="flex size-full items-center justify-center bg-zinc-600/50 text-zinc-400">
-        <i className={clsx('fas fa-xl', url ? 'fa-spinner fa-spin-pulse' : 'fa-box')} />
+        <i className={clsx('text-xl', url ? 'icon-[fa7-solid--spinner] animate-spin' : 'icon-[fa7-solid--box]')} />
       </AvatarFallback>
 
       <AvatarImage src={url ?? undefined} alt={alt} className="size-full object-contain" />

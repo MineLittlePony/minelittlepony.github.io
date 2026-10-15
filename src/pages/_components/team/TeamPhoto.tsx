@@ -23,7 +23,7 @@ export function TeamPhoto({ avatar, contacts, name }: TeamMember) {
 
   return (
     <div className={clsx(photoClassName, 'flex items-center justify-center bg-zinc-200 text-white')}>
-      <i className="fas fa-user fa-2xl" />
+      <i className="icon-[fa7-solid--user] text-2xl" />
     </div>
   )
 }

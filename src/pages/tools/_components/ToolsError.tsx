@@ -10,7 +10,7 @@ export function ToolsError() {
 
   return (
     <div className="flex items-center gap-2 font-bold text-red-500">
-      <i className="fas fa-triangle-exclamation" />
+      <i className="icon-[fa7-solid--triangle-exclamation]" />
       <span>{message}</span>
     </div>
   )

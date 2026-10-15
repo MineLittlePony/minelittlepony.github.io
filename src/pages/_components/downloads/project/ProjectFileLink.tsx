@@ -19,7 +19,7 @@ export function ProjectFileLink({ version }: ProjectFileLinkProps) {
   if (!file) {
     return (
       <span className={rootClassName} title={NO_FILE_MESSAGE}>
-        <i className="fas fa-ban fa-xl" />
+        <i className="icon-[fa7-solid--ban] text-xl" />
         <span>{NO_FILE_MESSAGE}</span>
       </span>
     )
@@ -30,7 +30,7 @@ export function ProjectFileLink({ version }: ProjectFileLinkProps) {
 
   return (
     <a href={file.url} title={label} className={linkClassName}>
-      <i className="fas fa-download fa-xl" />
+      <i className="icon-[fa7-solid--download] text-xl" />
       <span className="sm:sr-only">{label}</span>
     </a>
   )

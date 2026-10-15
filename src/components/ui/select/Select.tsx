@@ -21,7 +21,7 @@ export function Select<T>({ label, placeholder, positioning, renderValue, render
           <SelectValueDisplay placeholder={placeholder} render={renderValue} className="grow" />
 
           <SelectIndicator>
-            <i className="fas fa-chevron-down" />
+            <i className="icon-[fa7-solid--chevron-down]" />
           </SelectIndicator>
         </SelectTrigger>
       </SelectControl>
