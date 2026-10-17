@@ -15,12 +15,6 @@ export default antfu({
   },
   ignores: ['src/**/*.gen.*'],
 })
-  .override('antfu/react/rules', {
-    rules: {
-    // workaround for https://github.com/antfu/eslint-config/issues/811
-      'react/no-implicit-key': ['off'],
-    },
-  })
   .append({
     plugins: {
       'better-tailwindcss': tailwindcss,
