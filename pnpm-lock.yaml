@@ -286,7 +286,7 @@ importers:
         version: 2.0.0
       node:
         specifier: runtime:^24.22.0
-        version: runtime:24.22.0
+        version: runtime:24.22.2
       openapi-typescript:
         specifier: ^7.13.0
         version: 7.13.0(typescript@6.0.3)
@@ -294,17 +294,17 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(prettier@3.9.9)
       satteri:
-        specifier: ^0.10.5
-        version: 0.10.5
+        specifier: ^0.11.0
+        version: 0.11.6
       satteri-autolink-headings:
         specifier: ^0.1.1
-        version: 0.1.1(satteri@0.10.5)
+        version: 0.1.1(satteri@0.11.6)
       satteri-callouts:
         specifier: ^1.0.1
-        version: 1.0.1(satteri@0.10.5)
+        version: 1.0.1(satteri@0.11.6)
       satteri-slug:
         specifier: ^0.1.1
-        version: 0.1.1(satteri@0.10.5)
+        version: 0.1.1(satteri@0.11.6)
       sharp:
         specifier: ^0.35.5
         version: 0.35.5(@types/node@26.6.3)
@@ -628,8 +628,18 @@ packages:
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
+  '@bruits/satteri-android-arm64@0.11.6':
+    resolution: {integrity: sha512-9Cb6ZRDn29c0kluGA9urp/So/JnJOJJSf4J40xYLAIAj3GuqTNsCyquS4A1/yLuuHE2ngYJNnCylAQnDM3L9ow==}
+    cpu: [arm64]
+    os: [android]
+
   '@bruits/satteri-darwin-arm64@0.10.5':
     resolution: {integrity: sha512-27KTVl4TJkVahMy/ohyA7qd4938G5UNneFUz/PsScYfpIhj0IVAS23mpcJXdPF44sa6nva198lmV/cKIb2YPyA==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@bruits/satteri-darwin-arm64@0.11.6':
+    resolution: {integrity: sha512-kcr7QOPGrckuyhMZmUKYcyoXgjQN4vJ/6tCWHE2866mztZPNrTuy5itTwSAbIs1tK0XpTW42tBQ+XPNnkg0XIg==}
     cpu: [arm64]
     os: [darwin]
 
@@ -638,8 +648,24 @@ packages:
     cpu: [x64]
     os: [darwin]
 
+  '@bruits/satteri-darwin-x64@0.11.6':
+    resolution: {integrity: sha512-nwh4Atd/Cxw2SNS6+Gs0Esf/w2i4qyHzwcECaTgoFyxse3m0dpBpu8eqkqqIPfBc1lWhfe4i9LXuk7rG+4pwQw==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@bruits/satteri-freebsd-x64@0.11.6':
+    resolution: {integrity: sha512-qMkNZRYN3cLshfYawQYjfDS05A208QCOVh1adtEteYH+03MkuOoVVhYkzDRIKhWdfM3gFFEaUjXDOGfVqGjEJg==}
+    cpu: [x64]
+    os: [freebsd]
+
   '@bruits/satteri-linux-arm64-gnu@0.10.5':
     resolution: {integrity: sha512-glkYXZCJywjP13v67eAyAMSJdF+ncvEbYvgi/wOtffL9tQ27lr/zsyzUfgs+ovjJ9d8JNQKiXeiArJcX8PJL9w==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@bruits/satteri-linux-arm64-gnu@0.11.6':
+    resolution: {integrity: sha512-A7cHeCZQkvF3oTgQ6/5LvVriauE1dHo3u3gAME6H1X/+KMeum5Wras3Y7rYUcvPym1CxdmzjZh9WlYD62Ul1xg==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
@@ -650,8 +676,20 @@ packages:
     os: [linux]
     libc: [musl]
 
+  '@bruits/satteri-linux-arm64-musl@0.11.6':
+    resolution: {integrity: sha512-P/YAudp6VmUr63SFaZefwPIefsw92oZ1wQ6vqrtO/GY9qB3OxLqUVjSIcnKAtqMp4kDW8xBEdSwHz4GZU7P2+g==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
   '@bruits/satteri-linux-x64-gnu@0.10.5':
     resolution: {integrity: sha512-FVaLoPT1fBgGl0J+AYebyyXJYBachGl8Oyyrf1lye4RTqCB4S0Gwkj1uM9RJyThUOvx5VUmAT1CnNh1SFHA+kw==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@bruits/satteri-linux-x64-gnu@0.11.6':
+    resolution: {integrity: sha512-nhj90eZFLSA+Icd6n+oYpAi/UXr/mppLGd8jdEOB/larvWAZ/ewFxpT7CLzuNCg7r75+gkdHv9JuRb5eERY1Kg==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
@@ -662,8 +700,19 @@ packages:
     os: [linux]
     libc: [musl]
 
+  '@bruits/satteri-linux-x64-musl@0.11.6':
+    resolution: {integrity: sha512-mkWxwHd5Q2dDs+OZK/P1tZFvSPrh2Bb69utWHcBNM0wyJCRWd61T4jU1tF21lGL1C5dy7P+LvaT0y6PQDJj89Q==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
   '@bruits/satteri-wasm32-wasi@0.10.5':
     resolution: {integrity: sha512-ypz8c/Zmipxp4IoeDa228Gstv6TLzVmNs3yC6wKCoNSOjx1iwpgzu87Y3hTkXFdwChVGU85qeUDuOIarGUZQLw==}
+    engines: {node: '>=14.0.0'}
+    cpu: [wasm32]
+
+  '@bruits/satteri-wasm32-wasi@0.11.6':
+    resolution: {integrity: sha512-GrjNThC6BfA0u8LZwGpOeEFVKoJZsriowLtj/rBYj18fW7/UZouyzn/0Tsxg+tMaxMUgC9HFA078EmfAsdVONg==}
     engines: {node: '>=14.0.0'}
     cpu: [wasm32]
 
@@ -672,8 +721,18 @@ packages:
     cpu: [arm64]
     os: [win32]
 
+  '@bruits/satteri-win32-arm64-msvc@0.11.6':
+    resolution: {integrity: sha512-Plesa0QYtJoa3nlObg1Ypj9oD1VOioHMldHUUtG61T/JNU11EcN0pyj0tDsT3DW2pAxKrV0Q8xrfzGtBHuSjfg==}
+    cpu: [arm64]
+    os: [win32]
+
   '@bruits/satteri-win32-x64-msvc@0.10.5':
     resolution: {integrity: sha512-C3IfPvfvMXmlzBxaMPKFS1XiuV9pu2mC7YqkPk7PSvTgPZ8gbdASIpHpztDLvTTQjqZ0z1Ol8tK5X+V6XXC0wQ==}
+    cpu: [x64]
+    os: [win32]
+
+  '@bruits/satteri-win32-x64-msvc@0.11.6':
+    resolution: {integrity: sha512-fGs5d/7jBIPkYmXkhm9unoEfDuRZ5r66NLxbr+6c8bm0f7ywgPHgW3HJ9L7fKvyqhw49ePtbT4vkWREju8/U6w==}
     cpu: [x64]
     os: [win32]
 
@@ -1309,6 +1368,13 @@ packages:
     peerDependencies:
       '@emnapi/core': ^1.7.1 || ^2.0.0-alpha.4
       '@emnapi/runtime': ^1.7.1 || ^2.0.0-alpha.4
+
+  '@napi-rs/wasm-runtime@1.2.6':
+    resolution: {integrity: sha512-mRyDmEw9/fCDXCGfL1sbgIw/GUK0PVxRW4YwgPN61F3LQ+fSyoBFarJVzgGyhF6kRzEQZ0FejDqm4WLXSeqQmw==}
+    engines: {node: ^20.19.0 || ^22.13.0 || >=23.5.0}
+    peerDependencies:
+      '@emnapi/core': ^1.7.1 || 2.0.0-beta.2
+      '@emnapi/runtime': ^1.7.1 || 2.0.0-beta.2
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -3686,7 +3752,7 @@ packages:
     resolution: {integrity: sha512-kQK9LGGFiHtrWiNhZtA7Qbw17AQz+dmsEKODRIVTXA9+e5MS/2gZEBhYJt13GrAz5/IOZKddH/0Z3TP/Zgo+yw==}
     engines: {node: '>=18'}
 
-  node@runtime:24.22.0:
+  node@runtime:24.22.2:
     resolution:
       type: variations
       variants:
@@ -3694,9 +3760,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-y7HWJfv6YbI/1KlJ6kHJsIu3kF+8dUA7sR1LzKc6VWY=
+            integrity: sha256-s9D3zDDSjkR0j4TdskyXqHNZJ0QPrv/JbjRFSRQWenk=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.0/node-v24.22.0-aix-ppc64.tar.gz
+            url: https://nodejs.org/download/release/v24.22.2/node-v24.22.2-aix-ppc64.tar.gz
           targets:
             - cpu: ppc64
               os: aix
@@ -3704,9 +3770,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-apck2bUKXyK0gWze1EG1qNndrlRhkaXlt++lpeLuJtU=
+            integrity: sha256-qpVJNJ5H3/qkLc+V1uBq3oxL2vyYCXmIO4h2dnDfOFo=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.0/node-v24.22.0-darwin-arm64.tar.gz
+            url: https://nodejs.org/download/release/v24.22.2/node-v24.22.2-darwin-arm64.tar.gz
           targets:
             - cpu: arm64
               os: darwin
@@ -3714,9 +3780,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-SV4/JzxkXzxGd9Q4MEzfxwFynqXexXKPXI52ot7OS5E=
+            integrity: sha256-1eM21YjEW+DDfb1SzCmJVZMAnKSZeneh/QKBUTHtDlI=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.0/node-v24.22.0-darwin-x64.tar.gz
+            url: https://nodejs.org/download/release/v24.22.2/node-v24.22.2-darwin-x64.tar.gz
           targets:
             - cpu: x64
               os: darwin
@@ -3724,9 +3790,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-t+eZHVQHgVrfp0oqnNTbaDVSyM4y/0opXCLpcoScP10=
+            integrity: sha256-lcJkFQrOt/NDein9aYSST1+NFRHqPL1sUIuD9sVV2uI=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.0/node-v24.22.0-linux-arm64.tar.gz
+            url: https://nodejs.org/download/release/v24.22.2/node-v24.22.2-linux-arm64.tar.gz
           targets:
             - cpu: arm64
               os: linux
@@ -3734,9 +3800,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-jLp7v2iam1imXlgRFG6o0B5J0H5x97hGLk9v/NfS5/0=
+            integrity: sha256-9WQOG2VrZ/YA44z5xfJ460KMlJiZT1ykHWQG+6BgqfM=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.0/node-v24.22.0-linux-ppc64le.tar.gz
+            url: https://nodejs.org/download/release/v24.22.2/node-v24.22.2-linux-ppc64le.tar.gz
           targets:
             - cpu: ppc64le
               os: linux
@@ -3744,9 +3810,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-WQFxj1Uf+qduJQny1hLVvhb6ic3fvi1gEyXBDify0rY=
+            integrity: sha256-Nyhvy37wtDG3X/nc7VF/1zstSg6cRgJC1Ml5i4ubQkc=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.0/node-v24.22.0-linux-s390x.tar.gz
+            url: https://nodejs.org/download/release/v24.22.2/node-v24.22.2-linux-s390x.tar.gz
           targets:
             - cpu: s390x
               os: linux
@@ -3754,9 +3820,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-qVoPryjW98STA28FWdbTK3uMeaoG5BWxJ4L5aUaERIQ=
+            integrity: sha256-EevRbI14GcBnUhEiVQUnPXrqMFqN2FqcCusfvsI0MyA=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.0/node-v24.22.0-linux-x64-musl.tar.gz
+            url: https://nodejs.org/download/release/v24.22.2/node-v24.22.2-linux-x64-musl.tar.gz
           targets:
             - cpu: x64
               os: linux
@@ -3765,9 +3831,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-KOoKQ43poTvXiR/XWO7mx4Ge6K9UQt/Y1FvWXlbUIow=
+            integrity: sha256-NhcYxETkmvLKWhEMg7pqiQEUPyOrKF677wNB85H0gqk=
             type: binary
-            url: https://nodejs.org/download/release/v24.22.0/node-v24.22.0-linux-x64.tar.gz
+            url: https://nodejs.org/download/release/v24.22.2/node-v24.22.2-linux-x64.tar.gz
           targets:
             - cpu: x64
               os: linux
@@ -3775,10 +3841,10 @@ packages:
             archive: zip
             bin:
               node: node.exe
-            integrity: sha256-OlwgmlvFnmWzvA+hPtXhZqJr09VTMoR/SYt2sDdAjWE=
-            prefix: node-v24.22.0-win-arm64
+            integrity: sha256-9HlowhMQUHf2TGUQ8AdjLAyiV0gCoLUGfDJ8SavhxGg=
+            prefix: node-v24.22.2-win-arm64
             type: binary
-            url: https://nodejs.org/download/release/v24.22.0/node-v24.22.0-win-arm64.zip
+            url: https://nodejs.org/download/release/v24.22.2/node-v24.22.2-win-arm64.zip
           targets:
             - cpu: arm64
               os: win32
@@ -3786,10 +3852,10 @@ packages:
             archive: zip
             bin:
               node: node.exe
-            integrity: sha256-+Wg6GYd+EqmxZzBcjbcQQNgSh2NZ3iHw0ul8PzIfgMM=
-            prefix: node-v24.22.0-win-x64
+            integrity: sha256-yhv/XY6tE8ny6kBKF220a9QwcE1bURNzQEn6Nl53meI=
+            prefix: node-v24.22.2-win-x64
             type: binary
-            url: https://nodejs.org/download/release/v24.22.0/node-v24.22.0-win-x64.zip
+            url: https://nodejs.org/download/release/v24.22.2/node-v24.22.2-win-x64.zip
           targets:
             - cpu: x64
               os: win32
@@ -3797,9 +3863,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-aBKlPls3+8MkdtbDURA40rw7vRs7s0jWwE3Sxwocj0o=
+            integrity: sha256-cK/SUKkn+8MvPZWlhZfv3xSqitGU6JQmj5uDCaLauE4=
             type: binary
-            url: https://unofficial-builds.nodejs.org/download/release/v24.22.0/node-v24.22.0-linux-arm64-musl.tar.gz
+            url: https://unofficial-builds.nodejs.org/download/release/v24.22.2/node-v24.22.2-linux-arm64-musl.tar.gz
           targets:
             - cpu: arm64
               os: linux
@@ -3808,14 +3874,14 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-cs0lP74MJTnVIgjtCY1Ht4/ywyunYpXY5rWwzgZ9y6U=
+            integrity: sha256-hn4yLWcpTpxAXxDK5dcO0uSUC7Nn+kfby1FRyYmdfAQ=
             type: binary
-            url: https://unofficial-builds.nodejs.org/download/release/v24.22.0/node-v24.22.0-linux-x64-musl.tar.gz
+            url: https://unofficial-builds.nodejs.org/download/release/v24.22.2/node-v24.22.2-linux-x64-musl.tar.gz
           targets:
             - cpu: x64
               os: linux
               libc: musl
-    version: 24.22.0
+    version: 24.22.2
     hasBin: true
 
   normalize-path@3.0.0:
@@ -4182,6 +4248,9 @@ packages:
 
   satteri@0.10.5:
     resolution: {integrity: sha512-Ao1LKpAEa9Wdg0otgbVKViZHEq9ebdXe4DMrp3s9vQAU0HNIuHnFEuMuOcm0ZIXyV0Yzxj91NvhLpvXZJO/5ZQ==}
+
+  satteri@0.11.6:
+    resolution: {integrity: sha512-ddGCTqSfwL+A+odhdjj8E+ZMu1h0QEnG3VTmu7fPJL2+80GdjxDh1AeCw8mn2aa95eQSosG4e2QBYYfCc5nyiA==}
 
   sax@1.6.1:
     resolution: {integrity: sha512-42tBVwLWnaQvW5zc4HbZrTuWccECCZfBi92FDuwtqxasH+JbPB3/FOKb1m222K42R4WxuxzzMsTswfzgtSu64Q==}
@@ -5232,22 +5301,46 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
+  '@bruits/satteri-android-arm64@0.11.6':
+    optional: true
+
   '@bruits/satteri-darwin-arm64@0.10.5':
+    optional: true
+
+  '@bruits/satteri-darwin-arm64@0.11.6':
     optional: true
 
   '@bruits/satteri-darwin-x64@0.10.5':
     optional: true
 
+  '@bruits/satteri-darwin-x64@0.11.6':
+    optional: true
+
+  '@bruits/satteri-freebsd-x64@0.11.6':
+    optional: true
+
   '@bruits/satteri-linux-arm64-gnu@0.10.5':
+    optional: true
+
+  '@bruits/satteri-linux-arm64-gnu@0.11.6':
     optional: true
 
   '@bruits/satteri-linux-arm64-musl@0.10.5':
     optional: true
 
+  '@bruits/satteri-linux-arm64-musl@0.11.6':
+    optional: true
+
   '@bruits/satteri-linux-x64-gnu@0.10.5':
     optional: true
 
+  '@bruits/satteri-linux-x64-gnu@0.11.6':
+    optional: true
+
   '@bruits/satteri-linux-x64-musl@0.10.5':
+    optional: true
+
+  '@bruits/satteri-linux-x64-musl@0.11.6':
     optional: true
 
   '@bruits/satteri-wasm32-wasi@0.10.5':
@@ -5257,10 +5350,23 @@ snapshots:
       '@napi-rs/wasm-runtime': 1.2.4(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)
     optional: true
 
+  '@bruits/satteri-wasm32-wasi@0.11.6':
+    dependencies:
+      '@emnapi/core': 1.11.1
+      '@emnapi/runtime': 1.11.1
+      '@napi-rs/wasm-runtime': 1.2.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)
+    optional: true
+
   '@bruits/satteri-win32-arm64-msvc@0.10.5':
     optional: true
 
+  '@bruits/satteri-win32-arm64-msvc@0.11.6':
+    optional: true
+
   '@bruits/satteri-win32-x64-msvc@0.10.5':
+    optional: true
+
+  '@bruits/satteri-win32-x64-msvc@0.11.6':
     optional: true
 
   '@cacheable/memory@2.2.0':
@@ -5868,6 +5974,13 @@ snapshots:
       '@emnapi/core': 1.11.3
       '@emnapi/runtime': 1.11.3
       '@tybys/wasm-util': 0.10.4
+
+  '@napi-rs/wasm-runtime@1.2.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)':
+    dependencies:
+      '@emnapi/core': 1.11.1
+      '@emnapi/runtime': 1.11.1
+      '@tybys/wasm-util': 0.10.4
+    optional: true
 
   '@oslojs/encoding@1.1.0': {}
 
@@ -8998,7 +9111,7 @@ snapshots:
 
   node-releases@2.0.57: {}
 
-  node@runtime:24.22.0: {}
+  node@runtime:24.22.2: {}
 
   normalize-path@3.0.0: {}
 
@@ -9447,20 +9560,20 @@ snapshots:
     dependencies:
       suf-log: 2.5.3
 
-  satteri-autolink-headings@0.1.1(satteri@0.10.5):
+  satteri-autolink-headings@0.1.1(satteri@0.11.6):
     dependencies:
-      satteri: 0.10.5
+      satteri: 0.11.6
 
-  satteri-callouts@1.0.1(satteri@0.10.5):
+  satteri-callouts@1.0.1(satteri@0.11.6):
     dependencies:
       hast-util-from-html: 2.0.3
       hast-util-to-html: 9.0.5
-      satteri: 0.10.5
+      satteri: 0.11.6
 
-  satteri-slug@0.1.1(satteri@0.10.5):
+  satteri-slug@0.1.1(satteri@0.11.6):
     dependencies:
       github-slugger: 2.0.0
-      satteri: 0.10.5
+      satteri: 0.11.6
 
   satteri@0.10.5:
     dependencies:
@@ -9478,6 +9591,25 @@ snapshots:
       '@bruits/satteri-wasm32-wasi': 0.10.5
       '@bruits/satteri-win32-arm64-msvc': 0.10.5
       '@bruits/satteri-win32-x64-msvc': 0.10.5
+
+  satteri@0.11.6:
+    dependencies:
+      '@types/estree-jsx': 1.0.5
+      '@types/hast': 3.0.5
+      '@types/mdast': 4.0.4
+      '@types/unist': 3.0.3
+    optionalDependencies:
+      '@bruits/satteri-android-arm64': 0.11.6
+      '@bruits/satteri-darwin-arm64': 0.11.6
+      '@bruits/satteri-darwin-x64': 0.11.6
+      '@bruits/satteri-freebsd-x64': 0.11.6
+      '@bruits/satteri-linux-arm64-gnu': 0.11.6
+      '@bruits/satteri-linux-arm64-musl': 0.11.6
+      '@bruits/satteri-linux-x64-gnu': 0.11.6
+      '@bruits/satteri-linux-x64-musl': 0.11.6
+      '@bruits/satteri-wasm32-wasi': 0.11.6
+      '@bruits/satteri-win32-arm64-msvc': 0.11.6
+      '@bruits/satteri-win32-x64-msvc': 0.11.6
 
   sax@1.6.1: {}
 
